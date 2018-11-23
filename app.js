@@ -70,8 +70,42 @@ var prefix = '?';
 var prefix = '?';
 
 if(message.content.startsWith(prefix + "help")){
-    message.channel.send(" `préfixe = ?`  [`wtf / autistic / ty / exactly / pcmr / cat / pile / face / lancer6 / lancer12 / lancer20 / refjeux / refanime / secret / help / daily / compt`]"
-    )
+
+    var image_embed = new Discord.RichEmbed()
+    .setColor('#0000cc')
+    .setTitle('image:')
+    .setDescription('`[`wtf / autistic / ty / exactly / pcmr / cat`] ')
+    .setFooter('image')
+    message.channel.send(image_embed);
+
+    var random_embed = new Discord.RichEmbed()
+    .setColor('#0000cc')
+    .setTitle('random:')
+    .setDescription('`[`pile / face / lancer6 / lancer12 / lancer20`] ')
+    .setFooter('random')
+    message.channel.send(random_embed);
+
+    var jeux_embed = new Discord.RichEmbed()
+    .setColor('#0000cc')
+    .setTitle('jeux:')
+    .setDescription('`[`refjeux / refanime`] ')
+    .setFooter('jeux')
+    message.channel.send(jeux_embed);
+
+    var argent_embed = new Discord.RichEmbed()
+    .setColor('#0000cc')
+    .setTitle('argent:')
+    .setDescription('`[`daily / compt`] ')
+    .setFooter('argent')
+    message.channel.send(argent_embed);
+
+    var autre_embed = new Discord.RichEmbed()
+    .setColor('#0000cc')
+    .setTitle('autre:')
+    .setDescription('`[`secret / help`] ')
+    .setFooter('autre')
+    message.channel.send(autre_embed);
+
 };   
 
 var prefix = '?';

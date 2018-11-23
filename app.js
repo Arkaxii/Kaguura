@@ -12,14 +12,14 @@ client.on("message", message => {
        
                money.fetchBal(message.author.id).then((i) => { 
                    message.channel.send(`**Tu as:** ${i.money} $`);
-               }) ;
+               }) 
            }           
            var prefix = '?';
            if(message.content.startsWith(prefix + "payadm")){
        
                money.updateBal(message.author.id, 500 ).then((i) => { 
                    message.channel.send(`**tu as ressue 500$!**\n**New Balance:** ${i.money}`);
-               });
+               })
            } 
         
         

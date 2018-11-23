@@ -1,3 +1,4 @@
+const token = process.env.token;
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money');
@@ -645,4 +646,4 @@ if(message.content.startsWith(prefix + "refanime")){
 
         
 });
-client.login("NTExMjM1MTM3NzkxNDU5MzMy.DtGhtg.29gXQkpIIXStHQwjD0y2yTY4Kzc");
+client.login(token);

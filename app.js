@@ -21,7 +21,7 @@ client.on("message", message => {
                    message.channel.send(`**tu as ressue 500$!**\n**New Balance:** ${i.money}`);
                })
            } 
-        
+        {
            var prefix = '?';
          if(message.content.startsWith(prefix + "payfine")){
        
@@ -34,7 +34,7 @@ client.on("message", message => {
                 message.channel.send(`**You paid your fine of 500$!**\n**New Balance:** ${i.money}`)
               })
         } 
-            
+        };
            var prefix = '?';
            if(message.content.startsWith(prefix + "daily")){
               

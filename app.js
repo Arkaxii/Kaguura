@@ -44,7 +44,7 @@ client.on("message", message => {
                        money.updateBal(message.author.id, 500).then((i) => { 
                            message.channel.send({embed: {
                                color: 3447003,
-                               description: 'Tu as reçu **500$** \`?daily`\.`.',
+                               description: 'Tu as reçu **500$** \`?daily`\.Tu as ${i.money} $.',
                                author: {
                                    name: `${message.author.username}#${message.author.discriminator}`,
                                    icon_url: message.author.avatarURL 

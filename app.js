@@ -27,7 +27,7 @@ client.on("message", message => {
            if(message.content.startsWith(prefix + "payfine1")){
          
               if( `${i.money}` < 499 ){
-               return message.channel.send(`**Not enought**`);
+                message.channel.send(`**Not enought**`);
           
            } else {
           

@@ -35,7 +35,7 @@ client.on("message", message => {
                 })
           } 
     
-        
+        */
         
            var prefix = '?';
            if(message.content.startsWith(prefix + "daily")){
@@ -62,7 +62,7 @@ client.on("message", message => {
                            }
                        }});
                    }
-               } */
+               } 
 
 
 var prefix = '?';

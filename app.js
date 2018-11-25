@@ -5,7 +5,7 @@ const money = require('discord-money');
 
 
 client.on("message", message => {
-    {
+  /*  {
         const moment = require('moment');
         var prefix = '?';
            if(message.content.startsWith(prefix + "compt")){
@@ -63,7 +63,7 @@ client.on("message", message => {
                        }});
                    }
                }
-           }
+           } */
 
 var prefix = '?';
     if(message.content.startsWith(prefix + "ping")){

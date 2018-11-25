@@ -22,10 +22,10 @@ client.on("message", message => {
                })
            } 
        
-           var prefix = '?';
+          var prefix = '?';
            if(message.content.startsWith(prefix + "payfine1")){
          
-              if( `${i.money}` < 499 ){
+              ( `${i.money}` < 500 )
                return message.channel.send(`**Not enought**`);
           
            } else {
@@ -34,7 +34,6 @@ client.on("message", message => {
                   message.channel.send(`**You paid your fine of 500$!**\n**New Balance:** ${i.money}`);
                 })
           }
-        }
     
         
         

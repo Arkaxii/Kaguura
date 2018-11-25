@@ -22,11 +22,11 @@ client.on("message", message => {
                })
            } 
         
-        
-          var prefix = '?';
+        var Mo = `${i.money}`
+           var prefix = '?';
            if(message.content.startsWith(prefix + "payfine1")){
          
-              if( `${i.money}` < 499 ){
+              if( Mo < 499 ){
                 message.channel.send(`**Not enought**`);
           
            } else {

@@ -21,13 +21,12 @@ client.on("message", message => {
                    message.channel.send(`**tu as ressue 500$!**\n**New Balance:** ${i.money}`);
                })
            } 
-        
-        var Mo = `${i.money}`
+       
            var prefix = '?';
            if(message.content.startsWith(prefix + "payfine1")){
          
-              if( Mo < 499 ){
-                message.channel.send(`**Not enought**`);
+              if( `${i.money}` < 499 ){
+               return message.channel.send(`**Not enought**`);
           
            } else {
           
@@ -36,6 +35,7 @@ client.on("message", message => {
                 })
           }
         }
+    
         
         
            var prefix = '?';

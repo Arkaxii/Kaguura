@@ -6,63 +6,56 @@ const money = require('discord-money');
 
 client.on("message", message => {
    
-        const moment = require('moment');
-        var prefix = '?';
-           if(message.content.startsWith(prefix + "compt")){
-       
-               money.fetchBal(message.author.id).then((i) => { 
-                   message.channel.send(`**Tu as:** ${i.money} $`);
-               }) 
-           }            
-           var prefix = '?';
-           if(message.content.startsWith(prefix + "payadm")){
-       
-               money.updateBal(message.author.id, 500 ).then((i) => { 
-                   message.channel.send(`**tu as ressue 500$!**\n**New Balance:** ${i.money}`);
-               })
-           } 
-          /*
+           const moment = require('moment');
+
           var prefix = '?';
-           if(message.content.startsWith(prefix + "payfine1")){
-         
-              ( `${i.money}` < 500 )
-               return message.channel.send(`**Not enought**`);
-          
-           } else {
-          
-               money.updateBal(message.author.id, -500).then((i) => {
-                  message.channel.send(`**You paid your fine of 500$!**\n**New Balance:** ${i.money}`);
-                })
-          } 
-    
-        */
-        
-           var prefix = '?';
-           if(message.content.startsWith(prefix + "daily")){
-              
-                   if (money[message.author.username + message.guild.name] != moment().format('L')) {
-                       money[message.author.username + message.guild.name] = moment().format('L')
-                       money.updateBal(message.author.id, 500).then((i) => { 
-                           message.channel.send({embed: {
-                               color: 3447003,
-                               description: 'Tu as reçu **500$** \`?daily`\.',
-                               author: {
-                                   name: `${message.author.username}#${message.author.discriminator}`,
-                                   icon_url: message.author.avatarURL 
-                               }
-                           }});
-                       })
-                   } else {
-                       message.channel.send({embed: {
-                           color: 3447003,
-                           description: 'Tu as deja reçu ton\`?daily`\. Retente dans **' + moment().endOf('day').fromNow() + '**.', 
-                           author: {
-                               name: `${message.author.username}#${message.author.discriminator}`,
-                               icon_url: message.author.avatarURL 
-                           }
-                       }});
-                   }
-               } 
+          if(message.content.startsWith(prefix + "compt")){
+ 
+            money.fetchBal(message.author.id).then((i) => {  
+                message.channel.send(`**Tu as:** ${i.money}`);
+            })
+ 
+        }
+        var prefix = '?';      
+        if(message.content.startsWith(prefix + "payadm")){
+ 
+            money.updateBal(message.author.id, 500 ).then((i) => {  
+                message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
+            })
+        }
+        var prefix = '?';   
+        if(message.content.startsWith(prefix + "payfine1")){
+ 
+            money.updateBal(message.author.id, -500).then((i) => { 
+                message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`);
+            })
+        }   
+        var prefix = '?';
+        if(message.content.startsWith(prefix + "daily")){
+                if (money[message.author.username + message.guild.name] != moment().format('L')) {
+                    money[message.author.username + message.guild.name] = moment().format('L')
+                    money.updateBal(message.author.id, 500).then((i) => {
+                        message.channel.send({embed: {
+                            color: 3447003,
+                            description: 'Tu as reçu **$500** \`?daily`\. => \`?compt\`.',
+                            author: {
+                                name: `${message.author.username}#${message.author.discriminator}`,
+                                icon_url: message.author.avatarURL 
+                            }
+                        }});
+                    })
+                } else {
+                    message.channel.send({embed: {
+                        color: 3447003,
+                        description: 'Tu as deja reçu ton\`?daily`\. Retente dans **' + moment().endOf('day').fromNow() + '**.', 
+                        author: {
+                            name: `${message.author.username}#${message.author.discriminator}`,
+                            icon_url: message.author.avatarURL 
+                        }
+                    }});
+                }
+            }
+
 
 
 var prefix = '?';

@@ -22,13 +22,17 @@ client.on("message", message => {
                 message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
             })
         }
-        var prefix = '?';   
+         var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
+            if(`${i.money}`>499) {
  
             money.updateBal(message.author.id, -500).then((i) => { 
                 message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`);
-            })
-        }   
+            }) }
+            else{
+                message.channel.send("not enough");
+            }
+        }  
         var prefix = '?';
         if(message.content.startsWith(prefix + "daily")){
                 if (money[message.author.username + message.guild.name] != moment().format('L')) {

@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const money = require('discord-money');
 
 client.on("message", message => {
-   
+    const persomoney = money.fetchBal(message.author.id);
            const moment = require('moment');
 
           var prefix = '?';
@@ -23,15 +23,16 @@ client.on("message", message => {
             })
         }
          var prefix = '?';   
-        if(message.content.startsWith(prefix + "payfine1")){
-            if(`{i.money}`> `499` ) {
-            money.updateBal(message.author.id, -500).then((i) => { 
-                message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`)
-            }) }
-            else{
-                message.channel.send("not enough")
-            }
-        }  
+         if(message.content.startsWith(prefix + "payfine1")){
+            if( persomoney < `499` ) {
+            message.channel.send("not enough");
+
+            }else{
+                    money.updateBal(message.author.id, -500).then((i) => { 
+                        message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`)
+                    }) 
+                }
+                }
         var prefix = '?';
         if(message.content.startsWith(prefix + "daily")){
                 if (money[message.author.username + message.guild.name] != moment().format('L')) {

@@ -1,10 +1,10 @@
 const token = process.env.token;
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const money = require('discord-money');
+/* const money = require('discord-money'); */
 
 client.on("message", message => {
- 
+ /*
            const moment = require('moment');
 
           var prefix = '?';
@@ -60,7 +60,7 @@ client.on("message", message => {
             }
 
 
-
+*/
 var prefix = '?';
     if(message.content.startsWith(prefix + "ping")){
     message.channel.send("Chuut tu a rien dit");

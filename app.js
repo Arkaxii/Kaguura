@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const money = require('discord-money');
 
 client.on("message", message => {
-    const persomoney = money.fetchBal(message.author.id);
+ 
            const moment = require('moment');
 
           var prefix = '?';
@@ -22,9 +22,9 @@ client.on("message", message => {
                 message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
             })
         }
-         var prefix = '?';   
-         if(message.content.startsWith(prefix + "payfine1")){
-            if( persomoney < `499` ) {
+       var prefix = '?';   
+        if(message.content.startsWith(prefix + "payfine1")){
+            if( `{i.money} `< `499 `) {
             message.channel.send("not enough");
 
             }else{

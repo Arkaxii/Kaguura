@@ -24,13 +24,13 @@ client.on("message", message => {
         }
          var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
-            if(`{i.money}`> `499`) {
+            if(`{i.money}`> "499" ) {
  
             money.updateBal(message.author.id, -500).then((i) => { 
-                message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`);
+                message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`)
             }) }
             else{
-                message.channel.send("not enough");
+                message.channel.send("not enough")
             }
         }  
         var prefix = '?';

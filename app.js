@@ -36,6 +36,7 @@ client.on("message", message => {
         var prefix = '?';
         if(message.content.startsWith(prefix + "daily")){
                message.channel.send("Le daily est en phase de réajustement et sera donc down pour un bon moment ");
+        };
          /*if (money[message.author.username + message.guild.name] != moment().format('L')) {
                     money[message.author.username + message.guild.name] = moment().format('L')
                     money.updateBal(message.author.id, 500).then((i) => {

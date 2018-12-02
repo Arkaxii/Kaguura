@@ -523,61 +523,61 @@ if(message.content.startsWith(prefix + "refjeux")){
         }
         {
             function GTO (){
-                message.reply("great teacher onizuka")
+                message.reply(" Et c'est great teacher onizuka")
             }
             function FullmetalAlchimiste (){
-                message.reply("Fullmetal Alchimiste")
+                message.reply("Et c'est Fullmetal Alchimiste")
             }
             function FSN (){
-                message.reply("Fate Stay Night")
+                message.reply("Et c'est Fate Stay Night")
             }
             function Ken (){
-                message.reply("ken le survivant")
+                message.reply("Et c'est ken le survivant")
             }
             function Gurren_Lagann (){
-                message.reply("Gurren Lagann")
+                message.reply("Et c'est Gurren Lagann")
             }
             function SnK (){
-                message.reply("Shingeki no kyojin")
+                message.reply("Et c'est Shingeki no kyojin")
             }
             function FullmetalAlchimistebrotherhood (){
-                message.reply("Fullmetal Alchimiste Brotherhood")
+                message.reply("Et c'est Fullmetal Alchimiste Brotherhood")
             }
             function  rosario_vampire (){
-                message.reply(" rosario vampire ")
+                message.reply("Et c'est rosario vampire ")
             }
             function Hyouka (){
-                message.reply("Hyouka")
+                message.reply("Et c'est Hyouka")
             }
             function Oregairu (){
-                message.reply("Oregairu")
+                message.reply("Et c'est Oregairu")
             }
             function jojo (){
-                message.reply("Jojo's Bizarre Adventure: Stardust Crusaders")
+                message.reply("Et c'est Jojo's Bizarre Adventure: Stardust Crusaders")
             }
             function onepunch (){
-                message.reply("One Punch Man")
+                message.reply("Et c'est One Punch Man")
             }
             function Berserk  (){
-                message.reply("Berserk ")
+                message.reply("Et c'est Berserk ")
             }
             function BlackClover (){
-                message.reply("Black Clover")
+                message.reply("Et c'est Black Clover")
             }
             function KHR (){
-                message.reply("Katekyoshi Hitman Reborn!")
+                message.reply("Et c'est Katekyoshi Hitman Reborn!")
             }
             function Naruto_Shippuden (){
-                message.reply("Naruto Shippuden")
+                message.reply("Et c'est Naruto Shippuden")
             }
             function Onepiece(){
-                message.reply("One Piece")
+                message.reply("Et c'est One Piece")
             }
             function Black_Butler (){
-                message.reply("Black Butler")
+                message.reply("Et c'est Black Butler")
             }
             function  Dgray_Man (){
-                message.reply(" D.gray Man")
+                message.reply("Et c'est D.gray Man")
             }
                  function random(min, max){
                     min = Math.ceil(1);

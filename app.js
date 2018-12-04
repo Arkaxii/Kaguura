@@ -25,7 +25,7 @@ client.on("message", message => {
        var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
            
-            if(  money.fetchBal(message.author.id).then((i) => { `${i.money} `< `500 `})) {
+            if(  money.fetchBal(message.author.id).then((i) => { `${i.money} `< `499 `})) {
                     message.channel.send(`not enough`);
              
             

@@ -26,13 +26,13 @@ client.on("message", message => {
         if(message.content.startsWith(prefix + "payfine1")){
            
             if(  money.fetchBal(message.author.id).then((i) => { `${i.money} `< `499 `})) {
-                    message.channel.send(`not enough`);
+                    message.channel.send(`not enough`)
              
             
 
             }else{
                     money.updateBal(message.author.id, -500).then((i) => { 
-                        message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`);
+                        message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`)
                     }) 
                 }
             

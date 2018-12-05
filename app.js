@@ -9,7 +9,7 @@ client.on("message", message => {
      
  var prefix = '?';
         
-        if(message.content.startsWith(prefix + "help")){
+        if(message.content.startsWith(prefix + "daily")){
              
             module.exports.run = async (bot, message, args) => {
         

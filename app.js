@@ -1,62 +1,13 @@
 const token = process.env.token;
 const Discord = require('discord.js');
 const client = new Discord.Client();
-/* const money = require('discord-money'); */
+const money = require('discord-money'); 
 
 
 
 client.on("message", message => {
      
- var prefix = '?';
-        
-        if(message.content.startsWith(prefix + "daily")){
-             
-            module.exports.run = async (bot, message, args) => {
-        
-          
-                var currencyFormatter = require('currency-formatter')
-                var db = require('quick.db')
-                var ms = require('parse-ms');
-              
-        
-                
-                let cooldown = 8.64e+7; // Cooldown Daily
-                let amount = 250; // Daily Payout
-            
-                let lastDaily = await db.fetch(`lastDaily_${message.author.id}`)
-                try {
-                db.fetch(`account_${message.member.id}`).then(bucks => {
-                if(bucks == null || 0){
-                    db.set(`account_${message.member.id}`, 50)}
-            
-                else if (lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0) {
-                    let timeObj = ms(cooldown - (Date.now() - lastDaily))
-            
-                    let lastDailyEmbed = new discord.RichEmbed()
-                    .setAuthor(`Author`, `Picture Here`)
-                    .setColor(`DARK_RED`)
-                    .setDescription(`Daily Not Ready. Please Wait **${timeObj.hours}h ${timeObj.minutes}m**!`)
-                    message.channel.send(lastDailyEmbed)
-                } else {
-                    db.set(`lastDaily_${message.author.id}`, Date.now());
-                    db.add(`account_${message.member.id}`, amount).then(i => {
-                        var discord = require('discord.js')
-                        let dailyEmbed = new discord.RichEmbed()
-                        .setAuthor(`Author Here`, `Picture Here`)
-                        .setColor(`DARK_RED`)
-                        .addField(`Account Holder: `, `${message.author}`)
-                        .addField(`Daily Retrieved:`, `${currencyFormatter.format(amount, { code: 'USD' })}`)
-                        message.channel.send(dailyEmbed)
-                    })}
-                })} catch(err) {console.log(err)}
-             }
-            
-        }
-
-
-
-
-    /*
+ 
           const moment = require('moment');
 
           var prefix = '?';
@@ -77,7 +28,7 @@ client.on("message", message => {
         var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
            
-            if( money.fetchBal(message.author.id).then((i) => { `${i.money} `< `500 `})) {
+            if( money.fetchBal(message.author.id).then((i) => { {i.money} < 500 })) {
                     message.channel.send(`not enough`);
              
             
@@ -88,7 +39,7 @@ client.on("message", message => {
                     }) 
                 }
             
-        } */
+        } 
             
         var prefix = '?';
         if(message.content.startsWith(prefix + "daily")){

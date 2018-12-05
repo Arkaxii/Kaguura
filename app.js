@@ -1,11 +1,61 @@
 const token = process.env.token;
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const money = require('discord-money'); 
+/* const money = require('discord-money'); */
+
+
 
 client.on("message", message => {
- 
-           const moment = require('moment');
+     
+
+    module.exports.run = async (bot, message, args) => {
+
+  
+        var currencyFormatter = require('currency-formatter')
+        var db = require('quick.db')
+        var ms = require('parse-ms');
+      
+
+        
+        let cooldown = 8.64e+7; // Cooldown Daily
+        let amount = 250; // Daily Payout
+    
+        let lastDaily = await db.fetch(`lastDaily_${message.author.id}`)
+        try {
+        db.fetch(`account_${message.member.id}`).then(bucks => {
+        if(bucks == null || 0){
+            db.set(`account_${message.member.id}`, 50)}
+    
+        else if (lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0) {
+            let timeObj = ms(cooldown - (Date.now() - lastDaily))
+    
+            let lastDailyEmbed = new discord.RichEmbed()
+            .setAuthor(`Author`, `Picture Here`)
+            .setColor(`DARK_RED`)
+            .setDescription(`Daily Not Ready. Please Wait **${timeObj.hours}h ${timeObj.minutes}m**!`)
+            message.channel.send(lastDailyEmbed)
+        } else {
+            db.set(`lastDaily_${message.author.id}`, Date.now());
+            db.add(`account_${message.member.id}`, amount).then(i => {
+                var discord = require('discord.js')
+                let dailyEmbed = new discord.RichEmbed()
+                .setAuthor(`Author Here`, `Picture Here`)
+                .setColor(`DARK_RED`)
+                .addField(`Account Holder: `, `${message.author}`)
+                .addField(`Daily Retrieved:`, `${currencyFormatter.format(amount, { code: 'USD' })}`)
+                message.channel.send(dailyEmbed)
+            })}
+        })} catch(err) {console.log(err)}
+     }
+    
+    module.exports.config = {
+        command: "eco.daily",
+    }
+
+
+
+    /*
+          const moment = require('moment');
 
           var prefix = '?';
           if(message.content.startsWith(prefix + "compt")){
@@ -22,26 +72,25 @@ client.on("message", message => {
                 message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
             })
         }
-       var prefix = '?';   
+        var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
            
-            if(  money.fetchBal(message.author.id).then((i) => { `${i.money} `< `499 `})) {
-                    message.channel.send(`not enough`)
+            if( money.fetchBal(message.author.id).then((i) => { `${i.money} `< `500 `})) {
+                    message.channel.send(`not enough`);
              
             
 
             }else{
                     money.updateBal(message.author.id, -500).then((i) => { 
-                        message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`)
+                        message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`);
                     }) 
                 }
             
-            }
+        } */
+            
         var prefix = '?';
         if(message.content.startsWith(prefix + "daily")){
-               
-        
-         if (money[message.author.username + message.guild.name] != moment().format('L')) {
+                if (money[message.author.username + message.guild.name] != moment().format('L')) {
                     money[message.author.username + message.guild.name] = moment().format('L')
                     money.updateBal(message.author.id, 500).then((i) => {
                         message.channel.send({embed: {
@@ -56,7 +105,7 @@ client.on("message", message => {
                 } else {
                     message.channel.send({embed: {
                         color: 3447003,
-                        description: 'Tu as deja reçu ton\`?daily`\. Retente dans **' + moment().endOf('day').fromNow() + '**.', 
+                        description: 'Tu as deja reçu ton\`?daily`\. Retente dans **' + moment().endOf('day').fromNow() + '**.', // When you got your daily already, this message will show up.
                         author: {
                             name: `${message.author.username}#${message.author.discriminator}`,
                             icon_url: message.author.avatarURL 
@@ -64,8 +113,6 @@ client.on("message", message => {
                     }});
                 }
             }
-
-
 
 var prefix = '?';
     if(message.content.startsWith(prefix + "ping")){
@@ -527,61 +574,61 @@ if(message.content.startsWith(prefix + "refjeux")){
         }
         {
             function GTO (){
-                message.reply(" Et c'est great teacher onizuka")
+                message.reply("great teacher onizuka")
             }
             function FullmetalAlchimiste (){
-                message.reply("Et c'est Fullmetal Alchimiste")
+                message.reply("Fullmetal Alchimiste")
             }
             function FSN (){
-                message.reply("Et c'est Fate Stay Night")
+                message.reply("Fate Stay Night")
             }
             function Ken (){
-                message.reply("Et c'est ken le survivant")
+                message.reply("ken le survivant")
             }
             function Gurren_Lagann (){
-                message.reply("Et c'est Gurren Lagann")
+                message.reply("Gurren Lagann")
             }
             function SnK (){
-                message.reply("Et c'est Shingeki no kyojin")
+                message.reply("Shingeki no kyojin")
             }
             function FullmetalAlchimistebrotherhood (){
-                message.reply("Et c'est Fullmetal Alchimiste Brotherhood")
+                message.reply("Fullmetal Alchimiste Brotherhood")
             }
             function  rosario_vampire (){
-                message.reply("Et c'est rosario vampire ")
+                message.reply(" rosario vampire ")
             }
             function Hyouka (){
-                message.reply("Et c'est Hyouka")
+                message.reply("Hyouka")
             }
             function Oregairu (){
-                message.reply("Et c'est Oregairu")
+                message.reply("Oregairu")
             }
             function jojo (){
-                message.reply("Et c'est Jojo's Bizarre Adventure: Stardust Crusaders")
+                message.reply("Jojo's Bizarre Adventure: Stardust Crusaders")
             }
             function onepunch (){
-                message.reply("Et c'est One Punch Man")
+                message.reply("One Punch Man")
             }
             function Berserk  (){
-                message.reply("Et c'est Berserk ")
+                message.reply("Berserk ")
             }
             function BlackClover (){
-                message.reply("Et c'est Black Clover")
+                message.reply("Black Clover")
             }
             function KHR (){
-                message.reply("Et c'est Katekyoshi Hitman Reborn!")
+                message.reply("Katekyoshi Hitman Reborn!")
             }
             function Naruto_Shippuden (){
-                message.reply("Et c'est Naruto Shippuden")
+                message.reply("Naruto Shippuden")
             }
             function Onepiece(){
-                message.reply("Et c'est One Piece")
+                message.reply("One Piece")
             }
             function Black_Butler (){
-                message.reply("Et c'est Black Butler")
+                message.reply("Black Butler")
             }
             function  Dgray_Man (){
-                message.reply("Et c'est D.gray Man")
+                message.reply(" D.gray Man")
             }
                  function random(min, max){
                     min = Math.ceil(1);

@@ -6,10 +6,19 @@ const moment = require('moment');
 
 
 client.on("message", message => {
-    
+
+
+
+    function World_of_warcraft(){
+        message.reply("Et c'etai world of warcraft")
+    }
+    function Portal(){
+        message.reply("Et c'etai Portal")
+    }
+
     function random(min, max){
         min = Math.ceil(1);
-        max = Math.floor(2);
+        max = Math.floor(22);
         randnum = Math.floor(Math.random() * (max - min +1) +min);
         }  
 

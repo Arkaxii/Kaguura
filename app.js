@@ -31,7 +31,7 @@ client.on("message", message => {
             message.reply(" «c'est une vrai dent de requin faite en résine!»  (vous avez 30s)")
             setTimeout( World_of_warcraft , 30000);
         
-        if(message.content.startsWith("world of warcraft")){
+        if(message.content.startsWith(prefix + "world of warcraft")){
             money.updateBal(message.author.id, 500)
             message.reply("gg")
         } }
@@ -39,7 +39,7 @@ client.on("message", message => {
             message.reply(" «The cake is a lie»  (vous avez 30s)")
             setTimeout( Portal , 30000);
 
-            if(message.content.startsWith("portal")){
+            if(message.content.startsWith(prefix + "portal")){
                 money.updateBal(message.author.id, 500)
                 message.reply("gg")
             }}

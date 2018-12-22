@@ -1,3 +1,5 @@
+ var prefix = '?';
+        if(message.content.startsWith(prefix + "daily")){
 module.exports.run = async (bot, message, args) => { // Run the command when a command is called
 
     var discord = require('discord.js');
@@ -41,4 +43,4 @@ module.exports.run = async (bot, message, args) => { // Run the command when a c
 
 module.exports.config = { // This is the config for a command. Able to add things like proper usage & etc.
     command: "eco.daily",
-}
+}}

@@ -1,12 +1,12 @@
- var prefix = '?';
-        if(message.content.startsWith(prefix + "daily")){
-module.exports.run = async (bot, message, args) => { // Run the command when a command is called
 
     var discord = require('discord.js');
     var currencyFormatter = require('currency-formatter')
     var db = require('quick.db')
     var ms = require('parse-ms');
   
+  var prefix = '?';
+        if(message.content.startsWith(prefix + "daily")){
+ module.exports.run = async (bot, message, args) => { // Run the command when a command is called
    // This Code Is Registered To Zinx#9129
    // Some Of This Code Has Been Altered To Work As Much As Possible
     

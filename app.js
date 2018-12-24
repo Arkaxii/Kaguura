@@ -736,6 +736,7 @@ if(message.content.startsWith(prefix + "refanime")){
         message.reply("Pierre ! ( ͡° ل͜ ͡°) Tu as perdu ! ")
     } }
                 }
+          var prefix = `?`;
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 

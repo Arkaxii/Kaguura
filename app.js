@@ -735,7 +735,7 @@ if(message.content.startsWith(prefix + "refanime")){
           var prefix = `?`;
 
     if (message.content.startsWith(prefix + 'ms')) {
-        message.channel.sendMessage('Pong! Your ping is `' + `${message.createdTimestamp - client.ping}` + ' ms`');
+        message.channel.sendMessage('Pong! Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
     }
 });
 client.login(token);

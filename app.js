@@ -65,10 +65,6 @@ client.on("message", message => {
                 }
             }
 
-var prefix = '?';
-    if(message.content.startsWith(prefix + "ping")){
-    message.channel.send("Chuut tu a rien dit");
-};
 
 var prefix = '?';
 

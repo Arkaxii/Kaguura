@@ -736,6 +736,11 @@ if(message.content.startsWith(prefix + "refanime")){
         message.reply("Pierre ! ( ͡° ل͜ ͡°) Tu as perdu ! ")
     } }
                 }
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
 
+    if (message.content.startsWith(prefix + 'ping')) {
+        message.channel.sendMessage('Pong! Your ping is `' + `${message.createdTimestamp - Date.now()}` + ' ms`');
+    }
 });
 client.login(token);

@@ -737,11 +737,9 @@ if(message.content.startsWith(prefix + "refanime")){
     } }
                 }
           var prefix = `?`;
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
 
-    if (message.content.startsWith(prefix + 'ping')) {
-        message.channel.sendMessage('Pong! Your ping is `' + `${message.createdTimestamp - Date.now()}` + ' ms`');
+    if (message.content.startsWith(prefix + 'ms')) {
+        message.channel.sendMessage('Pong! Your ping is `' + `${message.createdTimestamp - client.ping}` + ' ms`');
     }
 });
 client.login(token);

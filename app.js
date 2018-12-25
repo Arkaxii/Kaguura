@@ -1,134 +1,138 @@
 const token = process.env.token;
-// Load up the discord.js library
-const Discord = require("discord.js");
+// Charge la bibliothèque discord.js
+const  Discord  =  require ( " discord.js " );
 
-// This is your client. Some people call it `bot`, some people call it `self`, 
-// some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
-// this is what we're refering to. Your client.
-const client = new Discord.Client();
+// Ceci est votre client. Certaines personnes l'appellent `bot`, d'autres l'appellent` soi-même`,
+// certains pourraient l'appeler `cootchie`. De toute façon, quand vous voyez `client.something` ou` bot.something`,
+// c'est ce à quoi nous nous référons. Votre client
+ client  const =  new  Discord.Client ();
 
-const prefix = "?";
+// Ici nous chargeons le fichier config.json qui contient notre jeton et nos valeurs de préfixe.
+const  config  =  require ( " ./config.json " );
+// config.token contient le jeton du bot
+// config.prefix contient le préfixe du message.
 
-client.on("ready", () => {
-  // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-  // Example of changing the bot's playing game to something useful. `client.user` is what the
-  // docs refer to as the "ClientUser".
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+client . on ( " prêt " , () => {
+  // Cet événement sera exécuté si le bot démarre et se connecte avec succès.
+  console . log ( ` Bot a commencé, avec $ { client . utilisateurs . taille } utilisateurs, $ { client . canaux . taille } canaux de $ { client . guildes . taille } guildes. ` );
+  // Exemple de changer le jeu du bot en quelque chose d'utile. `client.user` est ce que le
+  // docs se réfère à "ClientUser".
+  client . utilisateur . setActivity ( ` Au service de $ { client . guildes . taille } serveurs ` );
 });
 
-client.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+client . sur ( " guildCreate " , guild  => {
+  // Cet événement se déclenche lorsque le bot rejoint une guilde.
+  console . log ( ` Nouvelle guilde rejoint: $ { guild . name } (id: $ { guild . id }} ). Cette guilde a $ { guild . memberCount } members! ` );
+  client . utilisateur . setActivity ( ` Au service de $ { client . guildes . taille } serveurs ` );
 });
 
-client.on("guildDelete", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+client . sur ( " guildDelete " , guild  => {
+  // cet événement se déclenche lorsque le bot est supprimé d'une guilde.
+  console . log ( ` J'ai été retiré de: $ { guild . name } (id: $ { guild . id } ) ` );
+  client . utilisateur . setActivity ( ` Au service de $ { client . guildes . taille } serveurs ` );
 });
 
 
-client.on("message", async message => {
-  // This event will run on every single message received, from any channel or DM.
+client . on ( " message " , message asynchrone  => { 
+  // Cet événement sera exécuté sur chaque message reçu, quel que soit le canal ou le DM.
   
-  // It's good practice to ignore other bots. This also makes your bot ignore itself
-  // and not get into a spam loop (we call that "botception").
-  if(message.author.bot) return;
+  // C'est une bonne pratique d'ignorer les autres robots. Cela fait aussi que votre bot s'ignore
+  // et ne pas entrer dans une boucle de spam (on appelle cela "botception").
+  if ( message . author . bot ) return ;
   
-  // Also good practice to ignore any message that does not start with our prefix, 
-  // which is set in the configuration file.
-  if(message.content.indexOf(config.prefix) !== 0) return;
+  // C'est aussi une bonne pratique d'ignorer tout message qui ne commence pas par notre préfixe,
+  // qui est défini dans le fichier de configuration.
+  si ( un message . contenu . indexOf ( config . préfixe ) ==!  0 ) retour ;
   
-  // Here we separate our "command" name, and our "arguments" for the command. 
-  // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
-  // command = say
-  // args = ["Is", "this", "the", "real", "life?"]
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+  // Nous séparons ici notre nom de "commande" et nos "arguments" pour la commande.
+  // Par exemple, si nous avons le message "+ say Est-ce la vraie vie?" , nous aurons le suivant:
+  // commande = dire
+  // args = ["Est-ce que", "ceci", "le", "réel", "la vie?"]
+  const  args  =  message . contenu . tranche ( config . préfixe . longueur ). trim (). scinder ( /  + / g );
+  const  commande  =  args . shift (). toLowerCase ();
   
-  // Let's go with a few common example commands! Feel free to delete or change those.
+  // Allons-y avec quelques exemples de commandes courantes! N'hésitez pas à les supprimer ou à les modifier.
   
-  if(command === "ping") {
-    // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  if (commande ===  " ping " ) {
+    // Calcule le ping entre l'envoi d'un message et sa modification, donnant une belle latence aller-retour.
+    // Le second ping est une latence moyenne entre le bot et le serveur websocket (aller simple, pas aller-retour)
+    const  m  =  attend le  message . canal . envoyer ( " Ping? " );
+    m . modifier ( ` ! Pong est Latence $ { m . createdTimestamp  - un  message . createdTimestamp } . ms Latence API est $ { Math . tour ( client . ping ) } ms ` );
   }
   
-  if(command === "say") {
-    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
-    const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
-    message.channel.send(sayMessage);
+  if (commande ===  " dire " ) {
+    // fait que le bot dit quelque chose et supprime le message. Par exemple, il est ouvert à tout le monde.
+    // Pour obtenir le "message" lui-même, nous rejoignons le `args` dans une chaîne avec des espaces:
+    const  sayMessage  =  args . rejoindre ( "  " );
+    // Ensuite, nous supprimons le message de commande (sournois, non?). La prise ignore simplement l'erreur avec un truc mignon smiley.
+    message . delete (). catch ( O_o => {});
+    // Et on demande au bot de dire la chose:
+    message . canal . envoyer (direMessage);
   }
   
-  if(command === "kick") {
-    // This command must be limited to mods and admins. In this example we just hardcode the role names.
-    // Please read on Array.some() to understand this bit: 
+  if (commande ===  " kick " ) {
+    // Cette commande doit être limitée aux mods et aux administrateurs. Dans cet exemple, nous venons de coder en dur les noms de rôle.
+    // S'il vous plaît lire sur Array.some () pour comprendre ce bit:
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+    if ( ! message . membre . rôles . certains ( r => [ " Administrateur " , " Modérateur " ]. includes ( r . nom )))
+      renvoyer le  message . répondre ( " Désolé, vous ne disposez pas des autorisations nécessaires pour utiliser cela! " );
     
-    // Let's first check if we have a member and if we can kick them!
-    // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
-    // We can also support getting the member by ID, which would be args[0]
-    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-    if(!member.kickable) 
-      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+    // Vérifions d'abord si nous avons un membre et si nous pouvons lui donner un coup de pied!
+    // message.mentions.members est une collection de personnes qui ont été mentionnées, en tant que GuildMembers.
+    // Nous pouvons également aider à obtenir le membre par ID, ce qui serait args [0]
+    let member =  message . mentions . membres . premier () ||  message . guilde . membres . get (args [ 0 ]);
+    si ( ! membre)
+      renvoyer le  message . reply ( " Veuillez mentionner un membre valide de ce serveur " );
+    si ( ! membre . kickable )
+      renvoyer le  message . répondre ( " Je ne peux pas donner un coup de pied à cet utilisateur! Ont-ils un rôle plus important? Ai-je des autorisations de coup? " );
     
-    // slice(1) removes the first part, which here should be the user mention or ID
-    // join(' ') takes all the various parts to make it a single string.
-    let reason = args.slice(1).join(' ');
-    if(!reason) reason = "No reason provided";
+    // slice (1) supprime la première partie, qui devrait être ici la mention ou l'identifiant de l'utilisateur
+    // join ('') prend toutes les différentes parties pour en faire une chaîne unique.
+    laissez raison =  args . tranche ( 1 ). rejoindre ( '  ' );
+    si ( ! raison) raison =  " Aucune raison fournie " ;
     
-    // Now, time for a swift kick in the nuts!
-    await member.kick(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+    // Le moment est venu de donner un coup de pied rapide!
+    attendez  membre . coup de pied (raison)
+      . catch ( error  =>  message . reply ( ` Sorry $ { message . author } je n'ai pas pu donner un coup de pied à cause de: $ { error } ` ));
+    message . réponse ( ` $ { member . user . tag } a été botté par $ { message . author . tag } car: $ { raison } ` );
 
   }
   
-  if(command === "ban") {
-    // Most of this command is identical to kick, except that here we'll only let admins do it.
-    // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+  if (commande ===  " ban " ) {
+    // La plupart de cette commande est identique à kick, sauf qu'ici, nous ne laisserons que les administrateurs le faire.
+    // Dans le monde réel, les mods pourraient aussi interdire, mais ceci n'est qu'un exemple, non? ;)
+    if ( ! message . membre . rôles . certains ( r => [ " Administrateur " ]. includes ( r . nom )))
+      renvoyer le  message . répondre ( " Désolé, vous ne disposez pas des autorisations nécessaires pour utiliser cela! " );
     
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-    if(!member.bannable) 
-      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+    let member =  message . mentions . membres . premier ();
+    si ( ! membre)
+      renvoyer le  message . reply ( " Veuillez mentionner un membre valide de ce serveur " );
+    si ( ! membre . bannable )
+      renvoyer le  message . répondre ( " Je ne peux pas interdire cet utilisateur! Ont-ils un rôle plus important? Ai-je des autorisations d'interdiction? " );
 
-    let reason = args.slice(1).join(' ');
-    if(!reason) reason = "No reason provided";
+    laissez raison =  args . tranche ( 1 ). rejoindre ( '  ' );
+    si ( ! raison) raison =  " Aucune raison fournie " ;
     
-    await member.ban(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+    attendez  membre . interdiction (raison)
+      . catch ( error  =>  message . reply ( ` Sorry $ { message . author } Je n'ai pas pu interdire à cause de: $ { error } ` ));
+    message . répondre ( ` $ { member . user . tag } a été banni par $ { message . author . tag } car: $ { raison } ` );
   }
   
-  if(command === "purge") {
-    // This command removes all messages from all users in the channel, up to 100.
+  if (commande ===  " purge " ) {
+    // Cette commande supprime tous les messages de tous les utilisateurs du canal, jusqu'à 100.
     
-    // get the delete count, as an actual number.
-    const deleteCount = parseInt(args[0], 10);
+    // récupère le nombre de suppressions, en tant que nombre réel.
+    const  deleteCount  =  parseInt (args [ 0 ], 10 );
     
-    // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+    // Ooooh nice, conditions combinées. <3
+    if ( ! deleteCount || deleteCount <  2  || deleteCount >  100 )
+      renvoyer le  message . réponse ( " Veuillez indiquer un nombre compris entre 2 et 100 pour le nombre de messages à supprimer " );
     
-    // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await message.channel.fetchMessages({limit: deleteCount});
-    message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+    // Nous avons donc nos messages et les supprimons. Assez simple, non?
+    const  fetched  =  attend le  message . canal . fetchMessages ({limit : deleteCount});
+    message . canal . bulkDelete (récupéré)
+      . catch ( error  =>  message . reply ( ` Impossible de supprimer les messages à cause de: $ { error } ` ));
   }
+});
 });
 client.login(token);

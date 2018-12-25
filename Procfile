@@ -1,1 +1,1 @@
-worker: node app
+worker: node index

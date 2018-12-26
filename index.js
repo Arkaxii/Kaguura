@@ -69,7 +69,7 @@ client.on('ready', () => {//new ready event
   }, 1000);//the rainbow time
 })
 
-client.on("message", message => {//new msg event
+/* client.on("message", message => {//new msg event
   if (message.content === "?help") {//the help cmd
       message.react('🌈')
         let rainembed = new Discord.RichEmbed()//new embed
@@ -93,7 +93,7 @@ The steps of the role did not worked .!!
 =====================🌈 RainbowBot. 🌈=====================
 **`)
 message.author.sendEmbed(rainembed)//send the embed to the author dm
-    }})
+    }}) */
    client.on('message', message => {//new cmd
 	   if(message.content.startsWith(`r#inv`)) { //the invite bot cmd
 		   if(!message.channel.guild) return;

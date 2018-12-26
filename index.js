@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money'); 
 const config = require("./config.json");
+const size    = config.colors;
+const rainbow = new Array(size);
+
 
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
@@ -19,8 +22,6 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
-const size    = config.colors;
-const rainbow = new Array(size);
 
 for (var i=0; i<size; i++) {
   var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg

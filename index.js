@@ -76,26 +76,19 @@ client.on('ready', () => {//new ready event
         //the embed description (help msg)
         .setDescription(`**
 =====================🌈 RainbowBot. 🌈=====================
-r#set 
- - لإنشاء رتبة الرينبو وبدا الرينبو
+?set 
 - To create the role of the Rainbow & Start The Rainbow
-r#inv 
-- لدعوة البوت
+?inv 
 - To Invite the bot
-خطوات لو الرتبة م أشتغلت .!!
-1- ضع رتبة الرينبو فوق الالوان أو الرتب الملونه لو فيه
-2- ضع رتبة البوت فوق رتبة الرينبو
 The steps of the role did not worked .!!
 1- Place the role of the Rainbow above the colors or colored ranks if it
 2- Put the bot role above the role of the Rainbow 
-رآبط البوت - Bot Invite link
-- hhttp://cutt.us/HPkx6
 =====================🌈 RainbowBot. 🌈=====================
 **`)
 message.author.sendEmbed(rainembed)//send the embed to the author dm
     }}) */
    client.on('message', message => {//new cmd
-	   if(message.content.startsWith(`r#inv`)) { //the invite bot cmd
+	   if(message.content.startsWith(prefix + `inv`)) { //the invite bot cmd
 		   if(!message.channel.guild) return;
                  message.react('🌈')
 		   var embed = new Discord.RichEmbed()

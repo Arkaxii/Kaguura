@@ -1,7 +1,6 @@
 { 
   "prefix" : "?"
-}
-{
+
 	"servers": [
 		"ID 1ST SERVER",
 		"ID 2ND SERVER"

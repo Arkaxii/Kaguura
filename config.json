@@ -1,5 +1,3 @@
 { 
-  "prefix" : "?",
-    "randomize_delay": 3
-
+  "prefix" : "?"
 }

@@ -227,10 +227,9 @@ client.on("message", async message => {
                 message.channel.send(`**Tu as:** ${i.money}`);
             })
 	  }
-       var prefix = '?';      
+         var prefix = '?';      
         if(message.content.startsWith(prefix + "payadm")){
-            if(!message.author.has('246395977450258432') )
-            
+            if(!message.member.has('246395977450258432') )
             return message.reply("Cette commande est reserver au créateur du bot");
  
             money.updateBal(message.author.id, 500 ).then((i) => {  

@@ -206,7 +206,7 @@ client.on("message", async message => {
   
   if(command === "purge") {
 	       
-    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+    if(!message.member.permissions.has('ADMINISTRATOR') 
     return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande! Il te faudra un role nommée: **Administrator** ou **Moderator** ");
   
     const deleteCount = parseInt(args[0], 10);

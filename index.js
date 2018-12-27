@@ -229,7 +229,7 @@ client.on("message", async message => {
 	  }
           var prefix = '?';      
         if(message.content.startsWith(prefix + "payadm")){
-            if(!message.author  `246395977450258432` )
+            if(!message.author(  `246395977450258432` ))
             return message.reply("Cette commande est reserver au créateur du bot");
  
             money.updateBal(message.author.id, 500 ).then((i) => {  

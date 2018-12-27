@@ -226,7 +226,7 @@ client.on("message", async message => {
             money.fetchBal(message.author.id).then((i) => {  
                 message.channel.send(`**Tu as:** ${i.money}`);
             })
- 
+	  }
        var prefix = '?';      
         if(message.content.startsWith(prefix + "payadm")){
             if(!message.author.has('246395977450258432') )

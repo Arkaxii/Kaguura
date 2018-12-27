@@ -71,20 +71,49 @@ client.on('ready', () => {
 })
 
  client.on("message", message => {
-  if (message.content === "?rainhelp") {
-      message.react('🌈')
-        let rainembed = new Discord.RichEmbed()
-        .setDescription(`**
-=====================🌈 RainbowMode. 🌈=====================
-?set 
-- Crée le role qui servira pour le rainbow
-?inv 
--envoie un mp pour inviter le bot dans d'autre serveur
-SI LE RAINBOW NE FONCTIONNE PAS:
-Assurez-vous que le role rainbow soit le plus haut possible
-Assurez-vous de ne pas avoir changer le nom du role
-=====================🌈 RainbowMode. 🌈=====================
-**`)
+    if (message.content === "<<help") {
+        message.react('🤖')
+          let helpem = new Discord.RichEmbed()
+          .setTitle(`Requested By | ${message.author.username}`)
+          .setDescription(`**
+  =====================🤖 KaguraHelp+ 🤖=====================
+  **image:**
+  <<wtf
+  <<autistic  
+  <<ty
+  <<exactly 
+  <<pcmr 
+  <<cat
+  **utilitaire:**
+  <<secret: **Les prochain ajout sur le bot**
+  <<avatar: **Recupere l'avatar pour l'afficher plus grand **
+  <<ping: **Pour connaitre son ping**
+  <<kick: **Reserver aux modo et admin **
+  <<ban: **Reserver aux admin**
+  <<say: **Fait dir ce que tu veut au bot **
+  <<purge: **Peut suprimer de 2 a 100 message  **
+  <<set: **Crée le role qui servira pour le rainbow**
+  <<inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
+  **Argent**
+  <<compt: **pour voir à combien s'élève ton compt**
+  <<daily: **pour recevoir 500$ par jour**
+  <<pierre / <<papier / <<ciseaux : **pour gagnier 50 $ ou perdre 10$**
+  **Jeux**
+  <<refjeux: **trouve à quelle jeux appartien la référence **
+  <<refanime: **trouve à quelle anime appartien la référence **
+  **Random**
+  <<pile: **1 chance sur 2**
+  <<face: **1 chance sur 2**
+  <<lancer6: **imite un lancer de dé à 6 face **
+  <<lancer12: **imite un lancer de dé à 12 face **
+  <<lancer20:** imite un lancer de dé à 20 face**
+  SI LE RAINBOW NE FONCTIONNE PAS:
+  Assurez-vous que le role rainbow soit le plus haut possible
+  Assurez-vous de ne pas avoir changer le nom du role
+  astuce: le role rainbow est plus simple à metre en place sur tel que sur ordinateur
+  =====================🤖 KaguraHelp+ 🤖=====================
+  **`)
+          .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
 message.channel.send(rainembed);
     }}) 
    client.on('message', message => {
@@ -176,7 +205,10 @@ client.on("message", async message => {
   }
   
   if(command === "purge") {
-    
+	       
+    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+    return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande! Il te faudra un role nommée: **Administrator** ou **Moderator** ");
+  
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
@@ -242,47 +274,6 @@ client.on("message", async message => {
                     }});
                 }
             }
-
-var prefix = '?';
-
-if(message.content.startsWith(prefix + "help")){
-
-    var image_embed = new Discord.RichEmbed()
-    .setColor('#0000cc')
-    .setTitle('image:')
-    .setDescription('[`wtf / autistic / ty / exactly / pcmr / cat`] ')
-    .setFooter('image')
-    message.channel.send(image_embed);
-
-    var random_embed = new Discord.RichEmbed()
-    .setColor('#0000cc')
-    .setTitle('random:')
-    .setDescription('[`pile / face / lancer6 / lancer12 / lancer20`] ')
-    .setFooter('random')
-    message.channel.send(random_embed);
-
-    var jeux_embed = new Discord.RichEmbed()
-    .setColor('#0000cc')
-    .setTitle('jeux:')
-    .setDescription('[`refjeux / refanime / pierre / papier / ciseaux`] ')
-    .setFooter('jeux')
-    message.channel.send(jeux_embed);
-
-    var argent_embed = new Discord.RichEmbed()
-    .setColor('#0000cc')
-    .setTitle('argent:')
-    .setDescription('[`daily / compt`] ')
-    .setFooter('argent')
-    message.channel.send(argent_embed);
-
-    var autre_embed = new Discord.RichEmbed()
-    .setColor('#0000cc')
-    .setTitle('autre:')
-    .setDescription('[`secret / help / avatar / ms`] ')
-    .setFooter('autre')
-    message.channel.send(autre_embed);
-
-};   
 
 var prefix = '?';
 

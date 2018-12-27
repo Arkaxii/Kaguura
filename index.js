@@ -227,7 +227,7 @@ client.on("message", async message => {
                 message.channel.send(`**Tu as:** ${i.money}`);
             })
 	  }
-          var prefix = '?';      
+        /*  var prefix = '?';      
         if(message.content.startsWith(prefix + "payadm")){
             if(!message.author(  `246395977450258432` ))
             return message.reply("Cette commande est reserver au créateur du bot");
@@ -235,7 +235,7 @@ client.on("message", async message => {
             money.updateBal(message.author.id, 500 ).then((i) => {  
                 message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
             })
-        } 
+        } */
         /*
        var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){

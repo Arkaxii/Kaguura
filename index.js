@@ -64,7 +64,7 @@ client.on('ready', () => {
       client.guilds.forEach(g => {
                   var role = g.roles.find('name', 'Rainbow .');
                   if (role) {
-                      role.edit({color : "#00b33c" , "#00cc99" , "#1a8cff" , "#bb33ff" , "#ff1a75" , "#ffd11a" , "#ff8533"});
+                      role.edit({color : "#00b33c"  "#00cc99"  "#1a8cff"  "#bb33ff"  "#ff1a75"  "#ffd11a"  "#ff8533"});
                   };
       });
   }, 1000);

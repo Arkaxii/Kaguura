@@ -931,17 +931,19 @@ if(command === "rainbow") {
                 let rolerain = message.mentions.roles.first();
             if(!rolerain)
               return message.reply("Veuiller mentionner un role valide");
-
+	
                 client.on('ready', () => {
                     setInterval(function(){
                         client.guilds.forEach(g => {
                                     var rolerain = g.roles.find(rolerain);
                                     if (rolerain) {
-                                        rolerain.edit({color : "RANDOM" });
+                                        rolerain.edit({color : "#ff0000" });
                                     };
                         });
                     }, 1000);
                 })
+	                message.reply( message.author + ` TEEST`+ rolerain );
+
             }
  
          if(message.content.startsWith(prefix + "avatar")){

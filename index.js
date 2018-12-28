@@ -71,26 +71,6 @@ client.on('ready', () => {
   }, 1000);
 })
 */
-client.on('message', message => {
-if(command === "rainbow") {
-    if(!message.member.permissions.has('ADMINISTRATOR') )
-    return message.reply("Cette commande est réserver aux Admin");
-    let rolerain = message.mentions.roles.first();
-if(!rolerain)
-  return message.reply("Veuiller mentionner un role valide");
-}
-})
-
-    client.on('ready', () => {
-        setInterval(function(){
-            client.guilds.forEach(g => {
-                        var rolerain = g.roles.find(rolerain);
-                        if (rolerain) {
-                            rolerain.edit({color : "RANDOM" });
-                        };
-            });
-        }, 1000);
-    })
 
  client.on("message", message => {
     if (message.content === "<<help") {
@@ -960,6 +940,25 @@ if (randnum == 3){
            
              msg.delete();
            }  
-  
+  client.on('message', message => {
+if(command === "rainbow") {
+    if(!message.member.permissions.has('ADMINISTRATOR') )
+    return message.reply("Cette commande est réserver aux Admin");
+    let rolerain = message.mentions.roles.first();
+if(!rolerain)
+  return message.reply("Veuiller mentionner un role valide");
+}
+})
+
+    client.on('ready', () => {
+        setInterval(function(){
+            client.guilds.forEach(g => {
+                        var rolerain = g.roles.find(rolerain);
+                        if (rolerain) {
+                            rolerain.edit({color : "RANDOM" });
+                        };
+            });
+        }, 1000);
+    })
 });
 client.login(token);

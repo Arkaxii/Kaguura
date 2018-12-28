@@ -217,7 +217,6 @@ const command = args.shift().toLowerCase();
   } 
       
 	
-	
 	 if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");
@@ -237,9 +236,6 @@ client.on('ready', () => {
         }, 1000);
 
     })
-	
-	
-	
 	
 	const moment = require('moment');
 

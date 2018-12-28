@@ -169,7 +169,7 @@ client.on('message',  message => {
                             };
                 });
             }, 1000);
-})
+});
 client.on("message", async message => {
   if(message.author.bot) return;
   

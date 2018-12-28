@@ -146,7 +146,7 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
-  client.on('message', message => {
+/*  client.on('message', message => {
 	  
 const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
@@ -161,6 +161,7 @@ message.channel.send('rainbow définit ')
 
 }	  
 })
+
     client.on('ready', () => {
         setInterval(function(){
             client.guilds.forEach(g => {
@@ -170,7 +171,7 @@ message.channel.send('rainbow définit ')
                         };
             });
         }, 1000);
-    })
+    }) */
 
 client.on("message", async message => {
   if(message.author.bot) return;

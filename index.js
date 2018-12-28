@@ -5,7 +5,8 @@ const money = require('discord-money');
 const config = require("./config.json");
 
 const prefix = '?'
-
+const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 
 //information about the bot
 client.on('ready', () => {
@@ -147,15 +148,32 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
+  client.on('message', message => {
+if(command === "rainbow") {
+    if(!message.member.permissions.has('ADMINISTRATOR') )
+    return message.reply("Cette commande est réserver aux Admin");
+    let rolerain = message.mentions.roles.first();
+if(!rolerain)
+  return message.reply("Veuiller mentionner un role valide");
+message.channel.send('rainbow définit ')
+
+}	  
+})
+    client.on('ready', () => {
+        setInterval(function(){
+            client.guilds.forEach(g => {
+                        var rolerain = g.roles.find(rolerain);
+                        if (rolerain) {
+                            rolerain.edit({color : "RANDOM" });
+                        };
+            });
+        }, 1000);
+    })
 
 client.on("message", async message => {
   if(message.author.bot) return;
   
   if(message.content.indexOf(config.prefix) !== 0) return;
-  
-  
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
     
     if(message.content.startsWith(prefix + "ping")){
     const m = await message.channel.send("Ping?");
@@ -940,25 +958,6 @@ if (randnum == 3){
            
              msg.delete();
            }  
-  client.on('message', message => {
-if(command === "rainbow") {
-    if(!message.member.permissions.has('ADMINISTRATOR') )
-    return message.reply("Cette commande est réserver aux Admin");
-    let rolerain = message.mentions.roles.first();
-if(!rolerain)
-  return message.reply("Veuiller mentionner un role valide");
-}
-})
 
-    client.on('ready', () => {
-        setInterval(function(){
-            client.guilds.forEach(g => {
-                        var rolerain = g.roles.find(rolerain);
-                        if (rolerain) {
-                            rolerain.edit({color : "RANDOM" });
-                        };
-            });
-        }, 1000);
-    })
 });
 client.login(token);

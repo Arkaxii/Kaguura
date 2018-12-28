@@ -42,11 +42,10 @@ client.on('ready', () => {
 
   
    client.on("message", async message => {
+if(!message.channel.guild) return;
 
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
 
-  if(command === "rainbow") {
+  if(message.content.startsWith(prefix + 'set')) {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");
     let rolerain = message.mentions.roles.first();

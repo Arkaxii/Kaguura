@@ -227,15 +227,18 @@ client.on("message", async message => {
                 message.channel.send(`**Tu as:** ${i.money}`);
             })
 	  }
-         var prefix = '?';      
+         let target = message.mentions.sers.first() || message.author;
+       var prefix = '?';      
         if(message.content.startsWith(prefix + "payadm")){
-          if(message.author.id !== config.ownerID)
+		let target = message.mentions.users.first() || message.author;
+
+            if(message.author.id !== config.ownerID)
             return message.reply("Cette commande est reserver au créateur du bot");
  
-            money.updateBal(message.author.id, 500 ).then((i) => {  
+            money.updateBal(target.user.id, 500 ).then((i) => {  
                 message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
             })
-        } 
+        }
         /*
        var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){

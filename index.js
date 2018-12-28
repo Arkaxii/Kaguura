@@ -9,17 +9,13 @@ const prefix = '?'
 //information about the bot
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  console.log('')
-  console.log('')
+
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
   console.log('╔[═════════════════════════════════════]╗');
   console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
   console.log('Informations About Rainbow bot:')
-  console.log('')
   console.log(`Servers! [ " ${client.guilds.size} " ]`);
   console.log(`Users! [ " ${client.users.size} " ]`);
   console.log(`Channels! [ " ${client.channels.size} " ]`);
@@ -30,11 +26,9 @@ client.on('ready', () => {
   console.log(`Language! [ " NodeJS " ]`);
   console.log(`Ram Usage! [ " ${(process.memoryUsage().rss / 1048576).toFixed()}MB " ]`);
   console.log('╚[════════════════════════════════════]╝')
-  console.log('')
   console.log('╔[════════════]╗')
   console.log(`${client.user.username} Is Online`)
   console.log('╚[════════════]╝')
-  console.log('')
   console.log('╔[════════════]╗')
   console.log('Created By: Revenge')
   console.log('╚[════════════]╝')

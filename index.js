@@ -115,7 +115,7 @@ client.on('ready', () => {
   =====================🤖 KaguraHelp+ 🤖=====================
   **`)
           .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
-message.channel.send(rainembed);
+message.channel.send(helpem);
     }}) 
    client.on('message', message => {
 	   if(message.content.startsWith(prefix + `inv`)) {
@@ -146,32 +146,34 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
-/*  client.on('message', message => {
-	  
-const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-	  
-if(command === "rainbow") {
-    if(!message.member.permissions.has('ADMINISTRATOR') )
-    return message.reply("Cette commande est réserver aux Admin");
-    let rolerain = message.mentions.roles.first();
-if(!rolerain)
-  return message.reply("Veuiller mentionner un role valide");
-message.channel.send('rainbow définit ')
-
-}	  
-})
-
-    client.on('ready', () => {
-        setInterval(function(){
-            client.guilds.forEach(g => {
-                        var rolerain = g.roles.find(rolerain);
-                        if (rolerain) {
-                            rolerain.edit({color : "RANDOM" });
-                        };
-            });
-        }, 1000);
-    }) */
+client.on('message', async message => {
+    if(message.author.bot) return;
+      
+      if(message.content.indexOf(config.prefix) !== 0) return;
+        
+        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+          
+    if(command === "rainbow") {
+        if(!message.member.permissions.has('ADMINISTRATOR') )
+        return message.reply("Cette commande est réserver aux Admin");
+        let rolerain = message.mentions.roles.first();
+    if(!rolerain)
+      return message.reply("Veuiller mentionner un role valide");
+    
+      message.channel.send('rainbow définit ') 
+    }})
+    
+        client.on('ready', () => {
+            setInterval(function(){
+                client.guilds.forEach(g => {
+                            var rolerain = g.roles.find(rolerain);
+                            if (rolerain) {
+                                rolerain.edit({color : "RANDOM" });
+                            };
+                });
+            }, 1000);
+        }); 
 
 client.on("message", async message => {
   if(message.author.bot) return;

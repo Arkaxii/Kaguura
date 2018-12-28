@@ -146,7 +146,7 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
-client.on('message', async message => {
+client.on('message',  message => {
     if(message.author.bot) return;
       
       if(message.content.indexOf(config.prefix) !== 0) return;
@@ -160,9 +160,7 @@ client.on('message', async message => {
         let rolerain = message.mentions.roles.first();
     if(!rolerain)
       return message.reply("Veuiller mentionner un role valide");
-    
-      message.channel.send('rainbow définit ') 
-    }})
+        }})
     
         client.on('ready', () => {
             setInterval(function(){

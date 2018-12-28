@@ -146,10 +146,8 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
+
 client.on('message',  message => {
-    if(message.author.bot) return;
-      
-      if(message.content.indexOf(config.prefix) !== 0) return;
         
         const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
@@ -160,7 +158,8 @@ client.on('message',  message => {
         let rolerain = message.mentions.roles.first();
     if(!rolerain)
       return message.reply("Veuiller mentionner un role valide");
-        }})
+    
+    }})
     
         client.on('ready', () => {
             setInterval(function(){

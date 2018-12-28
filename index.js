@@ -64,7 +64,7 @@ client.on('ready', () => {
       client.guilds.forEach(g => {
                   var role = g.roles.find('name', 'Rainbow .');
                   if (role) {
-                      role.edit({color : "#00b33c + #00cc99 + #1a8cff + #bb33ff + #ff1a75 + #ffd11a + #ff8533" });
+                      role.edit({color : "RANDOM" });
                   };
       });
   }, 1000);
@@ -168,9 +168,8 @@ client.on("message", async message => {
   }
   
   if(command === "kick") {
-    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-      return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande! Il te faudra un role nommée: **Administrator** ou **Moderator** ");
-    
+    if(!message.member.permissions.has('ADMINISTRATOR') )
+      return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!" );
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
       return message.reply("Veuiller mentionner un utilisateur valide");
@@ -187,9 +186,8 @@ client.on("message", async message => {
   }
   
   if(command === "ban") {
-    if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande! Il te faudra un role nommée: **Administrator** ou **Moderator** ");
-    
+    if(!message.member.permissions.has('ADMINISTRATOR') )
+      return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!" );
     let member = message.mentions.members.first();
     if(!member)
       return message.reply("Veuiller mentionner un utilisateur valide");
@@ -205,10 +203,8 @@ client.on("message", async message => {
   }
   
   if(command === "purge") {
-	       
     if(!message.member.permissions.has('ADMINISTRATOR') )
-    return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande! Il te faudra un role nommée: **Administrator** ou **Moderator** ");
-  
+    return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!");
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
@@ -928,8 +924,14 @@ if (randnum == 3){
             };
 
  
- if(message.content.startsWith(prefix + "test")){
-    message.reply( message.author + ` TEEST`);
+ if(command === "test") {
+                if(!message.member.permissions.has('ADMINISTRATOR') )
+                return message.reply("Cette commande est réserver aux Admin");
+                let rolerain = message.mentions.role.first();
+            if(!rolerain)
+              return message.reply("Veuiller mentionner un role valide");
+
+                message.reply( message.author + ` TEEST`+ rolerain );
              }
  
          if(message.content.startsWith(prefix + "avatar")){

@@ -5,8 +5,6 @@ const money = require('discord-money');
 const config = require("./config.json");
 
 const prefix = '?'
-const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
 
 //information about the bot
 client.on('ready', () => {
@@ -149,6 +147,10 @@ client.on("guildDelete", guild => {
 });
 
   client.on('message', message => {
+	  
+const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+	  
 if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");

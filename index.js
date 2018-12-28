@@ -180,7 +180,7 @@ client.on("message", async message => {
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
     
-    if(message.content.startsWith(prefix + "ping")){
+    if(command === "ping") {
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latence de ${m.createdTimestamp - message.createdTimestamp}ms. API Latence de ${Math.round(client.ping)}ms`);
   }

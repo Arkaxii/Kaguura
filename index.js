@@ -43,6 +43,7 @@ client.user.setActivity("r#help | By Revenge",{type: 'WATCHING'});
 console.log('Done The Watching Setup Completed')
 	
 });
+/*
 client.on('message', message => {
 if(!message.channel.guild) return;
   if(message.content.startsWith(prefix + 'set')) {
@@ -69,7 +70,7 @@ client.on('ready', () => {
       });
   }, 1000);
 })
-
+*/
  client.on("message", message => {
     if (message.content === "<<help") {
         message.react('🤖')
@@ -924,15 +925,24 @@ if (randnum == 3){
             };
 
  
- if(command === "test") {
+if(command === "rainbow") {
                 if(!message.member.permissions.has('ADMINISTRATOR') )
                 return message.reply("Cette commande est réserver aux Admin");
                 let rolerain = message.mentions.roles.first();
             if(!rolerain)
               return message.reply("Veuiller mentionner un role valide");
 
-                message.reply( message.author + ` TEEST`+ rolerain );
-             }
+                client.on('ready', () => {
+                    setInterval(function(){
+                        client.guilds.forEach(g => {
+                                    var rolerain = g.roles.find(rolerain);
+                                    if (rolerain) {
+                                        rolerain.edit({color : "RANDOM" });
+                                    };
+                        });
+                    }, 1000);
+                })
+            }
  
          if(message.content.startsWith(prefix + "avatar")){
 

@@ -52,7 +52,7 @@ if(!message.channel.guild) return;
 if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
 }})
-
+/*
 client.on('ready', () => {
         setInterval(function(){
             client.guilds.forEach(g => {
@@ -64,6 +64,6 @@ client.on('ready', () => {
         }, 1000);
 
     });
-
+*/
 
 client.login(token);

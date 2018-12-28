@@ -147,29 +147,7 @@ client.on("guildDelete", guild => {
 });
 
 
-client.on('message',  message => {
-        
-        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-          
-    if(command === "rainbow") {
-        if(!message.member.permissions.has('ADMINISTRATOR') )
-        return message.reply("Cette commande est réserver aux Admin");
-        let rolerain = message.mentions.roles.first();
-    if(!rolerain)
-      return message.reply("Veuiller mentionner un role valide");
-    
-    }
-    
-            setInterval(function(){
-                client.guilds.forEach(g => {
-                            var rolerain = g.roles.find(rolerain);
-                            if (rolerain) {
-                                rolerain.edit({color : "RANDOM" });
-                            };
-                });
-            }, 1000);
-});
+
 client.on("message", async message => {
   if(message.author.bot) return;
   
@@ -237,7 +215,33 @@ const command = args.shift().toLowerCase();
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Impossible de purger car: ${error}`));
   } 
-           const moment = require('moment');
+      
+	
+	
+	 if(command === "rainbow") {
+    if(!message.member.permissions.has('ADMINISTRATOR') )
+    return message.reply("Cette commande est réserver aux Admin");
+    let rolerain = message.mentions.roles.first();
+if(!rolerain)
+  return message.reply("Veuiller mentionner un role valide");
+}
+
+client.on('ready', () => {
+        setInterval(function(){
+            client.guilds.forEach(g => {
+                        var rolerain = g.roles.find(rolerain);
+                        if (rolerain) {
+                            rolerain.edit({color : "RANDOM" });
+                        };
+            });
+        }, 1000);
+
+    })
+	
+	
+	
+	
+	const moment = require('moment');
 
           var prefix = '?';
           if(message.content.startsWith(prefix + "compt")){

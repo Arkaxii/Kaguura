@@ -227,15 +227,14 @@ client.on("message", async message => {
                 message.channel.send(`**Tu as:** ${i.money}`);
             })
 	  }
-         let target = message.mentions.sers.first() || message.author;
-       var prefix = '?';      
-        if(message.content.startsWith(prefix + "payadm")){
-		let target = message.mentions.users.first() || message.author;
-
-            if(message.author.id !== config.ownerID)
+          if(command === "payadm") {
+            if(message.author.id !== config.ownerID)            
             return message.reply("Cette commande est reserver au créateur du bot");
+            let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide");
  
-            money.updateBal(target.user.id, 500 ).then((i) => {  
+            money.updateBal(member.id, 500 ).then((i) => {  
                 message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
             })
         }

@@ -70,7 +70,7 @@ client.on('ready', () => {
       });
   }, 1000);
 })
-
+*/
 client.on('message', message => {
 if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
@@ -78,21 +78,20 @@ if(command === "rainbow") {
     let rolerain = message.mentions.roles.first();
 if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
-  message.channel.send('rainbow set!')
-
-}});
+}
+})
 
     client.on('ready', () => {
         setInterval(function(){
             client.guilds.forEach(g => {
                         var rolerain = g.roles.find(rolerain);
                         if (rolerain) {
-                            rolerain.edit({color : "#ff0000" });
+                            rolerain.edit({color : "RANDOM" });
                         };
             });
         }, 1000);
-    });
-*/
+    })
+
  client.on("message", message => {
     if (message.content === "<<help") {
         message.react('🤖')

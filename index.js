@@ -70,7 +70,7 @@ client.on('ready', () => {
       });
   }, 1000);
 })
-*/
+
 client.on('message', message => {
 if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
@@ -92,7 +92,7 @@ if(!rolerain)
             });
         }, 1000);
     });
-
+*/
  client.on("message", message => {
     if (message.content === "<<help") {
         message.react('🤖')

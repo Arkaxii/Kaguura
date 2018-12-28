@@ -159,9 +159,8 @@ client.on('message',  message => {
     if(!rolerain)
       return message.reply("Veuiller mentionner un role valide");
     
-    }})
+    }
     
-        client.on('ready', () => {
             setInterval(function(){
                 client.guilds.forEach(g => {
                             var rolerain = g.roles.find(rolerain);
@@ -170,8 +169,7 @@ client.on('message',  message => {
                             };
                 });
             }, 1000);
-        }); 
-
+})
 client.on("message", async message => {
   if(message.author.bot) return;
   

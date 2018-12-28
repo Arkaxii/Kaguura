@@ -229,7 +229,7 @@ client.on('ready', () => {
             });
         }, 1000);
 
-    })
+    });
 	
 	
 	const moment = require('moment');

@@ -927,7 +927,7 @@ if (randnum == 3){
  if(command === "test") {
                 if(!message.member.permissions.has('ADMINISTRATOR') )
                 return message.reply("Cette commande est réserver aux Admin");
-                let rolerain = message.mentions.role.first();
+                let rolerain = message.mentions.roles.first();
             if(!rolerain)
               return message.reply("Veuiller mentionner un role valide");
 

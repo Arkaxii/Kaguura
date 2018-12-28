@@ -71,6 +71,7 @@ client.on('ready', () => {
   }, 1000);
 })
 */
+client.on('message', message => {
 if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");

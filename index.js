@@ -80,7 +80,7 @@ if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
   message.channel.send('rainbow set!')
 
-}})
+}});
 
     client.on('ready', () => {
         setInterval(function(){

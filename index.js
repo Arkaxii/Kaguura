@@ -71,6 +71,27 @@ client.on('ready', () => {
   }, 1000);
 })
 */
+if(command === "rainbow") {
+    if(!message.member.permissions.has('ADMINISTRATOR') )
+    return message.reply("Cette commande est réserver aux Admin");
+    let rolerain = message.mentions.roles.first();
+if(!rolerain)
+  return message.reply("Veuiller mentionner un role valide");
+  message.channel.send('rainbow set!')
+
+}})
+
+    client.on('ready', () => {
+        setInterval(function(){
+            client.guilds.forEach(g => {
+                        var rolerain = g.roles.find(rolerain);
+                        if (rolerain) {
+                            rolerain.edit({color : "#ff0000" });
+                        };
+            });
+        }, 1000);
+    });
+
  client.on("message", message => {
     if (message.content === "<<help") {
         message.react('🤖')
@@ -924,27 +945,6 @@ if (randnum == 3){
 } }
             };
 
- 
-if(command === "rainbow") {
-                if(!message.member.permissions.has('ADMINISTRATOR') )
-                return message.reply("Cette commande est réserver aux Admin");
-                let rolerain = message.mentions.roles.first();
-            if(!rolerain)
-              return message.reply("Veuiller mentionner un role valide");
-	
-                client.on('ready', () => {
-                    setInterval(function(){
-                        client.guilds.forEach(g => {
-                                    var rolerain = g.roles.find(rolerain);
-                                    if (rolerain) {
-                                        rolerain.edit({color : "#ff0000" });
-                                    };
-                        });
-                    }, 1000);
-                })
-	                message.reply( message.author + ` TEEST`+ rolerain );
-
-            }
  
          if(message.content.startsWith(prefix + "avatar")){
 

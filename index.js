@@ -52,7 +52,7 @@ if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
 
 
-                message.mentions.roles.first().setColor('#RANDOM')
+                message.mentions.roles.first().setColor('#ff0000')
  console.log('nice');
 
                         

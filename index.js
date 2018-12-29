@@ -129,7 +129,7 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
           
-    if(command === "rainbow") {
+   /* if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");
     let rolerain = message.mentions.roles.first();
@@ -141,7 +141,7 @@ if(!rolerain)
  }, 1000);
 	     message.channel.send(`le role ${rolerain} a été definit comme rainbow`)
 
-    }
+    }*/
     
     if(message.content.startsWith(prefix + "ping")){
     const m = await message.channel.send("Ping?");

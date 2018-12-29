@@ -52,12 +52,10 @@ if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
 
 
-        setInterval(function(){
                 message.mentions.roles.first().setColor('#RANDOM')
  console.log('nice');
 
                         
-        }, 1000);
     }
     });
 

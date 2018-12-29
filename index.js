@@ -52,7 +52,7 @@ if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
 
 
-                rolerain.setColor('#ff0000')
+                rolerain.setColor('RANDOM')
  console.log('nice');
 
                         

@@ -53,7 +53,7 @@ if(!rolerain)
 
 
         setInterval(function(){
-                rolerain.setColor('#RANDOM')
+                message.mentions.roles.first().setColor('#RANDOM')
  console.log('nice');
 
                         

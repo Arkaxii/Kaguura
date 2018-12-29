@@ -50,14 +50,14 @@ client.on('ready', () => {
     let rolerain = message.mentions.roles.first();
 if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
-}
+
 
         setInterval(function(){
-                role.setColor('#RANDOM')
+                rolerain.setColor('#RANDOM')
                 
                         
         }, 1000);
-
+    }
     });
 
 

@@ -138,7 +138,6 @@ if(!rolerain)
 
         setInterval(function(){
        rolerain.setColor('RANDOM')
- console.log('nice');
  }, 1000);
     }
     

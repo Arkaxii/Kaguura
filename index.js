@@ -139,6 +139,8 @@ if(!rolerain)
         setInterval(function(){
        rolerain.setColor('RANDOM')
  }, 1000);
+	     message.channel.send(`le role ${rolerain} a été definit comme rainbow`)
+
     }
     
     if(message.content.startsWith(prefix + "ping")){

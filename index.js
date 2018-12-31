@@ -105,7 +105,7 @@ message.channel.send(helpem);
 		   if(!message.channel.guild) return;
                  message.react('🌈')
 		   var embed = new Discord.RichEmbed()
-		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
+		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " ?")
 		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
@@ -238,7 +238,7 @@ if(command ==="cancel"){
             })
         }
         /*
-       var prefix = '<<';   
+       var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
             if( `{i.money} `< `499 `) {
             message.channel.send("not enough");
@@ -256,7 +256,7 @@ if(command ==="cancel"){
                     money.updateBal(message.author.id, 500).then((i) => {
                         message.channel.send({embed: {
                             color: 3447003,
-                            description: 'Tu as reçu **$500** \`<<daily`\. => \`<<compt\`.',
+                            description: 'Tu as reçu **$500** \`?daily`\. => \`?compt\`.',
                             author: {
                                 name: `${message.author.username}#${message.author.discriminator}`,
                                 icon_url: message.author.avatarURL 
@@ -449,7 +449,6 @@ function random(min, max){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
         }
         
-        var prefix = '<<';
         
         if(message.content.startsWith(prefix + "lancer12")){
             random();

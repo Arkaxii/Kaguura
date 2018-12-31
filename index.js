@@ -3,12 +3,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "?" ;
 
+client.on ("ready" , () => {
+    answered = true;
+    cAnswer = "";
+    userAnswer = "";
+
+});
+
 client.on("message",  (message) => {
- 
-    
-  answered = true;
-  cAnswer = "";
-  userAnswer = "";
   msg = message.content.toLocaleLowerCase();
 
   if (answered == false && message.author == quizUser) {

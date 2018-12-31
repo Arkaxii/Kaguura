@@ -31,8 +31,7 @@ client.on("message",  (message) => {
           case 3: message.channel.send ("Parmis ces anime quelle l'anime avec le plus d'épisodes ? \n1 - Detective Conan \n2 - One Piece \n3 - Doraemon \n4 - C'est l'anime le plus long"); cAnswer = "3"; break;
 
       }
-      answered = false;
-      quizUser = message.author;
+  
   }
 
 

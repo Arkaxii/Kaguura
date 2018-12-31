@@ -39,10 +39,6 @@ client.on('ready', () => {
   console.log('╚[════════════]╝')
 client.user.setActivity("r#help | By Revenge",{type: 'WATCHING'});
 console.log('Done The Watching Setup Completed')
-    
-answered = true;
-cAnswer = "";
-userAnswer = "";
 
 });
 

@@ -244,8 +244,7 @@ if(command ==="cancel"){
       .catch(error => message.reply(`Impossible de purger car: ${error}`));
   } 
            const moment = require('moment');
-
-
+var prefix = '?'
           if(message.content.startsWith(prefix + "compt")){
  
             money.fetchBal(message.author.id).then((i) => {  
@@ -275,6 +274,8 @@ if(command ==="cancel"){
                 }
                 }
                 */
+	var prefix = '?'
+
         if(message.content.startsWith(prefix + "daily")){
               
          if (money[message.author.username + message.guild.name] != moment().format('L')) {
@@ -302,32 +303,37 @@ if(command ==="cancel"){
             }
 
 
+var prefix = '?'
 
 if(message.content.startsWith(prefix + "wtf")){
     message.channel.send("https://i.pinimg.com/originals/87/1f/3a/871f3afd6d0b5fdc14ecae612dd57bd1.jpg")
 };
 
+var prefix = '?'
 
 if(message.content.startsWith(prefix + "autistic")){
     message.channel.send("https://i.imgur.com/3D0XEV5.png")
 };
 
+var prefix = '?'
 
 if(message.content.startsWith(prefix + "ty")){
     message.channel.send("https://memegenerator.net/img/instances/48502183/thanks-bro.jpg")
 };
 
+var prefix = '?'
 
 if(message.content.startsWith(prefix + "exactly")){
     message.channel.send("https://i.imgur.com/B4oPi2u.jpg")
 };
 
+var prefix = '?'
 
 if(message.content.startsWith(prefix + "pcmr")){
     message.channel.send("https://ctl.s6img.com/society6/img/oGIy9Ox-_WKYk_952j5pyZAyDcA/w_700/duvet-covers/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-0028/a/13776406_8169003/~~/glorious-pc-gaming-master-race-feels-good-man-duvet-covers.jpg?wait=0&attempt=0")
 };
 
-
+var prefix = '?'
 var randnum = 0; 
 
 
@@ -352,7 +358,7 @@ if(message.content.startsWith(prefix + "cat")){
     message.channel.send(cat_embed);
 };
 
-
+var prefix = '?'
 if(message.content.startsWith(prefix + "secret")){
     message.channel.send("Ajout prochain: Commande de base / jeux de cart et collection / peut etre une commande permettant de sauvgarder un serv (pour avoir un rollback du serv) en cas de raid ")
 }
@@ -363,7 +369,7 @@ function random(min, max){
     randnum = Math.floor(Math.random() * (max - min +1) +min);
 }
 
-
+var prefix = '?'
 if(message.content.startsWith(prefix + "face")){
     random();
 
@@ -383,7 +389,7 @@ function random(min, max){
     randnum = Math.floor(Math.random() * (max - min +1) +min);
 }
 
-
+var prefix = '?'
 if(message.content.startsWith(prefix + "pile")){
     random();
 
@@ -403,7 +409,7 @@ if(message.content.startsWith(prefix + "pile")){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
     }
     
-    
+    var prefix = '?'
     if(message.content.startsWith(prefix + "lancer20")){
         random();
         if (randnum == 1){
@@ -475,7 +481,7 @@ function random(min, max){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
         }
         
-        
+        var prefix = '?'
         if(message.content.startsWith(prefix + "lancer12")){
             random();
         if (randnum == 1){
@@ -522,7 +528,7 @@ function random(min, max){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
         }
                     
-                    
+ var prefix = '?'                   
         if(message.content.startsWith(prefix + "lancer6")){
             random();
            if (randnum == 1){
@@ -610,7 +616,7 @@ function random(min, max){
                     max = Math.floor(23);
                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                     }      
-
+var prefix = '?'
 if(message.content.startsWith(prefix + "refjeux")){
     random();
     if (randnum == 1){
@@ -771,7 +777,7 @@ if(message.content.startsWith(prefix + "refjeux")){
                     max = Math.floor(21);
                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                     }      
-
+var prefix = '?'
 if(message.content.startsWith(prefix + "refanime")){
     random();
     if (randnum == 1){
@@ -867,7 +873,7 @@ if(message.content.startsWith(prefix + "refanime")){
                                     max = Math.floor(3);
                                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                                     }      
-                
+         var prefix = '?'       
                 if(message.content.startsWith(prefix + "papier")){
                     random();
                     if (randnum == 1){
@@ -890,7 +896,7 @@ if(message.content.startsWith(prefix + "refanime")){
                             max = Math.floor(3);
                             randnum = Math.floor(Math.random() * (max - min +1) +min);
                             }
-        
+     var prefix = '?'   
         if(message.content.startsWith(prefix + "pierre")){
             random();
             if (randnum == 1){
@@ -915,7 +921,7 @@ if(message.content.startsWith(prefix + "refanime")){
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
                 }
-
+var prefix = '?'
 if(message.content.startsWith(prefix + "ciseaux")){
 random();
 if (randnum == 1){

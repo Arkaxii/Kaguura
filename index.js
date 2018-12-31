@@ -129,6 +129,12 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
+client.on ("ready", () => {
+answered = true;
+cAnswer = "";
+userAnswer = "";
+});
+
 client.on("message", async message => {
   if(message.author.bot) return;
   

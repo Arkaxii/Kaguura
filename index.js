@@ -10,7 +10,9 @@ client.on("message", async message => {
   answered = true;
   cAnswer = "";
   userAnswer = "";
+  msg = message.content.toLocaleLowerCase();
 
+  
   if (answered == false && message.author == quizUser) {
       userAnswer = msg;
       if (userAnswer == cAnswer) {

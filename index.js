@@ -3,8 +3,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money'); 
 const config = require("./config.json");
+const prefix = '?'
 
-const prefix = '<<'
 //information about the bot
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -48,7 +48,7 @@ userAnswer = "";
 
 
  client.on("message", message => {
-  if (message.content === "<<help") {
+  if (message.content === "?help") {
       message.react('🤖')
         let helpem = new Discord.RichEmbed()
 	.setTitle(`Requested By | ${message.author.username}`)
@@ -56,39 +56,39 @@ userAnswer = "";
 =====================🤖 KaguraHelp+ 🤖=====================
 
 **image:**
-<<wtf
-<<autistic  
-<<ty
-<<exactly 
-<<pcmr 
-<<cat
+?wtf
+?autistic  
+?ty
+?exactly 
+?pcmr 
+?cat
 
 **utilitaire:**
-<<secret: **Les prochain ajout sur le bot**
-<<avatar: **Recupere l'avatar pour l'afficher plus grand **
-<<ping: **Pour connaitre son ping**
-<<kick: **Reserver aux admin**
-<<ban: **Reserver aux admin**
-<<say: **Fait dir ce que tu veut au bot **
-<<purge: **Peut suprimer de 2 a 100 message reserver aux admin **
-<<rainbow: **Change la couleur d'un role en random reserver aux admin**
-<<inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
+?secret: **Les prochain ajout sur le bot**
+?avatar: **Recupere l'avatar pour l'afficher plus grand **
+?ping: **Pour connaitre son ping**
+?kick: **Reserver aux admin**
+?ban: **Reserver aux admin**
+?say: **Fait dir ce que tu veut au bot **
+?purge: **Peut suprimer de 2 a 100 message reserver aux admin **
+?rainbow: **Change la couleur d'un role en random reserver aux admin**
+?inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
 
 **Argent:**
-<<compt: **pour voir à combien s'élève ton compt**
-<<daily: **pour recevoir 500$ par jour**
-<<pierre / <<papier / <<ciseaux : **pour gagnier 50 $ ou perdre 10$**
+?compt: **pour voir à combien s'élève ton compt**
+?daily: **pour recevoir 500$ par jour**
+?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 10$**
 
 **Jeux:**
-<<refjeux: **trouve à quelle jeux appartien la référence **
-<<refanime: **trouve à quelle anime appartien la référence **
+?refjeux: **trouve à quelle jeux appartien la référence **
+refanime: **trouve à quelle anime appartien la référence **
 
 **Random:**
-<<pile: **1 chance sur 2**
-<<face: **1 chance sur 2**
-<<lancer6: **imite un lancer de dé à 6 face **
-<<lancer12: **imite un lancer de dé à 12 face **
-<<lancer20:** imite un lancer de dé à 20 face**
+?pile: **1 chance sur 2**
+?face: **1 chance sur 2**
+?lancer6: **imite un lancer de dé à 6 face **
+?lancer12: **imite un lancer de dé à 12 face **
+?lancer20:** imite un lancer de dé à 20 face**
 
 SI LE RAINBOW NE FONCTIONNE PAS:
 Assurez-vous que le role rainbow soit le plus haut possible
@@ -219,7 +219,7 @@ if(command ==="cancel"){
   } 
            const moment = require('moment');
 
-          var prefix = '<<';
+
           if(message.content.startsWith(prefix + "compt")){
  
             money.fetchBal(message.author.id).then((i) => {  
@@ -234,8 +234,7 @@ if(command ==="cancel"){
             if(!member)
               return message.reply("Veuiller mentionner un utilisateur valide");
             money.updateBal(member.id, 500 ).then((i) => {  
-                message.channel.send(`Tu as offer $500! à **${member.user.tag} **\n
-Et à actuellement: **${i.money} $**`);
+                message.channel.send(`Tu as offer $500! à **${member.user.tag} **\nEt à actuellement: **${i.money} $**`);
             })
         }
         /*
@@ -250,10 +249,8 @@ Et à actuellement: **${i.money} $**`);
                 }
                 }
                 */
-        var prefix = '<<';
         if(message.content.startsWith(prefix + "daily")){
-               
-        
+              
          if (money[message.author.username + message.guild.name] != moment().format('L')) {
                     money[message.author.username + message.guild.name] = moment().format('L')
                     money.updateBal(message.author.id, 500).then((i) => {
@@ -279,37 +276,31 @@ Et à actuellement: **${i.money} $**`);
             }
 
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "wtf")){
     message.channel.send("https://i.pinimg.com/originals/87/1f/3a/871f3afd6d0b5fdc14ecae612dd57bd1.jpg")
 };
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "autistic")){
     message.channel.send("https://i.imgur.com/3D0XEV5.png")
 };
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "ty")){
     message.channel.send("https://memegenerator.net/img/instances/48502183/thanks-bro.jpg")
 };
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "exactly")){
     message.channel.send("https://i.imgur.com/B4oPi2u.jpg")
 };
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "pcmr")){
     message.channel.send("https://ctl.s6img.com/society6/img/oGIy9Ox-_WKYk_952j5pyZAyDcA/w_700/duvet-covers/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-0028/a/13776406_8169003/~~/glorious-pc-gaming-master-race-feels-good-man-duvet-covers.jpg?wait=0&attempt=0")
 };
 
-var prefix = '<<';
 
 var randnum = 0; 
 
@@ -335,7 +326,6 @@ if(message.content.startsWith(prefix + "cat")){
     message.channel.send(cat_embed);
 };
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "secret")){
     message.channel.send("Ajout prochain: Commande de base / jeux de cart et collection / peut etre une commande permettant de sauvgarder un serv (pour avoir un rollback du serv) en cas de raid ")
@@ -347,7 +337,6 @@ function random(min, max){
     randnum = Math.floor(Math.random() * (max - min +1) +min);
 }
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "face")){
     random();
@@ -368,7 +357,6 @@ function random(min, max){
     randnum = Math.floor(Math.random() * (max - min +1) +min);
 }
 
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "pile")){
     random();
@@ -389,7 +377,6 @@ if(message.content.startsWith(prefix + "pile")){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
     }
     
-    var prefix = '<<';
     
     if(message.content.startsWith(prefix + "lancer20")){
         random();
@@ -510,7 +497,6 @@ function random(min, max){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
         }
                     
-    var prefix = '<<';
                     
         if(message.content.startsWith(prefix + "lancer6")){
             random();
@@ -599,7 +585,6 @@ function random(min, max){
                     max = Math.floor(23);
                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                     }      
- var prefix = '<<';
 
 if(message.content.startsWith(prefix + "refjeux")){
     random();
@@ -761,7 +746,6 @@ if(message.content.startsWith(prefix + "refjeux")){
                     max = Math.floor(21);
                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                     }      
- var prefix = '<<';
 
 if(message.content.startsWith(prefix + "refanime")){
     random();
@@ -858,7 +842,6 @@ if(message.content.startsWith(prefix + "refanime")){
                                     max = Math.floor(3);
                                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                                     }      
-                 var prefix = '<<';
                 
                 if(message.content.startsWith(prefix + "papier")){
                     random();
@@ -882,7 +865,6 @@ if(message.content.startsWith(prefix + "refanime")){
                             max = Math.floor(3);
                             randnum = Math.floor(Math.random() * (max - min +1) +min);
                             }
-           var prefix = '<<';
         
         if(message.content.startsWith(prefix + "pierre")){
             random();
@@ -908,7 +890,6 @@ if(message.content.startsWith(prefix + "refanime")){
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
                 }
-var prefix = '<<';
 
 if(message.content.startsWith(prefix + "ciseaux")){
 random();

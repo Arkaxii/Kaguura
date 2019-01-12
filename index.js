@@ -989,11 +989,11 @@ if (randnum == 3){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setThumbnail(message.author.avatarURL)
-        .setDescription("This is the user's info!")
+        .setDescription("Voila les info!")
         .setColor(0x00FF00)
-        .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
+        .addField("Surnom complet:", `${message.author.username}#${message.author.discriminator}`)
         .addField("ID:", message.author.id)
-        .addField("Created At:", message.author.createdAt)
+        .addField("Crée le:", message.author.createdAt)
 
         message.channel.send(userinf);
 
@@ -1002,11 +1002,11 @@ if (randnum == 3){
     var userinfoo = new Discord.RichEmbed()
         .setAuthor(memberInfo.displayName)
         .setThumbnail(memberInfo.user.avatarURL)
-        .setDescription("This is the user's info!")
+        .setDescription("voila les info !")
         .setColor(0x00FF00)
-        .addField("Full Username:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
+        .addField("Surnom complet:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
         .addField("ID:", memberInfo.id)
-        .addField("Created At:", memberInfo.user.createdAt)
+        .addField("Crée le:", memberInfo.user.createdAt)
 
         message.channel.send(userinfoo);
   }

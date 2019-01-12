@@ -985,36 +985,36 @@ if (randnum == 3){
                quizUser = message.author;
            }
 	
-    if(message.content.startsWith(prefix + "info")){
+             if(message.content.startsWith(prefix + "info")){
 
-        let mi = message.mentions.users.first() ;
-        if(!mi){
-    var userinf = new Discord.RichEmbed()
-        .setAuthor(message.author.username)
-        .setThumbnail(message.author.avatarURL)
-        .setDescription("This is the user's info!")
-        .setColor(0x00FF00)
-        .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
-        .addField("ID:", message.author.id)
-        .addField("Created At:", message.author.createdAt)
-
-        message.channel.send(userinf);
-
-  }else{
-
-    var userinfoo = new Discord.RichEmbed()
-        .setAuthor(mi.displayName)
-        .setThumbnail(mi.user.avatarURL)
-        .setDescription("This is the user's info!")
-        .setColor(0x00FF00)
-        .addField("Full Username:", `${mi.user.username}#${mi.user.discriminator}`)
-        .addField("ID:", mi.id)
-        .addField("Created At:", mi.user.createdAt)
-
-        message.channel.send(userinfoo);
-  }
-}
-
+            let target = message.mentions.users.first() ;
+            if(!target){
+        var userinf = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setThumbnail(message.author.displayAvatarURL)
+            .setDescription("This is the user's info!")
+            .setColor(0x00FF00)
+            .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
+            .addField("ID:", message.author.id)
+            .addField("Created At:", message.author.createdAt)
+    
+            message.channel.send(userinf);
+    
+      }else{
+    
+        var userinfoo = new Discord.RichEmbed()
+            .setAuthor(target.displayName)
+            .setThumbnail(target.user.displayAvatarURL)
+            .setDescription("This is the user's info!")
+            .setColor(0x00FF00)
+            .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)
+            .addField("ID:", target.id)
+            .addField("Created At:", target.user.createdAt)
+    
+            message.channel.send(userinfoo);
+      }
+    }
+ 
  
 });
 client.login(token);

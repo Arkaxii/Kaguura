@@ -1012,6 +1012,6 @@ if (randnum == 3){
         message.channel.send(userinfoo);
   };
 
-  
+ 
 });
 client.login(token);

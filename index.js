@@ -984,7 +984,7 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
-module.exports.run = async (bot, message, args) => {
+	
     if(message.content.startsWith(prefix + "info")){
 
         let mi = message.mentions.users.first() ;
@@ -1013,7 +1013,6 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(userinfoo);
   }
-}
 }
 
  

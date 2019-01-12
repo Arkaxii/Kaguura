@@ -1004,7 +1004,7 @@ if (randnum == 3){
     
         var userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
-            .setThumbnail(target.user.tag)
+            .setThumbnail(target.user.avatarURL)
             .setDescription("This is the user's info!")
             .setColor(0x00FF00)
             .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)

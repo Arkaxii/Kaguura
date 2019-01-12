@@ -985,9 +985,10 @@ if (randnum == 3){
                quizUser = message.author;
            }
 module.exports.run = async (bot, message, args) => {
-  let mi = message.mentions.members.first();
+    if(message.content.startsWith(prefix + "info")){
 
-  if(!mi){
+        let mi = message.mentions.users.first() || message.author;
+        if(!mi){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setThumbnail(message.author.avatarURL)
@@ -1012,6 +1013,7 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(userinfoo);
   }
+}
 }
 
  

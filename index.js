@@ -984,17 +984,18 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
-	  let im = message.mentions.members.first();
+module.exports.run = async (bot, message, args) => {
+  let memberInfo = message.mentions.members.first();
 
-  if(!im){
+  if(!memberInfo){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setThumbnail(message.author.avatarURL)
-        .setDescription("Voila les info!")
+        .setDescription("This is the user's info!")
         .setColor(0x00FF00)
-        .addField("Surnom complet:", `${message.author.username}#${message.author.discriminator}`)
+        .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
         .addField("ID:", message.author.id)
-        .addField("Crée le:", message.author.createdAt)
+        .addField("Created At:", message.author.createdAt)
 
         message.channel.send(userinf);
 
@@ -1003,14 +1004,15 @@ if (randnum == 3){
     var userinfoo = new Discord.RichEmbed()
         .setAuthor(memberInfo.displayName)
         .setThumbnail(memberInfo.user.avatarURL)
-        .setDescription("voila les info !")
+        .setDescription("This is the user's info!")
         .setColor(0x00FF00)
-        .addField("Surnom complet:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
+        .addField("Full Username:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
         .addField("ID:", memberInfo.id)
-        .addField("Crée le:", memberInfo.user.createdAt)
+        .addField("Created At:", memberInfo.user.createdAt)
 
         message.channel.send(userinfoo);
-  };
+  }
+}
 
  
 });

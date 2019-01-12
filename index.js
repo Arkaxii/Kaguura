@@ -991,7 +991,7 @@ if (randnum == 3){
             if(!target){
         var userinf = new Discord.RichEmbed()
             .setAuthor(message.author.username)
-            .setThumbnail(message.author.displayAvatarURL)
+            .setThumbnail(message.author.avatarURL)
             .setDescription("This is the user's info!")
             .setColor(0x00FF00)
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
@@ -1004,7 +1004,7 @@ if (randnum == 3){
     
         var userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
-            .setThumbnail(target.user.displayAvatarURL)
+            .setThumbnail(target.user.tag)
             .setDescription("This is the user's info!")
             .setColor(0x00FF00)
             .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)

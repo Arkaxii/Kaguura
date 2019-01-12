@@ -984,8 +984,9 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
-	
-           if (msg.startsWith(prefix + "im" )){
+	  let im = message.mentions.members.first();
+
+  if(?im){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setThumbnail(message.author.avatarURL)

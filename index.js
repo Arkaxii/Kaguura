@@ -986,7 +986,7 @@ if (randnum == 3){
            }
 	  let im = message.mentions.members.first();
 
-  if(im){
+  if(!im){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setThumbnail(message.author.avatarURL)

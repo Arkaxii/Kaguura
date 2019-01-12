@@ -985,9 +985,9 @@ if (randnum == 3){
                quizUser = message.author;
            }
 module.exports.run = async (bot, message, args) => {
-  let memberInfo = message.mentions.members.first();
+  let mi = message.mentions.members.first();
 
-  if(!memberInfo){
+  if(!mi){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setThumbnail(message.author.avatarURL)
@@ -1002,13 +1002,13 @@ module.exports.run = async (bot, message, args) => {
   }else{
 
     var userinfoo = new Discord.RichEmbed()
-        .setAuthor(memberInfo.displayName)
-        .setThumbnail(memberInfo.user.avatarURL)
+        .setAuthor(mi.displayName)
+        .setThumbnail(mi.user.avatarURL)
         .setDescription("This is the user's info!")
         .setColor(0x00FF00)
-        .addField("Full Username:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
-        .addField("ID:", memberInfo.id)
-        .addField("Created At:", memberInfo.user.createdAt)
+        .addField("Full Username:", `${mi.user.username}#${mi.user.discriminator}`)
+        .addField("ID:", mi.id)
+        .addField("Created At:", mi.user.createdAt)
 
         message.channel.send(userinfoo);
   }

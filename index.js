@@ -1010,7 +1010,7 @@ if (randnum == 3){
         .addField("Crée le:", memberInfo.user.createdAt)
 
         message.channel.send(userinfoo);
-  }
+  };
 
   
 });

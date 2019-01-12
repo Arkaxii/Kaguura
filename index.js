@@ -987,7 +987,7 @@ if (randnum == 3){
 module.exports.run = async (bot, message, args) => {
     if(message.content.startsWith(prefix + "info")){
 
-        let mi = message.mentions.users.first() || message.author;
+        let mi = message.mentions.users.first() ;
         if(!mi){
     var userinf = new Discord.RichEmbed()
         .setAuthor(message.author.username)

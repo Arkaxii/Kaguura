@@ -130,16 +130,6 @@ answered = true;
 cAnswer = "";
 userAnswer = "";
 });
-function userInfo(user){
-    var finalString = '';
-    finalString += '**' + user.username + '**, with the **ID** of **' + user.id + '**';
-
-    var userCreated = user.createdAt.toString().split (' ');
-    finalString += ', was **created on ' + userCreated[1] + ' ' + userCreated[2] + ', ' + userCreated[3] + '**.'
-    finalString += 'Since then, they have **sent ' + surData[user.id].messagesSent + 'messages** to this discord.' 
-
-    return finalString;
-}
 
 client.on("message", async message => {
  
@@ -994,11 +984,36 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
-if (msg.startsWith(prefix + 'USERINFO')){
-    if (msg === prefix + 'USERINFO'){
-        message.channel.send(userInfo(sender));
+
+           if(message.content.startsWith(prefix + "info")){
+
+            let target = message.mentions.users.first() ;
+            if(!target){
+        var userinf = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setThumbnail(message.author.avatarURL)
+            .setDescription("This is the user's info!")
+            .setColor(0x00FF00)
+            .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
+            .addField("ID:", message.author.id)
+            .addField("Created At:", message.author.createdAt)
+    
+            message.channel.send(userinf);
+    
+      }else{
+    
+        var userinfoo = new Discord.RichEmbed()
+            .setAuthor(target.displayName)
+            .setImage(target.user.avatarURL)
+            .setDescription("This is the user's info!")
+            .setColor(0x00FF00)
+            .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)
+            .addField("ID:", target.id)
+            .addField("Created At:", target.user.createdAt)
+    
+            message.channel.send(userinfoo);
+      }
     }
-}
  
 });
 client.login(token);

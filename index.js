@@ -1000,15 +1000,9 @@ if (randnum == 3){
     
             message.channel.send(userinf);
     
-      }else{          
-            await message.channel.send({files: [
-              {
-                attachment: target.displayAvatarURL,
-                name: "avatar.png"
-              }
-            ]})
+      }else{       
 
-        let userinfoo = new Discord.RichEmbed()
+        var userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
             .setDescription(`**
             This is the user's info!
@@ -1016,7 +1010,7 @@ if (randnum == 3){
             ID:, ${target.id}
             Created At:, ${target.user.createdAt}** `)
             message.channel.send(userinfoo)
-      
+            
     } };
  
 });

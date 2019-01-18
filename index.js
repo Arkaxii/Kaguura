@@ -1006,7 +1006,7 @@ if (randnum == 3){
                 attachment: target.displayAvatarURL,
                 name: "avatar.png"
               }
-            ]});
+            ]})
 
         let userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
@@ -1017,7 +1017,7 @@ if (randnum == 3){
             Created At:, ${target.user.createdAt}** `)
             message.channel.send(userinfoo)
       
-    } }
+    } };
  
 });
 client.login(token);

@@ -129,6 +129,8 @@ client.on ("ready", () => {
 answered = true;
 cAnswer = "";
 userAnswer = "";
+let target = message.mentions.users.first() ;
+
 });
 
 client.on("message", async message => {
@@ -984,10 +986,9 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
-	
-             if(message.content.startsWith(prefix + "info")){
 
-            let target = message.mentions.users.first() ;
+           if(message.content.startsWith(prefix + "info")){
+
             if(!target){
         var userinf = new Discord.RichEmbed()
             .setAuthor(message.author.username)
@@ -1014,7 +1015,6 @@ if (randnum == 3){
             message.channel.send(userinfoo);
       }
     }
- 
  
 });
 client.login(token);

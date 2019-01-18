@@ -1002,10 +1002,7 @@ if(message.content.startsWith(prefix + "info")){
         var userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
             .setDescription("This is the user's info!")
-            .setColor(0x00FF00)
-            .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)
-            .addField("ID:", target.id)
-            .addField("Created At:", target.user.createdAt)
+
     
             message.channel.send(userinfoo);
       }

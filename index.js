@@ -1011,7 +1011,7 @@ if (randnum == 3){
             Created At:, ${target.user.createdAt}** `)
             message.channel.send(userinfoo)
             
-    } };
+    } }
  
 });
 client.login(token);

@@ -957,7 +957,7 @@ if (randnum == 3){
              ]});
            
              msg.delete();
-           }  
+           }
 
            msg = message.content.toLocaleLowerCase();
 
@@ -1000,20 +1000,24 @@ if (randnum == 3){
     
             message.channel.send(userinf);
     
-      }else{
-    
-        var userinfoo = new Discord.RichEmbed()
+      }else{          
+            await message.channel.send({files: [
+              {
+                attachment: target.displayAvatarURL,
+                name: "avatar.png"
+              }
+            ]});
+
+        let userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
-            .setImage(target.user.avatarURL)
-            .setDescription("This is the user's info!")
-            .setColor(0x00FF00)
-            .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)
-            .addField("ID:", target.id)
-            .addField("Created At:", target.user.createdAt)
-    
-            message.channel.send(userinfoo);
-      }
-    }
+            .setDescription(`**
+            This is the user's info!
+            Full Username:, ${target.user.username}#${target.user.discriminator}
+            ID:, ${target.id}
+            Created At:, ${target.user.createdAt}** `)
+            message.channel.send(userinfoo)
+      
+    } }
  
 });
 client.login(token);

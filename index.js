@@ -1006,6 +1006,7 @@ if (randnum == 3){
             .setAuthor(target.displayName)
             .setDescription("This is the user's info!")
             .setColor(0x00FF00)
+	    .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)
             .addField("ID:", target.id)
     
             message.channel.send(userinfoo);

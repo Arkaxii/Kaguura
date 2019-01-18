@@ -985,7 +985,10 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
- if (msg.startsWith(prefix + "info" )){
+           if(message.content.startsWith(prefix + "info")){
+
+            let target = message.mentions.users.first() ;
+            if(!target){
         var userinf = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setThumbnail(message.author.avatarURL)
@@ -994,19 +997,21 @@ if (randnum == 3){
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
             .addField("ID:", message.author.id)
             .addField("Created At:", message.author.createdAt)
+    
             message.channel.send(userinf);
-                }
-
-if(message.content.startsWith(prefix + "info")){
-      let target = message.mentions.users.first() ;    
+    
+      }else{
+    
         var userinfoo = new Discord.RichEmbed()
             .setAuthor(target.displayName)
             .setDescription("This is the user's info!")
-
+            .setColor(0x00FF00)
+            .addField("ID:", target.id)
+            .addField("Created At:", target.user.createdAt)
     
             message.channel.send(userinfoo);
       }
-         
+    }
  
 });
 client.login(token);

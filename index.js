@@ -985,34 +985,35 @@ if (randnum == 3){
                 answered = false;
                quizUser = message.author;
            }
+ if(message.content.startsWith(prefix + "info")){
+            let target = message.mentions.users.first() ;
 
-           let memberInfo = message.mentions.members.first();
-
-           if(!memberInfo){
-             var userinf = new Discord.RichEmbed()
-                 .setAuthor(message.author.username)
-                 .setThumbnail(message.author.avatarURL)
-                 .setDescription("This is the user's info!")
-                 .setColor(0x00FF00)
-                 .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
-                 .addField("ID:", message.author.id)
-                 .addField("Created At:", message.author.createdAt)
-         
-                 message.channel.send(userinf);
-         
-           }else{
-         
-             var userinfoo = new Discord.RichEmbed()
-                 .setAuthor(memberInfo.displayName)
-                 .setThumbnail(memberInfo.user.avatarURL)
-                 .setDescription("This is the user's info!")
-                 .setColor(0x00FF00)
-                 .addField("Full Username:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
-                 .addField("ID:", memberInfo.id)
-                 .addField("Created At:", memberInfo.user.createdAt)
-         
-                 message.channel.send(userinfoo);
-           }
+            if(!target){
+        var userinf = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setThumbnail(message.author.avatarURL)
+            .setDescription("This is the user's info!")
+            .setColor(0x00FF00)
+            .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
+            .addField("ID:", message.author.id)
+            .addField("Created At:", message.author.createdAt)
+    
+            message.channel.send(userinf);
+    
+      }else{
+    
+        var userinfoo = new Discord.RichEmbed()
+            .setAuthor(target.displayName)
+            .setThumbnail(target.user.avatarURL)
+            .setDescription("This is the user's info!")
+            .setColor(0x00FF00)
+            .addField("Full Username:", `${target.user.username}#${target.user.discriminator}`)
+            .addField("ID:", target.id)
+            .addField("Created At:", target.user.createdAt)
+    
+            message.channel.send(userinfoo);
+      }
+    }
          
  
 });

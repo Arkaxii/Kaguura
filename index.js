@@ -1007,7 +1007,6 @@ if (randnum == 3){
             .setDescription("This is the user's info!")
             .setColor(0x00FF00)
             .addField("ID:", target.id)
-            .addField("Created At:", target.user.createdAt)
     
             message.channel.send(userinfoo);
       }

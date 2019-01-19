@@ -328,11 +328,31 @@ var prefix = '?'
             }
 
 
-var prefix = '?'
+            if(command === "wink") {
 
-if(message.content.startsWith(prefix + "wtf")){
-    message.channel.send("https://i.pinimg.com/originals/87/1f/3a/871f3afd6d0b5fdc14ecae612dd57bd1.jpg")
-};
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide");
+
+                var wiink = [
+                    "https://i.imgur.com/5n9LYXg.gif",
+                    "https://imgur.com/eRv5luq.gif",
+                    "https://imgur.com/jGDdgkW.gif",
+                    "https://imgur.com/kobSUlH.gif",
+                    "https://imgur.com/lRhpexU.gif",
+                    "https://imgur.com/Rejo99g.gif",
+                    "https://imgur.com/nufEMto.gif"
+                    
+                ];
+            
+                var gif = wiink[Math.floor(Math.random() * wiink.length)] ;
+                var wink_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                message.channel.send(wink_embed);
+            };
 
 var prefix = '?'
 

@@ -58,7 +58,7 @@ console.log('Done The Watching Setup Completed')
 ?wink
 ?wave  
 ?sleep
-?wake up 
+?wake-up 
 ?slap 
 ?punch
 ?poke
@@ -406,7 +406,7 @@ if(command === "sleep") {
                 message.channel.send(sleep_embed);
             };
 
-            if(command === "wake up") {
+            if(command === "wake-up") {
 
                 let member = message.mentions.members.first();
             if(!member)
@@ -1250,13 +1250,13 @@ if (randnum == 3){
                   return message.reply("Veuiller mentionner un utilisateur valide");
 
         var infoa = new Discord.RichEmbed()
-        .setAuthor(memberInfo.displayName)
-        .setThumbnail(memberInfo.user.avatarURL)
+        .setAuthor(target.displayName)
+        .setThumbnail(target.user.avatarURL)
         .setDescription("Voici les infos!")
         .setColor(0x00FF00)
-        .addField("Pseudo Discord complet:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
-        .addField("ID:", memberInfo.id)
-        .addField("Crée le:", memberInfo.user.createdAt)
+        .addField("Pseudo Discord complet:", `${target.user.username}#${target.user.discriminator}`)
+        .addField("ID:", target.id)
+        .addField("Crée le:", target.user.createdAt)
             message.channel.send(infoa)
             
     };

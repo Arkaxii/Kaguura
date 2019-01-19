@@ -180,7 +180,11 @@ if(!rolerain)
 if(command ==="cancel"){
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");
-
+    let rolerain = message.mentions.roles.first();
+    if(!rolerain)
+      return message.reply("Veuiller mentionner un role avec le rainbow actif");
+           rolerain.setColor('RANDOM')
+           message.channel.send(`le role ${rolerain} n'a plus le rainbow actif`)
     
 } 
 

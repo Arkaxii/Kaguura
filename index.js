@@ -1010,7 +1010,7 @@ if (randnum == 3){
 
         var infoa = new Discord.RichEmbed()
             .setAuthor(target.displayName)
-            .setThumbnail(memberInfo.user.avatarURL)
+            .setThumbnail(target.user.avatarURL)
             .setDescription(`**
             This is the user's info!
             Full Username:, ${target.user.username}#${target.user.discriminator}

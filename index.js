@@ -989,10 +989,8 @@ if (randnum == 3){
                quizUser = message.author;
            }
 
-  if(message.content.startsWith(prefix + "meinfo")){
+           if(message.content.startsWith(prefix + "meinfo")){
 
-            let target = message.mentions.users.first() ;
-            if(!target){
         var infome = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setThumbnail(message.author.avatarURL)
@@ -1001,11 +999,12 @@ if (randnum == 3){
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
             .addField("ID:", message.author.id)
             .addField("Created At:", message.author.createdAt)
+    
             message.channel.send(infome);
             }
     
             if(command === "info") {
-                let member = message.mentions.members.first();
+                let target = message.mentions.members.first();
                 if(!member)
                   return message.reply("Veuiller mentionner un utilisateur valide");
 
@@ -1019,7 +1018,7 @@ if (randnum == 3){
             Created At:, ${target.user.createdAt}** `)
             message.channel.send(infoa)
             
-    } };
+    };
  
 });
 client.login(token);

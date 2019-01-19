@@ -1005,7 +1005,7 @@ if (randnum == 3){
     
             if(command === "info") {
                 let target = message.mentions.members.first();
-                if(!member)
+                if(!target)
                   return message.reply("Veuiller mentionner un utilisateur valide");
 
         var infoa = new Discord.RichEmbed()

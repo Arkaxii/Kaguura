@@ -352,7 +352,7 @@ var prefix = '?'
                 var gif = wiink[Math.floor(Math.random() * wiink.length)] ;
                 var wink_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
                 message.channel.send(wink_embed);
@@ -377,13 +377,13 @@ var prefix = '?'
                 var gif = waave[Math.floor(Math.random() * waave.length)] ;
                 var wave_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** fait un coucou à **${member.displayName}**._`)
                 message.channel.send(wave_embed);
             };
 
-if(command === "sleep") {
+            if(command === "sleep") {
 
                 let member = message.mentions.members.first();
             if(!member)
@@ -403,7 +403,7 @@ if(command === "sleep") {
                 var gif = sleeep[Math.floor(Math.random() * sleeep.length)] ;
                 var sleep_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** dort sur **${member.displayName}**._Attention aux filet de bave!`)
                 message.channel.send(sleep_embed);
@@ -428,13 +428,13 @@ if(command === "sleep") {
                 var gif = waake[Math.floor(Math.random() * waake.length)] ;
                 var wake_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+	        	.setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** réveille **${member.displayName}**._`)
                 message.channel.send(wake_embed);
             };
 
-if(command === "slap") {
+            if(command === "slap") {
 
                 let member = message.mentions.members.first();
             if(!member)
@@ -455,7 +455,7 @@ if(command === "slap") {
                 var gif = slaap[Math.floor(Math.random() * slaap.length)] ;
                 var slap_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+	         	.setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** écrase les moustiques qui sont sur **${member.displayName}**._`)
                 message.channel.send(slap_embed);
@@ -481,7 +481,7 @@ if(command === "slap") {
                 var gif = puunch[Math.floor(Math.random() * puunch.length)] ;
                 var punch_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** met une bonne grosse patate à **${member.displayName}**._`)
                 message.channel.send(punch_embed);
@@ -507,7 +507,7 @@ if(command === "slap") {
                 var gif = pooke[Math.floor(Math.random() * pooke.length)] ;
                 var poke_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** poke **${member.displayName}**._`)
                 message.channel.send(poke_embed);
@@ -532,7 +532,7 @@ if(command === "slap") {
                 var gif = paat[Math.floor(Math.random() * paat.length)] ;
                 var pat_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** fait pat pat à **${member.displayName}**._`)
                 message.channel.send(pat_embed);
@@ -557,7 +557,7 @@ if(command === "slap") {
                 var gif = kiiss[Math.floor(Math.random() * kiiss.length)] ;
                 var kiss_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+		        .setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** fait un bisou à **${member.displayName}**._`)
                 message.channel.send(kiss_embed);
@@ -582,11 +582,38 @@ if(command === "slap") {
                 var gif = kiill[Math.floor(Math.random() * kiill.length)] ;
                 var kill_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-		.setTitle('Roleplay')
+	        	.setTitle('Roleplay')
                 .setImage(gif)
                 .addField(`_**${message.author.username}** veut fair un "massage" à **${member.displayName}**._`)
                 message.channel.send(kill_embed);
             };  
+
+            if(command === "hug") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
+
+                var wiink = [
+                    "https://imgur.com/YdjuHIr.gif",
+                    "https://imgur.com/aEdAZYc.gif",
+                    "https://imgur.com/ix4pgEJ.gif",
+                    "https://imgur.com/mAklRRg.gif",
+                    "https://imgur.com/6D4XKIq.gif",
+                    "https://imgur.com/j21DTlV.gif",
+                    "https://imgur.com/cSg1o6L.gif",
+                    "https://imgur.com/MCAueOW.gif"
+                    
+                ];
+            
+                var huug = huug[Math.floor(Math.random() * huug.length)] ;
+                var hug_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+		        .setTitle('Roleplay')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                message.channel.send(hug_embed);
+            };
 
 var prefix = '?'
 var randnum = 0; 

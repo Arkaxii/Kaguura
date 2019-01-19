@@ -989,11 +989,11 @@ if (randnum == 3){
                quizUser = message.author;
            }
 
-           if(message.content.startsWith(prefix + "info")){
+  if(message.content.startsWith(prefix + "meinfo")){
 
             let target = message.mentions.users.first() ;
             if(!target){
-        var userinf = new Discord.RichEmbed()
+        var infome = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setThumbnail(message.author.avatarURL)
             .setDescription("This is the user's info!")
@@ -1001,21 +1001,25 @@ if (randnum == 3){
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
             .addField("ID:", message.author.id)
             .addField("Created At:", message.author.createdAt)
+            message.channel.send(infome);
+            }
     
-            message.channel.send(userinf);
-    
-      }else{       
+            if(command === "info") {
+                let member = message.mentions.members.first();
+                if(!member)
+                  return message.reply("Veuiller mentionner un utilisateur valide");
 
-        var userinfoo = new Discord.RichEmbed()
+        var infoa = new Discord.RichEmbed()
             .setAuthor(target.displayName)
+            .setThumbnail(memberInfo.user.avatarURL)
             .setDescription(`**
             This is the user's info!
             Full Username:, ${target.user.username}#${target.user.discriminator}
             ID:, ${target.id}
             Created At:, ${target.user.createdAt}** `)
-            message.channel.send(userinfoo)
+            message.channel.send(infoa)
             
-    } }
+    } };
  
 });
 client.login(token);

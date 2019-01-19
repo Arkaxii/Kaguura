@@ -1020,9 +1020,5 @@ if (randnum == 3){
             
     };
 
- if (msg.startsWith("@kagura")){
-        message.channel.send(":eyes: ");
-    }
-
 });
 client.login(token);

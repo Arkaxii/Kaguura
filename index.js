@@ -65,6 +65,7 @@ console.log('Done The Watching Setup Completed')
 ?pat
 ?kiss
 ?kill
+?hug
 
 **utilitaire:**
 ?secret: **Les prochain ajout sur le bot**
@@ -594,7 +595,7 @@ var prefix = '?'
             if(!member)
               return message.reply("Veuiller mentionner un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
 
-                var wiink = [
+                var huug = [
                     "https://imgur.com/YdjuHIr.gif",
                     "https://imgur.com/aEdAZYc.gif",
                     "https://imgur.com/ix4pgEJ.gif",

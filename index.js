@@ -51,6 +51,9 @@ console.log('Done The Watching Setup Completed')
         .setDescription(`**
 =====================🤖 KaguraHelp+ 🤖=====================
 
+**Admin**
+?help admin
+
 **image:**
 ?wtf
 ?autistic  
@@ -63,21 +66,20 @@ console.log('Done The Watching Setup Completed')
 ?secret: **Les prochain ajout sur le bot**
 ?avatar: **Recupere l'avatar pour l'afficher plus grand **
 ?ping: **Pour connaitre son ping**
-?kick: **Reserver aux admin**
-?ban: **Reserver aux admin**
 ?say: **Fait dir ce que tu veut au bot **
-?purge: **Peut suprimer de 2 a 100 message reserver aux admin **
-?rainbow: **Change la couleur d'un role en random reserver aux admin**
 ?inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
+?mes infos: **Donne des infos comme le pseudo avec # la pp et quant le compte a été crée**
+?info: ** Donne les info de la personne pinger** 
 
-**Argent:**
+**Argent:** (qui ne sert a rien pour l'instant)
 ?compt: **pour voir à combien s'élève ton compt**
 ?daily: **pour recevoir 500$ par jour**
 ?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 10$**
 
 **Jeux:**
 ?refjeux: **trouve à quelle jeux appartien la référence **
-refanime: **trouve à quelle anime appartien la référence **
+?refanime: **trouve à quelle anime appartien la référence **
+??quiz: **Tester votre QI **
 
 **Random:**
 ?pile: **1 chance sur 2**
@@ -86,16 +88,36 @@ refanime: **trouve à quelle anime appartien la référence **
 ?lancer12: **imite un lancer de dé à 12 face **
 ?lancer20:** imite un lancer de dé à 20 face**
 
-SI LE RAINBOW NE FONCTIONNE PAS:
-Assurez-vous que le role rainbow soit le plus haut possible
-Assurez-vous de ne pas avoir changer le nom du role
-astuce: le role rainbow est plus simple à metre en place sur tel que sur ordinateur
-
 =====================🤖 KaguraHelp+ 🤖=====================
 **`)
 	.setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
 message.channel.send(helpem);
-    }}) 
+  }
+
+    if (message.content === "?help admin") {
+        if(!message.member.permissions.has('ADMINISTRATOR') )
+        return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!" );
+        message.react('🤖')
+          let helpem = new Discord.RichEmbed()
+      .setTitle(`Requested By | ${message.author.username}`)
+          .setDescription(`**
+  =====================🤖 KaguraHelp+ 🤖=====================
+  
+?rainbow: **Change la couleur d'un role en random**
+?purge: **Peut suprimer de 2 a 100 message **
+?kick
+?ban
+
+SI LE RAINBOW NE FONCTIONNE PAS:
+Assurez-vous que le role rainbow soit le plus haut possible
+il change de couleur toute les minutes
+
+  =====================🤖 KaguraHelp+ 🤖=====================
+  **`)
+      .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
+  message.channel.send(helpem);
+      }})
+
    client.on('message', message => {
 	   if(message.content.startsWith(prefix + `inv`)) {
 		   if(!message.channel.guild) return;
@@ -185,8 +207,7 @@ if(command ==="cancel"){
       return message.reply("Veuiller mentionner un role avec le rainbow actif");
            rolerain.setColor('RANDOM')
            message.channel.send(`le role ${rolerain} n'a plus le rainbow actif`)
-    
-} 
+}
 
     if(command === "ping") {
     const m = await message.channel.send("Ping?");
@@ -989,16 +1010,16 @@ if (randnum == 3){
                quizUser = message.author;
            }
 
-           if(message.content.startsWith(prefix + "meinfo")){
+           if(message.content.startsWith(prefix + "mes infos")){
 
         var infome = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setThumbnail(message.author.avatarURL)
-            .setDescription("This is the user's info!")
+            .setDescription("Voici les infos!")
             .setColor(0x00FF00)
-            .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
+            .addField("Pseudo Discord complet:", `${message.author.username}#${message.author.discriminator}`)
             .addField("ID:", message.author.id)
-            .addField("Created At:", message.author.createdAt)
+            .addField("Crée le:", message.author.createdAt)
     
             message.channel.send(infome);
             }
@@ -1020,5 +1041,9 @@ if (randnum == 3){
             
     };
 
+    if (msg.startsWith("@kagura")){
+        message.channel.send(":eyes: ");
+    }
+ 
 });
 client.login(token);

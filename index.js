@@ -607,7 +607,7 @@ var prefix = '?'
                     
                 ];
             
-                var huug = huug[Math.floor(Math.random() * huug.length)] ;
+                var gif = huug[Math.floor(Math.random() * huug.length)] ;
                 var hug_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')

@@ -54,13 +54,17 @@ console.log('Done The Watching Setup Completed')
 **Admin**
 ?help admin
 
-**image:**
-?wtf
-?autistic  
-?ty
-?exactly 
-?pcmr 
-?cat
+**Rolplay:**
+?wink
+?wave  
+?sleep
+?wake up 
+?slap 
+?punch
+?poke
+?pat
+?kiss
+?kill
 
 **utilitaire:**
 ?secret: **Les prochain ajout sur le bot**
@@ -332,7 +336,7 @@ var prefix = '?'
 
                 let member = message.mentions.members.first();
             if(!member)
-              return message.reply("Veuiller mentionner un utilisateur valide");
+              return message.reply("Veuiller mentionner un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
 
                 var wiink = [
                     "https://i.imgur.com/5n9LYXg.gif",
@@ -350,33 +354,230 @@ var prefix = '?'
                 .setColor('RANDOM')
                 .setTitle('')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                .addField(`_**${msg.author.username}** fait un clin d'oeil à **${user.username}**._`)
                 message.channel.send(wink_embed);
             };
 
-var prefix = '?'
+            if(command === "wave") {
 
-if(message.content.startsWith(prefix + "autistic")){
-    message.channel.send("https://i.imgur.com/3D0XEV5.png")
-};
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Mentionne un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
 
-var prefix = '?'
+                var waave = [
+                    "https://imgur.com/3WiKvti.gif",
+                    "https://imgur.com/Jj6OGE5.gif",
+                    "https://imgur.com/ZZNqt61.gif",
+                    "https://imgur.com/xBqcMMi.gif",
+                    "https://imgur.com/7fBOonX.gif",
+                    "https://imgur.com/l6l863y.gif",
+                    "https://imgur.com/uOt1pQu.gif"      
+                            ];
+             
+                var gif = waave[Math.floor(Math.random() * waave.length)] ;
+                var wave_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** fait un coucou à **${member.displayName}**._`)
+                message.channel.send(wave_embed);
+            };
 
-if(message.content.startsWith(prefix + "ty")){
-    message.channel.send("https://memegenerator.net/img/instances/48502183/thanks-bro.jpg")
-};
+if(command === "sleep") {
 
-var prefix = '?'
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un coussin eu je voulai dire un utilisateur valide");
 
-if(message.content.startsWith(prefix + "exactly")){
-    message.channel.send("https://i.imgur.com/B4oPi2u.jpg")
-};
+                var sleeep = [
+                    "https://imgur.com/2gskFDV.gif",
+                    "https://imgur.com/OWzHrK8.gif",
+                    "https://imgur.com/hy96rog.gif",
+                    "https://imgur.com/mvWsLSR.gif",
+                    "https://imgur.com/3dvv35R.gif",
+                    "https://imgur.com/f8TdAv2.gif",
+                    "https://imgur.com/gnXArt6.gif"
+      
+                            ];
+             
+                var gif = sleeep[Math.floor(Math.random() * sleeep.length)] ;
+                var sleep_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** dort sur **${member.displayName}**._Attention aux filet de bave!`)
+                message.channel.send(sleep_embed);
+            };
 
-var prefix = '?'
+            if(command === "wake up") {
 
-if(message.content.startsWith(prefix + "pcmr")){
-    message.channel.send("https://ctl.s6img.com/society6/img/oGIy9Ox-_WKYk_952j5pyZAyDcA/w_700/duvet-covers/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-0028/a/13776406_8169003/~~/glorious-pc-gaming-master-race-feels-good-man-duvet-covers.jpg?wait=0&attempt=0")
-};
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide");
+
+                var wake = [
+                    "https://imgur.com/DmlqHdo.gif",
+                    "https://imgur.com/pMqMuG9.gif",
+                    "https://imgur.com/SGxUKOO.gif",
+                    "https://imgur.com/3XtI1o0.gif",
+                    "https://imgur.com/XxvPtMl.gif",
+                    "https://imgur.com/UzI7m3R?gif"
+      
+                            ];
+             
+                var gif = wake[Math.floor(Math.random() * wake.length)] ;
+                var wake_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** réveille **${member.displayName}**._`)
+                message.channel.send(wake_embed);
+            };
+
+if(command === "slap") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner une victi... un utilisateur valide");
+
+                var slaap = [
+                    "https://imgur.com/ihi7y0U.gif",
+                    "https://imgur.com/juJH8mr.gif",
+                    "https://imgur.com/JUVQqKk.gif",
+                    "https://imgur.com/zAgmwZg.gif",
+                    "https://imgur.com/kbroB2h.gif",
+                    "https://imgur.com/tMeekWB.gif",
+                    "https://imgur.com/sQsdSEF.gif",
+                    "https://imgur.com/xsl1mfm.gif"
+      
+                            ];
+             
+                var gif = slaap[Math.floor(Math.random() * slaap.length)] ;
+                var slap_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                message.channel.send(slap_embed);
+            };
+
+            if(command === "punch") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un punching... un utilisateur valide");
+
+                var puunch = [
+                    "https://imgur.com/HyMjVgS.gif",
+                    "https://imgur.com/x3AFwHJ.gif",
+                    "https://imgur.com/acMxPWB.gif",
+                    "https://imgur.com/7ZuHTId.gif",
+                    "https://imgur.com/QTUJ6UF.gif",
+                    "https://imgur.com/VxVNgya.gif"
+
+      
+                            ];
+             
+                var gif = puunch[Math.floor(Math.random() * puunch.length)] ;
+                var punch_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** met une bonne grosse patate à **${member.displayName}**._`)
+                message.channel.send(punch_embed);
+            };
+
+            if(command === "poke") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
+
+                var pooke = [
+                    "https://imgur.com/hFby4cs.gif",
+                    "https://imgur.com/n6U8lZG.gif",
+                    "https://imgur.com/IfhivGM.gif",
+                    "https://imgur.com/ShoP93K.gif",
+                    "https://imgur.com/57b84sF.gif",
+                    "https://imgur.com/iGFsH0w.gif",
+                    "https://imgur.com/vjfKWYp.gif"
+                    
+                            ];
+             
+                var gif = pooke[Math.floor(Math.random() * pooke.length)] ;
+                var poke_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** poke **${member.displayName}**._`)
+                message.channel.send(poke_embed);
+            };
+
+            if(command === "pat") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
+
+                var paat = [
+                    "https://imgur.com/AvUkatg.gif",
+                    "https://imgur.com/Q9J7XNn.gif",
+                    "https://imgur.com/vYL0xZb.gif",
+                    "https://imgur.com/yKCYGiM.gif",
+                    "https://imgur.com/IZU5Rdz.gif",
+                    "https://imgur.com/Tg6pP7n.gif"
+                    
+                            ];
+             
+                var gif = paat[Math.floor(Math.random() * paat.length)] ;
+                var pat_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** fait pat pat à **${member.displayName}**._`)
+                message.channel.send(pat_embed);
+            };            
+
+            if(command === "kiss") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner un utilisateur valide, sauf si tu n'as pas d'amis pour fair cette commande *touss touss*");
+
+                var kiiss = [
+                    "https://imgur.com/b5gws2K.gif",
+                    "https://imgur.com/9dEzPYo.gif",
+                    "https://imgur.com/m3muv2n.gif",
+                    "https://imgur.com/b437Iyw.gif",
+                    "https://imgur.com/rl3qDwX.gif",
+                    "https://imgur.com/RLbtpje.gif"
+                    
+                            ];
+             
+                var gif = kiiss[Math.floor(Math.random() * kiiss.length)] ;
+                var kiss_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** fait un bisou à **${member.displayName}**._`)
+                message.channel.send(kiss_embed);
+            };  
+
+            if(command === "kill") {
+
+                let member = message.mentions.members.first();
+            if(!member)
+              return message.reply("Veuiller mentionner une victi... un utilisateur valide");
+
+                var kiill = [
+                    "https://imgur.com/i05JQHj.gif",
+                    "https://imgur.com/asPls9q.gif",
+                    "https://imgur.com/UtxhqRL.gif",
+                    "https://imgur.com/RBYYTXS.gif",
+                    "https://imgur.com/HbuNUeF.gif",
+                    "https://imgur.com/MYBZTuL.gif"
+                    
+                            ];
+             
+                var gif = kiill[Math.floor(Math.random() * kiill.length)] ;
+                var kill_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage(gif)
+                .addField(`_**${message.author.username}** veut fair un "massage" à **${member.displayName}**._`)
+                message.channel.send(kill_embed);
+            };  
 
 var prefix = '?'
 var randnum = 0; 
@@ -1050,20 +1251,16 @@ if (randnum == 3){
                   return message.reply("Veuiller mentionner un utilisateur valide");
 
         var infoa = new Discord.RichEmbed()
-            .setAuthor(target.displayName)
-            .setThumbnail(target.user.avatarURL)
-            .setDescription(`**
-            This is the user's info!
-            Full Username:, ${target.user.username}#${target.user.discriminator}
-            ID:, ${target.id}
-            Created At:, ${target.user.createdAt}** `)
+        .setAuthor(memberInfo.displayName)
+        .setThumbnail(memberInfo.user.avatarURL)
+        .setDescription("Voici les infos!")
+        .setColor(0x00FF00)
+        .addField("Pseudo Discord complet:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
+        .addField("ID:", memberInfo.id)
+        .addField("Crée le:", memberInfo.user.createdAt)
             message.channel.send(infoa)
             
     };
-
-    if (msg.startsWith("@kagura")){
-        message.channel.send(":eyes: ");
-    }
  
 });
 client.login(token);

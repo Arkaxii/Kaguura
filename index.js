@@ -352,9 +352,8 @@ var prefix = '?'
                 var gif = wiink[Math.floor(Math.random() * wiink.length)] ;
                 var wink_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-                .setTitle('')
                 .setImage(gif)
-                .addField(`_**${msg.author.username}** fait un clin d'oeil à **${user.username}**._`)
+                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
                 message.channel.send(wink_embed);
             };
 
@@ -413,7 +412,7 @@ if(command === "sleep") {
             if(!member)
               return message.reply("Veuiller mentionner un utilisateur valide");
 
-                var wake = [
+                var waake = [
                     "https://imgur.com/DmlqHdo.gif",
                     "https://imgur.com/pMqMuG9.gif",
                     "https://imgur.com/SGxUKOO.gif",
@@ -423,7 +422,7 @@ if(command === "sleep") {
       
                             ];
              
-                var gif = wake[Math.floor(Math.random() * wake.length)] ;
+                var gif = waake[Math.floor(Math.random() * waake.length)] ;
                 var wake_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage(gif)
@@ -453,7 +452,7 @@ if(command === "slap") {
                 var slap_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                .addField(`_**${message.author.username}** écrase les moustiques qui sont sur **${member.displayName}**._`)
                 message.channel.send(slap_embed);
             };
 

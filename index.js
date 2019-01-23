@@ -1229,7 +1229,7 @@ if (randnum == 3){
                answered = true; cAnswer = ""; userAnswer = "";
            }
            function  time10s (){
-            message.reply("Les 10 secondes sont écouler!")
+            message.reply("Les 10 secondes sont écouler!"); break;
         }
          
            if (msg.startsWith(prefix + "quiz" )){

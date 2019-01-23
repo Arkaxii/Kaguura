@@ -1237,7 +1237,7 @@ if (randnum == 3){
                var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                switch(random){
                    case 1: message.channel.send ("Que ce qu'es le mot Tellurique: \n1 - Qualifie des planètes similaires a la Terre \n2 - Un minerai extrait de roche \n3 - Un mouvement spirituelle \n4 - Obi wan kenobi ");setTimeout( time10s , 30000) ; cAnswer = "1";  break; 
-                   case 2: message.channel.send ("Quel est l'auteur de la citation « Je n’ai pas échoué. J’ai simplement trouvé 10 000 solutions qui ne fonctionnent pas. » ?  \n1 - Benjamin Franklin. \n2 - Albert Einstein. \n3 - Thomas Edison. \n4 - Emmanuel Macron.");setTimeout( time10s , 30000) cAnswer = "3"; break;
+                   case 2: message.channel.send ("Quel est l'auteur de la citation « Je n’ai pas échoué. J’ai simplement trouvé 10 000 solutions qui ne fonctionnent pas. » ?  \n1 - Benjamin Franklin. \n2 - Albert Einstein. \n3 - Thomas Edison. \n4 - Emmanuel Macron.");setTimeout( time10s , 30000); cAnswer = "3"; break;
                    case 3: message.channel.send ("Parmis ces anime quelle l'anime avec le plus d'épisodes ? \n1 - Detective Conan \n2 - One Piece \n3 - Doraemon \n4 - C'est l'anime le plus long");setTimeout( time10s , 30000); cAnswer = "3"; break;
                    case 4: message.channel.send ("D’où vient Vasco de Gama ? \n1 - Du Portugal \n2 - De Venise \n3 - De l'Espagne \n4 - Du Taboulistan " );setTimeout( time10s , 30000); cAnswer = "1"; break;
                    case 5: message.channel.send ("Quelle année a suivi l’an 1 avant J.C ? \n1 - L'an 0 \n2 - L'an 1 aprés J.C \n3 - L'an 0 avant J.C \n4 Le nouvelle an");setTimeout( time10s , 30000); cAnswer = "2"; break;

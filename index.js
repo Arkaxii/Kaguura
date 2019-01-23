@@ -1229,7 +1229,7 @@ if (randnum == 3){
                answered = true; cAnswer = ""; userAnswer = "";
            }
            function  time10s (){
-            message.reply("Les 10 secondes sont écouler!"); break;
+            message.reply("Les 10 secondes sont écouler!  ")
         }
          
            if (msg.startsWith(prefix + "quiz" )){
@@ -1242,7 +1242,7 @@ if (randnum == 3){
                    case 4: message.channel.send ("D’où vient Vasco de Gama ? \n1 - Du Portugal \n2 - De Venise \n3 - De l'Espagne \n4 - Du Taboulistan " );setTimeout( time10s , 10000); cAnswer = "1"; break;
                    case 5: message.channel.send ("Quelle année a suivi l’an 1 avant J.C ? \n1 - L'an 0 \n2 - L'an 1 aprés J.C \n3 - L'an 0 avant J.C \n4 Le nouvelle an");setTimeout( time10s , 10000); cAnswer = "2"; break;
                    case 6: message.channel.send ("Combien de nouvelles chaînes sont apparus grâce à la TNT ? \n1 - 11 \n2 - 15 \n3 - 12 \n4 - 69");setTimeout( time10s , 10000); cAnswer = "3" ;break;
-                   case 7: message.channel.send ("Quel l’équivalent du pape au Tibet ? \n1 - Le dalalama \n2 - L'Alpaga \n3 L'Alpagïatelle \n4 - Le dallai lama");setTimeout( time10s , 10000); cAnswer = "4" ; break;
+                   case 7: message.channel.send ("Quel l’équivalent du pape au Tibet ? \n1 - Le dalalama \n2 - L'Alpaga \n3 - L'Alpagïatelle \n4 - Le dallai lama");setTimeout( time10s , 10000); cAnswer = "4" ; break;
                    case 8: message.channel.send ("De combien de syllabes est composé un alexandrin ? \n1 - 4 \n2 - 8 \n3 - 6 \n4 - 12");setTimeout( time10s , 10000); cAnswer = "4" ;break;
                    case 9: message.channel.send ("Comment appelle-t-on la lumière qui se rapproche le plus de la lumière du soleil ?  \n1 - La lumière jaune \n2 - Les UV \n3 - La lumière blanche \n4 - La lumière ");setTimeout( time10s , 10000); cAnswer = "3" ; break ;
                }

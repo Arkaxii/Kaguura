@@ -1229,15 +1229,21 @@ if (randnum == 3){
                answered = true; cAnswer = ""; userAnswer = "";
            }
          
-           if (msg.startsWith(prefix + "quiz" )){
-               number = 4;
+        if (msg.startsWith(prefix + "quiz" )){
+               number = 9;
                var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                switch(random){
                    case 1: message.channel.send ("Que ce qu'es le mot Tellurique: \n1 - Qualifie des planètes similaires a la Terre \n2 - Un minerai extrait de roche \n3 - Un mouvement spirituelle \n4 - Obi wan kenobi "); cAnswer = "1"; break;
                    case 2: message.channel.send ("Quel est l'auteur de la citation « Je n’ai pas échoué. J’ai simplement trouvé 10 000 solutions qui ne fonctionnent pas. » ?  \n1 - Benjamin Franklin. \n2 - Albert Einstein. \n3 - Thomas Edison. \n4 - Emmanuel Macron."); cAnswer = "3"; break;
                    case 3: message.channel.send ("Parmis ces anime quelle l'anime avec le plus d'épisodes ? \n1 - Detective Conan \n2 - One Piece \n3 - Doraemon \n4 - C'est l'anime le plus long"); cAnswer = "3"; break;
                    case 4: message.channel.send ("D’où vient Vasco de Gama ? \n1 - Du Portugal \n2 - De Venise \n3 - De l'Espagne \n4 - Du Taboulistan " ); cAnswer = "1"; break;
+                   case 5: message.channel.send ("Quelle année a suivi l’an 1 avant J.C ? \n1 - L'an 0 \n2 - L'an 1 aprés J.C \n3 - L'an 0 avant J.C \n4 Le nouvelle an"); cAnswer = "2"; break;
+                   case 6: message.channel.send ("Combien de nouvelles chaînes sont apparus grâce à la TNT ? \n1 - 11 \n2 - 15 \n3 - 12 \n4 - 69"); cAnswer = "3" ; break;
+                   case 7: message.channel.send ("Quel l’équivalent du pape au Tibet ? \n1 - Le dalalama \n2 - L'Alpaga \n3 L'Alpagïatelle \n4 - Le dallai lama"); cAnswer = "4" ; break;
+                   case 8: message.channel.send ("De combien de syllabes est composé un alexandrin ? \n1 - 4 \n2 - 8 \n3 - 6 \n4 - 12"); cAnswer = "4" ; break;
+                   case 9: message.channel.send ("Comment appelle-t-on la lumière qui se rapproche le plus de la lumière du soleil ?  \n1 - La lumière jaune \n2 - Les UV \n3 - La lumière blanche \n4 - La lumière "); cAnswer = "3" ; break ;
                }
+
                 answered = false;
                quizUser = message.author;
            }

@@ -1333,7 +1333,6 @@ message.channel.send(sond)
     message.react("✖")
 }).catch(function(){    
 });
-message.delete()
 
 }
 	

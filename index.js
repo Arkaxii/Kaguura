@@ -1320,7 +1320,6 @@ if(message.content.startsWith(prefix + "info discord")){
             };
 
 if(message.content.startsWith(prefix + "sondage")){
-	message.delete()
     let args = message.content.split(" ").slice(1);
     let tTE = args.join(" ")
 var sond = new Discord.RichEmbed()
@@ -1334,6 +1333,8 @@ message.channel.send(sond)
     message.react("✖")
 }).catch(function(){    
 });
+message.delete()
+
 }
 	
 });

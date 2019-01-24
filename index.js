@@ -1298,6 +1298,24 @@ if(message.content.startsWith(prefix + "info discord")){
     
             message.channel.send(infodisc);
             };
+	
+if(message.content.startsWith(prefix + "info kagura")){
+
+        var infobot = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setDescription("Voici les infos!")
+            .setColor(0x00FF00)
+            .addField(`Servers! [ " ${client.guilds.size} " ]` )
+            .addField(`Users! [ " ${client.users.size} " ]`)
+            .addField(`Channels! [ " ${client.channels.size} " ]`)
+            .addField(`Node Version! [ " ${process.version}" ]`)
+            .addField(`Prefix! [ " ${prefix}" ]`)
+            .addField(`Language! [ " NodeJS " ]`)
+            .addField(`Ram Usage! [ " ${(process.memoryUsage().rss / 1048576).toFixed()}MB " ]`)
+            .addField(`Crée par: ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
+            
+            message.channel.send(infobot);
+            };
 
 });
 client.login(token);

@@ -1313,7 +1313,7 @@ if(message.content.startsWith(prefix + "info discord")){
             .addField(`Prefix` , prefix)
             .addField("Language  NodeJS ")
             .addField(`Utilisation de la RAM en MB ` ,(process.memoryUsage().rss / 1048576).toFixed() )
-            .addField("Crée par: ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 ")
+            .setFooter(`Crée par ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)            
             
             message.channel.send(infobot);
             };

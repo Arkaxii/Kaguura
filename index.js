@@ -1320,10 +1320,11 @@ if(message.content.startsWith(prefix + "info discord")){
             };
 
 if(message.content.startsWith(prefix + "sondage")){
+	message.delete()
     let args = message.content.split(" ").slice(1);
     let tTE = args.join(" ")
 var sond = new Discord.RichEmbed()
-.setDescription("Sondage")
+.setDescription(`Sondage de `, message.author.username )
 .addField(tTE, "Répondre avec :white_check_mark: ou :x:")
 .setColor(0x00FF00)
 .setTimestamp()

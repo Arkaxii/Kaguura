@@ -68,6 +68,7 @@ console.log('Done The Watching Setup Completed')
 ?hug
 
 **utilitaire:**
+?info kagura: **Toute les infos a propo de Kagura**
 ?info discord: **Les info du serveur**
 ?secret: **Les prochain ajout sur le bot**
 ?avatar: **Recupere l'avatar pour l'afficher plus grand **

@@ -68,6 +68,7 @@ console.log('Done The Watching Setup Completed')
 ?hug
 
 **utilitaire:**
+?sondage: **Fait un sondage pour avoir l'avie d'autre personne**
 ?info kagura: **Toute les infos a propo de Kagura**
 ?info discord: **Les info du serveur**
 ?secret: **Les prochain ajout sur le bot**
@@ -1322,7 +1323,7 @@ if(message.content.startsWith(prefix + "sondage")){
     let args = message.content.split(" ").slice(1);
     let tTE = args.join(" ")
 var sond = new Discord.RichEmbed()
-.setDescription("Sondage")
+if(message.content.startsWith(prefix + "sondage de ", message.author.username )){
 .addField(tTE, "Répondre avec :white_check_mark: ou :x:")
 .setColor(0x00FF00)
 .setTimestamp()

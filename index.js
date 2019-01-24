@@ -1318,5 +1318,21 @@ if(message.content.startsWith(prefix + "info discord")){
             message.channel.send(infobot);
             };
 
+if(message.content.startsWith(prefix + "sondage")){
+    let args = message.content.split(" ").slice(1);
+    let tTE = args.join(" ")
+var sond = new Discord.RichEmbed()
+.setDescription("Sondage")
+.addField(tTE, "Répondre avec :white_check_mark: ou :x:")
+.setColor(0x00FF00)
+.setTimestamp()
+message.channel.send(sond)
+.then(function(message){
+    message.react("✔")
+    message.react("✖")
+}).catch(function(){    
+});
+}
+	
 });
 client.login(token);

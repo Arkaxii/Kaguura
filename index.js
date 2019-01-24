@@ -68,6 +68,7 @@ console.log('Done The Watching Setup Completed')
 ?hug
 
 **utilitaire:**
+?info discord: **Les info du serveur**
 ?secret: **Les prochain ajout sur le bot**
 ?avatar: **Recupere l'avatar pour l'afficher plus grand **
 ?ping: **Pour connaitre son ping**
@@ -1282,6 +1283,21 @@ if (randnum == 3){
             message.channel.send(infoa)
             
     };
- 
+
+if(message.content.startsWith(prefix + "info discord")){
+
+        var infodisc = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setThumbnail(message.guild.avatarURL)
+            .setDescription("Voici les infos!")
+            .setColor(0x00FF00)
+            .addField("Nom :", message.guild.name )
+            .addField("tu a rejoin le:", message.member.joinedAt)
+            .addField("nombre d'utilisateur", message.guild.memberCount)
+            .addField("Crée le:", message.guild.createdAt)
+    
+            message.channel.send(infodisc);
+            }
+
 });
 client.login(token);

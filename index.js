@@ -1267,7 +1267,7 @@ if (randnum == 3){
             message.channel.send(infome);
             }
     
-            if(command === "info") {
+            if(command === "infos") {
                 let target = message.mentions.members.first();
                 if(!target)
                   return message.reply("Veuiller mentionner un utilisateur valide");
@@ -1297,7 +1297,7 @@ if(message.content.startsWith(prefix + "info discord")){
             .addField("Crée le:", message.guild.createdAt)
     
             message.channel.send(infodisc);
-            }
+            };
 
 });
 client.login(token);

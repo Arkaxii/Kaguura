@@ -1294,7 +1294,7 @@ if(message.content.startsWith(prefix + "info discord")){
             .setColor(0x00FF00)
             .addField("Nom :", message.guild.name )
             .addField("Créateur du serveur :", message.guild.owner.user.tag)
-            .addField(`Channels total :` , message.channels.guild.size )
+            .addField("Channels total :" , message.channels.guild.size )
             .addField("Roles", message.guild.roles.size )
             .addField("nombre d'utilisateur :", message.guild.memberCount)
             .addField("tu a rejoin le :", message.member.joinedAt)

@@ -1347,6 +1347,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 if (!question)
                 message.channel.send("Je répond à tes questions .Faut vraiment être sans amis pour poser des question à moi ");
 
+		if(question)
                 var reponse = ["Très certainement",
                                "Très peut probable",
                                "Définitivement OUI !",

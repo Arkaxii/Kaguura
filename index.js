@@ -1338,6 +1338,6 @@ if(message.content.startsWith(prefix + "sondage")){
             message.delete()
             
             }
-	
+	 
 });
 client.login(token);

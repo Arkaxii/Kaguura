@@ -1296,6 +1296,7 @@ if(message.content.startsWith(prefix + "info discord")){
             .addField("Nom :", message.guild.name )
             .addField("tu a rejoin le:", message.member.joinedAt)
             .addField("nombre d'utilisateur", message.guild.memberCount)
+	    .addField("Channels total" , client.channels.guild )
             .addField("Crée le:", message.guild.createdAt)
     
             message.channel.send(infodisc);

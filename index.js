@@ -1294,10 +1294,13 @@ if(message.content.startsWith(prefix + "info discord")){
             .setColor(0x00FF00)
             .addField("Nom :", message.guild.name )
             .addField("Créateur du serveur :", message.guild.owner.user.tag)
-            .addField("tu a rejoin le :", message.member.joinedAt)
+            .addField(`Channels total :` , message.channels.guild.size )
+            .addField("Roles", message.guild.roles.size )
             .addField("nombre d'utilisateur :", message.guild.memberCount)
-            .addField(`Channels total :` , client.channels.length )
+            .addField("tu a rejoin le :", message.member.joinedAt)
+            .addField("Region :", message.guild.region )
             .addField("Crée le :", message.guild.createdAt)
+    
     
             message.channel.send(infodisc);
             };

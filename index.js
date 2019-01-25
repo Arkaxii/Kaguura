@@ -1346,7 +1346,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 let args = message.content.split(" ").slice(1);
                 let question = args.join(" ")
                 if (!question)
-                message.channel.send("Je répond à tes questions .Faut vraiment être sans amis pour poser des question à moi ");
+                message.channel.send("Je répond à tes questions. Faut vraiment être sans amis pour me poser des question ");
 
 		if(question)
                 var reponse = ["Très certainement",
@@ -1371,7 +1371,7 @@ if(message.content.startsWith(prefix + "sondage")){
                                "C'est un vrai mystère 🤔",
                                "Bip boup bip bip 🤖"]
 
-                               var result = Math.floor((Math.random() * reponse.length) + 0);
+                               var result = Math.floor((Math.random() * reponse) + 0);
                                message.channel.send(reponse[result]);
             }
 	 

@@ -1287,17 +1287,17 @@ if (randnum == 3){
     };
 
 if(message.content.startsWith(prefix + "info discord")){
-
         var infodisc = new Discord.RichEmbed()
             .setAuthor(message.author.username)
-            .setThumbnail(message.guild.avatarURL)
+            .setThumbnail(message.guild.iconURL)
             .setDescription("Voici les infos!")
             .setColor(0x00FF00)
             .addField("Nom :", message.guild.name )
-            .addField("tu a rejoin le:", message.member.joinedAt)
-            .addField("nombre d'utilisateur", message.guild.memberCount)
-	    .addField("Channels total" , client.channels.guilds )
-            .addField("Crée le:", message.guild.createdAt)
+            .addField("Créateur du serveur :", message.guild.owner.user.tag)
+            .addField("tu a rejoin le :", message.member.joinedAt)
+            .addField("nombre d'utilisateur :", message.guild.memberCount)
+            .addField(`Channels total :` , client.channels.guilds )
+            .addField("Crée le :", message.guild.createdAt)
     
             message.channel.send(infodisc);
             };

@@ -1340,6 +1340,38 @@ if(message.content.startsWith(prefix + "sondage")){
             message.delete()
             
             }
+	
+	 if(message.content.startsWith(prefix + "8ball")){
+                let args = message.content.split(" ").slice(1);
+                let question = args.join(" ")
+                if (!question)
+                message.channel.send("Je répond à tes questions .Faut vraiment être sans amis pour poser des question à moi ")
+
+                var reponse = ["Très certainement",
+                               "Très peut probable",
+                               "Définitivement OUI !",
+                               "Eeeuuuuuuuuuu non",
+                               "Eeeuuuuuuuuuu oui",
+                               "Ne compte pas dessu",
+                               "Selon internet oui",
+                               "Selon internet non",
+                               "J'ai été programmé pour dir non",
+                               "J'en sais rien demande à quelqu'un d'autre",
+                               "¯\_(ツ)_/¯",
+                               "Je dirai oui mais non donc oui et non",
+                               "C'est fortement possible",
+                               "On ma dit de dire oui",
+                               "On ma dit de dire non",
+                               "Je savai que tu allais poser cette question ! Hein ? Quoi ? Quelle réponse ?",
+                               "C'est douteux",
+                               "Sans aucun doute",
+                               "Demande au mur en face de toi",
+                               "C'est un vrai mystère 🤔",
+                               "Bip boup bip bip 🤖"]
+
+                               var result = Math.floor((Math.random() * reponse.length) + 0);
+                               message.channel.send(reponse[result]);
+            }
 	 
 });
 client.login(token);

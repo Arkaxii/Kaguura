@@ -1285,7 +1285,7 @@ if (randnum == 3){
             message.channel.send(infoa)
             
     };
-
+	
 if(message.content.startsWith(prefix + "info discord")){
         var infodisc = new Discord.RichEmbed()
             .setAuthor(message.author.username)
@@ -1296,7 +1296,7 @@ if(message.content.startsWith(prefix + "info discord")){
             .addField("Créateur du serveur :", message.guild.owner.user.tag)
             .addField("tu a rejoin le :", message.member.joinedAt)
             .addField("nombre d'utilisateur :", message.guild.memberCount)
-            .addField(`Channels total :` , client.channels.guilds )
+            .addField(`Channels total :` , client.channels.length )
             .addField("Crée le :", message.guild.createdAt)
     
             message.channel.send(infodisc);

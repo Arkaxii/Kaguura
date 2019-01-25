@@ -1371,7 +1371,7 @@ if(message.content.startsWith(prefix + "sondage")){
                                "C'est un vrai mystère 🤔",
                                "Bip boup bip bip 🤖"]
 
-                               var result = Math.floor((Math.random() * reponse) + 0);
+                               var result = Math.floor((Math.random() * reponse.length) + 0);
                                message.channel.send(reponse[result]);
             }
 	 

@@ -85,6 +85,7 @@ console.log('Done The Watching Setup Completed')
 ?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 10$**
 
 **Jeux:**
+?8ball: **Pose n'importe quelle question**
 ?refjeux: **trouve à quelle jeux appartien la référence **
 ?refanime: **trouve à quelle anime appartien la référence **
 ??quiz: **Tester votre QI **

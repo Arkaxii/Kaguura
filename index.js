@@ -274,7 +274,7 @@ var prefix = '?'
       var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
             money.fetchBal(message.author.id + message.guild.id).then((i) => {
-                if (i.money < "500" ){
+                if (i.money < 500 ){
                    return message.channel.send("not enough");
 
                 }

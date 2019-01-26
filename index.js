@@ -267,7 +267,7 @@ if(command ==="cancel"){
        let lastDaily = await db.fetch(`lastDaily_${message.author.id}`);
        if (lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0){
          let timeObj = ms(cooldown - (Date.now() - lastDaily));
-         message.channel.send(`Patiente encore **${timeObj.hour}h ${timeObj.minutes}m**!`);
+         message.channel.send(`Patiente encore **${timeObj.hours}h ${timeObj.minutes}m**!`);
 
        }else{message.channel.send(`Tu as ressu $${amount}`);
       db.set(`lastDaily_${message.author.id}`, Date.now());

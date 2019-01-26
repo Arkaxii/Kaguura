@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money'); 
 const config = require("./config.json");
+const db = require(`quick.db`)
 const prefix = '?'
 
 //information about the bot
@@ -271,16 +272,17 @@ var prefix = '?'
             })
         }
         
-       var prefix = '?';   
-        if(message.content.startsWith(prefix + "payfine")){
-            if( money.fetchBal(message.author.id).then((i) => { i.money})  < `500 `) {
+     var prefix = '?';   
+        if(message.content.startsWith(prefix + "payfine1")){
+            let selfb =  await db.fetch(`userBalance_${message.author.id}`);
+            if ( 500 > selfb){
             message.channel.send("not enough");
             }else{
                     money.updateBal(message.author.id, -500).then((i) => { 
                         message.channel.send(`**You paid your fine of $500!**\n**New Balance:** ${i.money}`)
                     }) 
                 }
-                };
+                }
                 
 	var prefix = '?'
 

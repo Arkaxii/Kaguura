@@ -262,7 +262,7 @@ if(command ==="cancel"){
      }
 
      if(command ==="daily"){
-       let cooldown = 8.64+7,
+       let cooldown = 8.64e+7,
           amount = 250;
        let lastDaily = await db.fetch(`lastDaily_${message.author.id}`);
        if (lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0){

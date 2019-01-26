@@ -67,7 +67,7 @@ client.on("message", async message => {
       let amount = parseInt(args.join('').replace(target, ''));
        if(isNaN(amount)) 
        return message.channel.send("Tu n'as pas mis de montant!");
-       let targetBalance = await db.fetch(`userBalance_${target.id}`),
+       let targetBalance = await db.fetch(`userBalance_${target.id}`);
        if (targetBalance === null) targetBalance = 0;
        db.add(`userBalance_${target.id}`,amount);
        message.channel.send(`**Tu as donner $${amount} a ${target.user.tag}!**`)

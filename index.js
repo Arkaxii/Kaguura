@@ -273,7 +273,7 @@ var prefix = '?'
         
        var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine")){
-            if( money < `500 `) {
+            if( money.fetchBal(message.author.id).then((i) => { i.money})  < `500 `) {
             message.channel.send("not enough");
             }else{
                     money.updateBal(message.author.id, -500).then((i) => { 

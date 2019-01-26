@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money'); 
 const config = require("./config.json");
-const db = require(`quick.db`)
+const db = require(`quick.db`);
 const prefix = '?'
 
 //information about the bot

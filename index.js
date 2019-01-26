@@ -46,11 +46,11 @@ console.log('Done The Watching Setup Completed')
 
  client.on("message", message => {
   if (message.content === "?help") {
-      message.react('??')
+      message.react('🤖')
         let helpem = new Discord.RichEmbed()
 	.setTitle(`Requested By | ${message.author.username}`)
         .setDescription(`**
-=====================?? KaguraHelp+ ??=====================
+=====================🤖 KaguraHelp+ 🤖=====================
 
 **Admin**
 ?help admin
@@ -98,20 +98,20 @@ console.log('Done The Watching Setup Completed')
 ?lancer12: **imite un lancer de dé à 12 face **
 ?lancer20:** imite un lancer de dé à 20 face**
 
-=====================?? KaguraHelp+ ??=====================
+=====================🤖 KaguraHelp+ 🤖=====================
 **`)
-	.setFooter(`created by ???????????Arkaxii#5194 `)
+	.setFooter(`created by  ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
 message.channel.send(helpem);
   }
 
     if (message.content === "?help admin") {
         if(!message.member.permissions.has('ADMINISTRATOR') )
         return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!" );
-        message.react('??')
+        message.react('🤖')
           let helpem = new Discord.RichEmbed()
       .setTitle(`Requested By | ${message.author.username}`)
           .setDescription(`**
-  =====================?? KaguraHelp+ ??=====================
+  =====================🤖 KaguraHelp+ 🤖=====================
   
 ?rainbow: **Change la couleur d'un role en random**
 ?purge: **Peut suprimer de 2 a 100 message **
@@ -122,16 +122,16 @@ SI LE RAINBOW NE FONCTIONNE PAS:
 Assurez-vous que le role rainbow soit le plus haut possible
 il change de couleur toute les minutes
 
-  =====================?? KaguraHelp+ ??=====================
+  =====================🤖 KaguraHelp+ 🤖=====================
   **`)
-      .setFooter(`created by ???????????Arkaxii#5194 `)
+      .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
   message.channel.send(helpem);
       }})
 
    client.on('message', message => {
 	   if(message.content.startsWith(prefix + `inv`)) {
 		   if(!message.channel.guild) return;
-                 message.react('??')
+                 message.react('🤖')
 		   var embed = new Discord.RichEmbed()
 		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " ?")
 		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
@@ -1320,7 +1320,7 @@ if(message.content.startsWith(prefix + "info discord")){
             .addField(`Prefix` , prefix)
             .addField("Language  NodeJS ")
             .addField(`Utilisation de la RAM en MB ` ,(process.memoryUsage().rss / 1048576).toFixed() )
-            .setFooter(`Crée par ???????????Arkaxii#5194 `)            
+            .setFooter(`Crée par ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)            
             
             message.channel.send(infobot);
             };
@@ -1370,8 +1370,8 @@ if(message.content.startsWith(prefix + "sondage")){
                                "C'est douteux",
                                "Sans aucun doute",
                                "Demande au mur en face de toi",
-                               "C'est un vrai mystère ??",
-                               "Bip boup bip bip ??"]
+                               "C'est un vrai mystère 🤔",
+                               "Bip boup bip bip 🤖"]
 
                                var result = Math.floor((Math.random() * reponse.length) + 0);
                                message.channel.send(reponse[result]);

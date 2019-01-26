@@ -2,7 +2,6 @@ const token = process.env.token;
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money'); 
-const economy = require('discord-eco');
 const config = require("./config.json");
 const prefix = '?'
 
@@ -274,7 +273,7 @@ var prefix = '?'
         
       var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
-            economy.fetchBalance(message.author.id + message.guild.id).then((i) => {
+            money.fetchBal(message.author.id + message.guild.id).then((i) => {
                 if (i.money < "500" ){
                    return message.channel.send("not enough");
 

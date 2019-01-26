@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require('discord-money'); 
 const config = require("./config.json");
+const db = require('quick.db')
 const prefix = '?'
 
 //information about the bot
@@ -273,8 +274,7 @@ var prefix = '?'
         
      var prefix = '?';   
         if(message.content.startsWith(prefix + "payfine1")){
-		var db = require('quick.db')
-            let selfb =  await db.fetch(`userBalance_${message.author.id}`);
+	let selfb =  await db.fetch(`userBalance_${message.author.id}`);
             if ( 500 > selfb){
             message.channel.send("not enough");
             }else{

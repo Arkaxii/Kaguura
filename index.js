@@ -23,7 +23,7 @@ client.on("message", async message => {
      message.channel.send(`${user.username} - Balance: $${balance}`);
      }
 
-     if(commande ==="daily"){
+     if(command ==="daily"){
        let cooldown = 8.64+7,
           amount = 250;
        let lastDaily = await db.fetch(`lastDaily_${message.author.id}`);

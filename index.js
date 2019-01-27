@@ -181,16 +181,17 @@ if(command === "shop"){
     .addField("**Pour plus d'information** ?buy [`ID_ITEM`]")
     message.channel.send(shoop);
 }
- if(message.content.startsWith(prefix + "buy 0001")){
-     var s0001 = new Discord.RichEmbed()
+if(command === "01"){
+    var s0001 = new Discord.RichEmbed()
      .setColor('RANDOM')
      .setTitle("Badge en terre")
      .setField("prix = 250$")
      message.channel.send(s0001);
  }
- if(message.content.startsWith(prefix + "buy 2")){
+ if(command === "02"){
     var s0002 = new Discord.RichEmbed()
     .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
     .setTitle("Badge en carton")
     .setField("prix = 500$")
     message.channel.send(s0002);

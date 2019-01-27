@@ -181,7 +181,7 @@ if(command === "shop"){
     .addField("**Pour plus d'information** ?info-b [`ID_ITEM`]")
     message.channel.send(shoop);
 }
- if(commande === "info-b 0001"){
+ if(command === "info-b 0001"){
      var s0001 = new Discord.RichEmbed()
      setColor('RANDOM')
      setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -189,7 +189,7 @@ if(command === "shop"){
      setTitle("prix = 250$")
      message.channel.send(s0001);
  }
- if(commande === "info-b 0002"){
+ if(command === "info-b 0002"){
     var s0002 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -197,7 +197,7 @@ if(command === "shop"){
     setTitle("prix = 500$")
     message.channel.send(s0002);
 }
-if(commande === "info-b 0003"){
+if(command === "info-b 0003"){
     var s0003 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -205,7 +205,7 @@ if(commande === "info-b 0003"){
     setTitle("prix = 1000$")
     message.channel.send(s0003);
 }
-if(commande === "info-b 0004"){
+if(command === "info-b 0004"){
     var s0004 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -213,7 +213,7 @@ if(commande === "info-b 0004"){
     setTitle("prix = 2000$")
     message.channel.send(s0004);
 }
-if(commande === "info-b 0005"){
+if(command === "info-b 0005"){
     var s0005 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -221,7 +221,7 @@ if(commande === "info-b 0005"){
     setTitle("prix = 4000$")
     message.channel.send(s0005);
 }
-if(commande === "info-b 0006"){
+if(command === "info-b 0006"){
     var s0006 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -229,7 +229,7 @@ if(commande === "info-b 0006"){
     setTitle("prix = 10 000$")
     message.channel.send(s0006);
 }
-if(commande === "info-b 0007"){
+if(command === "info-b 0007"){
     var s0007 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -237,7 +237,7 @@ if(commande === "info-b 0007"){
     setTitle("prix = 20 000$")
     message.channel.send(s0007);
 }
-if(commande === "info-b 0008"){
+if(command === "info-b 0008"){
     var s0008 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -245,7 +245,7 @@ if(commande === "info-b 0008"){
     setTitle("prix = 50 000$")
     message.channel.send(s0008);
 }
-if(commande === "info-b 0009"){
+if(command === "info-b 0009"){
     var s0009 = new Discord.RichEmbed()
     setColor('RANDOM')
     setThumbnail("https://i.imgur.com/w3w1YRs.png")

@@ -163,6 +163,33 @@ client.on("message", async message => {
 	
 	 msg = message.content.toLocaleLowerCase();
 
+	if(command === "shop"){
+    var shoop = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle('Shop')
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en terre - 250$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en carton - 500$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en fer - 1000$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en bronze - 2000$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en argent - 4000$ ")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en or - 10 000$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en Platine - 20 000$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge en diamant - 50 000$")
+    .setImage("https://i.imgur.com/w3w1YRs.png")
+    .addField("Badge legende - 200 000$")
+    message.channel.send(shoop);
+}
+	
+	
+	
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");

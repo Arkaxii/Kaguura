@@ -179,7 +179,7 @@ if(command === "shop"){
     .addField('Badge en Platine - 20 000$ - id = 0007')
     .addField('Badge en diamant - 50 000$ - id = 0008')
     .addField('Badge légende - 200 000$ - id = 0009')
-    .addField(`**Pour plus d'information** ?info-b [``ID_ITEM``]`)
+    .addField("**Pour plus d'information** ?info-b [`ID_ITEM`]")
     message.channel.send(shoop);
 }
  if(command === "info-b 0001"){

@@ -1383,7 +1383,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 Badge en Platine - 20 000$ - id = 0007"
                 Badge en diamant - 50 000$ - id = 0008"
                 Badge légende - 200 000$ - id = 0009"
-                **Pour plus d'information** ?buy ``[id]`` `)
+                **Pour plus d'information** ?buy [id] `)
+                .setFooter(`Shop`)
 
                 message.channel.send(shoop);
             };

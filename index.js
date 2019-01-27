@@ -1374,16 +1374,34 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setTitle("Shop")
                 .setDescription(`
-                Badge en terre - 250$ - id = 0001
-                Badge en carton - 500$ - id = 0002
-                Badge en fer - 1000$ - id = 0003
-                Badge en bronze - 2000$ - id = 0004"
-                Badge en argent - 4000$ - id = 0005"
-                Badge en or - 10 000$ - id = 0006"
-                Badge en Platine - 20 000$ - id = 0007"
-                Badge en diamant - 50 000$ - id = 0008"
-                Badge légende - 200 000$ - id = 0009"
-                **Pour plus d'information** ?buy [id] `)
+                **Badge en terre** - 250$ 
+                id = 0001
+
+                **Badge en carton** - 500$
+                id = 0002
+
+                **Badge en fer** - 1000$
+                id = 0003
+
+                **Badge en bronze** - 2000$
+                id = 0004
+
+                **Badge en argent** - 4000$
+                id = 0005
+
+                **Badge en or** - 10 000$
+                id = 0006
+
+                **Badge en Platine** - 20 000$
+                id = 0007
+
+                **Badge en diamant** - 50 000$
+                id = 0008
+
+                **Badge légende** - 200 000$
+                id = 0009
+                
+                **Pour plus d'information** ?buy id `)
                 .setFooter(`Shop`)
 
                 message.channel.send(shoop);

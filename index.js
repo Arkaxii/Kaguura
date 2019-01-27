@@ -1512,7 +1512,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle('Badge en terre')
                 .setDescription(`
-                **Tu as acheter le badge en terre!** Fait gaf de ne pas en metre partout! `)
+                **Tu as acheter le badge en terre!** 
+                 Fait gaf de ne pas en metre partout! `)
                  message.channel.send(b01);
 
 

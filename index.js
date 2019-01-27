@@ -167,30 +167,29 @@ client.on("message", async message => {
 
 if(command === "shop"){
     var shoop = new Discord.RichEmbed()
-  .setColor('RANDOM')
-
+    .setColor('RANDOM')
     .setTitle('Shop')
-    .addField('Badge en terre - 250$ - id = 0001')
-    .addField('Badge en carton - 500$ - id = 0002')
-    .addField('Badge en fer - 1000$ - id = 0003')
-    .addField('Badge en bronze - 2000$ - id = 0004')
-    .addField('Badge en argent - 4000$ - id = 0005')
-    .addField('Badge en or - 10 000$ - id = 0006')
-    .addField('Badge en Platine - 20 000$ - id = 0007')
-    .addField('Badge en diamant - 50 000$ - id = 0008')
-    .addField('Badge légende - 200 000$ - id = 0009')
-    .addField("**Pour plus d'information** ?info-b [`ID_ITEM`]")
+    .addField(`Badge en terre - 250$ - id = 0001`)
+    .addField(`Badge en carton - 500$ - id = 0002`)
+    .addField(`Badge en fer - 1000$ - id = 0003`)
+    .addField(`Badge en bronze - 2000$ - id = 0004`)
+    .addField(`Badge en argent - 4000$ - id = 0005`)
+    .addField(`Badge en or - 10 000$ - id = 0006`)
+    .addField(`Badge en Platine - 20 000$ - id = 0007`)
+    .addField(`Badge en diamant - 50 000$ - id = 0008`)
+    .addField(`Badge légende - 200 000$ - id = 0009`)
+    .addField("**Pour plus d'information** ?buy [`ID_ITEM`]")
     message.channel.send(shoop);
 }
- if(command === "info-b 0001"){
+ if(message.content.startsWith(prefix + "buy 0001")){
      var s0001 = new Discord.RichEmbed()
      .setColor('RANDOM')
-     .setTitle("Badge en terre")
      .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+     .setTitle("Badge en terre")
      .setField("prix = 250$")
      message.channel.send(s0001);
  }
- if(command === "info-b 0002"){
+ if(message.content.startsWith(prefix + "buy 0002")){
     var s0002 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -198,7 +197,7 @@ if(command === "shop"){
     .setField("prix = 500$")
     message.channel.send(s0002);
 }
-if(command === "info-b 0003"){
+if(message.content.startsWith(prefix + "buy 0003")){
     var s0003 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -206,7 +205,7 @@ if(command === "info-b 0003"){
     .setField("prix = 1000$")
     message.channel.send(s0003);
 }
-if(command === "info-b 0004"){
+if(message.content.startsWith(prefix + "buy 0004")){
     var s0004 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -214,7 +213,7 @@ if(command === "info-b 0004"){
     .setField("prix = 2000$")
     message.channel.send(s0004);
 }
-if(command === "info-b 0005"){
+if(message.content.startsWith(prefix + "buy 0005")){
     var s0005 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -222,7 +221,7 @@ if(command === "info-b 0005"){
     .setField("prix = 4000$")
     message.channel.send(s0005);
 }
-if(command === "info-b 0006"){
+if(message.content.startsWith(prefix + "buy 0006")){
     var s0006 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -230,7 +229,7 @@ if(command === "info-b 0006"){
     .setField("prix = 10 000$")
     message.channel.send(s0006);
 }
-if(command === "info-b 0007"){
+if(message.content.startsWith(prefix + "buy 0007")){
     var s0007 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -238,7 +237,7 @@ if(command === "info-b 0007"){
     .setField("prix = 20 000$")
     message.channel.send(s0007);
 }
-if(command === "info-b 0008"){
+if(message.content.startsWith(prefix + "buy 0008")){
     var s0008 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -246,7 +245,7 @@ if(command === "info-b 0008"){
     .setField("prix = 50 000$")
     message.channel.send(s0008);
 }
-if(command === "info-b 0009"){
+if(message.content.startsWith(prefix + "buy 0009")){
     var s0009 = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -254,7 +253,6 @@ if(command === "info-b 0009"){
     .setField("prix = 200 000$")
     message.channel.send(s0009);
 }
-
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )

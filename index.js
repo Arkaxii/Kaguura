@@ -184,74 +184,74 @@ if(command === "shop"){
 }
  if(command === "info-b 0001"){
      var s0001 = new Discord.RichEmbed()
-     setColor('RANDOM')
-     setThumbnail("https://i.imgur.com/w3w1YRs.png")
-     setTitle("Badge en terre")
-     setTitle("prix = 250$")
+     .setColor('RANDOM')
+     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+     .setTitle("Badge en terre")
+     .setField("prix = 250$")
      message.channel.send(s0001);
  }
  if(command === "info-b 0002"){
     var s0002 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en carton")
-    setTitle("prix = 500$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en carton")
+    .setField("prix = 500$")
     message.channel.send(s0002);
 }
 if(command === "info-b 0003"){
     var s0003 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en fer")
-    setTitle("prix = 1000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en fer")
+    .setField("prix = 1000$")
     message.channel.send(s0003);
 }
 if(command === "info-b 0004"){
     var s0004 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en bronze")
-    setTitle("prix = 2000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en bronze")
+    .setField("prix = 2000$")
     message.channel.send(s0004);
 }
 if(command === "info-b 0005"){
     var s0005 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en argent")
-    setTitle("prix = 4000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en argent")
+    .setField("prix = 4000$")
     message.channel.send(s0005);
 }
 if(command === "info-b 0006"){
     var s0006 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en or")
-    setTitle("prix = 10 000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en or")
+    .setField("prix = 10 000$")
     message.channel.send(s0006);
 }
 if(command === "info-b 0007"){
     var s0007 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en Platine")
-    setTitle("prix = 20 000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en Platine")
+    .setField("prix = 20 000$")
     message.channel.send(s0007);
 }
 if(command === "info-b 0008"){
     var s0008 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge en diamant")
-    setTitle("prix = 50 000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge en diamant")
+    .setField("prix = 50 000$")
     message.channel.send(s0008);
 }
 if(command === "info-b 0009"){
     var s0009 = new Discord.RichEmbed()
-    setColor('RANDOM')
-    setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    setTitle("Badge légende")
-    setTitle("prix = 200 000$")
+    .setColor('RANDOM')
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setTitle("Badge légende")
+    .setField("prix = 200 000$")
     message.channel.send(s0009);
 }
 

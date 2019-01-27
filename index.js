@@ -172,7 +172,7 @@ if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
         setInterval(function(){
        rolerain.setColor('RANDOM')
- }, 1000);
+ }, 60000);
 	     message.channel.send(`le role ${rolerain} a été definit comme rainbow`)
 }
 

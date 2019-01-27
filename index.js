@@ -1377,31 +1377,31 @@ if(message.content.startsWith(prefix + "sondage")){
                 **achat possible mais il ne sera pas sauvgarder**
 
                 **Badge en terre** - 250$ 
-                id = 0001
+                ID: 0001
 
                 **Badge en carton** - 500$
-                id = 0002
+                ID: 0002
 
                 **Badge en fer** - 1000$
-                id = 0003
+                ID: 0003
 
                 **Badge en bronze** - 2000$
-                id = 0004
+                ID: 0004
 
                 **Badge en argent** - 4000$
-                id = 0005
+                ID: 0005
 
                 **Badge en or** - 10 000$
-                id = 0006
+                ID: 0006
 
                 **Badge en Platine** - 20 000$
-                id = 0007
+                ID: 0007
 
                 **Badge en diamant** - 50 000$
-                id = 0008
+                ID: 0008
 
                 **Badge légende** - 200 000$
-                id = 0009
+                ID: 0009
                 
                 **Pour plus d'information** ?buy id `)
                 .setFooter(`Shop`)

@@ -167,18 +167,19 @@ client.on("message", async message => {
 
 if(command === "shop"){
     var shoop = new Discord.RichEmbed()
-    .setColor('RANDOM')
+  .setColor('RANDOM')
+
     .setTitle('Shop')
-    .addField("Badge en terre - 250$ - id = 0001")
-    .addField("Badge en carton - 500$ - id = 0002")
-    .addField("Badge en fer - 1000$ - id = 0003")
-    .addField("Badge en bronze - 2000$ - id = 0004")
-    .addField("Badge en argent - 4000$ - id = 0005")
-    .addField("Badge en or - 10 000$ - id = 0006")
-    .addField("Badge en Platine - 20 000$ - id = 0007")
-    .addField("Badge en diamant - 50 000$ - id = 0008")
-    .addField("Badge légende - 200 000$ - id = 0009")
-    .addField("**Pour plus d'information** ?info-b [`ID_ITEM`]")
+    .addField('Badge en terre - 250$ - id = 0001')
+    .addField('Badge en carton - 500$ - id = 0002')
+    .addField('Badge en fer - 1000$ - id = 0003')
+    .addField('Badge en bronze - 2000$ - id = 0004')
+    .addField('Badge en argent - 4000$ - id = 0005')
+    .addField('Badge en or - 10 000$ - id = 0006')
+    .addField('Badge en Platine - 20 000$ - id = 0007')
+    .addField('Badge en diamant - 50 000$ - id = 0008')
+    .addField('Badge légende - 200 000$ - id = 0009')
+    .addField(`**Pour plus d'information** ?info-b [``ID_ITEM``]`)
     message.channel.send(shoop);
 }
  if(command === "info-b 0001"){

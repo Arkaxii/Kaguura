@@ -184,23 +184,20 @@ if(command === "shop"){
  if(message.content.startsWith(prefix + "buy 0001")){
      var s0001 = new Discord.RichEmbed()
      .setColor('RANDOM')
-     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
      .setTitle("Badge en terre")
      .setField("prix = 250$")
      message.channel.send(s0001);
  }
- if(message.content.startsWith(prefix + "buy 0002")){
+ if(message.content.startsWith(prefix + "buy 2")){
     var s0002 = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
     .setTitle("Badge en carton")
     .setField("prix = 500$")
     message.channel.send(s0002);
 }
-if(message.content.startsWith(prefix + "buy 0003")){
+if(message.content.startsWith(prefix + "buy3")){
     var s0003 = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
     .setTitle("Badge en fer")
     .setField("prix = 1000$")
     message.channel.send(s0003);

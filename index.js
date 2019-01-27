@@ -4,6 +4,75 @@ const client = new Discord.Client();
 const money = require('discord-money'); 
 const db = require('quick.db');
 const ms = require('parse-ms')
+const Inventory = require('inventory');
+const inv = new Inventory(5);
+const ItemPile = require('itempile');
+const config = require("./config.json");
+const prefix = '?'
+
+//information about the bot
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log('')
+  console.log('+[-----------------------------------------------------------------]+')
+  console.log(`[Start] ${new Date()}`);
+  console.log('+[-----------------------------------------------------------------]+')
+  console.log('')
+  console.log('+[-------------------------------------]+');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log('')
+  console.log('Informations About Rainbow bot:')
+  console.log('')
+  console.log(`Servers! [ " ${client.guilds.size} " ]`);
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log(`Channels! [ " ${client.channels.size} " ]`);
+  console.log(`Arch! [ " ${process.arch} " ]`);
+  console.log(`Platform! [ " ${process.platform} " ]`);
+  console.log(`Node Version! [ " ${process.version}" ]`);
+  console.log(`Prefix! [ " ${prefix}" ]`);
+  console.log(`Language! [ " NodeJS " ]`);
+  console.log(`Ram Usage! [ " ${(process.memoryUsage().rss / 1048576).toFixed()}MB " ]`);
+  console.log('+[------------------------------------]+')
+  console.log('')
+  console.log('+[------------]+')
+  console.log(`${client.user.username} Is Online`)
+  console.log('+[------------]+')
+  console.log('')
+  console.log('+[------------]+')
+  console.log('Created By: Revenge')
+  console.log('+[------------]+')
+client.user.setActivity("r#help | By Revenge",{type: 'WATCHING'});
+console.log('Done The Watching Setup Completed')
+
+});
+
+client.on("message", async message => {
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+	
+	 msg = message.content.toLocaleLowerCase();
+
+     if(command === "give"){
+        inv.give(new ItemPile('dirt', 42));
+        return message.channel.send("dirt => 42")
+     }
+
+     if(commande === "inventaire"){
+       message.channel.send(inv);
+
+     }
+	 
+});
+client.login(token);
+
+/*
+const token = process.env.token;
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const money = require('discord-money'); 
+const db = require('quick.db');
+const ms = require('parse-ms')
 const config = require("./config.json");
 const prefix = '?'
 
@@ -52,10 +121,8 @@ console.log('Done The Watching Setup Completed')
 	.setTitle(`Requested By | ${message.author.username}`)
         .setDescription(`**
 =====================🤖 KaguraHelp+ 🤖=====================
-
 **Admin**
 ?help admin
-
 **Rolplay:**
 ?wink
 ?wave  
@@ -68,7 +135,6 @@ console.log('Done The Watching Setup Completed')
 ?kiss
 ?kill
 ?hug
-
 **utilitaire:**
 ?sondage: **Fait un sondage pour avoir l'avie d'autre personne**
 ?info kagura: **Toute les infos a propo de Kagura**
@@ -80,25 +146,21 @@ console.log('Done The Watching Setup Completed')
 ?inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
 ?mes infos: **Donne des infos comme le pseudo avec # la pp et quant le compte a été crée**
 ?info: ** Donne les info de la personne pinger** 
-
 **Argent:** (qui ne sert a rien pour l'instant)
 ?compt: **pour voir à combien s'élève ton compt**
 ?daily: **pour recevoir 500$ par jour**
 ?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 10$**
-
 **Jeux:**
 ?8ball: **Pose n'importe quelle question**
 ?refjeux: **trouve à quelle jeux appartien la référence **
 ?refanime: **trouve à quelle anime appartien la référence **
 ??quiz: **Tester votre QI **
-
 **Random:**
 ?pile: **1 chance sur 2**
 ?face: **1 chance sur 2**
 ?lancer6: **imite un lancer de dé à 6 face **
 ?lancer12: **imite un lancer de dé à 12 face **
 ?lancer20:** imite un lancer de dé à 20 face**
-
 =====================🤖 KaguraHelp+ 🤖=====================
 **`)
 	.setFooter(`created by  ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
@@ -118,11 +180,9 @@ message.channel.send(helpem);
 ?purge: **Peut suprimer de 2 a 100 message **
 ?kick
 ?ban
-
 SI LE RAINBOW NE FONCTIONNE PAS:
 Assurez-vous que le role rainbow soit le plus haut possible
 il change de couleur toute les minutes
-
   =====================🤖 KaguraHelp+ 🤖=====================
   **`)
       .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
@@ -1379,4 +1439,4 @@ if(message.content.startsWith(prefix + "sondage")){
             }
 	 
 });
-client.login(token);
+client.login(token); */

@@ -77,7 +77,8 @@ console.log('Done The Watching Setup Completed')
 ?inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
 ?mes infos: **Donne des infos comme le pseudo avec # la pp et quant le compte a été crée**
 ?info: ** Donne les info de la personne pinger** 
-**Argent:** (qui ne sert a rien pour l'instant)
+**Argent:** 
+?shop: **Pour fair des achat avec la THUN que tu as acqui**
 ?compt: **pour voir à combien s'élève ton compt**
 ?daily: **pour recevoir 500$ par jour**
 ?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 10$**
@@ -161,35 +162,99 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 	
-	 msg = message.content.toLocaleLowerCase();
+     msg = message.content.toLocaleLowerCase();
+     
 
-	if(command === "shop"){
+if(command === "shop"){
     var shoop = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle('Shop')
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en terre - 250$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en carton - 500$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en fer - 1000$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en bronze - 2000$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en argent - 4000$ ")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en or - 10 000$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en Platine - 20 000$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge en diamant - 50 000$")
-    .setImage("https://i.imgur.com/w3w1YRs.png")
-    .addField("Badge legende - 200 000$")
+    .addField("Badge en terre - 250$ - id = 0001")
+    .addField("Badge en carton - 500$ - id = 0002")
+    .addField("Badge en fer - 1000$ - id = 0003")
+    .addField("Badge en bronze - 2000$ - id = 0004")
+    .addField("Badge en argent - 4000$ - id = 0005")
+    .addField("Badge en or - 10 000$ - id = 0006")
+    .addField("Badge en Platine - 20 000$ - id = 0007")
+    .addField("Badge en diamant - 50 000$ - id = 0008")
+    .addField("Badge légende - 200 000$ - id = 0009")
+    .addField("**Pour plus d'information** ?info-b [`ID_ITEM`]")
     message.channel.send(shoop);
 }
-	
-	
-	
+ if(commande === "info-b 0001"){
+     var s0001 = new Discord.RichEmbed()
+     setColor('RANDOM')
+     setThumbnail("https://i.imgur.com/w3w1YRs.png")
+     setTitle("Badge en terre")
+     setTitle("prix = 250$")
+     message.channel.send(s0001);
+ }
+ if(commande === "info-b 0002"){
+    var s0002 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en carton")
+    setTitle("prix = 500$")
+    message.channel.send(s0002);
+}
+if(commande === "info-b 0003"){
+    var s0003 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en fer")
+    setTitle("prix = 1000$")
+    message.channel.send(s0003);
+}
+if(commande === "info-b 0004"){
+    var s0004 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en bronze")
+    setTitle("prix = 2000$")
+    message.channel.send(s0004);
+}
+if(commande === "info-b 0005"){
+    var s0005 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en argent")
+    setTitle("prix = 4000$")
+    message.channel.send(s0005);
+}
+if(commande === "info-b 0006"){
+    var s0006 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en or")
+    setTitle("prix = 10 000$")
+    message.channel.send(s0006);
+}
+if(commande === "info-b 0007"){
+    var s0007 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en Platine")
+    setTitle("prix = 20 000$")
+    message.channel.send(s0007);
+}
+if(commande === "info-b 0008"){
+    var s0008 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge en diamant")
+    setTitle("prix = 50 000$")
+    message.channel.send(s0008);
+}
+if(commande === "info-b 0009"){
+    var s0009 = new Discord.RichEmbed()
+    setColor('RANDOM')
+    setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    setTitle("Badge légende")
+    setTitle("prix = 200 000$")
+    message.channel.send(s0009);
+}
+
+
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");
@@ -287,7 +352,7 @@ if(command ==="cancel"){
          let timeObj = ms(cooldown - (Date.now() - lastDaily));
          message.channel.send(`Patiente encore **${timeObj.hours}h ${timeObj.minutes}m**!`);
 
-       }else{message.channel.send(`Tu as ressu $${amount}`);
+       }else{message.channel.send(`Tu as reçu $${amount}`);
       db.set(`lastDaily_${message.author.id}`, Date.now());
     db.add(`userBalance_${message.author.id}`, 250);
          
@@ -310,7 +375,7 @@ if(command ==="cancel"){
            return message.channel.send("**Ne donne pas plus que ce que tu as!**");
            db.add(`userBalance_${target.id}`,amount);
            db.subtract(`userBalance_${message.author.id}`, amount);
-           message.channel.send(`**Tu as donner $${amount} a ${target.user.tag}!**`)
+           message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
 
      }
 	
@@ -326,7 +391,7 @@ if(command ==="cancel"){
        let targetBalance = await db.fetch(`userBalance_${target.id}`);
        if (targetBalance === null) targetBalance = 0;
        db.add(`userBalance_${target.id}`,amount);
-       message.channel.send(`**Tu as donner $${amount} a ${target.user.tag}!**`)
+       message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
 
 
      }

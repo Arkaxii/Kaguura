@@ -185,8 +185,8 @@ if(command === "shop"){
  if(command === "info-b 0001"){
      var s0001 = new Discord.RichEmbed()
      .setColor('RANDOM')
-     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
      .setTitle("Badge en terre")
+     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
      .setField("prix = 250$")
      message.channel.send(s0001);
  }

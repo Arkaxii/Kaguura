@@ -1369,21 +1369,22 @@ if(message.content.startsWith(prefix + "sondage")){
                                var result = Math.floor((Math.random() * reponse.length) + 0);
                                message.channel.send(reponse[result]);
             }
-	 
  if(command === "shop"){
                 var shoop = new Discord.RichEmbed()
                 .setColor(0x00FF00)
                 .setTitle("Shop")
-                .addField("Badge en terre - 250$ - id = 0001")
-                .addField("Badge en carton - 500$ - id = 0002")
-                .addField("Badge en fer - 1000$ - id = 0003")
-                .addField("Badge en bronze - 2000$ - id = 0004")
-                .addField("Badge en argent - 4000$ - id = 0005")
-                .addField("Badge en or - 10 000$ - id = 0006")
-                .addField("Badge en Platine - 20 000$ - id = 0007")
-                .addField("Badge en diamant - 50 000$ - id = 0008")
-                .addField("Badge légende - 200 000$ - id = 0009")
-                .addField("**Pour plus d'information** ?buy `[id]` ")
+                .setDescription(`
+                Badge en terre - 250$ - id = 0001
+                Badge en carton - 500$ - id = 0002
+                Badge en fer - 1000$ - id = 0003
+                Badge en bronze - 2000$ - id = 0004"
+                Badge en argent - 4000$ - id = 0005"
+                Badge en or - 10 000$ - id = 0006"
+                Badge en Platine - 20 000$ - id = 0007"
+                Badge en diamant - 50 000$ - id = 0008"
+                Badge légende - 200 000$ - id = 0009"
+                **Pour plus d'information** ?buy ``[id]`` `)
+
                 message.channel.send(shoop);
             };
             

@@ -158,7 +158,7 @@ userAnswer = "";
 
 client.on("message", async message => {
  
-  const prefix = '?'
+  var prefix = '?'
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 	

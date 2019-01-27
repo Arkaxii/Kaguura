@@ -1374,6 +1374,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setTitle("Shop")
                 .setDescription(`
+                **achat possible mais il ne sera pas sauvgarder**
+
                 **Badge en terre** - 250$ 
                 id = 0001
 
@@ -1412,7 +1414,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle('Badge en terre')
-                .setDescription("prix = 250$")
+                .setDescription(`prix = 250$
+		        ?confirm 0001 pour acheter `)
                  message.channel.send(un);
              };
             
@@ -1421,7 +1424,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en carton")
-                .setDescription("prix = 500$")
+                .setDescription(`prix = 500$
+                ?confirm 0002 pour acheter `)
                 message.channel.send(deux);
             };
             
@@ -1430,7 +1434,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en fer")
-                .setDescription("prix = 1000$")
+                .setDescription(`prix = 1000$
+                ?confirm 0003 pour acheter `)
                 message.channel.send(troi);
             };
             
@@ -1439,7 +1444,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en bronze")
-                .setDescription("prix = 2000$")
+                .setDescription(`prix = 2000$
+                ?confirm 0004 pour acheter`)
                 message.channel.send(quatre);
             };
             
@@ -1448,7 +1454,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en argent")
-                .setDescription("prix = 4000$")
+                .setDescription(`prix = 4000$
+                ?confirm 0005 pour acheter `)
                 message.channel.send(cinque);
             };
             
@@ -1457,7 +1464,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en or")
-                .setDescription("prix = 10 000$")
+                .setDescription(`prix = 10 000$
+                ?confirm 0006 pour acheter `)
                 message.channel.send(six);
             };
             
@@ -1466,7 +1474,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en Platine")
-                .setDescription("prix = 20 000$")
+                .setDescription(`prix = 20 000$
+                ?confirm 0007 pour acheter`)
                 message.channel.send(sept);
             };
             
@@ -1475,7 +1484,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en diamant")
-                .setDescription("prix = 50 000$")
+                .setDescription(`prix = 50 000$
+                ?confirm 0008 pour acheter`)
                 message.channel.send(huit);
             };
             
@@ -1484,9 +1494,191 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge légende")
-                .setDescription("prix = 200 000$")
+                .setDescription(`prix = 200 000$
+                ?confirm 0009 pour acheter `)
                 message.channel.send(neuf);
             };
+
+            if(message.content.startsWith(prefix + "confirm 0001")){
+               let amount1 = '250';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b01 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en terre')
+                .setDescription(`
+                **Tu as acheter le badge en terre!** Fait gaf de ne pas en metre partout! `)
+                 message.channel.send(b01);
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0002")){
+               let amount1 = '500';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b02 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en carton')
+                .setDescription(`
+                **Tu as acheter le badge en carton!** `)
+                 message.channel.send(b02);
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0003")){
+               let amount1 = '1000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b03 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en fer')
+                .setDescription(`
+                **Tu as acheter le badge en fer!** `)
+                 message.channel.send(b03);
+                
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0004")){
+                amount1 = '2000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b04 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en carton')
+                .setDescription(`
+                **Tu as acheter le badge en bronze!** `)
+                 message.channel.send(b04);
+
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0005")){
+                amount1 = '4000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b05 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en argent')
+                .setDescription(`
+                **Tu as acheter le badge en argent!** `)
+                 message.channel.send(b05);
+
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0006")){
+                amount1 = '10000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b06 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en or')
+                .setDescription(`
+                **Tu as acheter le badge en or!** `)
+                 message.channel.send(b06);
+
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0007")){
+                amount1 = '20000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b07 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en platine')
+                .setDescription(`
+                **Tu as acheter le badge en platine!** `)
+                 message.channel.send(b07);
+
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0008")){
+                amount1 = '50000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b08 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en diamant')
+                .setDescription(`
+                **Tu as acheter le badge en diamant!** `)
+                 message.channel.send(b08);
+
+
+
+            }
+
+
+            if(message.content.startsWith(prefix + "confirm 0009")){
+                amount1 = '200000';
+                selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ")
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+
+                var b09 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge légende')
+                .setDescription(`
+                **Tu as acheter le badge en légend! GG** `)
+                 message.channel.send(b09);
+            }
 	
 });
 client.login(token); 

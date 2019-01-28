@@ -74,10 +74,11 @@ console.log('Done The Watching Setup Completed')
 ?avatar: **Recupere l'avatar pour l'afficher plus grand **
 ?ping: **Pour connaitre son ping**
 ?say: **Fait dir ce que tu veut au bot **
-?inv: **Envoie un mp pour inviter le bot dans d'autre serveur**
+?invite: **Envoie un mp pour inviter le bot dans d'autre serveur**
 ?mes infos: **Donne des infos comme le pseudo avec # la pp et quant le compte a été crée**
 ?info: ** Donne les info de la personne pinger** 
 **Argent:** 
+?inventair: **Pour voir son inventair**
 ?shop: **Pour fair des achat avec la THUN que tu as acqui**
 ?compt: **pour voir à combien s'élève ton compt**
 ?daily: **pour recevoir 500$ par jour**
@@ -122,7 +123,7 @@ il change de couleur toute les minutes
       }})
 
    client.on('message', message => {
-	   if(message.content.startsWith(prefix + `inv`)) {
+	   if(message.content.startsWith(prefix + `invite`)) {
 		   if(!message.channel.guild) return;
                  message.react('🤖')
 		   var embed = new Discord.RichEmbed()

@@ -1686,9 +1686,9 @@ if(message.content.startsWith(prefix + "sondage")){
     let balance = await db.fetch(`userBalance_${message.author.id}`);
      if (balance === null) balance = 0;
     var inve = new Discord.RichEmbed()
-    .setAuthor(message.author.id , message.author.avatarURL )
+    .setAuthor(message.author.id  )
     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-    .addField("tu as", balance,"$" )
+    .addField("tu as $${balance} ")
     .setDescription("A venire ")
     message.channel.send(inve);
 }

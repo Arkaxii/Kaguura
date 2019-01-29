@@ -159,11 +159,13 @@ userAnswer = "";
 
 client.on("message", async message => {
  
-  var prefix = '?'
+  
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 	
      msg = message.content.toLocaleLowerCase();
+     
+
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
@@ -173,7 +175,7 @@ if(!rolerain)
   return message.reply("Veuiller mentionner un role valide");
         setInterval(function(){
        rolerain.setColor('RANDOM')
- }, 60000);
+ }, 1000);
 	     message.channel.send(`le role ${rolerain} a été definit comme rainbow`)
 }
 
@@ -1370,7 +1372,8 @@ if(message.content.startsWith(prefix + "sondage")){
                                var result = Math.floor((Math.random() * reponse.length) + 0);
                                message.channel.send(reponse[result]);
             }
- if(command === "shop"){
+     
+            if(command === "shop"){
                 var shoop = new Discord.RichEmbed()
                 .setColor(0x00FF00)
                 .setTitle("Shop")
@@ -1502,7 +1505,7 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "confirm 0001")){
                let amount1 = '250';
-               let selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+               let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1525,7 +1528,7 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "confirm 0002")){
                let amount1 = '500';
-             let   selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+               let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1547,7 +1550,7 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "confirm 0003")){
                let amount1 = '1000';
-              let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+               let   selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1567,8 +1570,8 @@ if(message.content.startsWith(prefix + "sondage")){
 
 
             if(message.content.startsWith(prefix + "confirm 0004")){
-               let amount1 = '2000';
-              let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                let   amount1 = '2000';
+                let   selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1590,8 +1593,8 @@ if(message.content.startsWith(prefix + "sondage")){
 
 
             if(message.content.startsWith(prefix + "confirm 0005")){
-             let   amount1 = '4000';
-              let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                let    amount1 = '4000';
+                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1613,8 +1616,8 @@ if(message.content.startsWith(prefix + "sondage")){
 
 
             if(message.content.startsWith(prefix + "confirm 0006")){
-             let   amount1 = '10000';
-             let   selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                let  amount1 = '10000';
+                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1636,8 +1639,8 @@ if(message.content.startsWith(prefix + "sondage")){
 
 
             if(message.content.startsWith(prefix + "confirm 0007")){
-             let   amount1 = '20000';
-             let   selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                let   amount1 = '20000';
+                let selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1659,8 +1662,8 @@ if(message.content.startsWith(prefix + "sondage")){
 
 
             if(message.content.startsWith(prefix + "confirm 0008")){
-              let  amount1 = '50000';
-              let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                let  amount1 = '50000';
+                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1683,7 +1686,7 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "confirm 0009")){
               let  amount1 = '200000';
-               let selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+              let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
@@ -1698,18 +1701,17 @@ if(message.content.startsWith(prefix + "sondage")){
                 **Tu as acheter le badge en légend! GG** `)
                  message.channel.send(b09);
             }
-	/*
 if (command ==="?setd")
-            const setdes = args.slice(1).join(' ');
-            if(!setdes) setdes = "aucune description";  */
+            var setdes = args.slice(1).join(' ');
+            if(!setdes) setdes = "aucune description";
 
             if(command === "inventaire"){
-              let  rang = '1';
-              let   selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                let rang = '1',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1718,12 +1720,12 @@ if (command ==="?setd")
                 .setDescription(setdes)
                 message.channel.send(inveb1);
 
-              let  rang = '5';
-              let  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                let  rang = '5',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1733,12 +1735,12 @@ if (command ==="?setd")
                 message.channel.send(inveb2);
 
 
-             let   rang = '10';
-             let   selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                let rang = '10',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1748,12 +1750,12 @@ if (command ==="?setd")
                 message.channel.send(inveb3);
 
 
-             let   rang = '15';
-             let   selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                let rang = '15',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1763,12 +1765,12 @@ if (command ==="?setd")
                 message.channel.send(inveb4);
 
 
-              let  rang = '20';
-              let  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                let rang = '20',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1778,12 +1780,12 @@ if (command ==="?setd")
                 message.channel.send(inveb5);
 
 
-             let   rang = '25';
-               let selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+              let  rang = '25',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1793,12 +1795,12 @@ if (command ==="?setd")
                 message.channel.send(inveb6);
 
 
-             let   rang = '30';
-              let  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+              let  rang = '30',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1808,12 +1810,12 @@ if (command ==="?setd")
                 message.channel.send(inveb7);
 
 
-              let  rang = '35';
-              let  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+               let rang = '35',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1823,12 +1825,12 @@ if (command ==="?setd")
                 message.channel.send(inveb8);
 
 
-               let rang = '55';
-               let selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+              let  rang = '55',
+                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
                 if (rang = selfRank)
 
-                let balance = await db.fetch(`userBalance_${message.author.id}`);
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
                 var inveb9 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1840,6 +1842,6 @@ if (command ==="?setd")
 
                 
             }
-	
+
 });
 client.login(token); 

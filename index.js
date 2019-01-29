@@ -1708,9 +1708,9 @@ if (command ==="?setd") {
            
        if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
 
                 let amount1 = '1000';
-               let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 if (testBalance === null) testBalance = 0;
                 if (testBalance = amount1)
                 var inveb0 = new Discord.RichEmbed()
@@ -1722,7 +1722,6 @@ if (command ==="?setd") {
                 
 
                 let amountc = '2000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                 if (testBalance = amountc)
                 var inveb1 = new Discord.RichEmbed()
@@ -1734,7 +1733,6 @@ if (command ==="?setd") {
                 
 
                 let amountf = '3000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                if (testBalance = amountf)
                var inveb2 = new Discord.RichEmbed()
@@ -1747,7 +1745,6 @@ if (command ==="?setd") {
 
                 
                 let amountb = '4000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                 if (testBalance = amountb)
                 var inveb3 = new Discord.RichEmbed()
@@ -1760,7 +1757,6 @@ if (command ==="?setd") {
 
                 
                 let amounta = '5000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                if (testBalance = amounta)
                 var inveb4 = new Discord.RichEmbed()
@@ -1773,7 +1769,6 @@ if (command ==="?setd") {
 
                 
                 let amounto = '6000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                if (testBalance = amounto)
                 var inveb5 = new Discord.RichEmbed()
@@ -1786,7 +1781,6 @@ if (command ==="?setd") {
 
               
                 let amountp = '7000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                if (testBalance = amountp)
                 var inveb6 = new Discord.RichEmbed()
@@ -1799,7 +1793,6 @@ if (command ==="?setd") {
 
               
                 let amountd = '8000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                if (testBalance = amountd)
                 var inveb7 = new Discord.RichEmbed()
@@ -1812,7 +1805,6 @@ if (command ==="?setd") {
 
                
                 let amountl = '9000';
-                let  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                  if (testBalance === null) testBalance = 0;
                 
                 if (testBalance = amountl)

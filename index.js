@@ -1708,7 +1708,7 @@ if (command ==="?setd")
             if(command === "inventaire"){
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ('1' = selfRank)
+                if ( selfRank  = 1 )
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;

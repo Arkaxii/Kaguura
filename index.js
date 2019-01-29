@@ -1706,7 +1706,7 @@ if (command ==="?setd") {
             if(!setdes) setdes = "aucune description";
 }
            
-       if(command === "inventaire"){
+     if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
 
@@ -1716,10 +1716,10 @@ if (command ==="?setd") {
                 var inveb0 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`ttu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb0);
-            }   
+            }   break ;
 
                 let amountc = '2000';
                  if (testBalance === null) testBalance = 0;
@@ -1727,10 +1727,10 @@ if (command ==="?setd") {
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`ctu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb1);
-        }   
+        }    break ;
 
                 let amountf = '3000';
                  if (testBalance === null) testBalance = 0;
@@ -1738,10 +1738,10 @@ if (command ==="?setd") {
                var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`ftu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb2);
-    }       
+    }        break ;
 
                 
                 let amountb = '4000';
@@ -1750,10 +1750,10 @@ if (command ==="?setd") {
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`btu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb3);
-            }           
+            }            break ;
 
                 
                 let amounta = '5000';
@@ -1762,10 +1762,10 @@ if (command ==="?setd") {
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`atu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb4);
-            }   
+            }    break ;
 
                 
                 let amounto = '6000';
@@ -1774,10 +1774,10 @@ if (command ==="?setd") {
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`otu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb5);
-        }   
+        }    break ;
 
               
                 let amountp = '7000';
@@ -1786,10 +1786,10 @@ if (command ==="?setd") {
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`ptu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb6);
-    }       
+    }        break ;
 
               
                 let amountd = '8000';
@@ -1798,10 +1798,10 @@ if (command ==="?setd") {
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`dtu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb7);
-            }
+            } break ;
 
                
                 let amountl = '9000';
@@ -1811,10 +1811,10 @@ if (command ==="?setd") {
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`ltu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb8);
-                }
+                }  break ;
             } 
 	
 	

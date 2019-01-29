@@ -1706,131 +1706,130 @@ if (command ==="?setd") {
             if(!setdes) setdes = "aucune description";
 }
            
-            if(command === "inventaire"){
+         if(command === "inventaire"){
                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
                     amountt = [0 , 500];
                     if (selfBalance === null) selfBalance = 0;
 
-                if (amountt = selfBalance) 
+                if (amountt = selfBalance){ 
                 var inveb0 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`t tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb0);
-                
+            }
 
                  var   amountc = [500 , 1000];
                 if (selfBalance === null) selfBalance = 0;
 
-                if (amountc < selfBalance) 
+                if (amountc < selfBalance){ 
                  if (selfBalance === null) selfBalance = 0;
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`c tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb1);
-                
+                }
 
                 var   amountf = [1000 , 2000];
                if (selfBalance === null) selfBalance = 0;
 
-               if (amountf < selfBalance)
+               if (amountf < selfBalance){
                  if (selfBalance === null) selfBalance = 0;
                 var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`f tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb2);
-                
+               }
 
                 
                  var   amountb = [2000 , 4000];
                 if (selfBalance === null) selfBalance = 0;
 
-                if (amountb < selfBalance)
+                if (amountb < selfBalance){
                  if (selfBalance === null) selfBalance = 0;
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`b tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb3);
-                
+                }
 
                 
                 var   amounta = [4000 , 10000];
                if (selfBalance === null) selfBalance = 0;
 
-               if (amounta < selfBalance)
+               if (amounta < selfBalance){
                  if (selfBalance === null) selfBalance = 0;
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`a tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb4);
-                
+            }
 
                 
                 var   amounto = [10000 , 20000];
                if (selfBalance === null) selfBalance = 0;
 
-               if (amounto < selfBalance)
+               if (amounto < selfBalance){
                  if (selfBalance === null) selfBalance = 0;
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`o tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb5);
-                
+               }
 
               
                 var   amountp = [20000 , 50000];
                if (selfBalance === null) selfBalance = 0;
 
-               if (amountp < selfBalance)
+               if (amountp < selfBalance){
                  if (selfBalance === null) selfBalance = 0;
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`p tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb6);
-                
+            }
 
               
                 var   amountd = [50000 , 200000];
                if (selfBalance === null) selfBalance = 0;
                
 
-               if (amountd < selfBalance)
+               if (amountd < selfBalance){
                  if (selfBalance === null) selfBalance = 0;
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`d tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb7);
-                
+            }
 
                
                  var   amountl = [200000 , 9000000000];
                 if (selfBalance === null) selfBalance = 0;
                 
-                if (amountl < selfBalance)
+                if (amountl < selfBalance) {
                  if (selfBalance === null) selfBalance = 0;
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , selfBalance )
+                .addField(`l tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb8);
-                
+                }
             } 
-
 });
 client.login(token); 

@@ -1705,15 +1705,13 @@ if (command ==="?setd") {
             var setdes = args.slice(1).join(' ');
             if(!setdes) setdes = "aucune description";
 }
-                      if(command === "inventaire"){
-                var deletcomterre = message.channel.send("badge terre acquis")
+           
+            if(command === "inventaire"){
                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amountt = 500;
+                    amountt = [0 , 500];
                     if (selfBalance === null) selfBalance = 0;
-                    if(selfBalance > 500) 
-                    message.channel.bulkDelete(deletcomterre);
 
-                if (amountt < selfBalance) 
+                if (amountt = selfBalance) 
                 var inveb0 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -1722,11 +1720,8 @@ if (command ==="?setd") {
                 message.channel.send(inveb0);
                 
 
-                var deletcomcar = message.channel.send("badge carton acquis")
-                 var   amountc = 1000;
+                 var   amountc = [500 , 1000];
                 if (selfBalance === null) selfBalance = 0;
-                if(selfBalance > 500) 
-                message.channel.bulkDelete(deletcomcar);
 
                 if (amountc < selfBalance) 
                  if (selfBalance === null) selfBalance = 0;
@@ -1738,11 +1733,8 @@ if (command ==="?setd") {
                 message.channel.send(inveb1);
                 
 
-                var deletcomfer = message.channel.send("badge fer acquis")
-                var   amountf = 2000;
+                var   amountf = [1000 , 2000];
                if (selfBalance === null) selfBalance = 0;
-               if(selfBalance > 1000) 
-               message.channel.bulkDelete(deletcomfer);
 
                if (amountf < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
@@ -1755,11 +1747,8 @@ if (command ==="?setd") {
                 
 
                 
-                var deletcombr = message.channel.send("badge bronze acquis")
-                 var   amountb = 4000;
+                 var   amountb = [2000 , 4000];
                 if (selfBalance === null) selfBalance = 0;
-                if(selfBalance > 2000) 
-                message.channel.bulkDelete(deletcombr);
 
                 if (amountb < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
@@ -1772,11 +1761,8 @@ if (command ==="?setd") {
                 
 
                 
-                var deletcomarg = message.channel.send("badge argent acquis")
-                var   amounta = 4000;
+                var   amounta = [4000 , 10000];
                if (selfBalance === null) selfBalance = 0;
-               if(selfBalance > 10000) 
-               message.channel.bulkDelete(deletcomarg);
 
                if (amounta < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
@@ -1789,11 +1775,8 @@ if (command ==="?setd") {
                 
 
                 
-                var deletcomor = message.channel.send("badge or acquis")
-                var   amounto = 10000;
+                var   amounto = [10000 , 20000];
                if (selfBalance === null) selfBalance = 0;
-               if(selfBalance > 20000) 
-               message.channel.bulkDelete(deletcomor);
 
                if (amounto < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
@@ -1806,11 +1789,8 @@ if (command ==="?setd") {
                 
 
               
-                var deletcompl = message.channel.send("badge platine acquis")
-                var   amountp = 20000;
+                var   amountp = [20000 , 50000];
                if (selfBalance === null) selfBalance = 0;
-               if(selfBalance > 50000) 
-               message.channel.bulkDelete(deletcompl);
 
                if (amountp < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
@@ -1823,11 +1803,9 @@ if (command ==="?setd") {
                 
 
               
-                var deletcomcar = message.channel.send("badge diamant acquis")
-                var   amountd = 50000;
+                var   amountd = [50000 , 200000];
                if (selfBalance === null) selfBalance = 0;
-               if(selfBalance > 200000) 
-               message.channel.bulkDelete(deletcomcar);
+               
 
                if (amountd < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
@@ -1840,7 +1818,7 @@ if (command ==="?setd") {
                 
 
                
-                 var   amountl = 200000;
+                 var   amountl = [200000 , 9000000000];
                 if (selfBalance === null) selfBalance = 0;
                 
                 if (amountl < selfBalance)
@@ -1853,7 +1831,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb8);
                 
             } 
- 
 
 });
 client.login(token); 

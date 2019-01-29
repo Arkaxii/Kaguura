@@ -1706,10 +1706,9 @@ if (command ==="?setd")
             if(!setdes) setdes = "aucune description";
 
             if(command === "inventaire"){
-                let rang = '1',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('1' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1720,10 +1719,9 @@ if (command ==="?setd")
                 .setDescription(setdes)
                 message.channel.send(inveb1);
 
-                let  rang = '5',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('4' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1735,10 +1733,10 @@ if (command ==="?setd")
                 message.channel.send(inveb2);
 
 
-                let rang = '10',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                
+                var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('10' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1750,10 +1748,10 @@ if (command ==="?setd")
                 message.channel.send(inveb3);
 
 
-                let rang = '15',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('15' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1765,10 +1763,10 @@ if (command ==="?setd")
                 message.channel.send(inveb4);
 
 
-                let rang = '20',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                
+                var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('20' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1780,10 +1778,10 @@ if (command ==="?setd")
                 message.channel.send(inveb5);
 
 
-              let  rang = '25',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+              
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('25' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1795,10 +1793,10 @@ if (command ==="?setd")
                 message.channel.send(inveb6);
 
 
-              let  rang = '30',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+              
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('30' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1810,10 +1808,10 @@ if (command ==="?setd")
                 message.channel.send(inveb7);
 
 
-               let rang = '35',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+               
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('35' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1825,10 +1823,10 @@ if (command ==="?setd")
                 message.channel.send(inveb8);
 
 
-              let  rang = '55',
-                selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+              
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (rang = selfRank)
+                if ('55' = selfRank)
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;

@@ -1705,14 +1705,15 @@ if (command ==="?setd") {
             var setdes = args.slice(1).join(' ');
             if(!setdes) setdes = "aucune description";
 }
-           if(command === "inventaire"){
-
+                      if(command === "inventaire"){
+                var deletcomterre = message.channel.send("badge terre acquis")
                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 500;
-                    if(selfBalance > 1000) break ;
-                if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
+                    amountt = 500;
+                    if (selfBalance === null) selfBalance = 0;
+                    if(selfBalance > 500) 
+                    message.channel.bulkDelete(deletcomterre);
 
+                if (amountt < selfBalance) 
                 var inveb0 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -1721,151 +1722,138 @@ if (command ==="?setd") {
                 message.channel.send(inveb0);
                 
 
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 1000;
+                var deletcomcar = message.channel.send("badge carton acquis")
+                 var   amountc = 1000;
                 if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
+                if(selfBalance > 500) 
+                message.channel.bulkDelete(deletcomcar);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+                if (amountc < selfBalance) 
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb1);
                 
 
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 2000;
-                if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
+                var deletcomfer = message.channel.send("badge fer acquis")
+                var   amountf = 2000;
+               if (selfBalance === null) selfBalance = 0;
+               if(selfBalance > 1000) 
+               message.channel.bulkDelete(deletcomfer);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+               if (amountf < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb2);
                 
 
                 
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 4000;
+                var deletcombr = message.channel.send("badge bronze acquis")
+                 var   amountb = 4000;
                 if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
-                
+                if(selfBalance > 2000) 
+                message.channel.bulkDelete(deletcombr);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+                if (amountb < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb3);
                 
 
                 
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 10000;
-                if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
+                var deletcomarg = message.channel.send("badge argent acquis")
+                var   amounta = 4000;
+               if (selfBalance === null) selfBalance = 0;
+               if(selfBalance > 10000) 
+               message.channel.bulkDelete(deletcomarg);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+               if (amounta < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb4);
                 
 
                 
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 20000;
-                if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
+                var deletcomor = message.channel.send("badge or acquis")
+                var   amounto = 10000;
+               if (selfBalance === null) selfBalance = 0;
+               if(selfBalance > 20000) 
+               message.channel.bulkDelete(deletcomor);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+               if (amounto < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb5);
                 
 
               
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                amount = 50000;
-            if (selfBalance === null) selfBalance = 0;
-            if (amount > selfBalance) 
+                var deletcompl = message.channel.send("badge platine acquis")
+                var   amountp = 20000;
+               if (selfBalance === null) selfBalance = 0;
+               if(selfBalance > 50000) 
+               message.channel.bulkDelete(deletcompl);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+               if (amountp < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb6);
                 
 
               
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 200000;
-                if (selfBalance === null) selfBalance = 0;
-                if (amount > selfBalance) 
+                var deletcomcar = message.channel.send("badge diamant acquis")
+                var   amountd = 50000;
+               if (selfBalance === null) selfBalance = 0;
+               if(selfBalance > 200000) 
+               message.channel.bulkDelete(deletcomcar);
 
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+               if (amountd < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb7);
                 
 
                
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 200000;
+                 var   amountl = 200000;
                 if (selfBalance === null) selfBalance = 0;
-                if (amount <  selfBalance) 
-
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
+                
+                if (amountl < selfBalance)
+                 if (selfBalance === null) selfBalance = 0;
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb8);
                 
-
-              
-                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amount = 0;
-                if (selfBalance === null) selfBalance = 0;
-                if (amount = selfBalance) 
-
-                var balance = await db.fetch(`userBalance_${message.author.id}`);
-                 if (balance === null) balance = 0;
-                var inveb9 = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`tu as $` , balance )
-                .setDescription(setdes)
-                message.channel.send(inveb9);
-                
-
-                
             } 
+ 
 
 });
 client.login(token); 

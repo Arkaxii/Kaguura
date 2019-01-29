@@ -1707,12 +1707,12 @@ if (command ==="?setd") {
 }
            
          if(command === "inventaire"){
-                var deletcomterre = message.channel.send("badge terre acquis")
+                var deletcomterre = await message.channel.send("badge terre acquis")
                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
                     amountt = 500;
                     if (selfBalance === null) selfBalance = 0;
                     if(selfBalance = 500) 
-                    deletcomterre.delete()
+                    deletcomterre.delete();
 
                 if (amountt < selfBalance) 
                 var inveb0 = new Discord.RichEmbed()
@@ -1723,11 +1723,11 @@ if (command ==="?setd") {
                 message.channel.send(inveb0);
                 
 
-                var deletcomcar = message.channel.send("badge carton acquis")
+                var deletcomcar = await message.channel.send("badge carton acquis")
                  var   amountc = 1000;
                 if (selfBalance === null) selfBalance = 0;
                 if(selfBalance > 500) 
-                deletcomcar.delete()
+                deletcomcar.delete();
                 if (amountc < selfBalance) 
                  if (selfBalance === null) selfBalance = 0;
                 var inveb1 = new Discord.RichEmbed()
@@ -1738,11 +1738,11 @@ if (command ==="?setd") {
                 message.channel.send(inveb1);
                 
 
-                var deletcomfer = message.channel.send("badge fer acquis")
+                var deletcomfer = await message.channel.send("badge fer acquis")
                 var   amountf = 2000;
                if (selfBalance === null) selfBalance = 0;
                if(selfBalance > 1000) 
-               deletcomfer.delete()
+               deletcomfer.delete();
                if (amountf < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb2 = new Discord.RichEmbed()
@@ -1754,11 +1754,11 @@ if (command ==="?setd") {
                 
 
                 
-                var deletcombr = message.channel.send("badge bronze acquis")
+                var deletcombr = await message.channel.send("badge bronze acquis")
                  var   amountb = 4000;
                 if (selfBalance === null) selfBalance = 0;
                 if(selfBalance > 2000) 
-                deletcombr.delete()
+                deletcombr.delete();
                 if (amountb < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb3 = new Discord.RichEmbed()
@@ -1770,11 +1770,11 @@ if (command ==="?setd") {
                 
 
                 
-                var deletcomarg = message.channel.send("badge argent acquis")
+                var deletcomarg = await message.channel.send("badge argent acquis")
                 var   amounta = 10000;
                if (selfBalance === null) selfBalance = 0;
                if(selfBalance > 4000) 
-               deletcomarg.delete()
+               deletcomarg.delete();
                if (amounta < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb4 = new Discord.RichEmbed()
@@ -1786,11 +1786,11 @@ if (command ==="?setd") {
                 
 
                 
-                var deletcomor = message.channel.send("badge or acquis")
+                var deletcomor = await message.channel.send("badge or acquis")
                 var   amounto = 20000;
                if (selfBalance === null) selfBalance = 0;
                if(selfBalance > 10000) 
-               deletcomor.delete()
+               deletcomor.delete();
                if (amounto < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb5 = new Discord.RichEmbed()
@@ -1802,11 +1802,11 @@ if (command ==="?setd") {
                 
 
               
-                var deletcompl = message.channel.send("badge platine acquis")
+                var deletcompl = await message.channel.send("badge platine acquis")
                 var   amountp = 50000;
                if (selfBalance === null) selfBalance = 0;
                if(selfBalance > 20000) 
-               deletcompl.delete()
+               deletcompl.delete();
                if (amountp < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb6 = new Discord.RichEmbed()
@@ -1818,11 +1818,11 @@ if (command ==="?setd") {
                 
 
               
-                var deletcomcar = message.channel.send("badge diamant acquis")
+                var deletcomcar = await message.channel.send("badge diamant acquis")
                 var   amountd = 200000;
                if (selfBalance === null) selfBalance = 0;
                if(selfBalance > 50000) 
-               deletcomcar.delete()
+               deletcomcar.delete();
                if (amountd < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb7 = new Discord.RichEmbed()

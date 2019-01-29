@@ -1706,116 +1706,120 @@ if (command ==="?setd") {
             if(!setdes) setdes = "aucune description";
 }
            
-    if(command === "inventaire"){
+     if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
 
+                let amount0 = '0';
                 let amount1 = '1000';
+                let amountc = '2000';
+                let amountf = '3000';
+                let amountb = '4000';
+                let amounta = '5000';
+                let amounto = '6000';
+                let amountp = '7000';
+                let amountd = '8000';
+                let amountl = '9000';
+
                 if (testBalance === null) testBalance = 0;
-                if (testBalance = amount1){
+                if (testBalance = amount0)
+                var inveb = new Discord.RichEmbed()
+                .setAuthor(message.author.username , message.author.avatarURL  )
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .addField(`tu as $` , selfBalance )
+                .setDescription(setdes)
+                message.channel.send(inveb);
+
+                if (testBalance === null) testBalance = 0;
+                if (testBalance = amount1)
+
                 var inveb0 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`ttu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb0);
-            }   
+            
 
-                let amountc = '2000';
                  if (testBalance === null) testBalance = 0;
-                if (testBalance = amountc){
+                if (testBalance = amountc)
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`ctu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb1);
-        }   
+        
 
-                let amountf = '3000';
                  if (testBalance === null) testBalance = 0;
-               if (testBalance = amountf){
+               if (testBalance = amountf)
                var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`ftu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb2);
-    }       
 
                 
-                let amountb = '4000';
                  if (testBalance === null) testBalance = 0;
-                if (testBalance = amountb){
+                if (testBalance = amountb)
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`btu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb3);
-            }           
 
                 
-                let amounta = '5000';
                  if (testBalance === null) testBalance = 0;
-               if (testBalance = amounta){
+               if (testBalance = amounta)
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`atu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb4);
-            }   
 
                 
-                let amounto = '6000';
                  if (testBalance === null) testBalance = 0;
-               if (testBalance = amounto){
+               if (testBalance = amounto)
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`otu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb5);
-        }   
 
               
-                let amountp = '7000';
                  if (testBalance === null) testBalance = 0;
-               if (testBalance = amountp){
+               if (testBalance = amountp)
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`ptu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb6);
-    }       
 
               
-                let amountd = '8000';
                  if (testBalance === null) testBalance = 0;
-               if (testBalance = amountd){
+               if (testBalance = amountd)
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`dtu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb7);
-            }
 
                
-                let amountl = '9000';
                  if (testBalance === null) testBalance = 0;
-                
-                if (testBalance = amountl){
+                if (testBalance = amountl)
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .addField(`ltu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb8);
-                }
-            } 
+            };
 	
 	
 	 if(command === "arkapay2"){

@@ -1706,9 +1706,28 @@ if (command ==="?setd")
             if(!setdes) setdes = "aucune description";
 
             if(command === "inventaire"){
+
+                var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
+                if (selfRank === null) selfRank = 0;
+                if ( selfRank  != 0 ){break};
+
+                if (selfRank = 0 ){
+
+                var balance = await db.fetch(`userBalance_${message.author.id}`);
+                 if (balance === null) balance = 0;
+                var inveb0 = new Discord.RichEmbed()
+                .setAuthor(message.author.username , message.author.avatarURL  )
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .addField(`tu as $` , balance )
+                .setDescription(setdes)
+                message.channel.send(inveb0);
+                }
+
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  = 1 )
+                if ( selfRank  != 1 ){break};
+
+                if ( selfRank  = 1 ){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1718,10 +1737,13 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb1);
+                }
 
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 4 )
+                if ( selfRank  != 4 ){break};
+
+                if (selfRank = 4 ){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1731,12 +1753,15 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb2);
-
+                }
 
                 
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 10 )
+                if ( selfRank  != 10 ){break};
+
+                if (selfRank = 10 ){
+                
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1746,12 +1771,14 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb3);
-
+                }
 
                 
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 15)
+                if ( selfRank  != 15 ){break};
+
+                if (selfRank = 15){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1761,12 +1788,14 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb4);
-
+                }
 
                 
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 20 )
+                if ( selfRank  != 20 ){break};
+
+                if (selfRank = 20 ){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1776,12 +1805,14 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb5);
-
+                }
 
               
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 25)
+                if ( selfRank  != 25 ){break};
+
+                if (selfRank = 25){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1791,12 +1822,14 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb6);
-
+                }
 
               
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 30 )
+                if ( selfRank  != 30 ){break};
+
+                if (selfRank = 30 ){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1806,11 +1839,13 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb7);
-
+                }
 
                
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
+                if ( selfRank  != 35 ){break};
+
                 if (selfRank = 35 )
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
@@ -1821,12 +1856,14 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb8);
-
+                }
 
               
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if (selfRank = 55 )
+                if ( selfRank  != 55 ){break};
+
+                if (selfRank = 55 ){
 
                 var balance = await db.fetch(`userBalance_${message.author.id}`);
                  if (balance === null) balance = 0;
@@ -1836,7 +1873,7 @@ if (command ==="?setd")
                 .addField(`tu as $` , balance )
                 .setDescription(setdes)
                 message.channel.send(inveb9);
-
+                }
 
                 
             }

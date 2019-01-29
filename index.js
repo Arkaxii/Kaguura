@@ -1707,129 +1707,145 @@ if (command ==="?setd") {
 }
            
          if(command === "inventaire"){
+                var deletcomterre = message.channel.send("badge terre acquis")
                let selfBalance = await db.fetch(`userBalance_${message.author.id}`),
-                    amountt = [0 , 500];
+                    amountt = 500;
                     if (selfBalance === null) selfBalance = 0;
+                    if(selfBalance = 500) 
+                    deletcomterre.delete()
 
-                if (amountt = selfBalance){ 
+                if (amountt < selfBalance) 
                 var inveb0 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`t tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb0);
-            }
+                
 
-                 var   amountc = [500 , 1000];
+                var deletcomcar = message.channel.send("badge carton acquis")
+                 var   amountc = 1000;
                 if (selfBalance === null) selfBalance = 0;
-
-                if (amountc < selfBalance){ 
+                if(selfBalance > 500) 
+                deletcomcar.delete()
+                if (amountc < selfBalance) 
                  if (selfBalance === null) selfBalance = 0;
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`c tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb1);
-                }
+                
 
-                var   amountf = [1000 , 2000];
+                var deletcomfer = message.channel.send("badge fer acquis")
+                var   amountf = 2000;
                if (selfBalance === null) selfBalance = 0;
-
-               if (amountf < selfBalance){
+               if(selfBalance > 1000) 
+               deletcomfer.delete()
+               if (amountf < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`f tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb2);
-               }
+                
 
                 
-                 var   amountb = [2000 , 4000];
+                var deletcombr = message.channel.send("badge bronze acquis")
+                 var   amountb = 4000;
                 if (selfBalance === null) selfBalance = 0;
-
-                if (amountb < selfBalance){
+                if(selfBalance > 2000) 
+                deletcombr.delete()
+                if (amountb < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`b tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb3);
-                }
+                
 
                 
-                var   amounta = [4000 , 10000];
+                var deletcomarg = message.channel.send("badge argent acquis")
+                var   amounta = 10000;
                if (selfBalance === null) selfBalance = 0;
-
-               if (amounta < selfBalance){
+               if(selfBalance > 4000) 
+               deletcomarg.delete()
+               if (amounta < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`a tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb4);
-            }
+                
 
                 
-                var   amounto = [10000 , 20000];
+                var deletcomor = message.channel.send("badge or acquis")
+                var   amounto = 20000;
                if (selfBalance === null) selfBalance = 0;
-
-               if (amounto < selfBalance){
+               if(selfBalance > 10000) 
+               deletcomor.delete()
+               if (amounto < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`o tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb5);
-               }
+                
 
               
-                var   amountp = [20000 , 50000];
+                var deletcompl = message.channel.send("badge platine acquis")
+                var   amountp = 50000;
                if (selfBalance === null) selfBalance = 0;
-
-               if (amountp < selfBalance){
+               if(selfBalance > 20000) 
+               deletcompl.delete()
+               if (amountp < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`p tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb6);
-            }
+                
 
               
-                var   amountd = [50000 , 200000];
+                var deletcomcar = message.channel.send("badge diamant acquis")
+                var   amountd = 200000;
                if (selfBalance === null) selfBalance = 0;
-               
-
-               if (amountd < selfBalance){
+               if(selfBalance > 50000) 
+               deletcomcar.delete()
+               if (amountd < selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`d tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb7);
-            }
+                
 
                
-                 var   amountl = [200000 , 9000000000];
+                 var   amountl = 200000;
                 if (selfBalance === null) selfBalance = 0;
                 
-                if (amountl < selfBalance) {
+                if (amountl > selfBalance)
                  if (selfBalance === null) selfBalance = 0;
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`l tu as $` , selfBalance )
+                .addField(`tu as $` , selfBalance )
                 .setDescription(setdes)
                 message.channel.send(inveb8);
-                }
+                
             } 
 });
 client.login(token); 

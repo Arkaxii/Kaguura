@@ -1706,7 +1706,7 @@ if (command ==="?setd") {
             if(!setdes) setdes = "aucune description";
 }
            
-     if(command === "inventaire"){
+      if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
 
@@ -1730,7 +1730,6 @@ if (command ==="?setd") {
                 .setDescription(setdes)
                 message.channel.send(inveb);
 
-                if (testBalance === null) testBalance = 0;
                 if (testBalance = amount1)
 
                 var inveb0 = new Discord.RichEmbed()
@@ -1741,7 +1740,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb0);
             
 
-                 if (testBalance === null) testBalance = 0;
                 if (testBalance = amountc)
                 var inveb1 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1751,7 +1749,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb1);
         
 
-                 if (testBalance === null) testBalance = 0;
                if (testBalance = amountf)
                var inveb2 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1761,7 +1758,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb2);
 
                 
-                 if (testBalance === null) testBalance = 0;
                 if (testBalance = amountb)
                 var inveb3 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1771,7 +1767,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb3);
 
                 
-                 if (testBalance === null) testBalance = 0;
                if (testBalance = amounta)
                 var inveb4 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1781,7 +1776,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb4);
 
                 
-                 if (testBalance === null) testBalance = 0;
                if (testBalance = amounto)
                 var inveb5 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1791,7 +1785,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb5);
 
               
-                 if (testBalance === null) testBalance = 0;
                if (testBalance = amountp)
                 var inveb6 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1801,7 +1794,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb6);
 
               
-                 if (testBalance === null) testBalance = 0;
                if (testBalance = amountd)
                 var inveb7 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1811,7 +1803,6 @@ if (command ==="?setd") {
                 message.channel.send(inveb7);
 
                
-                 if (testBalance === null) testBalance = 0;
                 if (testBalance = amountl)
                 var inveb8 = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )

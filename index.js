@@ -1709,7 +1709,7 @@ if (command ==="?setd")
 
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 0 ){break};
+                if ( selfRank  != 0 ) {};
 
                 if (selfRank = 0 ){
 
@@ -1725,7 +1725,7 @@ if (command ==="?setd")
 
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 1 ){break};
+                if ( selfRank  != 1 ){};
 
                 if ( selfRank  = 1 ){
 
@@ -1741,7 +1741,7 @@ if (command ==="?setd")
 
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 4 ){break};
+                if ( selfRank  != 4 ){};
 
                 if (selfRank = 4 ){
 
@@ -1758,7 +1758,7 @@ if (command ==="?setd")
                 
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 10 ){break};
+                if ( selfRank  != 10 ){};
 
                 if (selfRank = 10 ){
                 
@@ -1776,7 +1776,7 @@ if (command ==="?setd")
                 
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 15 ){break};
+                if ( selfRank  != 15 ){};
 
                 if (selfRank = 15){
 
@@ -1793,7 +1793,7 @@ if (command ==="?setd")
                 
                 var  selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 20 ){break};
+                if ( selfRank  != 20 ){};
 
                 if (selfRank = 20 ){
 
@@ -1810,7 +1810,7 @@ if (command ==="?setd")
               
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 25 ){break};
+                if ( selfRank  != 25 ){};
 
                 if (selfRank = 25){
 
@@ -1827,7 +1827,7 @@ if (command ==="?setd")
               
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 30 ){break};
+                if ( selfRank  != 30 ){};
 
                 if (selfRank = 30 ){
 
@@ -1844,7 +1844,7 @@ if (command ==="?setd")
                
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 35 ){break};
+                if ( selfRank  != 35 ){};
 
                 if (selfRank = 35 )
 
@@ -1861,7 +1861,7 @@ if (command ==="?setd")
               
                 var selfRank = await db.fetch(`userInfo.badge_${message.author.id}`);
                 if (selfRank === null) selfRank = 0;
-                if ( selfRank  != 55 ){break};
+                if ( selfRank  != 55 ){};
 
                 if (selfRank = 55 ){
 

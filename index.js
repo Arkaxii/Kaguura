@@ -1847,5 +1847,30 @@ if (command ==="?setd") {
                 message.channel.send(inveb8);
                 
             } 
+	
+	
+	 if(command === "arkapay2"){
+        if(message.author.id !== config.ownerID)            
+        return message.reply("Tu t'attendais a quoi? Cette commande est reserver à mon créateur");
+        let target = message.mentions.members.first();
+        if(!target)
+          return message.reply("Faut mentionner quelqu'un!");
+        let amount = parseInt(args.join('').replace(target, ''));
+         if(isNaN(amount)) 
+         return message.channel.send("Tu n'as pas mis de montant!");
+         let targetBalance = await db.fetch(`testBalance_${target.id}`);
+         if (targetBalance === null) targetBalance = 0;
+         db.add(`testBalance_${target.id}`,amount);
+         message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
+  
+  
+       }
+
+       if(command ==="compt2"){
+        let user = message.mentions.users.first() || message.author;
+        let balance = await db.fetch(`testBalance_${user.id}`);
+        if (balance === null) balance = 0;
+        message.channel.send(`${user.username} - Balance: $${balance}`);
+        }
 });
 client.login(token); 

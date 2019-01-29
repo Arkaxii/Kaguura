@@ -1698,9 +1698,10 @@ if(message.content.startsWith(prefix + "sondage")){
                 **Tu as acheter le badge en légend! GG** `)
                  message.channel.send(b09);
             }
+	/*
 if (command ==="?setd")
             const setdes = args.slice(1).join(' ');
-            if(!setdes) setdes = "aucune description";
+            if(!setdes) setdes = "aucune description";  */
 
             if(command === "inventaire"){
               let  rang = '1';

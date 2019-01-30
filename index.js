@@ -1544,7 +1544,7 @@ if(message.content.startsWith(prefix + "sondage")){
             }
 
 
-            if(message.content.startsWith(prefix + "buy carton")){
+           if(message.content.startsWith(prefix + "buy carton")){
                let amount1 = '500';
                let amountb = '10999';
                let amountlim = '999';
@@ -1557,7 +1557,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
                 
-                if((testBalance > amountlim0 && testBalance < amountlim)){
+                if((testBalance > amountlim0 ) && ( testBalance < amountlim)){
                 return message.channel.send("tu dois acheter le badge terre avant");
                 }
                 if (amount1 > selfBalance)

@@ -1672,7 +1672,7 @@ if(message.content.startsWith(prefix + "sondage")){
                  if(testBalance > amountb )
                  return message.channel.send("Tu l'as deja eu !");
 
-                 if( bronzeBalance > amountlim ){
+                 if( bronzeBalance < amountlim ){
                  return message.channel.send("tu dois acheter le badge bronze avant");
                  }
                 if (amount1 > selfBalance)
@@ -1710,7 +1710,7 @@ if(message.content.startsWith(prefix + "sondage")){
                  if(testBalance > amountb )
                  return message.channel.send("Tu l'as deja eu !");
 
-                 if(argentBalance > amountlim){
+                 if(argentBalance < amountlim){
                  return message.channel.send("tu dois acheter le badge argent avant");
                  }
                 if (amount1 > selfBalance)
@@ -1748,7 +1748,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
 
-                if(orBalance > amountlim){
+                if(orBalance < amountlim){
                 return message.channel.send("tu dois acheter le badge or avant");
             }
                 if (amount1 > selfBalance)
@@ -1786,7 +1786,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
 
-                if(platineBalance > amountlim){
+                if(platineBalance < amountlim){
                 return message.channel.send("tu dois acheter le badge platine avant");
                 }
                 if (amount1 > selfBalance)
@@ -1824,7 +1824,7 @@ if(message.content.startsWith(prefix + "sondage")){
                  if(testBalance > amountb )
                  return message.channel.send("Tu l'as deja eu !");
                  
-                 if(diamantBalance > amountlim){
+                 if(diamantBalance < amountlim){
                  return message.channel.send("tu dois acheter le badge diamant avant");
             }
                   if (amount1 > selfBalance)
@@ -1857,7 +1857,7 @@ if(message.content.startsWith(prefix + "buy legende")){
      if(testBalance > amountb )
      return message.channel.send("Tu l'as deja eu !");
      
-     if(diamantBalance > amountlim){
+     if(diamantBalance < amountlim){
      return message.channel.send("tu dois acheter le badge diamant avant");
 }
       if (amount1 > selfBalance)

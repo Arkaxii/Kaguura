@@ -1714,8 +1714,7 @@ if(message.content.startsWith(prefix + "sondage")){
 }
 
 if (command ==="?setd") {
-            var setdes = args.slice(1).join(' ');
-            if(!setdes) setdes = "aucune description";
+            const setdes = args.slice(1).join(' ');
 }
 
 
@@ -1723,6 +1722,8 @@ if (command ==="?setd") {
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 if (testBalance === null) testBalance = 0;
+                if(!setdes) setdes = "aucune description";
+
 
                  if((testBalance>999 && testBalance<1001)){  
 

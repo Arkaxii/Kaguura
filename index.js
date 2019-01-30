@@ -1512,13 +1512,14 @@ if(message.content.startsWith(prefix + "sondage")){
                 message.channel.send(neuf);
             };
 
-             if(message.content.startsWith(prefix + "buy terre")){
+              if(message.content.startsWith(prefix + "buy terre")){
                let amount1 = '250';
+               let amountb = '999';
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if(( testBalance > 999))
+                if(( testBalance > amountb))
                 return message.channel.send("Tu l'as deja eu !");
                 
                 if (amount1 > selfBalance)
@@ -1544,13 +1545,15 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy carton")){
                let amount1 = '500';
+               let amountb = '10999';
+
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if(testBalance > 10999 )
+                if(testBalance > amountb ){
                 return message.channel.send("Tu l'as deja eu !");
-
+                }
                 if(testBalance>0 && testBalance<999)
                 return message.channel.send("tu dois acheter le badge terre avant");
             
@@ -1575,11 +1578,13 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy fer")){
                let amount1 = '1000';
+               let amountb = '110999';
+
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if(testBalance > 110999 )
+                if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
 
                 if(testBalance>0 && testBalance<10999)
@@ -1605,11 +1610,12 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy bronze")){
                 let   amount1 = '2000';
+                let amountb = '1110999';
                 let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                  if (selfBalance === null) selfBalance = 0;
                  if (testBalance === null) testBalance = 0;
-                 if(testBalance  > 1110999 )
+                 if(testBalance  > amountb )
                  return message.channel.send("Tu l'as deja eu !");
 
                  if(testBalance>0 && testBalance<110999)
@@ -1637,11 +1643,12 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy argent")){
                 let    amount1 = '4000';
+                let amountb = '11110999';
                 let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                  if (selfBalance === null) selfBalance = 0;
                  if (testBalance === null) testBalance = 0;
-                 if(testBalance > 11110999 )
+                 if(testBalance > amountb )
                  return message.channel.send("Tu l'as deja eu !");
 
                  if(testBalance>0 && testBalance<1110999 )
@@ -1669,11 +1676,13 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy or")){
                 let  amount1 = '10000';
+                let amountb = '111110999';
+
                 let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                  if (selfBalance === null) selfBalance = 0;
                  if (testBalance === null) testBalance = 0;
-                 if(testBalance > 111110999 )
+                 if(testBalance > amountb )
                  return message.channel.send("Tu l'as deja eu !");
 
                  if(testBalance>0 && testBalance<11110999  )
@@ -1701,11 +1710,12 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy platine")){
                 let   amount1 = '20000';
+                let amountb = '1111110999';
                 let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if(testBalance > 1111110999 )
+                if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
 
                 if(testBalance>0 && testBalance<111110999 )
@@ -1733,11 +1743,12 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy diamant")){
                 let  amount1 = '50000';
+                let amountb = '11111110999';
                 let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if(testBalance > 11111110999 )
+                if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
 
                 if(testBalance>0 && testBalance<1111110999 )
@@ -1765,11 +1776,12 @@ if(message.content.startsWith(prefix + "sondage")){
 
             if(message.content.startsWith(prefix + "buy légende")){
                 let  amount1 = '200000';
+                let amountb = '111111110999';
                 let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                  if (selfBalance === null) selfBalance = 0;
                  if (testBalance === null) testBalance = 0;
-                 if(testBalance > 11111110999 )
+                 if(testBalance > amountb )
                  return message.channel.send("Tu l'as deja eu !");
                  
                  if(testBalance>0 && testBalance<11111110999 )
@@ -1792,11 +1804,12 @@ if(message.content.startsWith(prefix + "sondage")){
 }
 if(message.content.startsWith(prefix + "buy legende")){
                let  amount1 = '200000';
+               let amountb = '111111110999';
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if(testBalance > 11111110999 )
+                if(testBalance > amountb )
                 return message.channel.send("Tu l'as deja eu !");
                 
                 if(testBalance>0 && testBalance<11111110999 )
@@ -1817,6 +1830,7 @@ if(message.content.startsWith(prefix + "buy legende")){
       regarde dans ton inventaire pour contempler ton nouveau badge !`)
        message.channel.send(b09); 
 }
+
      
 
 if(command === "inventaire"){

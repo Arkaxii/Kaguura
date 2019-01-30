@@ -6,7 +6,7 @@ const db = require('quick.db');
 const ms = require('parse-ms')
 const config = require("./config.json");
 const prefix = '?' 
- 
+
 //information about the bot
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);

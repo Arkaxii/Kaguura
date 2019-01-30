@@ -1512,6 +1512,36 @@ if(message.content.startsWith(prefix + "sondage")){
                 message.channel.send(neuf);
             };
 
+               if(message.content.startsWith(prefix + "buy terre")){
+               let amount1 = '250';
+               let testBalance = await db.fetch(`testBalance_${message.author.id}`);
+               let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+                if (selfBalance === null) selfBalance = 0;
+                if (testBalance === null) testBalance = 0;
+                if(( testBalance > 999))
+                return message.channel.send("Tu l'as deja eu !");
+                
+                if (amount1 > selfBalance)
+                return message.channel.send("Ah ba non tu n'as pas asser ");
+                db.subtract(`userBalance_${message.author.id}`, amount1);
+                db.add(`testBalance_${message.author.id}`, 1000);
+
+
+
+                var b01 = new Discord.RichEmbed()
+                .setColor(0x00FF00)
+                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+                .setTitle('Badge en terre')
+                .setDescription(`
+                **Tu as acheter le badge en terre!**
+                 Fait gaf de ne pas en metre partout! (Sans aucune arière penser bien entendu :p )
+                 Regarde dans ton [?inventaire] pour contempler ton nouveau badge ! `)
+                 message.channel.send(b01);
+
+
+            }
+
+
             if(message.content.startsWith(prefix + "buy carton")){
                let amount1 = '500';
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
@@ -1521,11 +1551,11 @@ if(message.content.startsWith(prefix + "sondage")){
                 if((testBalance > 10999 ))
                 return message.channel.send("Tu l'as deja eu !");
 
-                if((testBalance>0 && testBalance<999)){
+                if((testBalance>0 && testBalance<999))
                 return message.channel.send("tu dois acheter le badge terre avant");
-            }
+            
                 if (amount1 > selfBalance)
-                return message.channel.send("Ah ba non tu n'as pas asser ")
+                return message.channel.send("Ah ba non tu n'as pas asser ");
                 db.subtract(`userBalance_${message.author.id}`, amount1);
                 db.add(`testBalance_${message.author.id}`, 10000);
 
@@ -1552,9 +1582,9 @@ if(message.content.startsWith(prefix + "sondage")){
                 if((testBalance > 110999 ))
                 return message.channel.send("Tu l'as deja eu !");
 
-                if((testBalance>0 && testBalance<10999)){
+                if((testBalance>0 && testBalance<10999))
                 return message.channel.send("tu dois acheter le badge carton avant");
-                }
+                
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
                 db.subtract(`userBalance_${message.author.id}`, amount1);
@@ -1582,9 +1612,9 @@ if(message.content.startsWith(prefix + "sondage")){
                  if((testBalance  > 1110999 ))
                  return message.channel.send("Tu l'as deja eu !");
 
-                 if((testBalance>0 && testBalance<110999)) {
+                 if((testBalance>0 && testBalance<110999)) 
                  return message.channel.send("tu dois acheter le badge fer avant");
-                 }
+                 
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
                 db.subtract(`userBalance_${message.author.id}`, amount1);
@@ -1614,9 +1644,9 @@ if(message.content.startsWith(prefix + "sondage")){
                  if((testBalance > 11110999 ))
                  return message.channel.send("Tu l'as deja eu !");
 
-                 if((testBalance>0 && testBalance<1110999 )){
+                 if((testBalance>0 && testBalance<1110999 ))
                 return message.channel.send("tu dois acheter le badge bronze avant");
-                 }
+                 
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
                 db.subtract(`userBalance_${message.author.id}`, amount1);
@@ -1646,9 +1676,9 @@ if(message.content.startsWith(prefix + "sondage")){
                  if((testBalance > 111110999 ))
                  return message.channel.send("Tu l'as deja eu !");
 
-                 if((testBalance>0 && testBalance<11110999  )){
+                 if((testBalance>0 && testBalance<11110999  ))
                 return message.channel.send("tu dois acheter le badge argent avant");
-            }
+            
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
                 db.subtract(`userBalance_${message.author.id}`, amount1);
@@ -1678,9 +1708,9 @@ if(message.content.startsWith(prefix + "sondage")){
                 if((testBalance > 1111110999 ))
                 return message.channel.send("Tu l'as deja eu !");
 
-                if((testBalance>0 && testBalance<111110999 )){
+                if((testBalance>0 && testBalance<111110999 ))
                 return message.channel.send("tu dois acheter le badge or avant");
-                }
+                
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
                 db.subtract(`userBalance_${message.author.id}`, amount1);
@@ -1710,9 +1740,9 @@ if(message.content.startsWith(prefix + "sondage")){
                 if((testBalance > 11111110999 ))
                 return message.channel.send("Tu l'as deja eu !");
 
-                if((testBalance>0 && testBalance<1111110999 )){
+                if((testBalance>0 && testBalance<1111110999 ))
                 return message.channel.send("tu dois acheter le badge platine avant");
-            }
+            
                 if (amount1 > selfBalance)
                 return message.channel.send("Ah ba non tu n'as pas asser ")
                 db.subtract(`userBalance_${message.author.id}`, amount1);
@@ -1739,9 +1769,9 @@ if(message.content.startsWith(prefix + "sondage")){
                 let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                  if (selfBalance === null) selfBalance = 0;
                  if (testBalance === null) testBalance = 0;
-                 if((testBalance > 11111110999 )){
+                 if((testBalance > 11111110999 ))
                  return message.channel.send("Tu l'as deja eu !");
-                 }
+                 
                  if((testBalance>0 && testBalance<11111110999 ))
                  return message.channel.send("tu dois acheter le badge diamant avant");
                  
@@ -1766,9 +1796,9 @@ if(message.content.startsWith(prefix + "buy legende")){
                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 if (selfBalance === null) selfBalance = 0;
                 if (testBalance === null) testBalance = 0;
-                if((testBalance > 11111110999 )){
+                if((testBalance > 11111110999 ))
                 return message.channel.send("Tu l'as deja eu !");
-                }
+                
                 if((testBalance>0 && testBalance<11111110999 ))
                 return message.channel.send("tu dois acheter le badge diamnt avant");
                 
@@ -1787,6 +1817,7 @@ if(message.content.startsWith(prefix + "buy legende")){
       regarde dans ton inventaire pour contempler ton nouveau badge !`)
        message.channel.send(b09); 
 }
+     
 
 if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);

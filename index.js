@@ -1743,7 +1743,7 @@ if(message.content.startsWith(prefix + "buy legende")){
 
 
 
-            if(command === "inventaire"){
+if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 if (testBalance === null) testBalance = 0;
@@ -1753,7 +1753,7 @@ if(message.content.startsWith(prefix + "buy legende")){
                     var inv = new Discord.RichEmbed()
                     .setAuthor(message.author.username , message.author.avatarURL  )
                     .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                    .addField(`1tu as $` , selfBalance )
+                    .addField(`0tu as $` , selfBalance )
                     .setDescription("Aucune description ")
                     message.channel.send(inv);
                      }
@@ -1768,7 +1768,7 @@ if(message.content.startsWith(prefix + "buy legende")){
                 message.channel.send(invt);
                  }
 
-                 if((testBalance>9999 && testBalance<10001)){  
+                 if((testBalance>9999 && testBalance<11001)){  
 
                     var invc = new Discord.RichEmbed()
                     .setAuthor(message.author.username , message.author.avatarURL  )

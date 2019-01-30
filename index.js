@@ -1512,7 +1512,8 @@ if(message.content.startsWith(prefix + "sondage")){
                 message.channel.send(neuf);
             };
 
-              if(message.content.startsWith(prefix + "buy terre")){
+    
+           if(message.content.startsWith(prefix + "buy terre")){
                let amount1 = '250';
                let amountb = '999';
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
@@ -1831,14 +1832,14 @@ if(message.content.startsWith(prefix + "buy legende")){
        message.channel.send(b09); 
 }
 
-     
 
-if(command === "inventaire"){
+
+            if(command === "inventaire"){
                 var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
                 var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
                 if (testBalance === null) testBalance = 0;
 
-                if((testBalance<1)){ 
+                if((testBalance<999)){ 
 
                     var inv = new Discord.RichEmbed()
                     .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1858,7 +1859,7 @@ if(command === "inventaire"){
                 message.channel.send(invt);
                  }
 
-                 if((testBalance>9999 && testBalance<11001)){  
+                 if((testBalance>1001 && testBalance<11001)){  
 
                     var invc = new Discord.RichEmbed()
                     .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1868,7 +1869,7 @@ if(command === "inventaire"){
                     message.channel.send(invc);
                 }
 
-                if((testBalance>110999 && testBalance<111001)){  
+                if((testBalance>11001 && testBalance<111001)){  
 
                 var invf = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1878,7 +1879,7 @@ if(command === "inventaire"){
                 message.channel.send(invf);
                 }
 
-                if((testBalance>1110999 && testBalance<1111001)){  
+                if((testBalance>111001 && testBalance<1111001)){  
 
                 var invb = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1888,7 +1889,7 @@ if(command === "inventaire"){
                 message.channel.send(invb);
                 }
 
-                if((testBalance>11110999 && testBalance<11111001)){  
+                if((testBalance>1111001 && testBalance<11111001)){  
 
                var inva = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1898,7 +1899,7 @@ if(command === "inventaire"){
                 message.channel.send(inva);
                 }
                 
-            if((testBalance>111110999 && testBalance<111111001)){  
+            if((testBalance>11111001 && testBalance<111111001)){  
 
                 var invo = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1908,7 +1909,7 @@ if(command === "inventaire"){
                 message.channel.send(invo);
             }
                 
-                if((testBalance>1111110999 && testBalance<1111111001)){  
+                if((testBalance>111111001 && testBalance<1111111001)){  
 
                 var invp = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1918,7 +1919,7 @@ if(command === "inventaire"){
                 message.channel.send(invp);
                 }
                 
-                if((testBalance>11111110999 && testBalance<11111111001)){  
+                if((testBalance>1111111001 && testBalance<11111111001)){  
 
                 var invd = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1928,7 +1929,7 @@ if(command === "inventaire"){
                 message.channel.send(invd);
                 }
               
-                if((testBalance>111111110999  && testBalance<111111111001 )){  
+                if((testBalance>11111111001)){  
 
                 var invl = new Discord.RichEmbed()
                 .setAuthor(message.author.username , message.author.avatarURL  )
@@ -1940,7 +1941,6 @@ if(command === "inventaire"){
               
                
                 };
-	
 	
 	 if(command === "arkapay2"){
         if(message.author.id !== config.ownerID)            

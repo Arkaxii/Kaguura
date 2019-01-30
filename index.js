@@ -1512,7 +1512,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 message.channel.send(neuf);
             };
 
-        if(message.content.startsWith(prefix + "buy terre")){
+             if(message.content.startsWith(prefix + "buy terre")){
                let amount1 = '250';
                let testBalance = await db.fetch(`testBalance_${message.author.id}`);
                let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
@@ -1806,6 +1806,17 @@ if(message.content.startsWith(prefix + "buy legende")){
                  return message.channel.send("Ah ba non tu n'as pas asser ")
                  db.subtract(`userBalance_${message.author.id}`, amount1);
                  db.add(`testBalance_${message.author.id}`, 100000000000);
+
+      
+      var b09 = new Discord.RichEmbed()
+      .setColor(0x00FF00)
+      .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+      .setTitle('Badge légende')
+      .setDescription(`
+      **Tu as acheter le badge en légend! GG** 
+      regarde dans ton inventaire pour contempler ton nouveau badge !`)
+       message.channel.send(b09); 
+}
 
 
 if(command === "inventaire"){

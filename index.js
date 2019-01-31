@@ -321,6 +321,7 @@ if(command ==="cancel"){
         randnum = Math.floor(Math.random() * (max - min +1) +min);
     }
      if(command ==="roulette"){
+	selfBalance = await db.fetch(`userBalance_${message.author.id}`);
         let amount = parseInt(args.join(''));
         if(isNaN(amount))
         return message.channel.send("**Fait pas ton radin et défini un montant!**");

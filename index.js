@@ -490,7 +490,7 @@ if(command ==="cancel"){
                 message.channel.send(poke_embed);
             };
 
-            if(command === "pat") {
+            if(message.content.startsWith(prefix + "pat")){
 
                 let member = message.mentions.members.first();
             if(!member)

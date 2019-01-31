@@ -1137,7 +1137,7 @@ if(message.content.startsWith(prefix + "refanime")){
                 if(message.content.startsWith(prefix + "papier")){
                     let amount = 25;
     let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
-if(amount < selfBalance )
+if(amount > selfBalance )
 return message.channel.send("il te faut un minimum de 25$");
                     random();
                     if (randnum == 1){
@@ -1163,7 +1163,7 @@ return message.channel.send("il te faut un minimum de 25$");
         if(message.content.startsWith(prefix + "pierre")){
             let amount = 25;
     let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
-if(amount < selfBalance )
+if(amount > selfBalance )
 return message.channel.send("il te faut un minimum de 25$");
             random();
             if (randnum == 1){
@@ -1191,7 +1191,7 @@ return message.channel.send("il te faut un minimum de 25$");
 if(message.content.startsWith(prefix + "ciseaux")){
     let amount = 25;
     let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
-if(amount < selfBalance )
+if(amount > selfBalance )
 return message.channel.send("il te faut un minimum de 25$");
 random();
 if (randnum == 1){

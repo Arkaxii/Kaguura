@@ -170,6 +170,17 @@ client.on("message", async message => {
 	
      msg = message.content.toLocaleLowerCase();
 
+	    db.add(`globalMessages_${message.author.id}`, 1);
+     db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
+ 
+ 
+     if(message.content.startsWith(prefix + "messages")){
+     let member = message.mentions.members.first() || message.member; 
+     let global = await db.fetch(`globalMessages_${member.id}`);
+     let guild = await db.fetch(`guildMessages_${member.guild.id}_${member.id}`);
+     message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
+     }
+
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )

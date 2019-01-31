@@ -309,6 +309,7 @@ if(command ==="cancel"){
        if (targetBalance === null) targetBalance = 0;
        db.add(`userBalance_${target.id}`,amount);
        message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
+	}
 
  {
      function random(min, max){

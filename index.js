@@ -171,18 +171,7 @@ client.on("message", async message => {
 	
     db.add(`globalmessages_${message.author.id}` , 1);
     db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
-	
 
-    
-    if(message.content.startsWith(prefix + "messages")){
-
-    let member = message.mentions.members.first() || message.member; 
-    let globalm = await db.fetch(`globalmessages_${member.id}`);
-    let guildm = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);
-message.channel.send(`**Message global: \`${globalm}\`\nMessage dans la guild: \`${guildm}\`**` )
-    }
-	
-	
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
     return message.reply("Cette commande est réserver aux Admin");
@@ -2020,6 +2009,14 @@ if((testBalance>11111001 && testBalance<111111001)){
                     if (balance === null) balance = 0;
                     message.channel.send(`${user.username} - Balance: $${balance}`);
                     }
+	
+	    if(message.content.startsWith(prefix + "messages")){
+
+        let member = message.mentions.members.first() || message.member; 
+        let global = await db.fetch(`globalMessages_${member.id}`);
+        let guild = await db.fetch(`guildlMessages_${member.guild.id}_${member.id}`);
+    message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
+        }
             
 
 });

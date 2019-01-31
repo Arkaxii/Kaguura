@@ -1883,27 +1883,6 @@ if(message.content.startsWith(prefix + "buy legende")){
        message.channel.send(b09); 
 }
 
-
-
-db.fetchObject(`description_${message.author.id}`).then(i => {
-
-
-let desc;
-if (i.text){
-    desc = i.text
-}else{
-    desc = "Aucune description"
-}
-
-if(command === "set desc"){
-    if(!args.join(" "))
-    return message.channel.send("Entré une déscription");
-
-    db.updateText(`description_${message.author.id}` , args.join().trim()).then(i =>{
-        message.channel.send("description:" + i.text)
-    })
-}
-
 if(command === "inventaire"){
     var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
     var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
@@ -2019,7 +1998,7 @@ if((testBalance>11111001 && testBalance<111111001)){
     }
   
    
-    }; })
+    }; 
            
                    if(command ==="compt2"){
                     let user = message.mentions.users.first() || message.author;

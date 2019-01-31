@@ -1270,7 +1270,7 @@ if (randnum == 3){
            }
 
 
-if(message.content.startsWith(prefix + "infos")){
+ if(message.content.startsWith(prefix + "infos")){
            let memberInfo = message.mentions.members.first();
 
            if(!memberInfo){
@@ -1288,13 +1288,13 @@ if(message.content.startsWith(prefix + "infos")){
            }else{
          
              var userinfoo = new Discord.RichEmbed()
-             .setAuthor(target.displayName)
-             .setThumbnail(target.user.avatarURL)
+             .setAuthor(memberInfo.displayName)
+             .setThumbnail(memberInfo.user.avatarURL)
              .setDescription("Voici les infos!")
              .setColor(0x00FF00)
-             .addField("Pseudo Discord complet:", `${target.user.username}#${target.user.discriminator}`)
-             .addField("ID:", target.id)
-             .addField("Crée le:", target.user.createdAt)
+             .addField("Pseudo Discord complet:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
+             .addField("ID:", memberInfo.id)
+             .addField("Crée le:", memberInfo.user.createdAt)
          
                  message.channel.send(userinfoo);
            }

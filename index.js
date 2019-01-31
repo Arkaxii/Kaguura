@@ -2009,7 +2009,7 @@ if((testBalance>11111001 && testBalance<111111001)){
                     }
             
    if(message.content.startsWith(prefix + "messages")){
-    let member = message.mentions.member.first() || message.member; 
+    let member = message.mentions.users.first() || message.author;
     let global = await db.fetch(`globalmessages_${member.id}`);
     let guild = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);
 message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )

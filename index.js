@@ -1126,13 +1126,12 @@ if(message.content.startsWith(prefix + "refanime")){
 
                                     }
                                 };
-                                {
+                                                         {
                                 function random(min, max){
                                     min = Math.ceil(1);
                                     max = Math.floor(3);
                                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                                     }      
-         var prefix = '?'       
                 if(message.content.startsWith(prefix + "papier")){
                     random();
                     if (randnum == 1){
@@ -1140,13 +1139,13 @@ if(message.content.startsWith(prefix + "refanime")){
                     }
                     if (randnum == 2){
                         message.reply("Pierre ! *Balance la pierre dans ta figure* Tu a gagnier ... ")
-                     money.updateBal(message.author.id, 50 )
-                message.reply(`**Tu as reçue $50!**`);
+                        db.add(`userBalance_${message.author.id}`, 50);
+                        message.channel.send(`**Tu as reçue $50!**`);
                     }
                     if (randnum == 3){
-                        message.reply("Ciseaux ! ( ?° ?? ?°) Tu as perdu ! ")
-                     money.updateBal(message.author.id, -10 )
-                message.reply(`**Tu as perdu $10!**`);
+                        message.reply("Ciseaux ! ( ͡° ل͜ ͡°) Tu as perdu ! ")
+                        db.subtract(`userBalance_${message.author.id}`, 25);
+                        message.channel.send(`**Aller 25$ pour moi!**`);
                     } }
                 };
                 {
@@ -1155,7 +1154,6 @@ if(message.content.startsWith(prefix + "refanime")){
                             max = Math.floor(3);
                             randnum = Math.floor(Math.random() * (max - min +1) +min);
                             }
-     var prefix = '?'   
         if(message.content.startsWith(prefix + "pierre")){
             random();
             if (randnum == 1){
@@ -1163,24 +1161,23 @@ if(message.content.startsWith(prefix + "refanime")){
             }
             if (randnum == 2){
                 message.reply("Ciseaux ! Tu a gagnier ...*Prend les ciseaux et ...Déconexion* ");
-                money.updateBal(message.author.id, 50 )
-                message.reply(`**Tu as reçue $50!**`);
+                db.add(`userBalance_${message.author.id}`, 50);
+                message.channel.send(`**Tu as reçue $50!**`);
                 }
                 {
             if (randnum == 3){
-                message.reply("papier ! ( ?° ?? ?°) Tu as perdu ! ")
-             money.updateBal(message.author.id, -10 ).then((i) => {  
-                message.reply(`**Tu as perdu $10!**\n**New Balance:** ${i.money}`);
- })
+                message.reply("papier ! ( ͡° ل͜ ͡°) Tu as perdu ! ")
+                db.subtract(`userBalance_${message.author.id}`, 25);
+                message.channel.send("**Aller 25$ pour moi**")
+ }
             } };
-        } } 
+        } 
  {
             function random(min, max){
                 min = Math.ceil(1);
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
                 }
-var prefix = '?'
 if(message.content.startsWith(prefix + "ciseaux")){
 random();
 if (randnum == 1){
@@ -1188,15 +1185,16 @@ if (randnum == 1){
 }
 if (randnum == 2){
     message.reply("Papier ! Tu a gagnier ...*Mange le papier* ")
- money.updateBal(message.author.id, 50 )
-                message.reply(`**Tu as reçue $50!**`);
+    db.add(`userBalance_${message.author.id}`, 50);
+    message.channel.send(`**Tu as reçue $50!**`);
 }
 if (randnum == 3){
-    message.reply("Pierre ! ( ?° ?? ?°) Tu as perdu ! ")
- money.updateBal(message.author.id, -10 ).then((i) => {  
-                message.reply(`**Tu as perdu $10!**\n**New Balance:** ${i.money}`);
- })
-} }
+    message.reply("Pierre ! ( ͡° ل͜ ͡°) Tu as perdu ! ")
+    db.subtract(`userBalance_${message.author.id}`, 25);
+    message.channel.send("**Aller 25$ pour moi**")
+
+ }
+} 
             };
  
  if(message.content.startsWith(prefix + "test")){

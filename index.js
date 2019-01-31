@@ -168,19 +168,6 @@ client.on("message", async message => {
 	
 	 db.add(`globalmessages_${message.author.id}` , 1);
     db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
-	
-	
-    if(command ==="message"){
-    let member = message.mentions.member.first() || message.member; 
-    let global = await db.fetch(`globalmessages_${member.id}`);
-    let guild = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);
-message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
-    }
-
-
-  
-
-     
 
 
  if(command === "rainbow") {
@@ -2021,7 +2008,12 @@ if((testBalance>11111001 && testBalance<111111001)){
                     message.channel.send(`${user.username} - Balance: $${balance}`);
                     }
             
-
+ if(command ==="message"){
+    let member = message.mentions.member.first() || message.member; 
+    let global = await db.fetch(`globalmessages_${member.id}`);
+    let guild = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);
+message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
+    }
 
 });
 client.login(token); 

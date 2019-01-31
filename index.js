@@ -314,6 +314,31 @@ if(command ==="cancel"){
 
      }
 
+	{
+     function random(min, max){
+        min = Math.ceil(1);
+        max = Math.floor(2);
+        randnum = Math.floor(Math.random() * (max - min +1) +min);
+    }
+     if(command ==="roulette"){
+        let amount = parseInt(args.join(''));
+        if(isNaN(amount))
+        return message.channel.send("**Fait pas ton radin et défini un montant!**");
+        if (selfBalance === null) selfBalance = 0;
+        if (amount > selfBalance) 
+        return message.channel.send("**Ne parie pas plus que ce que tu as!**");
+        random();
+
+        if (randnum == 1){
+            message.reply("Charge le pistolet et...PAN! Heureusement que tu avais une casserolle blindée sur la tête! ")
+            db.subtract(`userBalance_${message.author.id}`, amount);
+
+        }
+        if (randnum == 2){
+            message.reply("Charge le pistolet et...Click. Tu as eu de la chance!")
+            db.add(`userBalance_${message.author.id}`, amount);
+        }
+     }}
     
             if(command === "wink") {
 

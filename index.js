@@ -84,6 +84,7 @@ console.log('Done The Watching Setup Completed')
 ?compt: **pour voir à combien s'élève ton compt**
 ?daily: **pour recevoir 500$ par jour**
 ?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 10$**
+?roulette [montant]: **Test ta chance pour gagnier des $!**
 **Jeux:**
 ?8ball: **Pose n'importe quelle question**
 ?refjeux: **trouve à quelle jeux appartien la référence **
@@ -314,18 +315,19 @@ if(command ==="cancel"){
 
      }
 
-	{
+ {
      function random(min, max){
         min = Math.ceil(1);
-        max = Math.floor(2);
+        max = Math.floor(3);
         randnum = Math.floor(Math.random() * (max - min +1) +min);
     }
      if(command ==="roulette"){
-	selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+        selfBalance = await db.fetch(`userBalance_${message.author.id}`);
         let amount = parseInt(args.join(''));
         if(isNaN(amount))
         return message.channel.send("**Fait pas ton radin et défini un montant!**");
         if (selfBalance === null) selfBalance = 0;
+
         if (amount > selfBalance) 
         return message.channel.send("**Ne parie pas plus que ce que tu as!**");
         random();
@@ -338,6 +340,11 @@ if(command ==="cancel"){
         if (randnum == 2){
             message.reply("Charge le pistolet et...Click. Tu as eu de la chance!")
             db.add(`userBalance_${message.author.id}`, amount);
+        }
+        if (randnum == 3){
+            message.reply("Charge le pistolet et...PAN! Heureusement que tu avais une casserolle blindée sur la tête! ")
+            db.subtract(`userBalance_${message.author.id}`, amount);
+
         }
      }}
     

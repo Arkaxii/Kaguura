@@ -2008,7 +2008,7 @@ if((testBalance>11111001 && testBalance<111111001)){
                     message.channel.send(`${user.username} - Balance: $${balance}`);
                     }
             
- if(command ==="message"){
+   if(message.content.startsWith(prefix + "messages")){
     let member = message.mentions.member.first() || message.member; 
     let global = await db.fetch(`globalmessages_${member.id}`);
     let guild = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);

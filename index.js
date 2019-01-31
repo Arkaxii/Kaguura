@@ -160,12 +160,26 @@ userAnswer = "";
 client.on("message", async message => {
     
     if (message.content.indexOf(config.prefix) !== 0) return;
-
-  
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+	
+	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 	
      msg = message.content.toLocaleLowerCase();
+	
+	 db.add(`globalmessages_${message.author.id}` , 1);
+    db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
+	
+	
+    if(command ==="message"){
+    let member = message.mentions.member.first() || message.member; 
+    let global = await db.fetch(`globalmessages_${member.id}`);
+    let guild = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);
+message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
+    }
+
+
+  
+
      
 
 

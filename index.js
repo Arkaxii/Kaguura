@@ -170,11 +170,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 	
      msg = message.content.toLocaleLowerCase();
-	
 
-     db.add(`globalmessages_${message.author.id}` , 1);
-     db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
- 
  
      if(message.content.startsWith(prefix + "messages")){
      let member = message.mentions.members.first() || message.member; 

@@ -1371,7 +1371,7 @@ if(message.content.startsWith(prefix + "sondage")){
                                message.channel.send(reponse[result]);
             }
      
-            if(command === prefix +"shop"){
+            if(command === "shop"){
                 var shoop = new Discord.RichEmbed()
                 .setColor(0x00FF00)
                 .setTitle("Badge")

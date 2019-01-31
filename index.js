@@ -160,7 +160,9 @@ userAnswer = "";
 });
 
 client.on("message", async message => {
-
+	
+db.add(`globalmessages_${message.author.id}` , 1);
+    db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
     
     if (message.content.indexOf(config.prefix) !== 0) return;
 	
@@ -168,9 +170,6 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 	
      msg = message.content.toLocaleLowerCase();
-	
-    db.add(`globalmessages_${message.author.id}` , 1);
-    db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )

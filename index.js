@@ -5,7 +5,6 @@ const money = require('discord-money');
 const db = require('quick.db');
 const ms = require('parse-ms')
 const config = require("./config.json");
-const prefix = '?'
 
 //information about the bot
 client.on('ready', () => {
@@ -123,6 +122,8 @@ il change de couleur toute les minutes
       }})
 
    client.on('message', message => {
+	   const prefix = '?'
+
 	   if(message.content.startsWith(prefix + `invite`)) {
 		   if(!message.channel.guild) return;
                  message.react('🤖')
@@ -159,6 +160,7 @@ userAnswer = "";
 
 client.on("message", async message => {
 	const prefix = '?'
+
     
     if (message.content.indexOf(config.prefix) !== 0) return;
 	

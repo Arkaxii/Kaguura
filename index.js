@@ -4,8 +4,6 @@ const client = new Discord.Client();
 const money = require('discord-money'); 
 const db = require('quick.db');
 const ms = require('parse-ms')
-const config = require("./config.json");
-const prefix = '?' 
 
 //information about the bot
 client.on('ready', () => {
@@ -158,18 +156,31 @@ userAnswer = "";
 });
 
 client.on("message", async message => {
-	const config = require("./config.json");
+  if (message.content.indexOf(prefix) !== 0) return;
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+      
+       msg = message.content.toLocaleLowerCase();
 
- 
-    if (message.content.indexOf(config.prefix) !== 0) return;
+    const ownerID = "246395977450258432"
 
-  
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-	
-     msg = message.content.toLocaleLowerCase();
-     
+    db.fetchObject(`guildPrefix_${message.guild.id}`).then(i =>{
 
+        if(!message.member.hasPermission('ADMINISTRATOR'))
+        return message.channel.send("nop");
+        if(!args.join(" "))
+        return message.channel.send("Si tu veut definire un prixe commence deja par me dire quelle prefixe :p");
+
+        db.updateText(`guildPrefix_${message.guild.id}` , args.join().trim()).then(i => {
+            message.channel.send('Le prefix a été changer en' + i.text);
+        })
+
+let prefix ;
+if (i.text) {
+    prefix = i.text
+}else{
+    prefix = '?'
+}
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
@@ -296,7 +307,7 @@ if(command ==="cancel"){
      }
 	
 	if(command === "arkapay"){
-      if(message.author.id !== config.ownerID)            
+      if(message.author.id !== ownerID)            
       return message.reply("Tu t'attendais a quoi? Cette commande est reserver à mon créateur");
       let target = message.mentions.members.first();
       if(!target)
@@ -1988,7 +1999,7 @@ if(message.content.startsWith(prefix + "buy legende")){
                 };
 	
 	 if(command === "arkapay2"){
-        if(message.author.id !== config.ownerID)            
+        if(message.author.id !== ownerID)            
         return message.reply("Tu t'attendais a quoi? Cette commande est reserver à mon créateur");
         let target = message.mentions.members.first();
         if(!target)

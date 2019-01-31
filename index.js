@@ -161,7 +161,8 @@ userAnswer = "";
 
 client.on("message", async message => {
 	
-
+	 db.add(`globalmessages_${message.author.id}` , 1);
+    db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
      
     if (message.content.indexOf(config.prefix) !== 0) return;
 	
@@ -170,13 +171,12 @@ client.on("message", async message => {
 	
      msg = message.content.toLocaleLowerCase();
 	
-	 db.add(`globalmessages_${message.author.id}` , 1);
-    db.add(`guildlmessages_${message.guild.id}_${message.author.id}` , 1);
+
 	
 
     
-    if(message.content.startsWith(prefix + "messages")){
-        
+      
+if(command === "message"){
     let member = message.mentions.members.first() || message.member; 
     let global = await db.fetch(`globalmessages_${member.id}`);
     let guild = await db.fetch(`guildlmessages_${member.guild.id}_${member.id}`);

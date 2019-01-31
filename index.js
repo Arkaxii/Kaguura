@@ -1128,13 +1128,17 @@ if(message.content.startsWith(prefix + "refanime")){
 
                                     }
                                 };
-                                {
+                           {
                                 function random(min, max){
                                     min = Math.ceil(1);
                                     max = Math.floor(3);
                                     randnum = Math.floor(Math.random() * (max - min +1) +min);
                                     }      
                 if(message.content.startsWith(prefix + "papier")){
+                    let amount = 25;
+    let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+if(amount < selfBalance )
+return message.channel.send("il te faut un minimum de 25$");
                     random();
                     if (randnum == 1){
                         message.reply("Papier ! Ex aequo retente encore ! ")
@@ -1157,6 +1161,10 @@ if(message.content.startsWith(prefix + "refanime")){
                             randnum = Math.floor(Math.random() * (max - min +1) +min);
                             }
         if(message.content.startsWith(prefix + "pierre")){
+            let amount = 25;
+    let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+if(amount < selfBalance )
+return message.channel.send("il te faut un minimum de 25$");
             random();
             if (randnum == 1){
                 message.reply("Pierre ! Ex aequo retente encore ! ")
@@ -1181,6 +1189,10 @@ if(message.content.startsWith(prefix + "refanime")){
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
                 }
 if(message.content.startsWith(prefix + "ciseaux")){
+    let amount = 25;
+    let  selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+if(amount < selfBalance )
+return message.channel.send("il te faut un minimum de 25$");
 random();
 if (randnum == 1){
     message.reply("Ciseaux ! Ex aequo retente encore ! ")

@@ -4,6 +4,8 @@ const client = new Discord.Client();
 const money = require('discord-money'); 
 const db = require('quick.db');
 const ms = require('parse-ms')
+const config = require("./config.json");
+const prefix = '?'
 
 //information about the bot
 client.on('ready', () => {
@@ -156,31 +158,16 @@ userAnswer = "";
 });
 
 client.on("message", async message => {
-  if (message.content.indexOf(prefix) !== 0) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-      
-       msg = message.content.toLocaleLowerCase();
+    
+    if (message.content.indexOf(config.prefix) !== 0) return;
 
-    const ownerID = "246395977450258432"
+  
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+	
+     msg = message.content.toLocaleLowerCase();
+     
 
-    db.fetchObject(`guildPrefix_${message.guild.id}`).then(i =>{
-
-        if(!message.member.hasPermission('ADMINISTRATOR'))
-        return message.channel.send("nop");
-        if(!args.join(" "))
-        return message.channel.send("Si tu veut definire un prixe commence deja par me dire quelle prefixe :p");
-
-        db.updateText(`guildPrefix_${message.guild.id}` , args.join().trim()).then(i => {
-            message.channel.send('Le prefix a été changer en' + i.text);
-        })
-
-let prefix ;
-if (i.text) {
-    prefix = i.text
-}else{
-    prefix = '?'
-}
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )
@@ -307,7 +294,7 @@ if(command ==="cancel"){
      }
 	
 	if(command === "arkapay"){
-      if(message.author.id !== ownerID)            
+      if(message.author.id !== config.ownerID)            
       return message.reply("Tu t'attendais a quoi? Cette commande est reserver à mon créateur");
       let target = message.mentions.members.first();
       if(!target)
@@ -323,7 +310,7 @@ if(command ==="cancel"){
 
      }
 
-
+    
             if(command === "wink") {
 
                 let member = message.mentions.members.first();
@@ -1141,7 +1128,7 @@ if(message.content.startsWith(prefix + "refanime")){
 
                                     }
                                 };
-                                                         {
+                                {
                                 function random(min, max){
                                     min = Math.ceil(1);
                                     max = Math.floor(3);
@@ -1386,7 +1373,7 @@ if(message.content.startsWith(prefix + "sondage")){
                                message.channel.send(reponse[result]);
             }
      
-            if(command === "shop"){
+            if(command === prefix +"shop"){
                 var shoop = new Discord.RichEmbed()
                 .setColor(0x00FF00)
                 .setTitle("Badge")
@@ -1404,7 +1391,7 @@ if(message.content.startsWith(prefix + "sondage")){
 
                 **Badge en or** - 10 000$
 
-                **Badge en Platine** - 20 000$
+                **Badge en platine** - 20 000$
 
                 **Badge en diamant** - 50 000$
 
@@ -1415,14 +1402,14 @@ if(message.content.startsWith(prefix + "sondage")){
 
                 message.channel.send(shoop);
             };
-
-              if(message.content.startsWith(prefix + "badge terre")){
+            
+            if(message.content.startsWith(prefix + "badge terre")){
                 var un = new Discord.RichEmbed()
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle('Badge en terre')
                 .setDescription(`prix = 250$
-                **buy terre pour l'achat**
+                ** [?buy terre] pour l'achat**
 		        `)
                  message.channel.send(un);
              };
@@ -1433,7 +1420,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en carton")
                 .setDescription(`prix = 500$
-                **buy carton pour l'achat**
+                **[?buy carton] pour l'achat**
                 `)
                 message.channel.send(deux);
             };
@@ -1444,7 +1431,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en fer")
                 .setDescription(`prix = 1000$
-                **buy fer pour l'achat**
+                **[?buy fer] pour l'achat**
                 `)
                 message.channel.send(troi);
             };
@@ -1455,7 +1442,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en bronze")
                 .setDescription(`prix = 2000$
-                **buy bronze pour l'achat**
+                **[?buy bronze] pour l'achat**
                 `)
                 message.channel.send(quatre);
             };
@@ -1466,7 +1453,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en argent")
                 .setDescription(`prix = 4000$
-                **buy argent pour l'achat**
+                **[?buy argent] pour l'achat**
                 `)
                 message.channel.send(cinque);
             };
@@ -1477,7 +1464,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en or")
                 .setDescription(`prix = 10 000$
-                **buy or pour l'achat**
+                **[?buy or] pour l'achat**
                 `)
                 message.channel.send(six);
             };
@@ -1488,7 +1475,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en Platine")
                 .setDescription(`prix = 20 000$
-                **buy platine pour l'achat**
+                **[?buy platine] pour l'achat**
                 `)
                 message.channel.send(sept);
             };
@@ -1499,7 +1486,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge en diamant")
                 .setDescription(`prix = 50 000$
-                **buy diamant pour l'achat**
+                **[?buy diamant] pour l'achat**
                 `)
                 message.channel.send(huit);
             };
@@ -1510,7 +1497,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge légende")
                 .setDescription(`prix = 200 000$
-                **buy légende pour l'achat**
+                **[?buy légende] pour l'achat**
                 `)
                 message.channel.send(neuf);
             };
@@ -1520,13 +1507,12 @@ if(message.content.startsWith(prefix + "sondage")){
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
                 .setTitle("Badge légende")
                 .setDescription(`prix = 200 000$
-                **buy légende pour l'achat**
+                **[?buy légende] pour l'achat**
                 `)
                 message.channel.send(neuf);
             };
 
-    
-       if(message.content.startsWith(prefix + "buy terre")){
+           if(message.content.startsWith(prefix + "buy terre")){
                let amount1 = '250';
                let amountb = '999';
 
@@ -1656,7 +1642,6 @@ if(message.content.startsWith(prefix + "sondage")){
                 db.add(`testBalance_${message.author.id}`, 1000000);
                 db.add(`bronzeBalance_${message.author.id}`, 1);
 
-
                 var b04 = new Discord.RichEmbed()
                 .setColor(0x00FF00)
                 .setThumbnail("https://i.imgur.com/w3w1YRs.png")
@@ -1665,11 +1650,7 @@ if(message.content.startsWith(prefix + "sondage")){
                 **Tu as acheter le badge en bronze!** 
                 Regarde dans ton [?inventaire] pour contempler ton nouveau badge ! `)
                 message.channel.send(b04);
-
-
-
             }
-
 
             if(message.content.startsWith(prefix + "buy argent")){
                 let amount1 = '4000';
@@ -1890,136 +1871,133 @@ if(message.content.startsWith(prefix + "buy legende")){
        message.channel.send(b09); 
 }
 
-            if(command === "inventaire"){
-                var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
-                var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
-                if (testBalance === null) testBalance = 0;
 
-                if((testBalance<999)){ 
 
-                    var inv = new Discord.RichEmbed()
-                    .setAuthor(message.author.username , message.author.avatarURL  )
-                    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                    .addField(`0tu as $` , selfBalance )
-                    .setDescription("Aucune description ")
-                    message.channel.send(inv);
-                     }
+if(command === "inventaire"){
+    var selfBalance = await db.fetch(`userBalance_${message.author.id}`);
+    var  testBalance = await db.fetch(`testBalance_${message.author.id}`);
 
-                 if((testBalance>999 && testBalance<1001)){  
+    if((testBalance<999)){ 
+        if (selfBalance === null) selfBalance = 0;
 
-                var invt = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`1tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invt);
-                 }
+        var inv = new Discord.RichEmbed()
+        .setAuthor(message.author.username , message.author.avatarURL  )
+        .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+        .setDescription(`tu as ${selfBalance}$ 
+        Aucune description`)
+        message.channel.send(inv);
+         }
 
-                 if((testBalance>1001 && testBalance<11001)){  
+     if((testBalance>999 && testBalance<1001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-                    var invc = new Discord.RichEmbed()
-                    .setAuthor(message.author.username , message.author.avatarURL  )
-                    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                    .addField(`2tu as $` , selfBalance )
-                    .setDescription("Aucune description" )
-                    message.channel.send(invc);
-                }
+    var invt = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invt);
+     }
 
-                if((testBalance>11001 && testBalance<111001)){  
+     if((testBalance>1001 && testBalance<11001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-                var invf = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`3tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invf);
-                }
+        var invc = new Discord.RichEmbed()
+        .setAuthor(message.author.username , message.author.avatarURL  )
+        .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+        .setDescription(`tu as ${selfBalance}$ 
+        Aucune description`)
+        message.channel.send(invc);
+    }
 
-                if((testBalance>111001 && testBalance<1111001)){  
+    if((testBalance>11001 && testBalance<111001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-                var invb = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`4tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invb);
-                }
+    var invf = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invf);
+    }
 
-                if((testBalance>1111001 && testBalance<11111001)){  
+    if((testBalance>111001 && testBalance<1111001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-               var inva = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`5tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(inva);
-                }
-                
-            if((testBalance>11111001 && testBalance<111111001)){  
+    var invb = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invb);
+    }
 
-                var invo = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`6tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invo);
-            }
-                
-                if((testBalance>111111001 && testBalance<1111111001)){  
+    if((testBalance>1111001 && testBalance<11111001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-                var invp = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`7tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invp);
-                }
-                
-                if((testBalance>1111111001 && testBalance<11111111001)){  
+   var inva = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(inva);
+    }
+    
+if((testBalance>11111001 && testBalance<111111001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-                var invd = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`8tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invd);
-                }
-              
-                if((testBalance>11111111001)){  
+    var invo = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invo);
+}
+    
+    if((testBalance>111111001 && testBalance<1111111001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-                var invl = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.avatarURL  )
-                .setThumbnail("https://i.imgur.com/w3w1YRs.png")
-                .addField(`9tu as $` , selfBalance )
-                .setDescription("Aucune description" )
-                message.channel.send(invl);
-                }
-              
-               
-                };
-	
-	 if(command === "arkapay2"){
-        if(message.author.id !== ownerID)            
-        return message.reply("Tu t'attendais a quoi? Cette commande est reserver à mon créateur");
-        let target = message.mentions.members.first();
-        if(!target)
-          return message.reply("Faut mentionner quelqu'un!");
-        let amount = parseInt(args.join('').replace(target, ''));
-         if(isNaN(amount)) 
-         return message.channel.send("Tu n'as pas mis de montant!");
-         let targetBalance = await db.fetch(`testBalance_${target.id}`);
-         if (targetBalance === null) targetBalance = 0;
-         db.add(`testBalance_${target.id}`,amount);
-         message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
+    var invp = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invp);
+    }
+    
+    if((testBalance>1111111001 && testBalance<11111111001)){  
+        if (selfBalance === null) selfBalance = 0;
+
+    var invd = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invd);
+    }
   
-  
-       }
+    if((testBalance>11111111001)){  
+        if (selfBalance === null) selfBalance = 0;
 
-       if(command ==="compt2"){
-        let user = message.mentions.users.first() || message.author;
-        let balance = await db.fetch(`testBalance_${user.id}`);
-        if (balance === null) balance = 0;
-        message.channel.send(`${user.username} - Balance: $${balance}`);
-        }
+    var invl = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL  )
+    .setThumbnail("https://i.imgur.com/w3w1YRs.png")
+    .setDescription(`tu as ${selfBalance}$ 
+    Aucune description`)
+    message.channel.send(invl);
+    }
+  
+   
+    };
+           
+                   if(command ==="compt2"){
+                    let user = message.mentions.users.first() || message.author;
+                    let balance = await db.fetch(`testBalance_${user.id}`);
+                    if (balance === null) balance = 0;
+                    message.channel.send(`${user.username} - Balance: $${balance}`);
+                    }
+            
+
+
 });
 client.login(token); 

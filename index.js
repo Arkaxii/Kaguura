@@ -6,6 +6,7 @@ const db = require('quick.db');
 const ms = require('parse-ms')
 const config = require("./config.json");
 const prefix = '?'
+const ms = require('ms');
 
 
 //information about the bot
@@ -189,6 +190,25 @@ client.on("message", async message => {
 	
      msg = message.content.toLocaleLowerCase();
 
+	if(command == "time"){
+     let Timer = args[0];
+
+     if(!args[0]){
+       return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h\"");
+     }
+   
+     if(args[0] <= 0){
+       return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h\"");
+     }
+   
+     message.channel.send(":white_check_mark: " + "| Timer lancer pour: " + `${ms(ms(Timer), {long: true})}`)
+   
+     setTimeout(function(){
+       message.channel.send(message.author.toString() + ` le temp est fini!, it lasted: ${ms(ms(Timer), {long: true})}`)
+   
+     }, ms(Timer));
+   }
+	
 
  if(command === "rainbow") {
     if(!message.member.permissions.has('ADMINISTRATOR') )

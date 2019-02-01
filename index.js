@@ -190,11 +190,11 @@ client.on("message", async message => {
 	
      msg = message.content.toLocaleLowerCase();
 
-	if(command == "time"){
+	if(command == "timer"){
      let Timer = args[0];
 
      if(!args[0]){
-       return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h\"");
+       return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h ou d\"");
      }
    
      if(args[0] <= 0){

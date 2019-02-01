@@ -152,7 +152,7 @@ if(message.content.startsWith(prefix + `mp`)) {
     .setTimestamp(sayMessage)
     .setFooter(`Requested By | ${message.author.username}`)
     .setColor("RANDOM")
-    message.ownerID.reply({embed})
+    message.author.send({embed})
 }
    });
 

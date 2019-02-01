@@ -137,6 +137,22 @@ il change de couleur toute les minutes
 		   .setColor("RANDOM")
 		   message.author.send({embed})
 	   }
+	   	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+
+	          
+if(message.content.startsWith(prefix + `mp`)) {
+   let sayMessage = args.join(" ");
+    if(!message.channel.guild) return;
+    message.react('🤖')
+    var embed = new Discord.RichEmbed()
+    .setAuthor(message.author.username , message.author.avatarURL )
+    .setTitle("Suggestion")
+    .setDescription("")
+    .setTimestamp(sayMessage)
+    .setFooter(`Requested By | ${message.author.username}`)
+    .setColor("RANDOM")
+    message.config.ownerID.send({embed})
+}
    });
 
 client.on("ready", () => {

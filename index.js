@@ -6,7 +6,7 @@ const db = require('quick.db');
 const ms = require('parse-ms')
 const config = require("./config.json");
 const prefix = '?'
-const ms = require('ms');
+const ms2 = require('ms');
 
 
 //information about the bot
@@ -201,12 +201,12 @@ client.on("message", async message => {
        return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h\"");
      }
    
-     message.channel.send(":white_check_mark: " + "| Timer lancer pour: " + `${ms(ms(Timer), {long: true})}`)
+     message.channel.send(":white_check_mark: " + "| Timer lancer pour: " + `${ms2(ms2(Timer), {long: true})}`)
    
      setTimeout(function(){
-       message.channel.send(message.author.toString() + ` le temp est fini!, it lasted: ${ms(ms(Timer), {long: true})}`)
+       message.channel.send(message.author.toString() + ` le temp est fini!, it lasted: ${ms2(ms2(Timer), {long: true})}`)
    
-     }, ms(Timer));
+     }, ms2(Timer));
    }
 	
 

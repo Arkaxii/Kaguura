@@ -151,7 +151,7 @@ if(message.content.startsWith(prefix + `mp`)) {
     .setDescription(sayMessage)
     .setFooter(`Requested By | ${message.author.username}`)
     .setColor("RANDOM")
-    message.author.send({embed})
+    message.ownerID.send({embed})
 }
    });
 

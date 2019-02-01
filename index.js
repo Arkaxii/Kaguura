@@ -141,7 +141,7 @@ il change de couleur toute les minutes
 
 	          
 if(message.content.startsWith(prefix + `mp`)) {
-	    var ownerID = "246395977450258432"
+	    var ownerID = "246395977450258432";
    let sayMessage = args.join(" ");
     if(!message.channel.guild) return;
     message.react('🤖')

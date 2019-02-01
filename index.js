@@ -141,6 +141,7 @@ il change de couleur toute les minutes
 
 	          
 if(message.content.startsWith(prefix + `mp`)) {
+	    var ownerID = "246395977450258432"
    let sayMessage = args.join(" ");
     if(!message.channel.guild) return;
     message.react('🤖')
@@ -151,7 +152,7 @@ if(message.content.startsWith(prefix + `mp`)) {
     .setTimestamp(sayMessage)
     .setFooter(`Requested By | ${message.author.username}`)
     .setColor("RANDOM")
-    message.config.ownerID.send({embed})
+    message.ownerID.send({embed})
 }
    });
 

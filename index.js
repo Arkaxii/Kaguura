@@ -177,18 +177,15 @@ cAnswer = "";
 userAnswer = "";
 });
 client.on('guildMemberAdd', member => {
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
 
-if(command == "welcome"){
-    var welc = args.slice(1).join(' ');
-    var welcomechannel = message.mentions.channels.first();
-    if(!welc)
-    message.channel.send("Precisez la phrase de bienvenue");
-    if(!welcomechannel)
-    message.channel.send("mentionner en premier un channel pour les bienvenues")
-
-}
+    let serverTag = member.guild.name
+    const welcomechannel = member.guild.channels.find('name', 'bienvenue')
+    var embed = new Discord.RichEmbed()
+    .setColor('#76D880')
+    .setThumbnail(message.guild.iconURL)
+    .setDescription(`<@${member.user.id}> à rejoint ${serverTag}! Bienvenue à toi !`)
+    return welcomechannel.send({embed})
+});
 
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')

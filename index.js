@@ -186,6 +186,27 @@ client.on('guildMemberAdd', member => {
     .setDescription(`<@${member.user.id}> à rejoint **${serverTag}**! Bienvenue à toi !`)
     return welcomechannel.send({embed})
 });
+client.on('guildMemberAdd', guildMember => {
+
+if(command == "set autorole" ){
+    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")
+    if(!args.join(" ")) return message.channel.send("Veillez mentionner un rôle pour l'auto-Role")
+    db.updateText(`autoRole_${message.guild.id}` , args.join(" ").trim()).then(i =>
+        message.channel.send("Auto-role a été changer avec succès pour :` ${i.text}`")
+        
+    )}
+
+    db.fetchObject(`autoRole_${guildMember.guild.id}`).then(i => {
+        if(!i.text || i.text.toLocaleLowerCase() === 'rien') return;
+        else {
+            try {
+guildMember.addRole(i.text)<--guildMember.addRole(guildMember.guild.roles.find('name' , i.text))
+            
+            } catch (e) {
+                console.log("autorole")
+            }
+      }})
+});
 
 client.on('guildMemberRemove', member => { 
     let serverTag = member.guild.name

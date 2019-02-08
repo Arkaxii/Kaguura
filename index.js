@@ -176,7 +176,25 @@ answered = true;
 cAnswer = "";
 userAnswer = "";
 });
+client.on("guildMemberAdd" , member => {
 
+
+const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+  
+   msg = message.content.toLocaleLowerCase();
+
+   if(command == "set welcome"){
+       var welc = args.slice(1).join(' ');
+       var membre = member.user.username;
+ if(!welc){
+     message.channel.send("pour savoir qui vient d'arriver metter `${membre}` dans votre phrase");
+     member.guild.channels.send(welc);
+
+ }
+   }
+ 
+});
 client.on("message", async message => {
 	
      db.add(`globalMessages_${message.author.id}`, 1);

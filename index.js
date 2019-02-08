@@ -183,7 +183,7 @@ client.on('guildMemberAdd', member => {
     const welcomechannel = member.guild.channels.find("name", "bienvenue")
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
-    .setDescription(`**${user.username}** à rejoint **${serverTag}**! Bienvenue à toi !`)
+    .setDescription(`<@${member.user.id}> à rejoint **${serverTag}**! Bienvenue à toi !`)
     return welcomechannel.send({embed})
 });
 
@@ -192,7 +192,7 @@ client.on('guildMemberRemove', member => {
     const leavechannel = member.guild.channels.find('name', 'bienvenue')
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
-    .setDescription(`**${user.username}** à quitter **${serverTag}**. A la revoyure !`)
+    .setDescription(`<@${member.user.id}> à quitter **${serverTag}**. A la revoyure !`)
     return leavechannel.send({embed})
 }); 
 

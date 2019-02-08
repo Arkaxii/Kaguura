@@ -188,6 +188,17 @@ client.on('guildMemberAdd', member => {
 
 
 });
+
+client.on('guildMemberRemove', member => { 
+    let serverTag = member.guild.name
+    const leavechannel = member.guild.channels.find('name', 'bienvenue')
+    var embed = new Discord.RichEmbed()
+    .setColor('#76D880')
+    .setThumbnail(message.guild.iconURL)
+    .setDescription(`<@${member.user.id}> à quitter ${serverTag}. A la revoyure !`)
+    return leavechannel.send({embed})
+}); 
+
 client.on("message", async message => {
 	
      db.add(`globalMessages_${message.author.id}`, 1);

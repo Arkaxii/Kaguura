@@ -176,24 +176,14 @@ answered = true;
 cAnswer = "";
 userAnswer = "";
 });
-client.on('guildMemberAdd', member => {
 
-    let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find("name", "bienvenue")
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`<@${member.user.id}> à rejoint ${serverTag}! Bienvenue à toi !`)
-    return welcomechannel.send({embed})
+client.on('guildMemberAdd', member => {   
+    member.guild.channels.find("name" , "bienvenue").send(`<@${member.user.id}> à rejoint ${member.guild.name}! Bienvenue à toi !`)
 });
 
-client.on('guildMemberRemove', member => { 
-    let serverTag = member.guild.name
-    const leavechannel = member.guild.channels.find('name', 'bienvenue')
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`<@${member.user.id}> à quitter ${serverTag}. A la revoyure !`)
-    return leavechannel.send({embed})
-}); 
+client.on('guildMemberRemove', member => {  
+    member.guild.channels.find("name" , "bienvenue").send(`<@${member.user.id}> à rejoint ${member.guild.name}! A la revoyure !`)
+});
 
 client.on("message", async message => {
 	

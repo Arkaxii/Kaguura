@@ -176,22 +176,24 @@ answered = true;
 cAnswer = "";
 userAnswer = "";
 });
-client.on("guildMemberAdd" , member => {
+client.on('guildMemberAdd', member => {
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
 
+if(command == "welcome"){
+    var welc = args.slice(1).join(' ');
+    var welcomechannel = message.mentions.channels.first();
+    if(!welc)
+    message.channel.send("Precisez la phrase de bienvenue");
+    if(!welcomechannel)
+    message.channel.send("mentionner en premier un channel pour les bienvenues")
 
-const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-  
-   msg = message.content.toLocaleLowerCase();
+}
 
-   if(command == "set welcome"){
-       var welc = args.slice(1).join(' ');
-       if(!welc)
-           message.channel.send("Precisez la phrase de bienvenue");
-       
-   }
- 
-   member.guild.channels.get('bienvenue').send( member.user.username + welc ); 
+    var embed = new Discord.RichEmbed()
+    .setColor('#76D880')
+    .setDescription(`:inbox_tray: <@${member.user.id}> ${welc} `)
+    return welcomechannel.send({embed})
 
 
 });

@@ -179,14 +179,11 @@ userAnswer = "";
 client.on('guildMemberAdd', member => {
 
     let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find('name', 'bienvenue')
+    const welcomechannel = member.guild.channels.find("name", "bienvenue")
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
-    .setThumbnail(message.guild.iconURL)
     .setDescription(`<@${member.user.id}> à rejoint ${serverTag}! Bienvenue à toi !`)
     return welcomechannel.send({embed})
-
-
 });
 
 client.on('guildMemberRemove', member => { 
@@ -194,7 +191,6 @@ client.on('guildMemberRemove', member => {
     const leavechannel = member.guild.channels.find('name', 'bienvenue')
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
-    .setThumbnail(message.guild.iconURL)
     .setDescription(`<@${member.user.id}> à quitter ${serverTag}. A la revoyure !`)
     return leavechannel.send({embed})
 }); 

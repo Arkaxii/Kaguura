@@ -209,6 +209,14 @@ client.on("message", async message => {
 	
      msg = message.content.toLocaleLowerCase();
 
+	if(command == "set autorole" ){
+    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")
+    if(!args.join(" ")) return message.channel.send("Veillez mentionner un rôle pour l'auto-Role")
+    db.updateText(`autoRole_${message.guild.id}` , args.join(" ").trim()).then(i =>
+        message.channel.send("Auto-role a été changer avec succès pour :` ${i.text}`")
+        
+        )}
+	
 	if(command == "timer"){
      let Timer = args[0];
 

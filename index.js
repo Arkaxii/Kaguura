@@ -185,12 +185,6 @@ client.on('guildMemberAdd', member => {
     .setThumbnail(message.guild.iconURL)
     .setDescription(`<@${member.user.id}> à rejoint ${serverTag}! Bienvenue à toi !`)
     return welcomechannel.send({embed})
-});
-
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`:inbox_tray: <@${member.user.id}> ${welc} `)
-    return welcomechannel.send({embed})
 
 
 });

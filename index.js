@@ -177,58 +177,7 @@ cAnswer = "";
 userAnswer = "";
 });
 
-client.on('guildMemberAdd', member => {
-    client.on("message", async message => {
 
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-
-    if(command == "set autorole"){
-        let roleA = message.mentions.roles.first();
-        if(!roleA)
-          return message.reply("Veuiller mentionner un role valide");
-          return message.channel.send("le role " + roleA + " a été mis en auto role")
-    }
-    })
-    member.addRole(roleA);
-	
-    let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find("name", "bienvenue")
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`<@${member.user.id}> à rejoint **${serverTag}**! Bienvenue à toi !`)
-    return welcomechannel.send({embed})
-});
-client.on('guildMemberAdd', guildMember => {
-
-if(command == "set autorole" ){
-    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")
-    if(!args.join(" ")) return message.channel.send("Veillez mentionner un rôle pour l'auto-Role")
-    db.updateText(`autoRole_${message.guild.id}` , args.join(" ").trim()).then(i =>
-        message.channel.send("Auto-role a été changer avec succès pour :` ${i.text}`")
-        
-    )}
-
-    db.fetchObject(`autoRole_${guildMember.guild.id}`).then(i => {
-        if(!i.text || i.text.toLocaleLowerCase() === 'rien') return;
-        else {
-            try {
-guildMember.addRole(i.text)<--guildMember.addRole(guildMember.guild.roles.find('name' , i.text))
-            
-            } catch (e) {
-                console.log("autorole")
-            }
-      }})
-});
-
-client.on('guildMemberRemove', member => { 
-    let serverTag = member.guild.name
-    const leavechannel = member.guild.channels.find('name', 'bienvenue')
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`<@${member.user.id}> à quitter **${serverTag}**. A la revoyure !`)
-    return leavechannel.send({embed})
-}); 
 
 client.on("message", async message => {
 	
@@ -2142,6 +2091,34 @@ if((testBalance>11111001 && testBalance<111111001)){
      let guild = await db.fetch(`guildMessages_${member.guild.id}_${member.id}`);
      message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
      }
-	
+	  if(command == "set autorole"){
+                        let roleA = message.mentions.roles.first();
+                        if(!roleA)
+                          return message.reply("Veuiller mentionner un role valide");
+                          return message.channel.send("le role " + roleA + " a été mis en auto role")
+                    }
+
 });
+
+client.on('guildMemberAdd', member => {
+
+    let serverTag = member.guild.name
+    const welcomechannel = member.guild.channels.find("name", "bienvenue")
+    member.addRole(roleA);
+    var embed = new Discord.RichEmbed()
+    .setColor('#76D880')
+    .setDescription(`<@${member.user.id}> à rejoint **${serverTag}**! Bienvenue à toi !`)
+    return welcomechannel.send({embed});
+
+});
+
+
+client.on('guildMemberRemove', member => { 
+    let serverTag = member.guild.name
+    const leavechannel = member.guild.channels.find('name', 'bienvenue')
+    var embed = new Discord.RichEmbed()
+    .setColor('#76D880')
+    .setDescription(`<@${member.user.id}> à quitter **${serverTag}**. A la revoyure !`)
+    return leavechannel.send({embed})
+}); 
 client.login(token); 

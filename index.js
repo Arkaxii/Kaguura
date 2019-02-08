@@ -178,7 +178,20 @@ userAnswer = "";
 });
 
 client.on('guildMemberAdd', member => {
+    client.on("message", async message => {
 
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    if(command == "set autorole"){
+        let roleA = message.mentions.roles.first();
+        if(!roleA)
+          return message.reply("Veuiller mentionner un role valide");
+          return message.channel.send("le role " + roleA + " a été mis en auto role")
+    }
+    })
+    member.addRole(roleA);
+	
     let serverTag = member.guild.name
     const welcomechannel = member.guild.channels.find("name", "bienvenue")
     var embed = new Discord.RichEmbed()

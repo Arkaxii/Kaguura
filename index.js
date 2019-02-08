@@ -186,14 +186,14 @@ const command = args.shift().toLowerCase();
 
    if(command == "set welcome"){
        var welc = args.slice(1).join(' ');
-       var membre = member.user.username;
- if(!welc){
-     message.channel.send("pour savoir qui vient d'arriver metter `${membre}` dans votre phrase");
-     member.guild.channels.send(welc);
-
- }
+       if(!welc)
+           message.channel.send("Precisez la phrase de bienvenue");
+       
    }
  
+   member.guild.channels.get('bienvenue').send( member.user.username + welc ); 
+
+
 });
 client.on("message", async message => {
 	

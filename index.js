@@ -280,7 +280,7 @@ if(command ==="cancel"){
 
     if(command === "ping") {
     const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latence de ${m.createdTimestamp - message.createdTimestamp}ms. API Latence de ${Math.round(client.ping)}ms`);
+    m.edit(`Pong! Latence de ` + Math.round(client.ping) + `ms. API Latence de ${Math.round(client.ping)}ms`);
   }
   
   if(command === "say") {

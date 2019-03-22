@@ -473,7 +473,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait un coucou à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** fait un coucou à **${member.displayName}**._`)
                 message.channel.send(wave_embed);
             };
 
@@ -499,7 +499,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** dort sur **${member.displayName}**._Attention aux filet de bave!`)
+                .setDescription(`_**${message.author.username}** dort sur **${member.displayName}**._Attention aux filet de bave!`)
                 message.channel.send(sleep_embed);
             };
 
@@ -524,7 +524,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 	        	.setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** réveille **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** réveille **${member.displayName}**._`)
                 message.channel.send(wake_embed);
             };
 
@@ -551,7 +551,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 	         	.setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** écrase les moustiques qui sont sur **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** écrase les moustiques qui sont sur **${member.displayName}**._`)
                 message.channel.send(slap_embed);
             };
 
@@ -577,7 +577,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** met une bonne grosse patate à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** met une bonne grosse patate à **${member.displayName}**._`)
                 message.channel.send(punch_embed);
             };
 
@@ -603,7 +603,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** poke **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** poke **${member.displayName}**._`)
                 message.channel.send(poke_embed);
             };
 
@@ -628,7 +628,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait pat pat à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** fait pat pat à **${member.displayName}**._`)
                 message.channel.send(pat_embed);
             };            
 
@@ -653,7 +653,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait un bisou à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** fait un bisou à **${member.displayName}**._`)
                 message.channel.send(kiss_embed);
             };  
 
@@ -678,7 +678,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 	        	.setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** veut fair un "massage" à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** veut fair un "massage" à **${member.displayName}**._`)
                 message.channel.send(kill_embed);
             };  
 
@@ -705,7 +705,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
                 message.channel.send(hug_embed);
             };
 

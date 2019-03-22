@@ -448,7 +448,7 @@ if(command ==="cancel"){
                 .setColor('RANDOM')
 		        .setTitle('Roleplay')
                 .setImage(gif)
-                .addField(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
+                .setDescription(`_**${message.author.username}** fait un clin d'oeil à **${member.displayName}**._`)
                 message.channel.send(wink_embed);
             };
 

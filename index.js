@@ -2135,6 +2135,7 @@ if(command === "setleav"){
 
 });
 
+
 client.on("message", async message => {
     let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
@@ -2145,9 +2146,8 @@ client.on("message", async message => {
     .setColor('#76D880')
     .setDescription(`${join}`)
     return welcomechannel.send({embed});
-        });break;
+        }); return
     });
-
 
 
 client.login(token); 

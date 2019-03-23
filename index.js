@@ -2135,7 +2135,10 @@ if(command === "setleav"){
            const join = await db.fetch(`joinMessage_${message.guild.id}`);
 
 });
-client.on('guildMemberAdd', member => {
+client.on("message", async message => {
+    let join = await db.fetch(`joinMessage_${message.guild.id}`);
+
+client.on('guildMemberAdd',  member => {
 
    let serverTag = member.guild.name
 const welcomechannel = member.guild.channels.find("name", "bienvenue")
@@ -2146,6 +2149,7 @@ return welcomechannel.send({embed});
 
 });
 
+});
 
 
 client.login(token); 

@@ -2147,6 +2147,6 @@ return welcomechannel.send({embed});
 
 });
 
-*/
+
 
 client.login(token); 

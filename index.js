@@ -2134,8 +2134,8 @@ if(command === "setleav"){
 }
 
 });
-client.on('guildMemberAdd', member => {
 	client.on("message", async message => {
+client.on('guildMemberAdd', member => {
     let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
    let serverTag = member.guild.name

@@ -2128,7 +2128,7 @@ if(command === "setleav"){
     let newMessage;
     if (args.join(" ").toUpperCase() === 'NONE') newMessage = ''; 
     else newMessage = args.join(" ").trim(); 
-    db.set(`joinMessage_${message.guild.id}`, newMessage)
+    db.set(`leaveMessage_${message.guild.id}`, newMessage)
         func.embed(message.channel, `**Le text d'aurevoir a été mis a jour:**\n > *${args.join(" ").trim()}*`)
 
 }
@@ -2149,5 +2149,19 @@ client.on('guildMemberAdd', member => {
         }); return
     });
 
+
+client.on("message", async message => {
+    if(message.author.bot) return;
+  let leav = await db.fetch(`leaveMessage_${message.guild.id}`)
+client.on('guildMemberRemove', member => { 
+
+let serverTag = member.guild.name
+const leavechannel = member.guild.channels.find('name', 'bienvenue')
+var embed = new Discord.RichEmbed()
+.setColor('#76D880')
+.setDescription(`${leav}`)
+return leavechannel.send({embed})
+}); return
+});
 
 client.login(token); 

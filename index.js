@@ -227,19 +227,7 @@ client.on("message", async message => {
 	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 	
-     msg = message.content.toLocaleLowerCase();
-	
-if (command === "setchannel"){
-    if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') 
-    return func.embed(message.channel, '**Séléctionne un salon** > *?setchannel #salon*')
-    let newChannel;
-if (args.join(" ").toUpperCase() === 'NONE') newChannel = '';
-else newChannel = message.mentions.channels.first().id;
-db.set(`messageChannel_${message.guild.id}`, newChannel).then(i => {
-    funct.embed(message.channel, `**le salon a été mis a jour à ${message.mentions.channels.first()}`)
-});
-}
-	
+     msg = message.content.toLocaleLowerCase();	
 
 	if(command == "set autorole" ){
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")
@@ -2111,6 +2099,19 @@ if((testBalance>11111001 && testBalance<111111001)){
                           return message.channel.send("le role " + roleA + " a été mis en auto role")
                     }
 
+	if (command === "setchannel"){
+    if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') 
+    return func.embed(message.channel, '**Séléctionne un salon** > *?setchannel #salon*')
+    let newChannel;
+if (args.join(" ").toUpperCase() === 'NONE') newChannel = '';
+else newChannel = message.mentions.channels.first().id;
+db.set(`messageChannel_${message.guild.id}`, newChannel).then(i => {
+    funct.embed(message.channel, `**le salon a été mis a jour à ${message.mentions.channels.first()}`)
+})
+}
+
+	
+	
 });
 
 client.on('guildMemberAdd', member => {

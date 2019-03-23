@@ -2137,71 +2137,18 @@ if(command === "setleav"){
 });
 
 client.on('guildMemberAdd', member => {
-        db.fetchObject(`messageChannel_${member.guild.id}`).then(i => {
+    let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
-            // Fetch Welcome Message (DMs)
-            db.fetchObject(`joinMessageDM_${member.guild.id}`).then(o => {
-
-                // DM User
-                if (!o.text) console.log('Error: Join DM Message not set. Please set one using ~setdm <message>'); // This will log in console that a guild didn't set this up, you dont need to include the conosle.log
-                else func.embed(member, o.text.replace('{user}', member).replace('{members}', member.guild.memberCount)) // This is where the embed function comes in, as well as replacing the variables we added earlier in chat.
-
-                // Now, return if no message channel is defined
-                if (!member.guild.channels.get(i.text)) return console.log('Error: Welcome/Leave channel not found. Please set one using ~setchannel #channel') // Again, this is optional. just the console.log not the if statement, we still want to return
-
-                // Fetch the welcome message
-                db.fetchObject(`joinMessage_${member.guild.id}`).then(p => {
-
-                    // Check if they have a join message
-                    if (!p.text) console.log('Error: User Join Message not found. Please set one using ~setwelcome <message>')
-                    else func.embed(member.guild.channels.get(i.text), p.text.replace('{user}', member).replace('{members}', member.guild.memberCount)) // We actually want to send the message.
-
-                })
-
-            })
-
-        })
-
-    })
-
-	
-/*    let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find("name", "bienvenue")
-    member.addRole(roleA);
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`<@${member.user.id}> à rejoint **${serverTag}**! Bienvenue à toi !`)
-    return welcomechannel.send({embed});
+   let serverTag = member.guild.name
+const welcomechannel = member.guild.channels.find("name", "bienvenue")
+member.addRole(roleA);
+var embed = new Discord.RichEmbed()
+.setColor('#76D880')
+.setDescription(`${join}`)
+return welcomechannel.send({embed});
 
 });
 
 */
-client.on('guildMemberRemove', member => { 
-db.fetchObject(`messageChannel_${member.guild.id}`).then(i => {
 
-            // If the channel is not found, return.
-            if (!member.guild.channels.get(i.text)) return console.log('Error: Welcome/Leave channel not found. Please set one using ~setchannel #channel')
-
-            // Fetch Leave Message
-            db.fetchObject(`leaveMessage_${member.guild.id}`).then(o => {
-                
-                // Check if o.text is defined
-                if (!o.text) console.log( 'Error: User leave message not found. Please set one using ~setleave <message>')
-                else func.embed(member.guild.channels.get(i.text), o.text.replace('{user}', member).replace('{members}', member.guild.memberCount)) // Now, send the message.
-
-            })
-
-        })
-
-    })
-
-
-	/*
-	let serverTag = member.guild.name
-    const leavechannel = member.guild.channels.find('name', 'bienvenue')
-    var embed = new Discord.RichEmbed()
-    .setColor('#76D880')
-    .setDescription(`<@${member.user.id}> à quitter **${serverTag}**. A la revoyure !`)
-    return leavechannel.send({embed})
-}); */
 client.login(token); 

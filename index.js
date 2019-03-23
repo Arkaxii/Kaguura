@@ -2175,9 +2175,29 @@ client.on('guildMemberAdd', member => {
 
 });
 
-
+*/
 client.on('guildMemberRemove', member => { 
-    let serverTag = member.guild.name
+db.fetchObject(`messageChannel_${member.guild.id}`).then(i => {
+
+            // If the channel is not found, return.
+            if (!member.guild.channels.get(i.text)) return console.log('Error: Welcome/Leave channel not found. Please set one using ~setchannel #channel')
+
+            // Fetch Leave Message
+            db.fetchObject(`leaveMessage_${member.guild.id}`).then(o => {
+                
+                // Check if o.text is defined
+                if (!o.text) console.log( 'Error: User leave message not found. Please set one using ~setleave <message>')
+                else func.embed(member.guild.channels.get(i.text), o.text.replace('{user}', member).replace('{members}', member.guild.memberCount)) // Now, send the message.
+
+            })
+
+        })
+
+    })
+
+})
+	/*
+	let serverTag = member.guild.name
     const leavechannel = member.guild.channels.find('name', 'bienvenue')
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')

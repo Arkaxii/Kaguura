@@ -2109,6 +2109,16 @@ db.set(`messageChannel_${message.guild.id}`, newChannel)
     func.embed(message.channel, `**le salon a été mis a jour à ${message.mentions.channels.first()} **`)
 }
 
+if (command === "setwelc"){
+    if (!args.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return func.embed(message.channel, '**Please mention a channel**\n > *~setwelcome message*')
+
+    let newMessage;
+    if (args.join(" ").toUpperCase() === 'NONE') newMessage = ''; 
+    else newMessage = args.join(" ").trim(); 
+    db.updateText(`joinMessage_${message.guild.id}`, newMessage)
+        func.embed(message.channel, `**Successfully updated welcome text to:**\n > *${args.join(" ").trim()}*`)
+    
+}
 
 	
 	

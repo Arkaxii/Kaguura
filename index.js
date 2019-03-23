@@ -7,6 +7,7 @@ const ms = require('parse-ms')
 const config = require("./config.json");
 const prefix = '?'
 const ms2 = require('ms');
+const func = require('./function.js'); 
 
 
 //information about the bot

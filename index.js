@@ -2110,23 +2110,62 @@ db.set(`messageChannel_${message.guild.id}`, newChannel)
 }
 
 if (command === "setwelc"){
-    if (!args.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return func.embed(message.channel, '**Please mention a channel**\n > *~setwelcome message*')
+    if (!args.join(" ") && args.join(" ").toUpperCase() !== 'NONE')
+	    return func.embed(message.channel, 'Séléctionne un salon** > *?setchannel #salon*')
 
     let newMessage;
     if (args.join(" ").toUpperCase() === 'NONE') newMessage = ''; 
     else newMessage = args.join(" ").trim(); 
     db.set(`joinMessage_${message.guild.id}`, newMessage)
-        func.embed(message.channel, `**Successfully updated welcome text to:**\n > *${args.join(" ").trim()}*`)
+        func.embed(message.channel, `**Le text de bienvenue a été mis a jour :**\n > *${args.join(" ").trim()}*`)
     
 }
 
+if(command === "setleav"){
+	 if (!args.join(" ") && args.join(" ").toUpperCase() !== 'NONE') 
+		 return func.embed(message.channel, 'Séléctionne un salon** > *?setchannel #salon*') 
+
+    let newMessage;
+    if (args.join(" ").toUpperCase() === 'NONE') newMessage = ''; 
+    else newMessage = args.join(" ").trim(); 
+    db.set(`joinMessage_${message.guild.id}`, newMessage)
+        func.embed(message.channel, `**Le text d'aurevoir a été mis a jour:**\n > *${args.join(" ").trim()}*`)
+
+}
 	
 	
 });
 
-/*client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
+        db.fetchObject(`messageChannel_${member.guild.id}`).then(i => {
 
-    let serverTag = member.guild.name
+            // Fetch Welcome Message (DMs)
+            db.fetchObject(`joinMessageDM_${member.guild.id}`).then(o => {
+
+                // DM User
+                if (!o.text) console.log('Error: Join DM Message not set. Please set one using ~setdm <message>'); // This will log in console that a guild didn't set this up, you dont need to include the conosle.log
+                else func.embed(member, o.text.replace('{user}', member).replace('{members}', member.guild.memberCount)) // This is where the embed function comes in, as well as replacing the variables we added earlier in chat.
+
+                // Now, return if no message channel is defined
+                if (!member.guild.channels.get(i.text)) return console.log('Error: Welcome/Leave channel not found. Please set one using ~setchannel #channel') // Again, this is optional. just the console.log not the if statement, we still want to return
+
+                // Fetch the welcome message
+                db.fetchObject(`joinMessage_${member.guild.id}`).then(p => {
+
+                    // Check if they have a join message
+                    if (!p.text) console.log('Error: User Join Message not found. Please set one using ~setwelcome <message>')
+                    else func.embed(member.guild.channels.get(i.text), p.text.replace('{user}', member).replace('{members}', member.guild.memberCount)) // We actually want to send the message.
+
+                })
+
+            })
+
+        })
+
+    })
+
+	
+/*    let serverTag = member.guild.name
     const welcomechannel = member.guild.channels.find("name", "bienvenue")
     member.addRole(roleA);
     var embed = new Discord.RichEmbed()

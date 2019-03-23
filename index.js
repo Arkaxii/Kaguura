@@ -2135,7 +2135,7 @@ if(command === "setleav"){
 
 });
 
-    client.on('guildMemberAdd', "message", async message => member => {
+    client.on('guildMemberAdd', "message", async message => { member => {
         let join = await db.fetch(`joinMessage_${message.guild.id}`);
     
        let serverTag = member.guild.name
@@ -2144,7 +2144,7 @@ if(command === "setleav"){
     .setColor('#76D880')
     .setDescription(`${join}`)
     return welcomechannel.send({embed});
-        });
+        }});
 
 
 client.login(token); 

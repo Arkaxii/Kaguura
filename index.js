@@ -2115,7 +2115,7 @@ if (command === "setwelc"){
     let newMessage;
     if (args.join(" ").toUpperCase() === 'NONE') newMessage = ''; 
     else newMessage = args.join(" ").trim(); 
-    db.updateText(`joinMessage_${message.guild.id}`, newMessage)
+    db.set(`joinMessage_${message.guild.id}`, newMessage)
         func.embed(message.channel, `**Successfully updated welcome text to:**\n > *${args.join(" ").trim()}*`)
     
 }

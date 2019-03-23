@@ -2134,18 +2134,17 @@ if(command === "setleav"){
 }
 
 });
-	client.on("message", async message => {
-client.on('guildMemberAdd', member => {
-    let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
-   let serverTag = member.guild.name
-const welcomechannel = member.guild.channels.find("name", "bienvenue")
-var embed = new Discord.RichEmbed()
-.setColor('#76D880')
-.setDescription(`${join}`)
-return welcomechannel.send({embed});
-	});
-});
+    client.on('guildMemberAdd', "message", async message => member => {
+        let join = await db.fetch(`joinMessage_${message.guild.id}`);
+    
+       let serverTag = member.guild.name
+    const welcomechannel = member.guild.channels.find("name", "bienvenue")
+    var embed = new Discord.RichEmbed()
+    .setColor('#76D880')
+    .setDescription(`${join}`)
+    return welcomechannel.send({embed});
+        });
 
 
 client.login(token); 

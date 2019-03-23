@@ -2139,7 +2139,6 @@ client.on('guildMemberAdd', member => {
 
    let serverTag = member.guild.name
 const welcomechannel = member.guild.channels.find("name", "bienvenue")
-member.addRole(roleA);
 var embed = new Discord.RichEmbed()
 .setColor('#76D880')
 .setDescription(`${join}`)

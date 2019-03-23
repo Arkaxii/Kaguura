@@ -2195,7 +2195,7 @@ db.fetchObject(`messageChannel_${member.guild.id}`).then(i => {
 
     })
 
-})
+
 	/*
 	let serverTag = member.guild.name
     const leavechannel = member.guild.channels.find('name', 'bienvenue')

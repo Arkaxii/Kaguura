@@ -227,6 +227,18 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 	
      msg = message.content.toLocaleLowerCase();
+	
+if (command === "setchannel"){
+    if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') 
+    return func.embed(message.channel, '**Séléctionne un salon** > *?setchannel #salon*')
+    let newChannel;
+if (args.join(" ").toUpperCase() === 'NONE') newChannel = '';
+else newChannel = message.mentions.channels.first().id;
+db.updateText(`messageChannel_${message.guild.id}`, newChannel).then(i => {
+    funct.embed(message.channel, `**le salon a été mis a jour à ${message.mentions.channels.first()}`)
+})
+}
+	
 
 	if(command == "set autorole" ){
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")

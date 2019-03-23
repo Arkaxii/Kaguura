@@ -2137,6 +2137,7 @@ if(command === "setleav"){
 });
 client.on("message", async message => {
     let join = await db.fetch(`joinMessage_${message.guild.id}`);
+    let leav = await db.fetch(`joinMessage_${message.guild.id}`);
 
 client.on('guildMemberAdd',  member => {
 
@@ -2144,12 +2145,20 @@ client.on('guildMemberAdd',  member => {
 const welcomechannel = member.guild.channels.find("name", "bienvenue")
 var embed = new Discord.RichEmbed()
 .setColor('#76D880')
-.setDescription(`${join}`)
+.setDescription(`${join}`);
 return welcomechannel.send({embed});
 
 });
 
+
+client.on('guildMemberRemove', member => { 
+
+let serverTag = member.guild.name
+const leavechannel = member.guild.channels.find('name', 'bienvenue')
+var embed = new Discord.RichEmbed()
+.setColor('#76D880')
+.setDescription(`${leav}`);
+return leavechannel.send({embed})
+}); 
 });
-
-
 client.login(token); 

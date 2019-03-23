@@ -2132,12 +2132,10 @@ if(command === "setleav"){
         func.embed(message.channel, `**Le text d'aurevoir a été mis a jour:**\n > *${args.join(" ").trim()}*`)
 
 }
-	
-	
-});
+           const join = await db.fetch(`joinMessage_${message.guild.id}`);
 
+});
 client.on('guildMemberAdd', member => {
-    let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
    let serverTag = member.guild.name
 const welcomechannel = member.guild.channels.find("name", "bienvenue")

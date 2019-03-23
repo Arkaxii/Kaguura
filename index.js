@@ -2105,7 +2105,7 @@ if((testBalance>11111001 && testBalance<111111001)){
     let newChannel;
 if (args.join(" ").toUpperCase() === 'NONE') newChannel = '';
 else newChannel = message.mentions.channels.first().id;
-db.set(`messageChannel_${message.guild.id}`, newChannel).
+db.set(`messageChannel_${message.guild.id}`, newChannel)
     funct.embed(message.channel, `**le salon a été mis a jour à ${message.mentions.channels.first()}`)
 }
 

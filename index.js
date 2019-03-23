@@ -2139,7 +2139,7 @@ client.on("message", async message => {
     if(message.author.bot) return;
     let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
-    client.on('guildMemberAdd', member => {    
+client.on('guildMemberAdd', member => {    
        let serverTag = member.guild.name
     const welcomechannel = member.guild.channels.find("name", "bienvenue")
     var embed = new Discord.RichEmbed()
@@ -2149,5 +2149,17 @@ client.on("message", async message => {
         }); return
     });
 
+client.on("message", async message => {
+    if(message.author.bot) return;
+  let leav = await db.fetch(`leaveMessage_${message.guild.id}`)
+client.on('guildMemberRemove', member => { 
 
+let serverTag = member.guild.name
+const leavechannel = member.guild.channels.find('name', 'bienvenue')
+var embed = new Discord.RichEmbed()
+.setColor('#76D880')
+.setDescription(`${leav}`)
+return leavechannel.send({embed})
+}); return
+});
 client.login(token); 

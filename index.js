@@ -2148,7 +2148,7 @@ client.on('guildMemberAdd', member => {
     .setDescription(`${join}`)
     return welcomechannel.send({embed});
 
-}); 
+}); return;
     });
 
 client.login(token); 

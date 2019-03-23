@@ -2124,7 +2124,7 @@ if (command === "setwelc"){
 	
 });
 
-client.on('guildMemberAdd', member => {
+/*client.on('guildMemberAdd', member => {
 
     let serverTag = member.guild.name
     const welcomechannel = member.guild.channels.find("name", "bienvenue")
@@ -2144,5 +2144,5 @@ client.on('guildMemberRemove', member => {
     .setColor('#76D880')
     .setDescription(`<@${member.user.id}> à quitter **${serverTag}**. A la revoyure !`)
     return leavechannel.send({embed})
-}); 
+}); */
 client.login(token); 

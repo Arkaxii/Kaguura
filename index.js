@@ -2135,8 +2135,8 @@ if(command === "setleav"){
 
 });
 
-
 client.on("message", async message => {
+    if(message.author.bot) return;
     let join = await db.fetch(`joinMessage_${message.guild.id}`);
 
     client.on('guildMemberAdd', member => {    

@@ -2381,5 +2381,48 @@ return leavechannel.send({embed});
 
 }); return;
 });
+client.on("message", async message => {
+
+    if (message.content.indexOf(config.prefix) !== 0) return;
+	
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+  
+   msg = message.content.toLocaleLowerCase();
+  
+   db.add(`globalMessages_${message.author.id}`, 1);
+   db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
+
+var dispatcher;
+let splitM = message.content.split(" ");
+if(splitM[0] === '?play') {
+if(splitM.length === 2)
+{
+    if(message.member.voiceChannel)
+    {
+        message.member.voiceChannel.join().then(connection =>{
+            dispatcher = connection.playArbitraryInput(splitM[1]);
+            
+            dispatcher.on('end', e => {
+                dispatcher = undefined;
+            })
+        });
+
+    }
+    else
+    message.reply("rejoin un vocal !").catch(console.error);
+}
+    else
+    message.reply("Probleme dans le param").catch(console.error);
+}
+   else if(splitM[0] === '?pause'){
+       if(dispatcher !== undefined)
+       dispatcher.pause();
+   }
+   else if(splitM[0] === '?resume'){
+    if(dispatcher !== undefined)
+    dispatcher.resume();
+   }
+});
 
 client.login(token); 

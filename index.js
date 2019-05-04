@@ -2431,7 +2431,7 @@ let validate = await ytdl.validateURL(args[0]);
 if (!validate) 
 return message.channel.send("Un url valid serai mieux :p");
 let info = await ytdl.getInfo(args[0]);
-  let VoiceConnection = message.member.voiceChannel.join () 
+     let VoiceConnection = message.member.voiceChannel.join () 
         .then (voiceConnection => { 
         const stream = ytdl (args [0], {filter: 'audioonly'}); 
         streamdispatcher = voiceConnection.playStream ( stream, streamOptions); 

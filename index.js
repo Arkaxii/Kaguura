@@ -2435,7 +2435,7 @@ const command = args.shift().toLowerCase();
     let info = await ytdl.getInfo(args[0]);
          let VoiceConnection = message.member.voiceChannel.join () 
             .then (voiceConnection => { 
-            const stream = ytdl (args [0], {filter: 'audioonly'}); 
+            const stream = ytdl (args [0], {filter: 'audio'}); 
             streamdispatcher = voiceConnection.playStream ( stream, streamOptions); 
             }) 
             .catch (console.error); 

@@ -2405,8 +2405,6 @@ return leavechannel.send({embed});
 
 client.on("message", async message => {
 
-    const ytdl = require('ytdl-core');
-
     if (message.content.indexOf(config.prefix) !== 0) return;
 	
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
@@ -2417,30 +2415,36 @@ const command = args.shift().toLowerCase();
    db.add(`globalMessages_${message.author.id}`, 1);
    db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
 
+var dispatcher;
+let splitM = message.content.split(" ");
+if(splitM[0] === '?play') {
+if(splitM.length === 2)
+{
+    if(message.member.voiceChannel)
+    {
+        message.member.voiceChannel.join().then(connection =>{
+            dispatcher = connection.playArbitraryInput(splitM[1]);
+            
+            dispatcher.on('end', e => {
+                dispatcher = undefined;
+            })
+        });
 
-if(command === "play"){
-
-if(!message.member.voiceChannel)
-return message.channel.send("Va dans un vocal avant");
-if(message.guild.me.voiceChannel)
-return message.channel.send("Je peut pas me cloner !");
-if(!args[0])
-return message.channel.send("C'est mieux avec l'url :p");
-	const streamOptions = {cherche: 0, volume: 1};
-let validate = await ytdl.validateURL(args[0]);
-if (!validate) 
-return message.channel.send("Un url valid serai mieux :p");
-let info = await ytdl.getInfo(args[0]);
-     let VoiceConnection = message.member.voiceChannel.join () 
-        .then (voiceConnection => { 
-        const stream = ytdl (args [0], {filter: 'audioonly'}); 
-        streamdispatcher = voiceConnection.playStream ( stream, streamOptions); 
-        }) 
-        .catch (console.error); 
-message.channel.send(`en cour: ${info.title}`);
-
+    }
+    else
+    message.reply("rejoin un vocal !").catch(console.error);
 }
-	});
-
+    else
+    message.reply("Probleme dans les param").catch(console.error);
+}
+   else if(splitM[0] === '?pause'){
+       if(dispatcher !== undefined)
+       dispatcher.pause();
+   }
+   else if(splitM[0] === '?resume'){
+    if(dispatcher !== undefined)
+    dispatcher.resume();
+   }
+});
 
 client.login(token); 

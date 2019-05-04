@@ -372,6 +372,8 @@ if(message.content.startsWith(prefix + `mp`)) {
 }
 	        if(message.content.startsWith("n'est ce pas Kagura ?")){
         if(message.author.id !== config.ownerID);
+	 let args = message.content.split(" ").slice(1);
+
 var reponse = [
 "Entièrement d'accord",
 "Ah ba sa oui",
@@ -385,7 +387,7 @@ var reponse = [
 
         var result = Math.floor((Math.random() * reponse.length) + 0);
 
-        message.channel.send(reponse);
+        message.channel.send(reponse[result]);
   
   
        }

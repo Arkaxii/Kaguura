@@ -341,7 +341,7 @@ il change de couleur toute les minutes
     
     })
 
-   client.on('message', message => {
+client.on("message", async message => {
 
 	   if(message.content.startsWith(prefix + `invite`)) {
 		   if(!message.channel.guild) return;
@@ -370,6 +370,25 @@ if(message.content.startsWith(prefix + `mp`)) {
     .setColor("RANDOM")
     message.ownerID.send({embed})
 }
+	        if(message.content.startsWith("n'est ce pas Kagura ?")){
+        if(message.author.id !== config.ownerID);
+var reponse = [
+"Entièrement d'accord",
+"Ah ba sa oui",
+"Tu pens comme moi x)",
+"Sa c'est sûr :p",
+"Je peut pas le nier",
+"Ce n'etai pas déja une évidence ?"
+
+
+]
+
+        var result = Math.floor((Math.random() * reponse.length) + 0);
+
+        message.channel.send(reponse);
+  
+  
+       }
    });
 
 client.on("ready", () => {
@@ -609,25 +628,6 @@ if(command ==="cancel"){
        message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
 	}
 	
-     if(message.content.startsWith("n'est ce pas Kagura")){
-        if(message.author.id !== config.ownerID);
-var reponse = [
-"Entièrement d'accord",
-"Ah ba sa oui",
-"Tu pens comme moi x)",
-"Sa c'est sûr :p",
-"Je peut pas le nier",
-"Ce n'etai pas déja une évidence ?"
-
-
-]
-
-        var result = Math.floor((Math.random() * reponse.length) + 0);
-
-        message.channel.send(reponse);
-  
-  
-       }
  {
      function random(min, max){
         min = Math.ceil(1);

@@ -608,7 +608,25 @@ if(command ==="cancel"){
        db.add(`userBalance_${target.id}`,amount);
        message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
 	}
+     if(command === "n'est ce pas Kagura"){
+        if(message.author.id !== config.ownerID);
+var reponse = [
+"Entièrement d'accord",
+"Ah ba sa oui",
+"Tu pens comme moi x)",
+"Sa c'est sûr :p",
+"Je peut pas le nier",
+"Ce n'etai pas déja une évidence ?"
 
+
+]
+
+        var result = Math.floor((Math.random() * reponse.length) + 0);
+
+        message.channel.send(reponse);
+  
+  
+       }
  {
      function random(min, max){
         min = Math.ceil(1);

@@ -608,7 +608,8 @@ if(command ==="cancel"){
        db.add(`userBalance_${target.id}`,amount);
        message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
 	}
-     if(command === "n'est ce pas Kagura"){
+	
+     if(message.content.startsWith(prefix + "n'est ce pas Kagura")){
         if(message.author.id !== config.ownerID);
 var reponse = [
 "Entièrement d'accord",

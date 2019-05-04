@@ -609,7 +609,7 @@ if(command ==="cancel"){
        message.channel.send(`**Tu as donner $${amount} à ${target.user.tag}!**`)
 	}
 	
-     if(message.content.startsWith(prefix + "n'est ce pas Kagura")){
+     if(message.content.startsWith("n'est ce pas Kagura")){
         if(message.author.id !== config.ownerID);
 var reponse = [
 "Entièrement d'accord",

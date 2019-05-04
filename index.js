@@ -2426,12 +2426,17 @@ if(message.guild.me.voiceChannel)
 return message.channel.send("Je peut pas me cloner !");
 if(!args[0])
 return message.channel.send("C'est mieux avec l'url :p");
+	const streamOptions = {cherche: 0, volume: 1};
 let validate = await ytdl.validateURL(args[0]);
 if (!validate) 
 return message.channel.send("Un url valid serai mieux :p");
 let info = await ytdl.getInfo(args[0]);
-let connection = await message.member.voiceChannel.join();
-let dispatcher = await connection.playArbitraryInput(ytdl(args[0], { filter: 'audioonly'}));
+  let VoiceConnection = message.member.voiceChannel.join () 
+        .then (voiceConnection => { 
+        const stream = ytdl (args [0], {filter: 'audioonly'}); 
+        streamdispatcher = voiceConnection.playStream ( stream, streamOptions); 
+        }) 
+        .catch (console.error); 
 message.channel.send(`en cour: ${info.title}`);
 
 }

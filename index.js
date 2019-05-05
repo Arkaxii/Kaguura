@@ -2349,7 +2349,7 @@ const command = args.shift().toLowerCase();
     let info = await ytdl.getInfo(args[0]);
 
     let connection = await message.member.voiceChannel.join ()
-    let dispatcher = await connection.Play (ytdl (args [0],{ filter: `audioonly` }));
+    let dispatcher = await connection.playStream (ytdl (args [0],{ filter: `audioonly` }));
 
     message.channel.send(`en cour: ${info.title}`);
     

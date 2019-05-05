@@ -2336,28 +2336,26 @@ const command = args.shift().toLowerCase();
 
 
    if(command === "play"){
-
+    const streamOptions = {cherche: 0, volume: 1};
     if(!message.member.voiceChannel)
     return message.channel.send("Va dans un vocal avant");
     if(message.guild.me.voiceChannel)
     return message.channel.send("Je peut pas me cloner !");
     if(!args[0])
     return message.channel.send("C'est mieux avec l'url :p");
-        const streamOptions = {cherche: 0, volume: 1};
     let validate = await ytdl.validateURL(args[0]);
     if (!validate) 
     return message.channel.send("Un url valid serai mieux :p");
     let info = await ytdl.getInfo(args[0]);
-         let voiceConnection = message.member.voiceChannel.join () 
-            .then (voiceConnection => { 
-            const stream = ytdl (args [0], {filter: 'audio'}); 
-            streamdispatcher = voiceConnection.playStream ( stream, streamOptions); 
-            }) 
-            .catch (console.error); 
+    let VoiceConnection = message.member.voiceChannel.join () 
+    .then (voiceConnection => { 
+    const stream = ytdl (args [0], {filter: 'audioonly'}); 
+    streamdispatcher = voiceConnection.playStream ( stream, streamOptions); 
+    }) 
+    .catch (console.error); 
     message.channel.send(`en cour: ${info.title}`);
     
     }
         });
-    
 
 client.login(token); 

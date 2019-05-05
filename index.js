@@ -2356,6 +2356,14 @@ const command = args.shift().toLowerCase();
     message.channel.send(`en cour: ${info.title}`);
     
     }
+	   if(command === "leave"){
+        if(!message.member.voiceChannel)
+        return message.channel.send("Tu dois te connecter au vocale pour me déconnecter!");
+        if(!message.guild.me.voiceChannel)
+        return message.channel.send("je ne suis pas connecter");
+        message.guild.me.voiceChannel.leave();
+        message.channel.send("ok");
+    }
         });
 
 client.login(token); 

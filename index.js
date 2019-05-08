@@ -1,7 +1,6 @@
 const token = process.env.token;
 const {Client} = require('discord.js');
 const client = new Client({ disableEveryone: true});
-const config = require("./config.json");
 const prefix = '?'
 
 client.on('warn', console.warn);

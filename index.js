@@ -2,6 +2,8 @@ const token = process.env.token;
 const {Client} = require('discord.js');
 const client = new Client({ disableEveryone: true});
 const prefix = '?'
+const fs = require('fs');
+const ytdl = require('ytdl-core');
 
 client.on('warn', console.warn);
 

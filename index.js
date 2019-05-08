@@ -389,19 +389,21 @@ client.on("message", async message => {
 
      msg = message.content.toLocaleLowerCase();	
 	
-  if (command === "dico"){
-    let chepasécrire = args.join(' ');
+ if (command === "dico"){
+    let chepasécrire = args.slice(1).join(' ');
     if(!chepasécrire)  
     return message.reply("Quelle mot ne sais-tu pas ?");
-    message.reply(`https://www.larousse.fr/dictionnaires/francais/${chepasécrire}`)
+    message.channel.send(`https://www.larousse.fr/dictionnaires/francais/${chepasécrire}`)
 }
 
 if (command === "chercher"){
-    let search = args.join(' ');
+    let search = args.slice(1).join(' ');
     if(!search)  
     return message.reply("Que veux-tu chercher?");
-    message.reply(`http://www.google.fr/#q=${search}`)
+    message.channel.send(`http://www.google.fr/#q=${search}`)
 }
+
+
 
 
 	if(command == "set autorole" ){

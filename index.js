@@ -2,8 +2,6 @@ const token = process.env.token;
 const {Client} = require('discord.js');
 const client = new Client({ disableEveryone: true});
 const prefix = '?'
-const fs = require('fs');
-const ytdl = require('ytdl-core');
 
 client.on('warn', console.warn);
 
@@ -37,7 +35,7 @@ client.on('message' , async  msg =>{
             console.error(`Impossible de rejoindre le voice channel car: ${error}`);
             return msg.channel.send(`je ne peut pas rejoindre le salon: ${error}`);
         }
-        const dispatcher = connection.playStream(ytd(args[1]))
+        const dispatcher = connection.playStream(ytdl(args[1]))
         .on('end' , () => {
             console.log('song ended');
         })

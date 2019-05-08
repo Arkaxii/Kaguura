@@ -14,7 +14,7 @@ client.on('disconnect', () => console.log('I just disconnected, making sure you 
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
-client.on('message' , msg =>{
+client.on('message' , async  msg =>{
 
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;

@@ -4,3 +4,6 @@
 
 }
 
+exports.PREFIX = '?';
+
+exports.GOOGLE_API_KEY = 'AIzaSyAiEurzyZ6qh2jb07gqIucfeGvPiF-55oA';

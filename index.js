@@ -4,6 +4,10 @@ const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const token = process.env.token;
 
+const PREFIX = '?';
+
+const GOOGLE_API_KEY = 'AIzaSyAiEurzyZ6qh2jb07gqIucfeGvPiF-55oA';
+
 const client = new Client({ disableEveryone: true });
 
 const youtube = new YouTube(GOOGLE_API_KEY);

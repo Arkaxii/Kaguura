@@ -5,7 +5,7 @@ const token = process.env.token;
 
 const PREFIX = '?';
 
-const GOOGLE_API_KEY = 'AIzaSyAiEurzyZ6qh2jb07gqIucfeGvPiF-55oA';
+const GOOGLE_API_KEY = 'AIzaSyC4HZSo3soVcNZTSDLiQstgbBgVHWlvmlU';
 
 const client = new Client({ disableEveryone: true });
 

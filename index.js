@@ -388,6 +388,20 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 
      msg = message.content.toLocaleLowerCase();	
+	
+	if (command === "dico"){
+    let chepasécrire = args.slice(1).join(' ');
+    if(!chepasécrire)  
+    return message.reply("Quelle mot ne sais-tu pas ?");
+    message.reply(`https://www.larousse.fr/dictionnaires/francais/${chepasécrire}`)
+}
+
+if (command === "chercher"){
+    let search = args.slice(1).join(' ');
+    if(!search)  
+    return message.reply("Que veux-tu chercher?");
+    message.reply(`http://www.google.fr/#q=${search}`)
+}
 
 	if(command == "set autorole" ){
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")

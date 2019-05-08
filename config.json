@@ -1,4 +1,4 @@
-
-exports.PREFIX = '?';
-
-exports.GOOGLE_API_KEY = 'AIzaSyAiEurzyZ6qh2jb07gqIucfeGvPiF-55oA';
+{ 
+    "prefix" : "?",
+        "ownerID": "246395977450258432"
+  }

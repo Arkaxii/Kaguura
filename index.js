@@ -355,7 +355,7 @@ client.on("message", async message => {
 
 
            if (msg.startsWith(prefix + "quiz" )){
-               number = 9;
+               number = 18;
                var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                switch(random){
                 case 1: message.channel.send ("Que ce qu'es le mot Tellurique: \n1 - Qualifie des planètes similaires a la Terre \n2 - Un minerai extrait de roche \n3 - Un mouvement spirituelle \n4 - Obi wan kenobi "); cAnswer = "1";  break; 
@@ -367,7 +367,18 @@ client.on("message", async message => {
                    case 7: message.channel.send ("Quel l’équivalent du pape au Tibet ? \n1 - Le dalalama \n2 - L'Alpaga \n3 - L'Alpagïatelle \n4 - Le dallai lama");cAnswer = "4" ; break;
                    case 8: message.channel.send ("De combien de syllabes est composé un alexandrin ? \n1 - 4 \n2 - 8 \n3 - 6 \n4 - 12");cAnswer = "4" ;break;
                    case 9: message.channel.send ("Comment appelle-t-on la lumière qui se rapproche le plus de la lumière du soleil ?  \n1 - La lumière jaune \n2 - Les UV \n3 - La lumière blanche \n4 - La lumière ");cAnswer = "3" ; break ;
-               }
+                   case 10: message.channel.send ("Quel était le nom du programme spatial qui visait à envoyer le premier homme sur la lune ? \n1 - Spoutnik  \n2 - Voyager 1 \n3 - Apollo 11 \n4 - L'Homme n'a jamais marché sur la lune, c'est un mensonge de la NASA !");cAnswer = "3" ;break;
+                   case 11: message.channel.send ("Quel révolutionnaire et grand orateur a déclaré en 1792 : “De l’audace, encore de l’audace, toujours de l’audace.” \n1 - Saint-Juste \n2 - Danton \n3 - Robespierre \n4 - Marat");cAnswer = "2" ;break;
+                   case 12: message.channel.send ("Selon la légende, comment le pape Adrien IV est mort en 1159 ?\n1 - En avalant une mouche \n2 - En se cognant contre une porte \n3 - En tombant d'un balcon \n4 - En chutant de chevale");cAnswer = "1" ;break;
+                   case 13: message.channel.send ("Qui est le dieu du Soleil dans l'ancienne Egypte ? \n1 - Seth \n2 - Ramsès \n3 - Reshep  \n4 - Râ / Rê");cAnswer = "4" ;break;
+                   case 14: message.channel.send ("Quel a été le premier nom du jeu de boules ? \n1 - Le por███ 👀 \n2 - La pétanque \n3 - Le Boulingrins \n4 - Bocce");cAnswer = "3" ;break;
+                   case 15: message.channel.send ("Les champignons compte plus de 50 000 espèces. Combient sont comestible?\n1 - Quelque dizaine \n2 - Quelque centaine \n3 - Quelque miliers \n4 - La réponse 4");cAnswer = "2" ;break;
+                   case 16: message.channel.send ("Sur quelle échelle est éxprimée l'intensité des tremblement de terre? \n1 - L'échelle de Trilling \n2 - L'échelle de Richter \n3 - L'échelle de Beaufort \n4 - L'échelle de Chuck norris");cAnswer = "2" ;break;
+                   case 17: message.channel.send ("En Ecosse un lac porte le nom de:  \n1 - Lake \n2 - See \n3 - Loch \n4 - Water");cAnswer = "3" ;break;
+                   case 18: message.channel.send ("Les habitant de la Nouvelle-Guinée s'appellent: \n1 - Les Massaïs \n2 - Les Maoris \n3 - Les Papous \n4 - Les Gilnéen");cAnswer = "3" ;break;
+
+               
+	       }
 
                 answered = false;
                quizUser = message.author;

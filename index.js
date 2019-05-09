@@ -389,18 +389,33 @@ client.on("message", async message => {
 
      msg = message.content.toLocaleLowerCase();	
 	
+
   if (command === "dico"){
-    const chepasécrire = args.join(" ");
-    if(!chepasécrire)  
-    return message.reply("Quelle mot ne sais-tu pas ?");
-    message.channel.send(`https://www.larousse.fr/dictionnaires/francais/${chepasécrire}`);
+    const chepasécriree = args.join(" ");
+    if(!chepasécriree)  
+    return message.reply("Je ne peut pas t'aider si tu ne met rien");
+    message.channel.send(`https://www.larousse.fr/dictionnaires/francais/${chepasécriree}`);
 }
 
 if (command === "chercher"){
     const search = args.join(" ");
     if(!search)  
-    return message.reply("Que veux-tu chercher?");
+    return message.reply("Je ne peut pas t'aider si tu ne met rien");
     message.channel.send(`http://www.google.fr/#q=${search}`);
+}
+
+if (command === "a-f"){
+    const chepasdir = args.join(" ");
+    if(!chepasdir)  
+    return message.reply("Je ne peut pas t'aider si tu ne met rien");
+    message.channel.send(`https://www.larousse.fr/dictionnaires/anglais-francais/${chepasdir}`);
+}
+
+if (command === "f-a"){
+    const chepasdire = args.join(" ");
+    if(!chepasdire)  
+    return message.reply("Je ne peut pas t'aider si tu ne met rien");
+    message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
 

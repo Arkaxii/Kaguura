@@ -8,6 +8,9 @@ const config = require("./config.json");
 const prefix = '?'
 const ms2 = require('ms');
 const func = require('./function.js'); 
+const language = require('./langOptions');
+const translate = require('google-translate-api');
+const speech = require('./messages');
 
 
 //information about the bot

@@ -429,12 +429,16 @@ if (command === "f-a"){
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
-
-
   if(command === "addrole") {
 
     let sayMessage = args.slice(1).join(' ');
+    const event = {
+        MESSAGE_REACTION_ADD: 'messageReactionAdd',
+        MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
+    };
+    const { d: data } = event;
     let roleAd = message.mentions.roles.first();
+    const user = client.users.get(data.user_id);
     const member = message.guild.members.get(user.id);
 
     if(!roleAd)
@@ -446,9 +450,6 @@ if (command === "f-a"){
         message.react("🤖")
     }).catch(function(){    
     }); 
-    const event = {
-        MESSAGE_REACTION_ADD: 'messageReactionAdd',
-    };
        if (event.t === "messageReactionAdd") {
         member.addRole(roleAd);
     } else {
@@ -456,7 +457,10 @@ if (command === "f-a"){
     }
 
   }
-
+	
+	
+	
+	
 	if(command == "timer"){
      let Timer = args[0];
 

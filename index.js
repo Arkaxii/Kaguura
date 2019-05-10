@@ -429,13 +429,15 @@ if (command === "f-a"){
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
-   if(command === "addrole") {
+  
+
+  if(command === "addrole") {
 
     let sayMessage = args.slice(1).join(' ');
     let roleAd = message.mentions.roles.first();
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");
-	       message.delete().catch(O_o=>{}); 
+    message.delete().catch(O_o=>{}); 
     message.channel.send(` ${roleAd} ${sayMessage}`).then(async msg =>{
         await  message.react("🤖")
     })
@@ -443,10 +445,6 @@ if (command === "f-a"){
      const reaction = collected.first();
      switch(reaction.emoji.name){
          case '🤖':
-         if (message.member.roles.has(roleAd)){
-             msg.delet(2000);
-             return message.channel.send("Tu as déja se role");
-         }
          message.member.addRole(roleAd).catch(err => {
              console.log(err);
              return message.channel.send(`Erreur: **${err.message}**`);

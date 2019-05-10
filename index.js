@@ -442,7 +442,7 @@ if (command === "f-a"){
         await  message.react("🤖")
     })
  .then(collected => {
-     const reaction = collected.first();
+     let reaction = collected.first();
      switch(reaction.emoji.name){
          case '🤖':
          message.member.addRole(roleAd)

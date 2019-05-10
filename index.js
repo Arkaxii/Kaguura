@@ -2414,7 +2414,6 @@ if(command ==="cancel"){
     
    exports.run = async (client, message, args, config) => {
 
-                const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
                 const command = args.shift().toLowerCase();
 
                 if(command === "daily"){

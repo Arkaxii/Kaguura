@@ -445,8 +445,10 @@ if (command === "f-a"){
         message.react("🤖")
     }).catch(function(){    
     }); 
-    
-       if (event.t === "MESSAGE_REACTION_ADD") {
+    const event = {
+        MESSAGE_REACTION_ADD: 'messageReactionAdd',
+    };
+       if (event.t === "messageReactionAdd") {
         member.addRole(roleAd);
     } else {
         member.removeRole(roleAd);

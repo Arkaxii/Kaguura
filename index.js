@@ -435,7 +435,6 @@ if (command === "f-a"){
     let roleAd = message.mentions.roles.first();
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");
-    message.delete().catch(O_o=>{}); 
     message.channel.send(` ${roleAd} ${sayMessage}`).then(async msg =>{
         await  message.react("🤖")
     })

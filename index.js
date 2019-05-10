@@ -431,11 +431,12 @@ if (command === "f-a"){
 
 
 
-
   if(command === "addrole") {
 
     let sayMessage = args.slice(1).join(' ');
     let roleAd = message.mentions.roles.first();
+    const member = message.guild.members.get(user.id);
+
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");
 

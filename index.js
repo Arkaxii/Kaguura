@@ -548,7 +548,7 @@ if(command ==="cancel"){
      }
 
 
-if(commmand ==="daily"){
+if(command ==="daily"){
 
      let timeout = 86400000 // 24 hours in milliseconds, change if you'd like.
      let amount = 500

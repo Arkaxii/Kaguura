@@ -430,9 +430,10 @@ if (command === "f-a"){
 }
 
 
-if(command === "addrole") {
 
-    const sayMessage = args.join(" ");
+  if(command === "addrole") {
+
+    let sayMessage = args.slice(1).join(' ');
     let roleAd = message.mentions.roles.first();
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");

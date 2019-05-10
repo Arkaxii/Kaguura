@@ -441,11 +441,6 @@ if (command === "f-a"){
     message.delete().catch(O_o=>{}); 
     message.channel.send( roleAd + sayMessage)
     message.react('🤖')
-    if (event.t === "MESSAGE_REACTION_ADD") {
-        member.addRole(roleAd);
-    } else {
-        member.removeRole(roleAd);
-    }
 
   }
 

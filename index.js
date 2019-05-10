@@ -435,7 +435,6 @@ if (command === "f-a"){
 
     let sayMessage = args.slice(1).join(' ');
     let roleAd = message.mentions.roles.first();
-	   await message.delete().catch(O_o=>{}); 
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");
   

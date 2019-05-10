@@ -431,8 +431,7 @@ if (command === "f-a"){
 
   
 
-
-  if(command === "addrole") {
+ if(command === "addrole") {
 
     let sayMessage = args.slice(1).join(' ');
     let roleAd = message.mentions.roles.first();
@@ -445,16 +444,22 @@ if (command === "f-a"){
      const reaction = collected.first();
      switch(reaction.emoji.name){
          case '🤖':
+         if (message.member.roles.has(roleAd)){
+             msg.delet(2000);
+             return message.channel.send("Tu as déja se role");
+         }
          message.member.addRole(roleAd).catch(err => {
              console.log(err);
              return message.channel.send(`Erreur: **${err.message}**`);
          });
+         message.channel.send(`Tu t'es ajouter le role ${roleAd}!`).then(m => m.delete(3000));
+         msg.delete();
          
      }
  })
- message.delete().catch(O_o=>{}); 
 
   }
+
 
 
    

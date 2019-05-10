@@ -430,13 +430,23 @@ if (command === "f-a"){
 }
 
 
-	if(command == "set autorole" ){
-    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("vous ne pouvez pas utiliser cette commande")
-    if(!args.join(" ")) return message.channel.send("Veillez mentionner un rôle pour l'auto-Role")
-    db.updateText(`autoRole_${message.guild.id}` , args.join(" ").trim()).then(i =>
-        message.channel.send("Auto-role a été changer avec succès pour :` ${i.text}`")
+if(command === "addrole") {
 
-        )}
+    const sayMessage = args.join(" ");
+    let rolerain = message.mentions.roles.first();
+    if(!roleAd)
+      return message.reply("Veuiller mentionner un role valide");
+
+    message.delete().catch(O_o=>{}); 
+    message.channel.send( rolerain + sayMessage)
+    message.react('🤖')
+    if (event.t === "MESSAGE_REACTION_ADD") {
+        member.addRole(roleAd);
+    } else {
+        member.removeRole(roleAd);
+    }
+
+  }
 
 	if(command == "timer"){
      let Timer = args[0];

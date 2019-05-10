@@ -429,32 +429,33 @@ if (command === "f-a"){
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
-  if(command === "addrole") {
+   if(command === "addrole") {
 
     let sayMessage = args.slice(1).join(' ');
-    const event = {
-        MESSAGE_REACTION_ADD: 'messageReactionAdd',
-        MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
-    };
-    const { d: data } = event;
     let roleAd = message.mentions.roles.first();
-    const user = client.users.get(data.user_id);
-    const member = message.guild.members.get(user.id);
-
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");
-
     message.delete().catch(O_o=>{}); 
-    message.channel.send(` ${roleAd} ${sayMessage}`)
-    .then(function(message){
-        message.react("🤖")
-    }).catch(function(){    
-    }); 
-       if (event.t === "messageReactionAdd") {
-        member.addRole(roleAd);
-    } else {
-        member.removeRole(roleAd);
-    }
+    message.channel.send(` ${roleAd} ${sayMessage}`).then(async msg =>{
+        await  message.react("🤖")
+    })
+ .then(collected => {
+     const reaction = collected.first();
+     switch(reaction.emoji.name){
+         case '🤖':
+         if (message.member.roles.has(roleAd)){
+             msg.delet(2000);
+             return message.channel.send("Tu as déja se role");
+         }
+         message.member.addRole(roleAd).catch(err => {
+             console.log(err);
+             return message.channel.send(`Erreur: **${err.message}**`);
+         });
+         message.channel.send(`Tu t'es ajouter le role ${roleAd}!`).then(m => m.delete(3000));
+         msg.delete();
+         
+     }
+ })
 
   }
 	

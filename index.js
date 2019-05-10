@@ -433,12 +433,12 @@ if (command === "f-a"){
 if(command === "addrole") {
 
     const sayMessage = args.join(" ");
-    let rolerain = message.mentions.roles.first();
+    let roleAd = message.mentions.roles.first();
     if(!roleAd)
       return message.reply("Veuiller mentionner un role valide");
 
     message.delete().catch(O_o=>{}); 
-    message.channel.send( rolerain + sayMessage)
+    message.channel.send( roleAd + sayMessage)
     message.react('🤖')
     if (event.t === "MESSAGE_REACTION_ADD") {
         member.addRole(roleAd);

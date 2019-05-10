@@ -431,6 +431,7 @@ if (command === "f-a"){
 
 
 
+
   if(command === "addrole") {
 
     let sayMessage = args.slice(1).join(' ');
@@ -439,8 +440,17 @@ if (command === "f-a"){
       return message.reply("Veuiller mentionner un role valide");
 
     message.delete().catch(O_o=>{}); 
-    message.channel.send( roleAd + sayMessage)
-    message.react('🤖')
+    message.channel.send(` ${roleAd} ${sayMessage}`)
+    .then(function(message){
+        message.react("🤖")
+    }).catch(function(){    
+    }); 
+    
+       if (event.t === "MESSAGE_REACTION_ADD") {
+        member.addRole(roleAd);
+    } else {
+        member.removeRole(roleAd);
+    }
 
   }
 

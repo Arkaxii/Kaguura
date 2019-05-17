@@ -502,7 +502,7 @@ if(command ==="cancel"){
     if(command === "ping") {
     const m = await message.channel.send("Ping?");
  /* m.edit(`Pong! Latence de ${m.createdTimestamp - message.createdTimestamp} ms. API Latence de ${Math.round(client.ping)}ms`); */
-	    message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");    
+	    message.channel.send(`Ton ping est de\` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de \` ${Math.round(client.ping)} \` ms`);    
     }
 
   if(command === "say") {

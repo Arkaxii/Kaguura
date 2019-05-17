@@ -500,9 +500,10 @@ if(command ==="cancel"){
 }
 
     if(command === "ping") {
-    const m = await message.channel.send("Ping?");
- /* m.edit(`Pong! Latence de ${m.createdTimestamp - message.createdTimestamp} ms. API Latence de ${Math.round(client.ping)}ms`); */
-	  m.edit(`Ton ping est de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
+    const m = await message.channel.send(":red_circle: ");
+	    m.edit(`:red_circle: :red_circle: `);
+	    m.edit(`:red_circle: :red_circle: :red_circle: `);
+	  m.edit(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
     }
 
   if(command === "say") {

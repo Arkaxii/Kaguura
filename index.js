@@ -334,20 +334,20 @@ client.on('ready', () => {
 
 
          if(message.content.startsWith("mais ou est le respect ?")){
-            message.channel.send("Il est bon" + {files: [
-                {
-                  attachment: "https://i.imgur.com/J2qrXHK.gif",
-                  name: "respect.png"
-                }
-              ]});
-                          message.channel.send("Il est bon https://i.imgur.com/J2qrXHK.gif ")
+            let respect = new Discord.RichEmbed()
+            .setTitle(`Il est bon`)
+            .setImage("https://i.imgur.com/J2qrXHK.gif")
+
+                          message.channel.send(respect);
         }
 
-        if(message.content.startsWith("mais ou est le respect ?")){
-            message.channel.send("Il est bon https://i.imgur.com/J2qrXHK.gif ")
+        if(message.content.startsWith("Mais ou est le respect ?")){
+            let respecta = new Discord.RichEmbed()
+            .setTitle(`Il est bon`)
+            .setImage("https://i.imgur.com/J2qrXHK.gif")
+
+                          message.channel.send(respecta);
         }
-
-
      });
   
   client.on("ready", () => {

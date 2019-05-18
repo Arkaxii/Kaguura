@@ -532,8 +532,8 @@ if(command ==="cancel"){
 }
 
     if(command === "ping") {
-    const m = await message.channel.send("▇┈┈ ");
-	    m.edit(`▇▇┈ `);
+    const m = await message.channel.send("▇▒▒");
+	    m.edit(`▇▇▒ `);
 	    m.edit(`▇▇▇ `);
 	  m.edit(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
     }

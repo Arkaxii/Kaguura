@@ -26,7 +26,6 @@ client.on('diamantBalance_', () => { console.log('diamantBalance_!'); console.lo
 client.on('legendeBalance_', () => { console.log('legendeBalance_!'); console.log(client.settings.all()) });
 
 
-
 //information about the bot
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);

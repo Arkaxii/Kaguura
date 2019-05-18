@@ -8,6 +8,24 @@ const config = require("./config.json");
 const prefix = '?'
 const ms2 = require('ms');
 const func = require('./function.js'); 
+const Quick = require ( ' quick.db-plus ' ) ;   
+let db = new Quick.db('database');
+const guildDb = new Quick.db('Data');
+client . settings =  guildDb ;
+client.on('globalMessages_', () => { console.log('globalMessages_'); console.log(client.settings.all()) });
+client.on('guildMessages_', () => { console.log('guildMessages_'); console.log(client.settings.all()) });
+client.on('userBalance_', () => { console.log('userBalance_!'); console.log(client.settings.all()) });
+client.on('testBalance_', () => { console.log('testBalance_!'); console.log(client.settings.all()) });
+client.on('terreBalance_', () => { console.log('terreBalance_!'); console.log(client.settings.all()) });
+client.on('cartonBalance_', () => { console.log('cartonBalance_!'); console.log(client.settings.all()) });
+client.on('ferBalance_', () => { console.log('ferBalance_!'); console.log(client.settings.all()) });
+client.on('bronzeBalance_', () => { console.log('bronzeBalance_!'); console.log(client.settings.all()) });
+client.on('argentBalance_', () => { console.log('argentBalance_!'); console.log(client.settings.all()) });
+client.on('orBalance_', () => { console.log('orBalance_!'); console.log(client.settings.all()) });
+client.on('platineBalance_', () => { console.log('platineBalance_!'); console.log(client.settings.all()) });
+client.on('diamantBalance_', () => { console.log('diamantBalance_!'); console.log(client.settings.all()) });
+client.on('legendeBalance_', () => { console.log('legendeBalance_!'); console.log(client.settings.all()) });
+
 
 
 //information about the bot

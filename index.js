@@ -332,11 +332,6 @@ client.on('ready', () => {
   
          }
 
-         const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-         const command = args.shift().toLowerCase();
-         if(command == "mais ou est le respect ?"){
-             message.channel.send("Il est bon https://i.imgur.com/J2qrXHK.gif ")
-         }
      });
   
   client.on("ready", () => {
@@ -451,7 +446,9 @@ if (command === "f-a"){
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
-  
+if(command == "mais ou est le respect ?"){
+    message.channel.send("Il est bon https://i.imgur.com/J2qrXHK.gif ")
+}
 
   if(command === "addrole") {
 

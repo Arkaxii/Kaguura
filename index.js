@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token;
 const money = require('discord-money'); 
-const db = require('quick.db');
 const ms = require('parse-ms')
 const config = require("./config.json");
 const prefix = '?'

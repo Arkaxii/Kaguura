@@ -2440,35 +2440,44 @@ if(command ==="cancel"){
 
     
 
-function play(connection, message){
+function Play(connection, message){
     var server = servers[message.guild.id];
     server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
     server.dispatcher.on("end", function()  {
-        if (serveur.queue[0]) play(connection, message);
-        else connection.dispatcher();
-    });
+        if (serveur.queue[0]) {
+        play(connection, message);
+        }
+        else{
+             connection.dispatcher();
+    }});
 }
        if (command === "play"){
 
-           if(!args[1])
-               message.channel.send("link une vidéo");
-           
-           if(!message.member.voiceChannel)
-               message.channel.send("connecte toi");
-               
-           
-           if(!serves[message.guild.id]) servers[message.guild.id] = {
-               queue: []
-           };
-           var server = servers[message.guild.id];
-           ServiceUIFrameContext.queue.push(args[1]);
-           if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
-               play(connection, message);
-           })
+if(message.member.voiceChannel){
+
+    if(!message.guild.voiceConnection){
+
+        if(!serveur[message.guild.id]){
+
+        servers[message.guild.id] = {queue: []}
+    }
+    message.member.voiceChannel.join()
+    .then(connection =>{
+        var server = servers[message.guild.id];
+    message.reply("Succes")
+    server.queue.push(args);
+    Play(connection, message);
+    })
+
+          }
+
+       }
+       else{
+           message.reply("Tu dois être dans un salon vocale!");
        }
     
-
+    }
 
 
 

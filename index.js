@@ -1585,8 +1585,17 @@ if(command ==="cancel"){
                 };
     
      if(message.content.startsWith(prefix + "test")){
-        message.reply( message.author + ` TEEST`);
-                 }
+        const truk = args.join(" ");
+        if(!truk)  
+        return message.reply("meh");
+
+        var tess = new Discord.RichEmbed()
+
+        .setDescription(`https://www.linternaute.fr/dictionnaire/fr/definition/${truk}`)
+        
+
+            message.channel.send(tess);                
+         }
     
                    if(message.content.startsWith(prefix + "avatar")){
     

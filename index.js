@@ -2464,9 +2464,9 @@ if(message.member.voiceChannel){
     }
     message.member.voiceChannel.join()
     .then(connection =>{
-        var server = servers[message.guild.id];
+        var serveur = servers[message.guild.id];
     message.reply("Succes")
-    server.queue.push(args);
+    serveur.queue.push(args);
     Play(connection, message);
     })
 

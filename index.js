@@ -2445,7 +2445,7 @@ function Play(connection, message){
     server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
     server.dispatcher.on("end", function()  {
-        if (serveur.queue[0]) {
+        if (server.queue[0]) {
         play(connection, message);
         }
         else{
@@ -2464,9 +2464,9 @@ if(message.member.voiceChannel){
     }
     message.member.voiceChannel.join()
     .then(connection =>{
-        var serveur = servers[message.guild.id];
+        var server = serveurs[message.guild.id];
     message.reply("Succes")
-    serveur.queue.push(args);
+    server.queue.push(args);
     Play(connection, message);
     })
 

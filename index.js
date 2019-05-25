@@ -2451,13 +2451,13 @@ function play(connection, message){
 }
        if (command === "play"){
 
-           if(!args[1]){
+           if(!args[1])
                message.channel.send("link une vidéo");
-           return; }
-           if(!message.member.voiceChannel){
+           
+           if(!message.member.voiceChannel)
                message.channel.send("connecte toi");
-               return;
-           }
+               
+           
            if(!serves[message.guild.id]) servers[message.guild.id] = {
                queue: []
            };
@@ -2474,7 +2474,7 @@ function play(connection, message){
 
 
 
-       
+
     
        if(command === "play1"){
         const streamOptions = {cherche: 0, volume: 1};

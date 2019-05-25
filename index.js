@@ -2458,7 +2458,7 @@ if(message.member.voiceChannel){
 
     if(!message.guild.voiceConnection){
 
-        if(!server[message.guild.id]){
+        if(!servers[message.guild.id]){
 
         servers[message.guild.id] = {queue: []}
     }

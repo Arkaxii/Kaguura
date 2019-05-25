@@ -2436,6 +2436,7 @@ if(command ==="cancel"){
        if(command === "play"){
 
         const streamOptions = {cherche: 0, volume: 1};
+        const broadcast = client.createVoiceBroadcast();
 
         if(!message.member.voiceChannel)
         return message.channel.send("Va dans un vocal avant");

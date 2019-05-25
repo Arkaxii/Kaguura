@@ -2422,20 +2422,61 @@ if(command ==="cancel"){
     
         const ytdl = require('ytdl-core');
     
-        if (message.content.indexOf(config.prefix) !== 0) return;
+    if (message.content.indexOf(config.prefix) !== 0) return;
     
-        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     
        msg = message.content.toLocaleLowerCase();
     
        db.add(`globalMessages_${message.author.id}`, 1);
        db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
+
+
+
+
+
+       var servers = {};
+
     
+
+function play(connection, message){
+    var server = servers[message.guild.id];
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+    server.queue.shift();
+    server.dispatcher.on("end", function()  {
+        if (serveur.queue[0]) play(connection, message);
+        else connection.dispatcher();
+    });
+}
+       if (command === "play"){
+
+           if(!args[1]){
+               message.channel.send("link une vidéo");
+           return; }
+           if(!message.member.voiceChannel){
+               message.channel.send("connecte toi");
+               return;
+           }
+           if(!serves[message.guild.id]) servers[message.guild.id] = {
+               queue: []
+           };
+           var server = servers[message.guild.id];
+           ServiceUIFrameContext.queue.push(args[1]);
+           if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+               play(connection, message);
+           })
+       }
     
+
+
+
+
+
+
+       
     
-    
-       if(command === "play"){
+       if(command === "play1"){
         const streamOptions = {cherche: 0, volume: 1};
         if(!message.member.voiceChannel)
         return message.channel.send("Va dans un vocal avant");

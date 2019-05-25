@@ -2419,72 +2419,21 @@ if(command ==="cancel"){
     });
     
     client.on("message", async message => {
-    
+
+        
         const ytdl = require('ytdl-core');
     
     if (message.content.indexOf(config.prefix) !== 0) return;
     
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-    
-       msg = message.content.toLocaleLowerCase();
-    
+        
        db.add(`globalMessages_${message.author.id}`, 1);
        db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
 
 
-
-
-
-       const servers = {};
-       const server = servers[message.guild.id];
     
-
-function Play(connection, message){
-
-    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
-    server.queue.shift();
-    server.dispatcher.on("end", function()  {
-        if (server.queue[0]) {
-        play(connection, message);
-        }
-        else{
-             connection.dispatcher();
-    }});
-}
-       if (command === "play"){
-
-if(message.member.voiceChannel){
-
-    if(!message.guild.voiceConnection){
-
-        if(!servers[message.guild.id]){
-
-        servers[message.guild.id] = {queue: []}
-    }
-    message.member.voiceChannel.join()
-    .then(connection =>{
-    message.reply("Succes")
-    server.queue.push(args);
-    Play(connection, message);
-    })
-
-          }
-
-       }
-       else{
-           message.reply("Tu dois être dans un salon vocale!");
-       }
-    
-    }
-
-
-
-
-
-
-    
-       if(command === "play1"){
+       if(command === "play"){
         const streamOptions = {cherche: 0, volume: 1};
         if(!message.member.voiceChannel)
         return message.channel.send("Va dans un vocal avant");

@@ -2436,12 +2436,12 @@ if(command ==="cancel"){
 
 
 
-       var servers = {};
-
+       const servers = {};
+       const server = servers[message.guild.id];
     
 
 function Play(connection, message){
-    var server = servers[message.guild.id];
+
     server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
     server.dispatcher.on("end", function()  {
@@ -2464,7 +2464,6 @@ if(message.member.voiceChannel){
     }
     message.member.voiceChannel.join()
     .then(connection =>{
-        var server = servers[message.guild.id];
     message.reply("Succes")
     server.queue.push(args);
     Play(connection, message);

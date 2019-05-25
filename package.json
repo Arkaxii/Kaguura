@@ -33,7 +33,7 @@
     "quick.db-plus": "^0.1.3-build",
     "randomcolor": "^0.5.3",
     "sequelize": "^5.8.1",
-    "sqlite3": "^4.0.4",
+    "sqlite3": "^4.0.8",
     "string-similarity": "^3.0.0",
     "tar": "^4.4.8",
     "uws": "^100.0.1",

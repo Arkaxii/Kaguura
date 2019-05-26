@@ -463,26 +463,7 @@ if (command === "f-a"){
 }
 
 
-  if(command === "addrole") {
-
-    let sayMessage = args.slice(1).join(' ');
-    let roleAd = message.mentions.roles.first();
-    if(!roleAd)
-      return message.reply("Veuiller mentionner un role valide");
   
-    message.channel.send(` ${roleAd} ${sayMessage}`).then(async msg =>{
-        await  message.react("🤖")
-    })
- .then(collected => {
-     let reaction = collected.first();
-     switch(reaction.emoji.name){
-         case '🤖':
-         message.member.addRole(roleAd)
-
-     }
- })
-
-  }
 
 
    
@@ -521,15 +502,6 @@ if(!rolerain)
 	     message.channel.send(`le role ${rolerain} a été definit comme rainbow`)
 }
 
-if(command ==="cancel"){
-    if(!message.member.permissions.has('ADMINISTRATOR') )
-    return message.reply("Cette commande est réserver aux Admin");
-    let rolerain = message.mentions.roles.first();
-    if(!rolerain)
-      return message.reply("Veuiller mentionner un role avec le rainbow actif");
-           rolerain.setColor('RANDOM')
-           message.channel.send(`le role ${rolerain} n'a plus le rainbow actif`)
-}
 
     if(command === "ping") {
     const m = await message.channel.send("▇═══ 25%");
@@ -2368,12 +2340,7 @@ if(command ==="cancel"){
          let guild = await db.fetch(`guildMessages_${member.guild.id}_${member.id}`);
          message.channel.send(`**Message global: \`${global}\`\nMessage dans la guild: \`${guild}\`**` )
          }
-          if(command == "set autorole"){
-                            let roleA = message.mentions.roles.first();
-                            if(!roleA)
-                              return message.reply("Veuiller mentionner un role valide");
-                              return message.channel.send("le role " + roleA + " a été mis en auto role")
-                        }
+
     
         if (command === "setchannel"){
         if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') 
@@ -2507,7 +2474,7 @@ if(command ==="cancel"){
             client.on("message", async message => {
 
 
-            if(message.content.startsWith(prefix + "roletest")){
+            if(message.content.startsWith(prefix + "addrole")){
  
                 if(!message.member.permissions.has('ADMINISTRATOR') )
                 return message.reply("Cette commande est réserver aux Admin");

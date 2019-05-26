@@ -2507,7 +2507,7 @@ if(command ==="cancel"){
             client.on("message", async message => {
 
 
-            if(message.content.startsWith(prefix + "test")){
+            if(message.content.startsWith(prefix + "roletest")){
  
                 if(!message.member.permissions.has('ADMINISTRATOR') )
                 return message.reply("Cette commande est réserver aux Admin");

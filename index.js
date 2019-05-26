@@ -1574,7 +1574,7 @@ if(!rolerain)
                        
                         await reaction.remove(user)
 
-                      await  message.delete(p1)
+                         message.delete(p1)
                         
                         var p2 = new Discord.RichEmbed()
                         .setAuthor("Page `[2]` ")

@@ -1586,7 +1586,7 @@ if(command ==="cancel"){
     
      if(message.content.startsWith(prefix + "test")){
  
-        var p1 = new Discord.RichEmbed()
+        const p1 = new Discord.RichEmbed()
 
         .setAuthor("Page `[1]` ")
         .setDescription("  qsdf ")
@@ -1604,7 +1604,7 @@ if(command ==="cancel"){
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
                 
-                        p1.edit(p2)
+                        p1.edit(p2);
                     }
                 })
 

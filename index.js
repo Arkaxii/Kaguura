@@ -1582,27 +1582,10 @@ if(command ==="cancel"){
     
      }
     } 
-                };
+                }; 
 
-                if(message.content.startsWith(prefix + "test")){
-                    const embedrec = message.embeds.setTitle("bruh");
-                    message.channel.send(embedrec)
-                    .then(message => {
-                        message.react("⏩")
-              
-                        client.on('messageReactionAdd', (reaction, user) =>{
-    
-                            if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-    
-                                const exembed = new Discord.RichEmbed(embedrec).setTitle(`teeest`);
 
-                                message.channel.send(exembed);
-                            }
-                        })
-                    })
-                }
-
-     if(message.content.startsWith(prefix + "test1")){
+     if(message.content.startsWith(prefix + "test")){
  
         const p1 = new Discord.RichEmbed()
 
@@ -1615,8 +1598,9 @@ if(command ==="cancel"){
                 message.react("⏩")
                 client.on('messageReactionAdd', (reaction, user) =>{
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                        await messageReaction.remove("⏩")
                         
-                        var p2 = new Discord.RichEmbed()
+                        var p2 = new Discord.RichEmbed() 
 
                         .setAuthor("Page `[2]` ")
                         .setDescription("  blblblblblblbl ")

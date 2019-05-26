@@ -1585,16 +1585,32 @@ if(command ==="cancel"){
                 };
     
      if(message.content.startsWith(prefix + "test")){
-        const truk = args.join(" ");
-        if(!truk)  
-        return message.reply("meh");
+ 
+        var p1 = new Discord.RichEmbed()
 
-        var tess = new Discord.RichEmbed()
+        .setAuthor("Page `[1]` ")
+        .setDescription("  qsdf ")
+        .setFooter("Page `[2]` ===>")
 
-        .setDescription(`https://www.linternaute.fr/dictionnaire/fr/definition/${truk}`)
-        
+            message.channel.send(p1)
+            .then(message => {
+                message.react("⏩")
+                client.on('messageReactionAdd', (reaction, user) =>{
+                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                        message.delete();
 
-            message.channel.send(tess);                
+                        var p2 = new Discord.RichEmbed()
+
+                        .setAuthor("Page `[1]` ")
+                        .setDescription("  qsdf ")
+                        .setFooter("Page `[2]` ===>")
+                
+                            message.channel.send(p2)
+
+                    }
+                })
+
+            })
          }
     
                    if(message.content.startsWith(prefix + "avatar")){

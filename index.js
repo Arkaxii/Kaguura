@@ -1586,7 +1586,7 @@ if(command ==="cancel"){
 
 
 
-     if(message.content.startsWith(prefix + "test1")){
+     if(message.content.startsWith(prefix + "test")){
  
         const p1 = new Discord.RichEmbed()
         .setAuthor("Page `[1]` ")
@@ -1596,9 +1596,9 @@ if(command ==="cancel"){
             .then(message => {
                 message.react("⏩")
 
-                client.on('messageReactionAdd', (reaction, author) =>{
+                client.on('messageReactionAdd', (reaction, user) =>{
                 
-                    if (reaction.emoji.name === "⏩" && author.id !== client.author.id) {
+                    if (reaction.emoji.name === "⏩" && user.id === client.author.id) {
                 
                         message.delete();
                         

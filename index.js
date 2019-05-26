@@ -2517,7 +2517,7 @@ if(command ==="cancel"){
                     .then(message => {
                         message.react("⏩")
                     
-                        client.on('messageReactionAdd', (reaction, user) =>{
+                        client.on('messageReactionAdd', async (reaction, user) =>{
                         
                             if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                                

@@ -2529,7 +2529,7 @@ if(command ==="cancel"){
                             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                                
                                 reaction.remove(user)
-                               const m = await message.channel.send("Role ajouter!");
+                               const m = message.channel.send("Role ajouter!");
                                 message.member.addRole(rolegive)
                                 m.delete(1000)                            
                             }

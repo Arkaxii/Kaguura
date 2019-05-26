@@ -1568,19 +1568,19 @@ if(!rolerain)
             .then(message => {
                 message.react("⏩")
             
-                client.on('messageReactionAdd', (reaction, user) =>{
+                client.on('messageReactionAdd',async (reaction, user) =>{
                 
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                        
-                        reaction.remove(user)
+                        await reaction.remove(user)
 
-                        message.delete(p1)
+                      await  message.delete(p1)
                         
                         var p2 = new Discord.RichEmbed()
                         .setAuthor("Page `[2]` ")
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
-                        message.channel.send(p2);return;
+                        message.channel.send(p2);
                       
                     }
                 })

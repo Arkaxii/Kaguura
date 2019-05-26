@@ -1601,9 +1601,9 @@ if(command ==="cancel"){
 
                         var p2 = new Discord.RichEmbed()
 
-                        .setAuthor("Page `[1]` ")
-                        .setDescription("  qsdf ")
-                        .setFooter("Page `[2]` ===>")
+                        .setAuthor("Page `[2]` ")
+                        .setDescription("  blblblblblblbl ")
+                        .setFooter("Page `[3]` ===>")
                 
                             message.channel.send(p2)
 

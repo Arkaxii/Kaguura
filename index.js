@@ -2504,5 +2504,39 @@ if(command ==="cancel"){
         }
             });
 
+            client.on("message", async message => {
+
+
+            if(message.content.startsWith(prefix + "test")){
+ 
+                const p1 = new Discord.RichEmbed()
+                .setAuthor("Page `[1]` ")
+                .setDescription("  qsdf ")
+                .setFooter("Page `[2]` ===>")
+                    message.channel.send(p1)
+                    .then(message => {
+                        message.react("⏩")
+                    
+                        client.on('messageReactionAdd', (reaction, user) =>{
+                        
+                            if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                               
+                               await reaction.remove(user)
+        
+                                message.delete(p1)
+                                
+                                var p2 = new Discord.RichEmbed()
+                                .setAuthor("Page `[2]` ")
+                                .setDescription("  blblblblblblbl ")
+                                .setFooter("Page `[3]` ===>")
+                                message.channel.send(p2);
+                                
+                            }
+                        })
+                    })
+                    
+                 }
+                });
+
 
 client.login(token); 

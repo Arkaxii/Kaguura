@@ -1595,7 +1595,7 @@ if(command ==="cancel"){
             message.channel.send(p1)
             .then(message => {
                 message.react("⏩")
-            })
+            
                 client.on('messageReactionAdd', (reaction, user) =>{
                 
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
@@ -1610,7 +1610,7 @@ if(command ==="cancel"){
                         message.channel.send(p2);
                     }
                 })
-
+            })
             
          }
     

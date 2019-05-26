@@ -1597,17 +1597,15 @@ if(command ==="cancel"){
                 message.react("⏩")
                 client.on('messageReactionAdd', (reaction, user) =>{
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                        message.delete()
-
+                        
                         var p2 = new Discord.RichEmbed()
 
                         .setAuthor("Page `[2]` ")
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
                 
-                            message.channel.send(p2);
-
-                    }break;
+                        p1.edit(p2)
+                    }
                 })
 
             })

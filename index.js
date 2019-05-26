@@ -1583,8 +1583,26 @@ if(command ==="cancel"){
      }
     } 
                 };
-    
-     if(message.content.startsWith(prefix + "test")){
+
+                if(message.content.startsWith(prefix + "test1")){
+                    const embedrec = message.embeds[0];
+                    channel.send(embedrec)
+                    .then(message => {
+                        message.react("⏩")
+                    client.on('messageReactionAdd', (reaction, user) =>{
+    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+
+        const exembed = new Discord.RichEmbed(embedrec).setTitle(`teeest`);
+
+        channel.send(exembed);
+
+    }
+                    
+})
+                    })
+}
+
+     if(message.content.startsWith(prefix + "test1")){
  
         const p1 = new Discord.RichEmbed()
 

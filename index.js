@@ -1598,8 +1598,7 @@ if(command ==="cancel"){
 
                 client.on('messageReactionAdd', (reaction, user) =>{
                 
-                    if (reaction.emoji.name === "⏩" && message.user === client.author) {
-                
+                    if (reaction.emoji.name === "⏩" && message.user.id !== client.author.id) {
                         message.delete();
                         
                         var p2 = new Discord.RichEmbed()

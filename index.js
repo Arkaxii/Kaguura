@@ -2524,11 +2524,13 @@ if(command ==="cancel"){
                     .then(message => {
                         message.react("✅")
                     
-                        client.on('messageReactionAdd', (reaction, user) =>{
+                        client.on('messageReactionAdd',  (reaction, user) =>{
                         
                             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                                 
                                 reaction.message.guild.member(user).addRole(rolegive)                              
+
+                                reaction.remove(user);
                                 
                             }
                         })

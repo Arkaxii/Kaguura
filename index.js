@@ -1600,7 +1600,8 @@ if(command ==="cancel"){
                 
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                        
-                        
+                        reaction.remove(user)
+
                         message.delete(p1)
                         
                         var p2 = new Discord.RichEmbed()
@@ -1608,6 +1609,7 @@ if(command ==="cancel"){
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
                         message.channel.send(p2);
+                        
                     }
                 })
             })

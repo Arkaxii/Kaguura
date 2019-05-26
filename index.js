@@ -1585,7 +1585,7 @@ if(command ==="cancel"){
                 };
 
                 if(message.content.startsWith(prefix + "test")){
-                    const embedrec = message.embeds[0];
+                    const embedrec = message.embeds.setTitle("bruh");
                     message.channel.send(embedrec)
                     .then(message => {
                         message.react("⏩")

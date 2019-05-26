@@ -1572,9 +1572,9 @@ if(!rolerain)
                 
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                        
-                        await reaction.remove(user)
+                         reaction.remove(user)
 
-                         message.delete(p1)
+                        await  message.delete(p1)
                         
                         var p2 = new Discord.RichEmbed()
                         .setAuthor("Page `[2]` ")

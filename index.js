@@ -2529,9 +2529,8 @@ if(command ==="cancel"){
                             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                                
                                 reaction.remove(user)
-                              const m =  message.channel.send("Ton role ne t'as pas été donnée avec succes :p")
- 
-                                message.delete( m, 1000);
+                                message.member.addRole(rolegive)
+
                             }
                         })
                     })

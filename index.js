@@ -1574,14 +1574,14 @@ if(!rolerain)
                        
                         reaction.remove(user)
 
-                     /*   message.delete(p1)
+                        message.delete(p1)
                         
                         var p2 = new Discord.RichEmbed()
                         .setAuthor("Page `[2]` ")
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
-                        message.channel.send(p2);
-                       */ 
+                        message.channel.send(p2);return;
+                      
                     }
                 })
             })
@@ -2504,6 +2504,8 @@ if(!rolerain)
                     })
                     
                  }
+
+
                 });
 
 

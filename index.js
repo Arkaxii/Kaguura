@@ -1589,23 +1589,23 @@ if(command ==="cancel"){
      if(message.content.startsWith(prefix + "test1")){
  
         const p1 = new Discord.RichEmbed()
-
         .setAuthor("Page `[1]` ")
         .setDescription("  qsdf ")
         .setFooter("Page `[2]` ===>")
-
             message.channel.send(p1)
             .then(message => {
                 message.react("⏩")
-                client.on('messageReactionAdd', (reaction, user) =>{
-                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                        message.delete();
-                        var p2 = new Discord.RichEmbed()
 
+                client.on('messageReactionAdd', (reaction, author) =>{
+                
+                    if (reaction.emoji.name === "⏩" && author.id !== client.author.id) {
+                
+                        message.delete();
+                        
+                        var p2 = new Discord.RichEmbed()
                         .setAuthor("Page `[2]` ")
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
-                
                         message.channel.send(p2);
                     }
                 })

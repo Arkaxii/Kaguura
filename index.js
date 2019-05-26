@@ -1586,7 +1586,7 @@ if(command ==="cancel"){
 
                 if(message.content.startsWith(prefix + "test")){
                     const embedrec = message.embeds[0];
-                    channel.send(embedrec)
+                    message.channel.send(embedrec)
                     .then(message => {
                         message.react("⏩")
               
@@ -1596,7 +1596,7 @@ if(command ==="cancel"){
     
                                 const exembed = new Discord.RichEmbed(embedrec).setTitle(`teeest`);
 
-                                channel.send(exembed);
+                                message.channel.send(exembed);
                             }
                         })
                     })

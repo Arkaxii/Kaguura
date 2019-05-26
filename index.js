@@ -2526,7 +2526,7 @@ if(command ==="cancel"){
                     
                         client.on('messageReactionAdd', (reaction, user) =>{
                         
-                            if (reaction.emoji.name === "✅" ) {
+                            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                                
                                 reaction.remove(user)
                                 message.channel.send("réussit ?");

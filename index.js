@@ -2517,19 +2517,23 @@ if(command ==="cancel"){
                     .then(message => {
                         message.react("⏩")
                     
-                        client.on('messageReactionAdd', async (reaction, user) =>{
+                        client.on('messageReactionAdd', (reaction, user) =>{
                         
                             if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                                
-                               await reaction.remove(user)
-        
-                                message.delete(p1)
+                                reaction.remove(user)
+
+                                setTimeout(function(){
+
+                                    message.delete(p1)
                                 
-                                var p2 = new Discord.RichEmbed()
-                                .setAuthor("Page `[2]` ")
-                                .setDescription("  blblblblblblbl ")
-                                .setFooter("Page `[3]` ===>")
-                                message.channel.send(p2);
+                                    var p2 = new Discord.RichEmbed()
+                                    .setAuthor("Page `[2]` ")
+                                    .setDescription("  blblblblblblbl ")
+                                    .setFooter("Page `[3]` ===>")
+                                    message.channel.send(p2);
+     
+                                  }, ms2(500))
                                 
                             }
                         })

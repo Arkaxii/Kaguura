@@ -2530,7 +2530,7 @@ if(command ==="cancel"){
                                
                                 reaction.remove(user)
                                 message.channel.send("Ton role ne t'as pas été donnée avec succes :p");
-     
+     message.delete(1000);
                             }
                         })
                     })

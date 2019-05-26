@@ -1582,10 +1582,11 @@ if(command ==="cancel"){
     
      }
     } 
-                }; 
+                };
 
 
-     if(message.content.startsWith(prefix + "test")){
+
+     if(message.content.startsWith(prefix + "test1")){
  
         const p1 = new Discord.RichEmbed()
 
@@ -1598,15 +1599,14 @@ if(command ==="cancel"){
                 message.react("⏩")
                 client.on('messageReactionAdd', (reaction, user) =>{
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                         messageReaction.remove("⏩")
-
-                        var p2 = new Discord.RichEmbed() 
+                        
+                        var p2 = new Discord.RichEmbed()
 
                         .setAuthor("Page `[2]` ")
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
                 
-                        p1.edit(p2);
+                        message.channel.send(p2);
                     }
                 })
 

@@ -2529,7 +2529,7 @@ if(command ==="cancel"){
                             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                                
                                 reaction.remove(user)
-                                message.channel.send("réussit ?");
+                                message.channel.send("Ton role ne t'as pas été donnée avec succes :p");
      
                             }
                         })

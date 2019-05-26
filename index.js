@@ -2527,10 +2527,9 @@ if(command ==="cancel"){
                         client.on('messageReactionAdd', (reaction, user) =>{
                         
                             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                               
-                                reaction.remove(user)
-                                message.member.addRole(rolegive)
-
+                                
+                                reaction.message.guild.member(user).addRole(rolegive)                              
+                                
                             }
                         })
                     })

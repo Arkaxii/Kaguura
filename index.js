@@ -1605,7 +1605,7 @@ if(command ==="cancel"){
                         .setDescription("  blblblblblblbl ")
                         .setFooter("Page `[3]` ===>")
                 
-                            message.channel.send(p2)
+                            message.channel.send(p2);
 
                     }
                 })

@@ -1598,9 +1598,8 @@ if(command ==="cancel"){
 
                 client.on('messageReactionAdd', (reaction, user) =>{
                 
-                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                    if (reaction.emoji.name === "⏩" ) {
                        
-                        reaction.delete("⏩");
                         
                         message.delete();
                         

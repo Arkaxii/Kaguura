@@ -1595,16 +1595,11 @@ if(command ==="cancel"){
             message.channel.send(p1)
             .then(message => {
                 message.react("⏩")
-
-                const filter = (reaction, user) => {
-                    return ['⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
-                };
+            })
+                client.on('messageReactionAdd', (reaction, user) =>{
                 
-                message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-                .then(collected => {
-                    const reaction = collected.first();
-                    
-                    if (reaction.emoji.name === '⏩') {
+                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                       
                         
                         message.delete();
                         
@@ -1615,7 +1610,8 @@ if(command ==="cancel"){
                         message.channel.send(p2);
                     }
                 })
-            })
+
+            
          }
     
                    if(message.content.startsWith(prefix + "avatar")){

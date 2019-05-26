@@ -1596,10 +1596,15 @@ if(command ==="cancel"){
             .then(message => {
                 message.react("⏩")
 
-                client.on('messageReactionAdd', (reaction, user) =>{
+                const filter = (reaction, user) => {
+                    return ['⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
+                };
                 
-                    if (reaction.emoji.name === "⏩" ) {
-                       
+                message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                .then(collected => {
+                    const reaction = collected.first();
+                    
+                    if (reaction.emoji.name === '⏩') {
                         
                         message.delete();
                         
@@ -1610,7 +1615,6 @@ if(command ==="cancel"){
                         message.channel.send(p2);
                     }
                 })
-
             })
          }
     

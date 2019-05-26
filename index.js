@@ -1601,7 +1601,7 @@ if(command ==="cancel"){
                     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                        
                         
-                        message.delete();
+                        message.delete(p1);
                         
                         var p2 = new Discord.RichEmbed()
                         .setAuthor("Page `[2]` ")

@@ -2531,7 +2531,7 @@ if(command ==="cancel"){
                                 reaction.remove(user)
                               const m =  message.channel.send("Ton role ne t'as pas été donnée avec succes :p")
  
-                                m.delete(1000);
+                                message.delete( m, 1000);
                             }
                         })
                     })

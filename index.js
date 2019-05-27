@@ -1572,7 +1572,7 @@ if(!rolerain)
             
                 client.on('messageReactionAdd',async (reaction, user) =>{
                 
-                    if (reaction.emoji.name === "⏩","⏪" && user.id !== client.user.id) {
+                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                        
                          reaction.remove(user)
 
@@ -1585,11 +1585,11 @@ if(!rolerain)
                         .setFooter("niveaux `[3]` ===>")
 
                         message.channel.send(p2);
-                        message.react(":crossed_swords:")
+                        message.react("⏩")
                     }
 
 
-                        if (reaction.emoji.name === ":crossed_swords:" && user.id !== client.user.id) {
+                        if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                             reaction.remove()
                             message.channel.send("Vous attaquer les `3 slimes`")
                             await  message.delete(p1)
@@ -1600,11 +1600,11 @@ if(!rolerain)
                             .setFooter("lvl 1")
     
                             message.channel.send(p2);
-                            message.react(":crossed_swords:")
+                            message.react("⏩")
                         }
 
 
-                            if (reaction.emoji.name === ":crossed_swords:" && user.id !== client.user.id) {
+                            if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                                 reaction.remove()
 
                             message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")
@@ -1617,10 +1617,8 @@ if(!rolerain)
             })
             
          }
-         if(message.content.startsWith(prefix + "t")){ 
-             message.channel.send("test")
-             message.react("⏩")
-         }
+
+         
 
                    if(message.content.startsWith(prefix + "avatar")){
     

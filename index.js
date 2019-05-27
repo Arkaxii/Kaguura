@@ -2365,8 +2365,11 @@ if(!rolerain)
                            .setImage("https://i.imgur.com/Z0lJoXU.jpg")
                            .setFooter("niveaux `[3]` ===>")
             
-                           message.channel.send(p2) 
-                           message.react("🔪");
+                           message.channel.send(p2).then(message => {
+
+                            message.react("🔪");
+
+                           })
 
                        }
                    

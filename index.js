@@ -2344,6 +2344,21 @@ if(!rolerain)
 
         }
 
+        function lvl2 () {
+            if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                reaction.remove(user)
+               
+               var p2 = new Discord.RichEmbed()
+               .setAuthor("Niveaux 2")
+               .setImage("https://i.imgur.com/Z0lJoXU.jpg")
+               .setFooter("niveaux `[3]` ===>")
+
+               message.channel.send(p2)
+               message.react("🔪")
+
+           } 
+        }
+
         if(message.content.startsWith(prefix + "test")){
  
             const p1 = new Discord.RichEmbed()
@@ -2357,18 +2372,8 @@ if(!rolerain)
     
                     client.on('messageReactionAdd',async (reaction, user) =>{
     
-                        if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                             reaction.remove(user)
-                            
-                            var p2 = new Discord.RichEmbed()
-                            .setAuthor("Niveaux 2")
-                            .setImage("https://i.imgur.com/Z0lJoXU.jpg")
-                            .setFooter("niveaux `[3]` ===>")
-    
-                            message.channel.send(p2)
-                            message.p2.react("🔪")
-
-                        } 
+                
+                        message.send(lvl2); 
                    
                     }) 
                   

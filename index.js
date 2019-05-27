@@ -2366,7 +2366,7 @@ if(!rolerain)
                             .setFooter("niveaux `[3]` ===>")
     
                             message.channel.send(p2)
-                            message.react(p2, "🔪")
+                            message.p2.react("🔪")
 
                         } 
                    

@@ -2377,9 +2377,7 @@ if(!rolerain)
                               await message.delete(p2)
                             
                                 var c2 = new Discord.RichEmbed()
-                                .setAuthor("Combat")
                                 .setImage("https://i.imgur.com/s1r84dF.jpg")    
-                                .setFooter("lvl 1")
     
                                 message.channel.send(c2).then(message => {
                                     message.react("🔪")
@@ -2395,7 +2393,8 @@ if(!rolerain)
                                             En tentant d'attaquer, vous glisser sur le slime
                                             0 hp
                                             Les slimes ont gagnier!`)
-                                        
+                                            .setFooter("lvl 1")
+
                                     message.channel.send(deflvl2)                               
                                 }
                             })

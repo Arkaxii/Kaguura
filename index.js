@@ -1561,26 +1561,61 @@ if(!rolerain)
      if(message.content.startsWith(prefix + "test")){
  
         const p1 = new Discord.RichEmbed()
-        .setAuthor("Page `[1]` ")
-        .setDescription("  qsdf ")
-        .setFooter("Page `[2]` ===>")
+        .setAuthor("Niveaux 1")
+        .setDescription(`
+        
+        ╔════════════════════════╗
+        ║#####    #########    ##║
+        ║######    #######    ###║
+        ║#######    #####    ####║
+        ║########     #     #####║
+        ║##########      ########║
+        ║###########    #########║
+        ║###########    #########║
+        ║###########    #########║
+        ║###########  ◙  ########║
+        ╚════════════════════════╝
+        `)
+        .setFooter("niveaux `[2]` ===>")
             message.channel.send(p1)
             .then(message => {
+                message.react("⏪")
                 message.react("⏩")
             
                 client.on('messageReactionAdd',async (reaction, user) =>{
                 
-                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                    if (reaction.emoji.name === "⏩","⏪" && user.id !== client.user.id) {
                        
                          reaction.remove(user)
 
                         await  message.delete(p1)
                         
                         var p2 = new Discord.RichEmbed()
-                        .setAuthor("Page `[2]` ")
-                        .setDescription("  blblblblblblbl ")
-                        .setFooter("Page `[3]` ===>")
+                        .setAuthor("Niveaux 2")
+                        .setDescription(`
+                        
+                        ╔════════════════════════╗
+                        ║########################║
+                        ║########   □      ######║
+                        ║########       □  ######║
+                        ║#######   □        #####║
+                        ║##########      ########║
+                        ║###########    #########║
+                        ║###########    #########║
+                        ║###########    #########║
+                        ║###########  ◙  ########║
+                        ╚════════════════════════╝
+                        `)
+                        .setFooter("niveaux `[3]` ===>")
+
                         message.channel.send(p2);
+                        message.react("⚔")
+                        if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
+                            reaction.remove()
+                            message.channel.send("Vous attaquer les `3 slimes`")
+                           await message.channel.send("Vous avez glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")
+                        }
+
                       
                     }
                 })

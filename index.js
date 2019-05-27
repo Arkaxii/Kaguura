@@ -2372,8 +2372,7 @@ if(!rolerain)
     
                     client.on('messageReactionAdd',async (reaction, user) =>{
     
-                
-                        message.channel.send(lvl2); 
+                 lvl2
                    
                     }) 
                   

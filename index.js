@@ -1619,7 +1619,7 @@ if(!rolerain)
          }
          if(message.content.startsWith(prefix + "t")){ 
              message.channel.send("test")
-             message.react(":crossed_swords:")
+             message.react(":fast_forward:")
          }
 
                    if(message.content.startsWith(prefix + "avatar")){

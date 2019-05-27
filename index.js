@@ -2373,7 +2373,7 @@ if(!rolerain)
                             if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                                 reaction.remove(user)
                                 message.channel.send("Vous attaquer les `3 slimes`")
-                                await  message.delete(p2)
+                                  message.delete(p2)
                             
                                 var c2 = new Discord.RichEmbed()
                                 .setAuthor("Combat")

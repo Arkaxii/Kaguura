@@ -1568,11 +1568,11 @@ if(!rolerain)
             message.channel.send(p1)
             .then(message => {
             //    message.react("⏪")
-                message.react("⏩")
+                message.react(":fast_forward:")
             
                 client.on('messageReactionAdd',async (reaction, user) =>{
                 
-                    if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
+                    if (reaction.emoji.name === ":fast_forward:" && user.id !== client.user.id) {
                        
                          reaction.remove(user)
 
@@ -1585,11 +1585,11 @@ if(!rolerain)
                         .setFooter("niveaux `[3]` ===>")
 
                         message.channel.send(p2);
-                        message.react("🗡")
+                        message.react("🔪")
                     }
 
 
-                        if (reaction.emoji.name === "🗡" && user.id !== client.user.id) {
+                        if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                             reaction.remove(user)
                             message.channel.send("Vous attaquer les `3 slimes`")
                             await  message.delete(p1)

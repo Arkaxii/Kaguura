@@ -1586,6 +1586,7 @@ if(!rolerain)
 
                         message.channel.send(p2);
                         message.react(":crossed_swords:")
+                    }
 
 
                         if (reaction.emoji.name === ":crossed_swords:" && user.id !== client.user.id) {
@@ -1600,6 +1601,7 @@ if(!rolerain)
     
                             message.channel.send(p2);
                             message.react(":crossed_swords:")
+                        }
 
 
                             if (reaction.emoji.name === ":crossed_swords:" && user.id !== client.user.id) {
@@ -1607,15 +1609,19 @@ if(!rolerain)
 
                             message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")
                             }
-                        }
+                        
 
                       
-                    }
+                    
                 })
             })
             
          }
-    
+         if(message.content.startsWith(prefix + "t")){ 
+             message.channel.send("test")
+             message.react(":crossed_swords:")
+         }
+
                    if(message.content.startsWith(prefix + "avatar")){
     
                  let msg = await message.channel.send("Génération de l'avatar...");

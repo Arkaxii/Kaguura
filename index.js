@@ -1562,24 +1562,12 @@ if(!rolerain)
  
         const p1 = new Discord.RichEmbed()
         .setAuthor("Niveaux 1")
-        .setDescription(`
-        
-        ╔════════════════════════╗
-        ║#####----#########----##║
-        ║######----#######----###║
-        ║#######----#####----####║
-        ║########-----#-----#####║
-        ║##########------########║
-        ║###########----#########║
-        ║###########----#########║
-        ║###########----#########║
-        ║###########--◙--########║
-        ╚════════════════════════╝
-        `)
+        .setImage("https://i.imgur.com/2x8lTdK.jpg")
+
         .setFooter("niveaux `[2]` ===>")
             message.channel.send(p1)
             .then(message => {
-                message.react("⏪")
+            //    message.react("⏪")
                 message.react("⏩")
             
                 client.on('messageReactionAdd',async (reaction, user) =>{
@@ -1592,28 +1580,33 @@ if(!rolerain)
                         
                         var p2 = new Discord.RichEmbed()
                         .setAuthor("Niveaux 2")
-                        .setDescription(`
-                        
-                        ╔════════════════════════╗
-                        ║########################║
-                        ║########---□------######║
-                        ║########-------□--######║
-                        ║#######---□--------#####║
-                        ║##########------########║
-                        ║###########----#########║
-                        ║###########----#########║
-                        ║###########----#########║
-                        ║###########--◙--########║
-                        ╚════════════════════════╝
-                        `)
+                        .setImage("https://i.imgur.com/Z0lJoXU.jpg")
+                                   
                         .setFooter("niveaux `[3]` ===>")
 
                         message.channel.send(p2);
                         message.react("⚔")
+
+
                         if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
                             reaction.remove()
                             message.channel.send("Vous attaquer les `3 slimes`")
-                           await message.channel.send("Vous avez glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")
+                            await  message.delete(p1)
+                        
+                            var p2 = new Discord.RichEmbed()
+                            .setAuthor("Combat")
+                            .setImage("https://i.imgur.com/Z0lJoXU.jpg")    
+                            .setFooter("lvl 1")
+    
+                            message.channel.send(p2);
+                            message.react("⚔")
+
+
+                            if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
+                                reaction.remove()
+
+                            message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")
+                            }
                         }
 
                       

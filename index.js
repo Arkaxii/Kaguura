@@ -1585,11 +1585,11 @@ if(!rolerain)
                         .setFooter("niveaux `[3]` ===>")
 
                         message.channel.send(p2);
-                        message.react("🗡")
+                        message.react("🔪")
                     }
 
 
-                        if (reaction.emoji.name === "🗡" && user.id !== client.user.id) {
+                        if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                             reaction.remove(user)
                             message.channel.send("Vous attaquer les `3 slimes`")
                             await  message.delete(p1)
@@ -1600,11 +1600,11 @@ if(!rolerain)
                             .setFooter("lvl 1")
     
                             message.channel.send(p2);
-                            message.react("🗡")
+                            message.react("🔪")
                         }
 
 
-                            if (reaction.emoji.name === "🗡" && user.id !== client.user.id) {
+                            if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                                 reaction.remove(user)
 
                             message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")

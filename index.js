@@ -2378,7 +2378,7 @@ if(!rolerain)
                             
                                 var c2 = new Discord.RichEmbed()
                                 .setAuthor("Combat")
-                                .setImage("https://i.imgur.com/Z0lJoXU.jpg")    
+                                .setImage("https://i.imgur.com/s1r84dF.jpg")    
                                 .setFooter("lvl 1")
     
                                 message.channel.send(c2).then(message => {

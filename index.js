@@ -2389,7 +2389,14 @@ if(!rolerain)
                                     if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                                         reaction.remove(user)
         
-                                    message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")                               
+                                        var deflvl2 = new Discord.RichEmbed()
+                                            .setAuthor("Combat contre slime")
+                                            .setDescription(`
+                                            En tentant d'attaquer, vous glisser sur le slime
+                                            0 hp
+                                            Les slimes ont gagnier!`)
+                                        
+                                    message.channel.send(deflvl2)                               
                                 }
                             })
                         })

@@ -2359,7 +2359,6 @@ if(!rolerain)
     
                         if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                              reaction.remove(user)
-                            await  message.delete(p1)
                             
                             var p2 = new Discord.RichEmbed()
                             .setAuthor("Niveaux 2")
@@ -2367,12 +2366,15 @@ if(!rolerain)
                             .setFooter("niveaux `[3]` ===>")
     
                             message.channel.send(p2)
+                            message.react("🔪")
 
-                        } }) })
-                        .then(message => {
-                        message.react("🔪")
+                        } 
+                   
+                    }) 
+                  
+                })
 
-                        client.on('messageReactionAdd',async (reaction, user) =>{
+              /*          client.on('messageReactionAdd',async (reaction, user) =>{
 
                             if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                                 reaction.remove(user)
@@ -2398,7 +2400,7 @@ if(!rolerain)
                                 message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")
                                 }
                             })
-                            })
+                            }) */
                     }
               
         

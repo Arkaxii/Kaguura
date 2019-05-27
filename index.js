@@ -1619,7 +1619,7 @@ if(!rolerain)
          }
          if(message.content.startsWith(prefix + "t")){ 
              message.channel.send("test")
-             message.react(":fast_forward:")
+             message.react("⏩")
          }
 
                    if(message.content.startsWith(prefix + "avatar")){

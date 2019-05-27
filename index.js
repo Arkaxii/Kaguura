@@ -2369,11 +2369,12 @@ if(!rolerain)
                            message.channel.send(p2).then(message => {
                             message.react("🔪");
 
+                            client.on('messageReactionAdd',async (reaction, user) =>{
 
                             if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                                 reaction.remove(user)
                                 message.channel.send("Vous attaquer les `3 slimes`")
-                                  message.delete(p2)
+                              await message.delete(p2)
                             
                                 var c2 = new Discord.RichEmbed()
                                 .setAuthor("Combat")
@@ -2383,18 +2384,22 @@ if(!rolerain)
                                 message.channel.send(c2).then(message => {
                                     message.react("🔪")
 
+                                    client.on('messageReactionAdd',async (reaction, user) =>{
+
                                     if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
                                         reaction.remove(user)
         
                                     message.channel.send("En tentant d'attaquer, vous glisser sur le slime : \n `0` hp \n Les slimes ont gagnier")                               
-                                }                             
-                            })                             
-                        }                          
-                    })                         
-                }                     
-            })              
-        })           
-    }
+                                }
+                            })
+                        })
+                    }
+                })
+            })
+        }
+    })
+})
+}
 });
     
     

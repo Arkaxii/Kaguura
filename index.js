@@ -2410,7 +2410,7 @@ if(!rolerain)
 })
 }
 });
-client.on("message", async message => {
+client.on("message", async (message) =>{
 if(command === "class"){
      
     const clas = new Discord.RichEmbed()

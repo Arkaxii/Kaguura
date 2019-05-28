@@ -2508,7 +2508,7 @@ if(command === "class"){
                 message.channel.send("et ba nop pas encore terminer")
             }
         })
-/*
+
 
 client.on('messageReactionAdd',async (reaction, user) =>{
 
@@ -2614,7 +2614,7 @@ message.channel.send(guerrier).then(message => {
     }
 })  
 
-/*
+
 
 
 
@@ -2817,7 +2817,7 @@ message.channel.send(sorcier).then(message => {
 })
 }
 })
-*/
+
 })
 }
 })

@@ -2344,6 +2344,9 @@ if(!rolerain)
 
         }
 
+
+
+
         if(message.content.startsWith(prefix + "test")){
  
             const p1 = new Discord.RichEmbed()
@@ -2406,7 +2409,8 @@ if(!rolerain)
     })
 })
 }
-});
+        
+
 if(command === "class"){
      
     const clas = new Discord.RichEmbed()
@@ -2752,7 +2756,7 @@ message.channel.send(sorcier).then(message => {
 })
 })
 }
-
+});
 
 
 

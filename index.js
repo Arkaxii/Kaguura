@@ -2438,17 +2438,17 @@ if(command === "class"){
     `)
     .setFooter("niveaux `[2]` ===>")
         message.channel.send(clas)
-        .then(async , message => {
-        await    message.react(":zero:")
-        await    message.react(":one:")
-        await    message.react(":two:")
-        await    message.react(":three:")
-        await    message.react(":four:")
-        await    message.react(":five:")
-        await    message.react(":six:")
-        await    message.react(":seven:")
-        await    message.react(":eight:")
-        await    message.react(":nine:")
+        .then(message => {
+            message.react(":zero:")
+            message.react(":one:")
+            message.react(":two:")
+            message.react(":three:")
+            message.react(":four:")
+            message.react(":five:")
+            message.react(":six:")
+            message.react(":seven:")
+            message.react(":eight:")
+            message.react(":nine:")
 
 
             client.on('messageReactionAdd',async (reaction, user) =>{

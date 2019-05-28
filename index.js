@@ -2852,19 +2852,18 @@ if(command === "class"){
     .setFooter("niveaux `[2]` ===>")
         message.channel.send(clas)
         .then(message => {
-            message.react(message.guild.emoji.get(":zero:"))
-            message.react(message.guild.emoji.get(":one:"))
-            message.react(message.guild.emoji.get(":two:"))
-            message.react(message.guild.emoji.get(":three:"))
-            message.react(message.guild.emoji.get(":four:"))
-            message.react(message.guild.emoji.get(":five:"))
-            message.react(message.guild.emoji.get(":six:"))
-            message.react(message.guild.emoji.get(":seven:"))
-            message.react(message.guild.emoji.get(":eight:"))
-            message.react(message.guild.emoji.get(":nine:"))
-            
+            message.react("↔")
+            message.react("↕")
+            message.react("↖")
+            message.react("↗")
+            message.react("↘")
+            message.react("↙")
+            message.react("↩")
+            message.react("↪")
+            message.react("⬆")
+            message.react("⬇")
             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === ":zero:" && user.id !== client.user.id) {
+                if (reaction.emoji.name === "↔" && user.id !== client.user.id) {
                     reaction.remove(user)
                     reaction.remove()
                     await message.delete(clas)
@@ -2888,7 +2887,7 @@ if(command === "class"){
             })
         }
         client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === ":one:" && user.id !== client.user.id) {
+            if (reaction.emoji.name === "↕" && user.id !== client.user.id) {
                 reaction.remove(user)
                 reaction.remove()
                 await message.delete(clas)
@@ -2913,7 +2912,7 @@ if(command === "class"){
     })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":two:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↖" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -2938,7 +2937,7 @@ message.channel.send(clerc).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":three:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↗" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -2963,7 +2962,7 @@ message.channel.send(druid).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":four:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↘" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -2988,7 +2987,7 @@ message.channel.send(guerrier).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":five:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↙" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -3013,7 +3012,7 @@ message.channel.send(mage).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":six:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -3038,7 +3037,7 @@ message.channel.send(moine).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":seven:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↪" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -3063,7 +3062,7 @@ message.channel.send(paladin).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":eight:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "⬆" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)
@@ -3088,7 +3087,7 @@ message.channel.send(rodeur).then(message => {
 })
 }
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === ":nine:" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "⬇" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
         await message.delete(clas)

@@ -2409,8 +2409,6 @@ if(!rolerain)
     })
 })
 }
-});
-client.on("message", async (message) =>{
 if(command === "class"){
      
     const clas = new Discord.RichEmbed()
@@ -2440,7 +2438,7 @@ if(command === "class"){
     `)
     .setFooter("niveaux `[2]` ===>")
         message.channel.send(clas)
-        .then(message => {
+        .then(async , message => {
         await    message.react(":zero:")
         await    message.react(":one:")
         await    message.react(":two:")

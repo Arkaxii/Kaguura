@@ -3127,7 +3127,6 @@ message.channel.send(sorcier).then(message => {
 
 
 
-
     
     client.on("message", async message => {
         if(message.author.bot) return;

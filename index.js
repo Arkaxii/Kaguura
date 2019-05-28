@@ -2439,16 +2439,8 @@ if(command === "class"){
     .setFooter("niveaux `[2]` ===>")
         message.channel.send(clas)
         .then(message => {
-            message.react(":zero:")
-            message.react(":one:")
-            message.react(":two:")
-            message.react(":three:")
-            message.react(":four:")
-            message.react(":five:")
-            message.react(":six:")
-            message.react(":seven:")
-            message.react(":eight:")
-            message.react(":nine:")
+            message.react(emoji("582704161368571927"));
+
 
 
             client.on('messageReactionAdd',async (reaction, user) =>{

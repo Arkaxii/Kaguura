@@ -2443,12 +2443,12 @@ if(command === "class"){
 
 
 
-            client.on('messageReactionAdd',async (reaction, user) =>{
+            client.on('messageReactionAdd', (reaction, user) =>{
 
                 if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                    await reaction.remove(user)
-                    await reaction.remove()
-                    await message.delete(clas)
+                     reaction.remove(user)
+                     reaction.remove()
+                     message.delete(clas)
 
                     
                     var barbare = new Discord.RichEmbed()
@@ -2464,11 +2464,11 @@ if(command === "class"){
                 message.react("✅")
                 message.react("⏩");
 
-                client.on('messageReactionAdd',async (reaction, user) =>{
+                client.on('messageReactionAdd', (reaction, user) =>{
                     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                         reaction.remove(user)
                         reaction.remove()
-                        await message.delete(barbare)
+                         message.delete(barbare)
 
 
                 message.channel.send("et ba nop pas encore terminer")
@@ -2477,12 +2477,12 @@ if(command === "class"){
             
                 
 
-        client.on('messageReactionAdd',async (reaction, user) =>{
+        client.on('messageReactionAdd', (reaction, user) =>{
 
             if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                 reaction.remove(user)
                 reaction.remove()
-                await message.delete(clas)
+                 message.delete(clas)
 
                 
                 var barde = new Discord.RichEmbed()
@@ -2498,11 +2498,11 @@ if(command === "class"){
             message.react("✅")
             message.react("⏩")
 
-            client.on('messageReactionAdd',async (reaction, user) =>{
+            client.on('messageReactionAdd', (reaction, user) =>{
                 if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                     reaction.remove(user)
                     reaction.remove()
-                    await message.delete(barde)
+                     message.delete(barde)
 
             
                 message.channel.send("et ba nop pas encore terminer")
@@ -2510,12 +2510,12 @@ if(command === "class"){
         })
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var clerc = new Discord.RichEmbed()
@@ -2531,11 +2531,11 @@ message.channel.send(clerc).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(clerc)
+             message.delete(clerc)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2545,12 +2545,12 @@ message.channel.send(clerc).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var druid = new Discord.RichEmbed()
@@ -2566,11 +2566,11 @@ message.channel.send(druid).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(druid)
+             message.delete(druid)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2584,12 +2584,12 @@ message.channel.send(druid).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var guerrier = new Discord.RichEmbed()
@@ -2603,11 +2603,11 @@ message.channel.send(guerrier).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(guerrier)
+             message.delete(guerrier)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2619,12 +2619,12 @@ message.channel.send(guerrier).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var mage = new Discord.RichEmbed()
@@ -2640,11 +2640,11 @@ message.channel.send(mage).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(mage)
+             message.delete(mage)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2656,12 +2656,12 @@ message.channel.send(mage).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var moine = new Discord.RichEmbed()
@@ -2675,11 +2675,11 @@ message.channel.send(moine).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(moine)
+             message.delete(moine)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2691,12 +2691,12 @@ message.channel.send(moine).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var paladin = new Discord.RichEmbed()
@@ -2710,11 +2710,11 @@ message.channel.send(paladin).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(paladin)
+             message.delete(paladin)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2725,12 +2725,12 @@ message.channel.send(paladin).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var rodeur = new Discord.RichEmbed()
@@ -2744,11 +2744,11 @@ message.channel.send(rodeur).then(message => {
     message.react("✅")
     message.react("⏩")
 
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(rodeur)
+             message.delete(rodeur)
 
     
         message.channel.send("et ba nop pas encore terminer")
@@ -2758,12 +2758,12 @@ message.channel.send(rodeur).then(message => {
 
 
 
-client.on('messageReactionAdd',async (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(clas)
+         message.delete(clas)
 
         
         var sorcier = new Discord.RichEmbed()
@@ -2775,11 +2775,11 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
 message.channel.send(sorcier).then(message => {
     message.react("✅")
-    client.on('messageReactionAdd',async (reaction, user) =>{
+    client.on('messageReactionAdd', (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(sorcier)
+             message.delete(sorcier)
 
         message.channel.send("et ba nop pas encore terminer")
     }

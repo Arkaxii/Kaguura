@@ -2439,7 +2439,7 @@ if(command === "class"){
     .setFooter("niveaux `[2]` ===>")
         message.channel.send(clas)
         .then(message => {
-            message.react(emoji("582704161368571927"));
+            message.react( emoji => emoji.name === ":zero:")
 
 
 

@@ -2838,16 +2838,26 @@ if(command === "class"){
     .setAuthor("Class")
     .setDescription(`
     
-    -Barbare:
-    -Barde:
-    -Clerc:
-    -Druide:
-    -Chevalier:
-    -Mage:
-    -Moine:
-    -Paladin:
-    -Rôdeur:
-    -Sorcier:
+    -Barbare: ↔
+
+    -Barde: ↕
+
+    -Clerc: ↖
+
+    -Druide: ↗
+
+    -Chevalier: ↘
+
+    -Mage: ↙
+
+    -Moine: ↩
+
+    -Paladin: ↪
+
+    -Rôdeur: ⬆
+
+    -Sorcier: ⬇
+
     `)
     .setFooter("niveaux `[2]` ===>")
         message.channel.send(clas)

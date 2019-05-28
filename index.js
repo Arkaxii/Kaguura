@@ -2445,9 +2445,9 @@ if(command === "class"){
 
             client.on('messageReactionAdd',async (reaction, user) =>{
 
-                if (reaction.emoji.name === "⏩ " && user.id !== client.user.id) {
+                if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                     await reaction.remove(user)
-                    reaction.remove()
+                    await reaction.remove()
                     await message.delete(clas)
 
                     
@@ -2508,7 +2508,7 @@ if(command === "class"){
                 message.channel.send("et ba nop pas encore terminer")
             }
         })
-
+/*
 
 client.on('messageReactionAdd',async (reaction, user) =>{
 
@@ -2614,7 +2614,7 @@ message.channel.send(guerrier).then(message => {
     }
 })  
 
-
+/*
 
 
 
@@ -2817,7 +2817,7 @@ message.channel.send(sorcier).then(message => {
 })
 }
 })
-
+*/
 })
 }
 })

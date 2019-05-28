@@ -2828,10 +2828,10 @@ message.channel.send(sorcier).then(message => {
 
 }) 
 }
-*/
 
 
 
+/*
 if(command === "class"){
 
     const clas = new Discord.RichEmbed()
@@ -3131,7 +3131,7 @@ message.channel.send(sorcier).then(message => {
 })
 })
 })
-}
+}*/
 
 });
 

@@ -2463,6 +2463,7 @@ if(command === "class"){
                 message.react("✅")
                 message.react("⏩")
 
+                client.on('messageReactionAdd',async (reaction, user) =>{
                     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                         reaction.remove(user)
                         await message.delete(barbare)
@@ -2474,6 +2475,7 @@ if(command === "class"){
             
                 
 
+        client.on('messageReactionAdd',async (reaction, user) =>{
 
             if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                 reaction.remove(user)
@@ -2493,6 +2495,7 @@ if(command === "class"){
             message.react("✅")
             message.react("⏩")
 
+            client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                     reaction.remove(user)
                     await message.delete(barde)
@@ -2503,6 +2506,7 @@ if(command === "class"){
         })
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2522,6 +2526,7 @@ message.channel.send(clerc).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(clerc)
@@ -2554,6 +2559,7 @@ message.channel.send(druid).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(druid)
@@ -2567,6 +2573,7 @@ message.channel.send(druid).then(message => {
 
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2584,6 +2591,7 @@ message.channel.send(guerrier).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(guerrier)
@@ -2598,6 +2606,7 @@ message.channel.send(guerrier).then(message => {
 
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2617,6 +2626,7 @@ message.channel.send(mage).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(mage)
@@ -2631,6 +2641,7 @@ message.channel.send(mage).then(message => {
 
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2648,6 +2659,7 @@ message.channel.send(moine).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(moine)
@@ -2662,6 +2674,7 @@ message.channel.send(moine).then(message => {
 
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2679,6 +2692,7 @@ message.channel.send(paladin).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(paladin)
@@ -2692,6 +2706,7 @@ message.channel.send(paladin).then(message => {
 
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2709,6 +2724,7 @@ message.channel.send(rodeur).then(message => {
     message.react("✅")
     message.react("⏩")
 
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(rodeur)
@@ -2721,6 +2737,7 @@ message.channel.send(rodeur).then(message => {
 
 
 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
     if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2736,6 +2753,7 @@ message.channel.send(rodeur).then(message => {
 
 message.channel.send(sorcier).then(message => {
     message.react("✅")
+    client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
             await message.delete(sorcier)
@@ -2745,45 +2763,47 @@ message.channel.send(sorcier).then(message => {
 })  
 
 
-}
-}
-
-
-}
-}
-
-
-}
-}
-
-
+})
 }
 })
 
-
-}
-}
-
-}
-
-})
 })
 }
-
-/*
 })
-}
-
 
 })
 }
+})
 
+})
+}
+})
+
+})
+}
+})
+
+})
+}
+})
+
+})
+}
+})
+
+})
+}
+})
+
+})
+}
+})
 
 })
 }       
 })
 
-})
+}) 
 }
 
 

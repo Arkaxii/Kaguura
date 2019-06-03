@@ -2781,7 +2781,7 @@ if(command === "class"){
                         reaction.remove(user)
                         reaction.remove()
                         await message.delete(barbare)
-                        message.delete().catch(O_o=>{}); 
+                        message.channel.send("❌A été Annuler")
 
                     }
                 })
@@ -2816,7 +2816,7 @@ if(command === "class"){
                 reaction.remove(user)
                 reaction.remove()
                 await message.delete(barbare)
-                message.delete().catch(O_o=>{}); 
+                message.channel.send("❌A été Annuler")
 
             }
         })
@@ -2852,7 +2852,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -2887,7 +2887,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -2922,7 +2922,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -2957,7 +2957,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -2992,7 +2992,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -3027,7 +3027,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -3062,7 +3062,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
+        message.channel.send("❌A été Annuler")
 
     }
 })
@@ -3096,8 +3096,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
-        message.delete().catch(O_o=>{}); 
-
+        message.channel.send("❌A été Annuler")
     }
 })
 })

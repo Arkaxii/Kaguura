@@ -2420,61 +2420,61 @@ if(command === "class"){
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Barde:** 1
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Clerc:** 2
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Druide:** 3
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Chevalier:** 4
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Mage:** 5
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
     
     **-Moine:** 6
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Paladin:** 7
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Rôdeur:** 8
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     **-Sorcier:** 9
     ligne de combat:
     armure utiliser:
     arme utiliser:
-    type d'attaque utiser:
+    type d'attaque utiliser:
 
     `)
     .setFooter("")

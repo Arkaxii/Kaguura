@@ -2554,7 +2554,7 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
             if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
                 reaction.remove(user)
                 reaction.remove()
-                await message.delete(barbare)
+                await message.delete(barde)
                 message.channel.send("❌A été Annuler")
 
             }
@@ -2590,7 +2590,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(clerc)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2625,7 +2625,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(druid)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2660,7 +2660,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(guerrier)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2695,7 +2695,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(mage)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2730,7 +2730,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(moine)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2765,7 +2765,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(paladin)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2800,7 +2800,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(rodeur)
         message.channel.send("❌A été Annuler")
 
     }
@@ -2834,7 +2834,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         reaction.remove()
-        await message.delete(barbare)
+        await message.delete(sorcier)
         message.channel.send("❌A été Annuler")
     }
 })

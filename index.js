@@ -2409,336 +2409,73 @@ if(!rolerain)
     })
 })
 }
-/*
-if(command === "class"){
-     
-    const clas = new Discord.RichEmbed()
-    .setAuthor("Class")
-    .setDescription(`
-    
-    -Barbare:
 
-    -Barde:
-
-    -Clerc:
-
-    -Druide:
-
-    -Chevalier:
-
-    -Mage:
-
-    -Moine:
-
-    -Paladin:
-
-    -Rôdeur:
-
-    -Sorcier:
-
-    `)
-    .setFooter("?`nom de class` pour plus d'information")
-        message.channel.send(clas)
-
-}
-
-
-
-if(command === "barbare"){
-
-    var barbare = new Discord.RichEmbed()
-    .setAuthor("Barbare")
-    .setImage("https://i.imgur.com/tluyj40.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Barbare ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(barbare).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(barbare)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")   
-    }  
-})
-})
-}
-
-
-
-if(command === "barde"){
-
-    var barde = new Discord.RichEmbed()
-    .setAuthor("Barde")
-    .setImage("https://i.imgur.com/kzV53Vy.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Barde ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(barde).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(barde)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "clerc"){
-
-    var cle = new Discord.RichEmbed()
-    .setAuthor("Clerc")
-    .setImage("https://i.imgur.com/ik8cIbo.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Clerc ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(cle).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(cle)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "druide"){
-
-    var droude = new Discord.RichEmbed()
-    .setAuthor("Druide")
-    .setImage("https://i.imgur.com/7gGcQB3.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Druide ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(droude).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(droude)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "chevalier"){
-
-    var chev = new Discord.RichEmbed()
-    .setAuthor("Chevalier")
-    .setImage("https://i.imgur.com/hKl4yeP.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Chevalier ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(chev).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(chev)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "mage"){
-
-    var mage = new Discord.RichEmbed()
-    .setAuthor("Mage")
-    .setImage("https://i.imgur.com/I8y8Npk.jpg")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Mage ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(mage).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(mage)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "moine"){
-
-    var moine = new Discord.RichEmbed()
-    .setAuthor("Moine")
-    .setImage("https://i.imgur.com/FDslwrn.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Moine ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(moine).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(moine)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "paladin"){
-
-    var pala = new Discord.RichEmbed()
-    .setAuthor("Paladin")
-    .setImage("https://i.imgur.com/BVmG9m1.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Paladin ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(pala).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(pala)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "rodeur"){
-
-    var rod = new Discord.RichEmbed()
-    .setAuthor("Rôdeur")
-    .setImage("https://i.imgur.com/5ydscFv.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un rôdeur ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(rod).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(rod)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-
-
-if(command === "sorcier"){
-
-    var sor = new Discord.RichEmbed()
-    .setAuthor("Sorcier")
-    .setImage("https://i.imgur.com/vgMYf49.png")
-    .setDescription(`
-    Description a venire
-    tu ne pourras pas changer de class veux-tu être un Sorcier ? 
-    `)
-    .setFooter("✅ pour choisir cette class")
-    message.channel.send(sor).then(message => {
-        message.react("✅")
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                reaction.remove(user)
-                await message.delete(sor)
-
-
-        message.channel.send("Cette fonction n'est pas encore établit")
-    }  
-})
-})
-}
-
-*/
 
 if(command === "class"){
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")
     .setDescription(`
     
-    -Barbare: Description a venir 
-0
-    -Barde: Description a venir
-1
-    -Clerc: Description a venir
-2
-    -Druide: Description a venir
-3
-    -Chevalier: Description a venir
-4
-    -Mage: Description a venir
-5
-    -Moine: Description a venir
-6
-    -Paladin: Description a venir
-7
-    -Rôdeur: Description a venir
-8
-    -Sorcier: Description a venir
-9
+    **-Barbare:** 0 
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Barde:** 1
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Clerc:** 2
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Druide:** 3
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Chevalier:** 4
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Mage:** 5
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+    
+    **-Moine:** 6
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Paladin:** 7
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Rôdeur:** 8
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
+    **-Sorcier:** 9
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiser:
+
     `)
     .setFooter("")
         message.channel.send(clas)
@@ -2762,7 +2499,9 @@ if(command === "class"){
                     var barbare = new Discord.RichEmbed()
                     .setAuthor("Barbare")
                     .setImage("https://i.imgur.com/tluyj40.png")
-                    .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Barbare ? 
+                    .setDescription(`
+                    
+tu ne pourras pas changer de class veux-tu vraiment être Barbare ? 
                     `)
                     .setFooter("✅accepter ❌refuser ")
             message.channel.send(barbare).then(async function (message ) {

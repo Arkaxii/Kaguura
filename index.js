@@ -2781,7 +2781,8 @@ if(command === "class"){
                         reaction.remove(user)
                         reaction.remove()
                         await message.delete(barbare)
-                
+                        message.delete().catch(O_o=>{}); 
+
                     }
                 })
             })
@@ -2815,7 +2816,8 @@ if(command === "class"){
                 reaction.remove(user)
                 reaction.remove()
                 await message.delete(barbare)
-        
+                message.delete().catch(O_o=>{}); 
+
             }
         })
     })
@@ -2850,6 +2852,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -2884,6 +2887,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -2918,6 +2922,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -2952,6 +2957,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -2986,6 +2992,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -3020,6 +3027,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -3054,6 +3062,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })
@@ -3087,6 +3096,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         reaction.remove(user)
         reaction.remove()
         await message.delete(barbare)
+        message.delete().catch(O_o=>{}); 
 
     }
 })

@@ -2854,7 +2854,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 }
 
-if(command === "cl"){
+if(command === "class"){
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")
     .setDescription(`
@@ -2922,18 +2922,19 @@ if(command === "cl"){
     `)
     .setFooter("")
         message.channel.send(clas)
-        .then(async function (message ) {
-            message.react("0⃣")    
-            message.react("1⃣")
-            message.react("2⃣")
-            message.react("3⃣")
-            message.react("4⃣")
-            message.react("5⃣")
-            message.react("6⃣")
-            message.react("7⃣")
-            message.react("8⃣")
-            message.react("9⃣")
-            client.on('messageReactionAdd',async (reaction, user) =>{
+        .then(message => {
+            message.react("9⃣").then(message => {     
+                message.react("8⃣").then(message => {
+                    message.react("7⃣").then(message => {
+                        message.react("6⃣").then(message => {
+                            message.react("5⃣").then(message => {
+                                message.react("4⃣").then(message => {
+                                    message.react("3⃣").then(message => {
+                                        message.react("2⃣").then(message => {
+                                            message.react("1⃣").then(message => {
+                                                message.react("0⃣").then(message => {
+           
+         client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
                     reaction.remove(user)
                     reaction.remove()
@@ -2949,6 +2950,7 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                     .setFooter("✅accepter ❌refuser ")
             message.channel.send(barbare).then(async function (message ) {
                await message.react("✅")
+               await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
                     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                         reaction.remove(user)
@@ -2957,9 +2959,19 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                 message.channel.send("et ba nop pas encore terminer")
                     }
                 })
- 
+                client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(barbare)
+                        message.channel.send("❌A été Annuler")
+
+                    }
+                })
             })
         }
+    })
+})
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
                 reaction.remove(user)
@@ -2974,6 +2986,7 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                 .setFooter("✅accepter ❌refuser ")
                 message.channel.send(barde).then(async function (message ) {
                     await message.react("✅")
+                    await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
                     reaction.remove(user)
@@ -2983,9 +2996,19 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                 message.channel.send("et ba nop pas encore terminer")
             }
         })  
+        client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                reaction.remove(user)
+                reaction.remove()
+                await message.delete(barde)
+                message.channel.send("❌A été Annuler")
 
+            }
+        })
     })
 }
+        })
+    })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3000,6 +3023,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(clerc).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3010,9 +3034,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clerc)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                                        })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3027,6 +3061,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(druid).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3036,9 +3071,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(druid)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                                    })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3053,6 +3098,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(guerrier).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3062,9 +3108,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(guerrier)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                                })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3079,6 +3135,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(mage).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3088,9 +3145,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(mage)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                            })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3105,6 +3172,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(moine).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3114,9 +3182,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(moine)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                        })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3131,6 +3209,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(paladin).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3140,9 +3219,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(paladin)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                    })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "8⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3157,6 +3246,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(rodeur).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3166,9 +3256,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })  
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(rodeur)
+        message.channel.send("❌A été Annuler")
 
+    }
+})
 })
 }
+})
+                })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "9⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3183,6 +3283,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(sorcier).then(async function (message ) {
             await message.react("✅")
+            await message.react("❌")
                 client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
             reaction.remove(user)
@@ -3191,21 +3292,21 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         message.channel.send("et ba nop pas encore terminer")
     }
 })
-
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(sorcier)
+        message.channel.send("❌A été Annuler")
+    }
+})
 })
 }
+})
+            })
 
 })
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
+
 }
 });
 

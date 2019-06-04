@@ -2480,11 +2480,11 @@ if(command === "class"){
     .setFooter("")
         message.channel.send(clas)
         .then(async function (message ) {
-         await  message.react("0⃣")    
+         await   message.react("0⃣")    
          await   message.react("1⃣")
          await   message.react("2⃣")
          await   message.react("3⃣")
-         await  message.react("4⃣")
+         await   message.react("4⃣")
          await   message.react("5⃣")
          await   message.react("6⃣")
          await   message.react("7⃣")
@@ -2854,6 +2854,359 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 }
 
+if(command === "cl"){
+    const clas = new Discord.RichEmbed()
+    .setAuthor("Class")
+    .setDescription(`
+    
+    **-Barbare:** 0 
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Barde:** 1
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Clerc:** 2
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Druide:** 3
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Chevalier:** 4
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Mage:** 5
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+    
+    **-Moine:** 6
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Paladin:** 7
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Rôdeur:** 8
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    **-Sorcier:** 9
+    ligne de combat:
+    armure utiliser:
+    arme utiliser:
+    type d'attaque utiliser:
+
+    `)
+    .setFooter("")
+        message.channel.send(clas)
+        .then(async function (message ) {
+         await   message.react("0⃣")    
+         await   message.react("1⃣")
+         await   message.react("2⃣")
+         await   message.react("3⃣")
+         await   message.react("4⃣")
+         await   message.react("5⃣")
+         await   message.react("6⃣")
+         await   message.react("7⃣")
+         await   message.react("8⃣")
+         await   message.react("9⃣")
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
+                    reaction.remove(user)
+                    reaction.remove()
+                    await message.delete(clas)
+                    
+                    var barbare = new Discord.RichEmbed()
+                    .setAuthor("Barbare")
+                    .setImage("https://i.imgur.com/tluyj40.png")
+                    .setDescription(`
+                    
+tu ne pourras pas changer de class veux-tu vraiment être Barbare ? 
+                    `)
+                    .setFooter("✅accepter ❌refuser ")
+            message.channel.send(barbare).then(async function (message ) {
+               await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(barbare)
+                message.channel.send("et ba nop pas encore terminer")
+                    }
+                })
+ 
+            })
+        }
+        client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
+                reaction.remove(user)
+                reaction.remove()
+                await message.delete(clas)
+                
+                var barde = new Discord.RichEmbed()
+                .setAuthor("Barde")
+                .setImage("https://i.imgur.com/kzV53Vy.png")
+                .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Barde ?
+                `)
+                .setFooter("✅accepter ❌refuser ")
+                message.channel.send(barde).then(async function (message ) {
+                    await message.react("✅")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                    reaction.remove(user)
+                    reaction.remove()
+                    await message.delete(barde)
+            
+                message.channel.send("et ba nop pas encore terminer")
+            }
+        })  
+
+    })
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var clerc = new Discord.RichEmbed()
+        .setAuthor("Clerc")
+        .setImage("https://i.imgur.com/ik8cIbo.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Clerc ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(clerc).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(clerc)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var druid = new Discord.RichEmbed()
+        .setAuthor("Druide")
+        .setImage("https://i.imgur.com/7gGcQB3.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Druide ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(druid).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(druid)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var guerrier = new Discord.RichEmbed()
+        .setAuthor("Chevalier")
+        .setImage("https://i.imgur.com/hKl4yeP.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Chevalier ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(guerrier).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(guerrier)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var mage = new Discord.RichEmbed()
+        .setAuthor("Mage")
+        .setImage("https://i.imgur.com/I8y8Npk.jpg")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Mage ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(mage).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(mage)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var moine = new Discord.RichEmbed()
+        .setAuthor("Moine")
+        .setImage("https://i.imgur.com/FDslwrn.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Moine ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(moine).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(moine)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var paladin = new Discord.RichEmbed()
+        .setAuthor("Paladin")
+        .setImage("https://i.imgur.com/BVmG9m1.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Paladin ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(paladin).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(paladin)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "8⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var rodeur = new Discord.RichEmbed()
+        .setAuthor("Rôdeur")
+        .setImage("https://i.imgur.com/5ydscFv.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Rôdeur ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(rodeur).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(rodeur)
+    
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})  
+
+})
+}
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "9⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(clas)
+        
+        var sorcier = new Discord.RichEmbed()
+        .setAuthor("Sorcier")
+        .setImage("https://i.imgur.com/vgMYf49.png")
+        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Sorcier ?
+        `)
+        .setFooter("✅accepter ❌refuser ")
+        message.channel.send(sorcier).then(async function (message ) {
+            await message.react("✅")
+                client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(sorcier)
+        message.channel.send("et ba nop pas encore terminer")
+    }
+})
+
+})
+}
+
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+}
 });
 
     client.on("message", async message => {

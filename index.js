@@ -2922,17 +2922,17 @@ if(command === "cl"){
     `)
     .setFooter("")
         message.channel.send(clas)
-        .then(async function (message ) {
-         await   message.react("0⃣")    
-         await   message.react("1⃣")
-         await   message.react("2⃣")
-         await   message.react("3⃣")
-         await   message.react("4⃣")
-         await   message.react("5⃣")
-         await   message.react("6⃣")
-         await   message.react("7⃣")
-         await   message.react("8⃣")
-         await   message.react("9⃣")
+        .then( message => {
+            message.react("0⃣")    
+            message.react("1⃣")
+            message.react("2⃣")
+            message.react("3⃣")
+            message.react("4⃣")
+            message.react("5⃣")
+            message.react("6⃣")
+            message.react("7⃣")
+            message.react("8⃣")
+            message.react("9⃣")
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
                     reaction.remove(user)

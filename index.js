@@ -2854,7 +2854,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 }
 
-if(command === "class"){
+if(command === "cl"){
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")
     .setDescription(`

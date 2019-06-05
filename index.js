@@ -2938,7 +2938,7 @@ if(command === "cl"){
                 tu ne pourras pas changer de class veux-tu être un Barbare ? 
                 `)
                 .setFooter("Class")
-        message.channel.send(barbare).then(message => {
+        message.channel.send(barbare).then(async function (message ) {
         await    message.react("✅")
         await    message.react("⏩")
 
@@ -2966,7 +2966,7 @@ if(command === "cl"){
             tu ne pourras pas changer de class veux-tu être un Barde ?
             `)
             .setFooter("Class")
-    message.channel.send(barde).then(message => {
+    message.channel.send(barde).then(async function (message ) {
         await   message.react("✅")
         await   message.react("⏩")
 
@@ -2994,7 +2994,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     tu ne pourras pas changer de class veux-tu vraiment être Clerc ?
     `)
     .setFooter("Class")
-message.channel.send(clerc).then(message => {
+message.channel.send(clerc).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3019,7 +3019,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     tu ne pourras pas changer de class veux-tu vraiment être Druide ?
     `)
     .setFooter("Class")
-message.channel.send(druid).then(message => {
+message.channel.send(druid).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3046,7 +3046,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Chevalier ?
     `)
     .setFooter("Class")
-message.channel.send(guerrier).then(message => {
+message.channel.send(guerrier).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3075,7 +3075,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     tu ne pourras pas changer de class veux-tu vraiment être Mage ?
     `)
     .setFooter("Class")
-message.channel.send(mage).then(message => {
+message.channel.send(mage).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3102,7 +3102,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Moine ?
     `)
     .setFooter("Class")
-message.channel.send(moine).then(message => {
+message.channel.send(moine).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3129,7 +3129,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Paladin ?
     `)
     .setFooter("Class")
-message.channel.send(paladin).then(message => {
+message.channel.send(paladin).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3156,7 +3156,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Rôdeur ?
     `)
     .setFooter("Class")
-message.channel.send(rodeur).then(message => {
+message.channel.send(rodeur).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
 
@@ -3184,7 +3184,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
     `)
     .setFooter("Class")
 
-message.channel.send(sorcier).then(message => {
+message.channel.send(sorcier).then(async function (message ) {
     await message.react("✅")
     await message.react("❌")
 client.on('messageReactionAdd',async (reaction, user) =>{

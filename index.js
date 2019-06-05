@@ -2481,7 +2481,51 @@ if(command === "class"){
     .setFooter("")
         message.channel.send(clas)
         .then(async function (message ) {
-             message.react("0⃣")
+
+            setTimeout(function(){
+                message.react("0⃣")
+
+              }, ms2(500));
+
+              setTimeout(function(){
+                message.react("1⃣")
+
+              }, ms2(1000));
+              setTimeout(function(){
+                message.react("2⃣")
+
+              }, ms2(1500));
+              setTimeout(function(){
+                message.react("3⃣")
+
+              }, ms2(2000));
+              setTimeout(function(){
+                message.react("4⃣")
+
+              }, ms2(2500));
+              setTimeout(function(){
+                message.react("5⃣")
+
+              }, ms2(3000));
+              setTimeout(function(){
+                message.react("6⃣")
+
+              }, ms2(3500));
+              setTimeout(function(){
+                message.react("7⃣")
+
+              }, ms2(4000));
+              setTimeout(function(){
+                message.react("8⃣")
+
+              }, ms2(4500));
+              setTimeout(function(){
+                message.react("9⃣")
+
+              }, ms2(5000));
+
+
+
 
             
             client.on('messageReactionAdd',async (reaction, user) =>{
@@ -2520,8 +2564,7 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                 })
             })
         }
-         message.react("1⃣")
-
+        
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
                 reaction.remove(user)
@@ -2557,8 +2600,6 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
         })
     })
 }
-  message.react("2⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2595,8 +2636,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
- message.react("3⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2632,8 +2671,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
- message.react("4⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2669,8 +2706,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-  message.react("5⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2706,8 +2741,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-  message.react("6⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2743,8 +2776,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-   message.react("7⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2780,8 +2811,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-   message.react("8⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "8⃣" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -2817,8 +2846,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-   message.react("9⃣")
-
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "9⃣" && user.id !== client.user.id) {
         reaction.remove(user)

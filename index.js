@@ -3201,50 +3201,50 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         await message.delete(sorcier)
     message.delet(user)
 }
-})  
-
 })
+
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }
 })
 
-})
+}).catch()
 }       
 })
 
 
-}) 
+}).catch()
 }
 
 });

@@ -2481,7 +2481,7 @@ if(command === "class"){
     .setFooter("")
         message.channel.send(clas)
         .then(async function (message ) {
-            await message.react("0⃣")
+             message.react("0⃣")
 
             
             client.on('messageReactionAdd',async (reaction, user) =>{
@@ -2520,7 +2520,7 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                 })
             })
         }
-        await message.react("1⃣")
+         message.react("1⃣")
 
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
@@ -2557,7 +2557,7 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
         })
     })
 }
-await  message.react("2⃣")
+  message.react("2⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
@@ -2595,7 +2595,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await message.react("3⃣")
+ message.react("3⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
@@ -2632,7 +2632,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await message.react("4⃣")
+ message.react("4⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
@@ -2669,7 +2669,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await  message.react("5⃣")
+  message.react("5⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
@@ -2706,7 +2706,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await  message.react("6⃣")
+  message.react("6⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
@@ -2743,7 +2743,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await   message.react("7⃣")
+   message.react("7⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
@@ -2780,7 +2780,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await   message.react("8⃣")
+   message.react("8⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "8⃣" && user.id !== client.user.id) {
@@ -2817,7 +2817,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 })
 }
-await   message.react("9⃣")
+   message.react("9⃣")
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "9⃣" && user.id !== client.user.id) {

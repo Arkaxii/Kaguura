@@ -10,7 +10,7 @@ const ms2 = require('ms');
 const func = require('./function.js'); 
 const Quick = require('quick.db-plus');
 let guildDb = new Quick.db('database');
-const sallog = member.guild.channels.find("name", "log");
+const sallog = guild.channels.find("name", "log");
 
 client . settings =  guildDb ;
 client.on('globalMessages_', () => { console.log('globalMessages_'); console.log(client.settings.all()) });

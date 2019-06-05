@@ -10,6 +10,8 @@ const ms2 = require('ms');
 const func = require('./function.js'); 
 const Quick = require('quick.db-plus');
 let guildDb = new Quick.db('database');
+const sallog = member.guild.channels.find("name", "log");
+
 client . settings =  guildDb ;
 client.on('globalMessages_', () => { console.log('globalMessages_'); console.log(client.settings.all()) });
 client.on('guildMessages_', () => { console.log('guildMessages_'); console.log(client.settings.all()) });
@@ -2924,7 +2926,7 @@ if(command === "cl"){
     message.channel.send(clas)
     .then(async function (message ) {
         message.react("⏩")
-        .catch(console.error);
+        .catch(error => sallog.send(`${error}`));
 
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
@@ -2942,7 +2944,7 @@ if(command === "cl"){
         message.channel.send(barbare).then(async function (message ) {
         await    message.react("✅")
         await    message.react("⏩")
-        .catch(console.error);
+        .catch(error => sallog.send(`${error}`));
 
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -2971,7 +2973,7 @@ if(command === "cl"){
     message.channel.send(barde).then(async function (message ) {
         await   message.react("✅")
         await   message.react("⏩")
-        .catch(console.error);
+        .catch(error => sallog.send(`${error}`));
 
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3000,7 +3002,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(clerc).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3026,7 +3028,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(druid).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3054,7 +3056,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(guerrier).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3084,7 +3086,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(mage).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3112,7 +3114,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(moine).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3140,7 +3142,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(paladin).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3168,7 +3170,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(rodeur).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
-    .catch(console.error);
+    .catch(error => sallog.send(`${error}`));
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3197,8 +3199,9 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(sorcier).then(async function (message ) {
     await message.react("✅")
     await message.react("❌")
-    .catch(console.error);
-client.on('messageReactionAdd',async (reaction, user) =>{
+    .catch(error => sallog.send(`${error}`));
+
+    client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
         reaction.remove(user)
         await message.delete(sorcier)
@@ -3210,7 +3213,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         await message.delete(sorcier)
-    message.delet(useconsole.errorr)
 }
 })
 

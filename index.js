@@ -2480,21 +2480,21 @@ if(command === "class"){
     `)
     .setFooter("")
         message.channel.send(clas)
-		
-            
-        message.react("0⃣")
-        .then(() =>   message.react("1⃣"))
-        .then(() =>   message.react("2⃣"))
-        .then(() =>  message.react("3⃣"))
-        .then(() =>  message.react("4⃣"))
-        .then(() =>  message.react("5⃣"))
-        .then(() =>   message.react("6⃣"))
-        .then(() =>   message.react("7⃣"))
-        .then(() =>   message.react("8⃣"))
-        .then(() =>   message.react("9⃣"))
-        
-        .catch(() => console.error("L'un des emoji n'as pas fonctionner."));
+		try {
+           await message.react("0⃣")
+            await message.react("1⃣")
+            await  message.react("2⃣")
+            await message.react("3⃣")
+            await message.react("4⃣")
+            await  message.react("5⃣")
+            await  message.react("6⃣")
+            await   message.react("7⃣")
+            await   message.react("8⃣")
+            await   message.react("9⃣")
 
+            } catch (error) {
+			console.error('One of the emojis failed to react.');
+		}
             
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
@@ -2859,7 +2859,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 }
 
-if(command === "cl."){
+if(command === "cl"){
 
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")

@@ -2856,7 +2856,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 }
 
 if(command === "cl"){
-    const sallog = guild.channels.find("name", "log");
+    const sallog = message.guild.channels.find(channel => channel.name === "log");
 
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")

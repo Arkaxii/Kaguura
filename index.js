@@ -10,7 +10,6 @@ const ms2 = require('ms');
 const func = require('./function.js'); 
 const Quick = require('quick.db-plus');
 let guildDb = new Quick.db('database');
-const sallog = guild.channels.find("name", "log");
 
 client . settings =  guildDb ;
 client.on('globalMessages_', () => { console.log('globalMessages_'); console.log(client.settings.all()) });
@@ -2857,6 +2856,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 }
 
 if(command === "cl"){
+    const sallog = guild.channels.find("name", "log");
+
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")
     .setDescription(`

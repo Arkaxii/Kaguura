@@ -2859,7 +2859,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 }
 
-if(command === "cl"){
+if(command === "cl."){
 
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")

@@ -3199,52 +3199,52 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
         reaction.remove(user)
         await message.delete(sorcier)
-    message.delet(user)
+    message.delet(useconsole.errorr)
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }
 })
 
-}).catch()
+}).catch(console.error);
 }       
 })
 
 
-}).catch()
+}).catch(console.error);
 }
 
 });

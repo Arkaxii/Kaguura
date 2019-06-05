@@ -2482,49 +2482,18 @@ if(command === "class"){
         message.channel.send(clas)
         .then(async function (message ) {
 
-            setTimeout(function(){
-                message.react("0⃣")
-
-              }, ms2(500));
-
-              setTimeout(function(){
-                message.react("1⃣")
-
-              }, ms2(1000));
-              setTimeout(function(){
-                message.react("2⃣")
-
-              }, ms2(1500));
-              setTimeout(function(){
-                message.react("3⃣")
-
-              }, ms2(2000));
-              setTimeout(function(){
-                message.react("4⃣")
-
-              }, ms2(2500));
-              setTimeout(function(){
-                message.react("5⃣")
-
-              }, ms2(3000));
-              setTimeout(function(){
-                message.react("6⃣")
-
-              }, ms2(3500));
-              setTimeout(function(){
-                message.react("7⃣")
-
-              }, ms2(4000));
-              setTimeout(function(){
-                message.react("8⃣")
-
-              }, ms2(4500));
-              setTimeout(function(){
-                message.react("9⃣")
-
-              }, ms2(5000));
 
 
+             message.react("0⃣")
+             message.react("1⃣")
+              message.react("2⃣")
+             message.react("3⃣")
+             message.react("4⃣")
+              message.react("5⃣")
+              message.react("6⃣")
+               message.react("7⃣")
+               message.react("8⃣")
+               message.react("9⃣")
 
 
             

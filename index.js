@@ -2924,6 +2924,7 @@ if(command === "cl"){
     message.channel.send(clas)
     .then(async function (message ) {
         message.react("⏩")
+        .catch(console.error);
 
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
@@ -2941,6 +2942,7 @@ if(command === "cl"){
         message.channel.send(barbare).then(async function (message ) {
         await    message.react("✅")
         await    message.react("⏩")
+        .catch(console.error);
 
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -2969,6 +2971,7 @@ if(command === "cl"){
     message.channel.send(barde).then(async function (message ) {
         await   message.react("✅")
         await   message.react("⏩")
+        .catch(console.error);
 
         client.on('messageReactionAdd',async (reaction, user) =>{
             if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -2997,6 +3000,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(clerc).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3022,6 +3026,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(druid).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3049,6 +3054,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(guerrier).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3078,6 +3084,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(mage).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3105,6 +3112,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(moine).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3132,6 +3140,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(paladin).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3159,6 +3168,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(rodeur).then(async function (message ) {
     await message.react("✅")
     await message.react("⏩")
+    .catch(console.error);
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
@@ -3187,6 +3197,7 @@ if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
 message.channel.send(sorcier).then(async function (message ) {
     await message.react("✅")
     await message.react("❌")
+    .catch(console.error);
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
         reaction.remove(user)
@@ -3203,48 +3214,48 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }
 })
 
-}).catch(console.error);
+})
 }       
 })
 
 
-}).catch(console.error);
+})
 }
 
 });

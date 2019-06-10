@@ -2419,62 +2419,62 @@ if(command === "class"){
     
     **-Barbare:** 0 
     Style de combat: Corp à corp
-    armure utiliser: Armure de plate légère
-    arme utiliser: Hache à 2 mains, épée à 2 mains  
+    armure: Armure de plate légère
+    arme: Hache à 2 mains, épée à 2 mains  
     type d'attaque utiliser: Bourinage, bourinage et euu... BOURINAGE!
 
     **-Barde:** 1
     Style de combat: Distance
-    armure utiliser: équipement en cuire/ maille
-    arme utiliser: Arc, instrument de musique spécialement ceux avec corde
+    armure: équipement en cuire/ maille
+    arme: Arc, instrument de musique spécialement ceux avec corde
     type d'attaque utiliser: tire à l'arc/ musique 
 
     **-Clerc:** 2
     Style de combat: Support distance
-    armure utiliser: équipement en tissue
-    arme utiliser: Armes sacré (livres sacré/ bâton sacré)
+    armure: équipement en tissue
+    arme: Armes sacré (livres sacré/ bâton sacré)
     type d'attaque utiliser: Sacré/ bénédiction majeur
 
     **-Druide:** 3
     Style de combat: Distance/ Support 
-    armure utiliser: équipement en cuire
-    arme utiliser: Bâton
+    armure: équipement en cuire
+    arme: Bâton
     type d'attaque utiliser: Faune et flore/ métamorphe
 
     **-Chevalier:** 4
     Style de combat: Corp à corp/ tank
-    armure utiliser: Armure de plate complet
-    arme utiliser: Hache à 2 main/ épée à 1(2) main(s)/ Bouclier
+    armure: Armure de plate complet
+    arme: Hache à 2 main/ épée à 1(2) main(s)/ Bouclier
     type d'attaque utiliser: Coup d'estoc/ taunt/ attaque basique
 
     **-Mage:** 5
     Style de combat: Distance
-    armure utiliser: équipement en tissue
-    arme utiliser: Bâton/ sceptre 
+    armure: équipement en tissue
+    arme: Bâton/ sceptre 
     type d'attaque utiliser: Givre/ feux/ éclair
     
     **-Moine:** 6
     Style de combat: Corp à corp
-    armure utiliser: équipement en maille/ cuire
-    arme utiliser: Pugilat 
+    armure: équipement en maille/ cuire
+    arme: Pugilat 
     type d'attaque utiliser: Art martiaux/ Qi 
 
     **-Paladin:** 7
     Style de combat: Corp à corp/ tank/ support
-    armure utiliser: Armure de plate lourde
-    arme utiliser: Marteaux/ épée 1(2) main(s)/ livre/ Bouclier
+    armure: Armure de plate lourde
+    arme: Marteaux/ épée 1(2) main(s)/ livre/ Bouclier
     type d'attaque utiliser: Lumière/ sacrée/ bénédiction mineur
 
     **-Rôdeur:** 8
     Style de combat: Corp à corp
-    armure utiliser: équipement en cuire
-    arme utiliser: Dague/ courte épée
+    armure: équipement en cuire
+    arme: Dague/ courte épée
     type d'attaque utiliser: furtivité/ poisons  
 
     **-Sorcier:** 9
     Style de combat: Distance
-    armure utiliser: équipement en tissue
-    arme utiliser: Bâton/ sceptre
+    armure: équipement en tissue
+    arme: Bâton/ sceptre
     type d'attaque utiliser: Invocation/ maléfice/ sortilège mistérieux 
 
     `)
@@ -2509,7 +2509,7 @@ if(command === "class"){
                     .setDescription(`
                     Un combattant brutal qui provient des frontières de la civilisation
                                         `)
-                    .setFooter("✅accepter ❌refuser ")
+                    .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde* ")
             message.channel.send(barbare).then(async function (message ) {
                await message.react("✅")
                await message.react("❌")
@@ -2545,7 +2545,7 @@ if(command === "class"){
                 .setDescription(`qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés,
                  troubler ses ennemis et accessoirement tiré des flèches.
                 `)
-                .setFooter("✅accepter ❌refuser ")
+                .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
                 message.channel.send(barde).then(async function (message ) {
                     await message.react("✅")
                     await message.react("❌")
@@ -2581,7 +2581,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setDescription(`Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie
         et utiliser le pouvoir sacré pour occire ses ennemis.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(clerc).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2617,7 +2617,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setImage("https://i.imgur.com/7gGcQB3.png")
         .setDescription(`A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(druid).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2652,7 +2652,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setImage("https://i.imgur.com/hKl4yeP.png")
         .setDescription(`Un maître en matière d’armes et d'armures de toutes sortes à la fois courageux et vaillant.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(guerrier).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2687,7 +2687,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setImage("https://i.imgur.com/I8y8Npk.jpg")
         .setDescription(` Qui, à force d'étudier sans cesse, parvient à maîtriser la magie et acquiert d'incroyables pouvoirs.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(mage).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2723,7 +2723,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setDescription(`Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense
         et accessoirement aime la bière.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(moine).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2759,7 +2759,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setDescription(`Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien 
         et à un penchant un peut trop prononcé pour la lumière.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(paladin).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2795,7 +2795,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setDescription(`A la fois pisteur et chasseur, une créature des étendues sauvages
         qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(rodeur).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")
@@ -2832,7 +2832,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges
         pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
         `)
-        .setFooter("✅accepter ❌refuser ")
+        .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(sorcier).then(async function (message ) {
             await message.react("✅")
             await message.react("❌")

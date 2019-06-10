@@ -2542,8 +2542,7 @@ if(command === "class"){
                 var barde = new Discord.RichEmbed()
                 .setAuthor("Barde")
                 .setImage("https://i.imgur.com/kzV53Vy.png")
-                .setDescription(`qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés,
-                 troubler ses ennemis et accessoirement tiré des flèches.
+                .setDescription(`qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés, troubler ses ennemis et accessoirement tiré des flèches.
                 `)
                 .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
                 message.channel.send(barde).then(async function (message ) {
@@ -2578,8 +2577,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var clerc = new Discord.RichEmbed()
         .setAuthor("Clerc")
         .setImage("https://i.imgur.com/ik8cIbo.png")
-        .setDescription(`Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie
-        et utiliser le pouvoir sacré pour occire ses ennemis.
+        .setDescription(`Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie et utiliser le pouvoir sacré pour occire ses ennemis.
         `)
         .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(clerc).then(async function (message ) {
@@ -2720,8 +2718,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var moine = new Discord.RichEmbed()
         .setAuthor("Moine")
         .setImage("https://i.imgur.com/FDslwrn.png")
-        .setDescription(`Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense
-        et accessoirement aime la bière.
+        .setDescription(`Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense et accessoirement aime la bière.
         `)
         .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(moine).then(async function (message ) {
@@ -2756,8 +2753,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var paladin = new Discord.RichEmbed()
         .setAuthor("Paladin")
         .setImage("https://i.imgur.com/BVmG9m1.png")
-        .setDescription(`Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien 
-        et à un penchant un peut trop prononcé pour la lumière.
+        .setDescription(`Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien  et à un penchant un peut trop prononcé pour la lumière.
         `)
         .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(paladin).then(async function (message ) {
@@ -2792,8 +2788,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var rodeur = new Discord.RichEmbed()
         .setAuthor("Rôdeur")
         .setImage("https://i.imgur.com/5ydscFv.png")
-        .setDescription(`A la fois pisteur et chasseur, une créature des étendues sauvages
-        qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
+        .setDescription(`A la fois pisteur et chasseur, une créature des étendues sauvages qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
         `)
         .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(rodeur).then(async function (message ) {
@@ -2829,8 +2824,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         .setAuthor("Sorcier")
         .setImage("https://i.imgur.com/vgMYf49.png")
         .setDescription(`Qui rôde à la frontière des lieux civilisés.
-        Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges
-        pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
+        Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
         `)
         .setFooter("✅accepter ❌refuser *Peut prendre plusieur seconde*")
         message.channel.send(sorcier).then(async function (message ) {

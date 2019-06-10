@@ -2418,64 +2418,64 @@ if(command === "class"){
     .setDescription(`
     
     **-Barbare:** 0 
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Corp à corp
+    armure utiliser: Armure de plate légère
+    arme utiliser: Hache à 2 mains, épée à 2 mains  
+    type d'attaque utiliser: Bourinage, bourinage et euu... BOURINAGE!
 
     **-Barde:** 1
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Distance
+    armure utiliser: équipement en cuire/ maille
+    arme utiliser: Arc, instrument de musique spécialement ceux avec corde
+    type d'attaque utiliser: tire à l'arc/ musique 
 
     **-Clerc:** 2
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Support distance
+    armure utiliser: équipement en tissue
+    arme utiliser: Armes sacré (livres sacré/ bâton sacré)
+    type d'attaque utiliser: Sacré/ bénédiction majeur
 
     **-Druide:** 3
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Distance/ Support 
+    armure utiliser: équipement en cuire
+    arme utiliser: Bâton
+    type d'attaque utiliser: Faune et flore/ métamorphe
 
     **-Chevalier:** 4
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Corp à corp/ tank
+    armure utiliser: Armure de plate complet
+    arme utiliser: Hache à 2 main/ épée à 1(2) main(s)/ Bouclier
+    type d'attaque utiliser: Coup d'estoc/ taunt/ attaque basique
 
     **-Mage:** 5
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Distance
+    armure utiliser: équipement en tissue
+    arme utiliser: Bâton/ sceptre 
+    type d'attaque utiliser: Givre/ feux/ éclair
     
     **-Moine:** 6
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Corp à corp
+    armure utiliser: équipement en maille/ cuire
+    arme utiliser: Pugilat 
+    type d'attaque utiliser: Art martiaux/ Qi 
 
     **-Paladin:** 7
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Corp à corp/ tank/ support
+    armure utiliser: Armure de plate lourde
+    arme utiliser: Marteaux/ épée 1(2) main(s)/ livre/ Bouclier
+    type d'attaque utiliser: Lumière/ sacrée/ bénédiction mineur
 
     **-Rôdeur:** 8
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Corp à corp
+    armure utiliser: équipement en cuire
+    arme utiliser: Dague/ courte épée
+    type d'attaque utiliser: furtivité/ poisons  
 
     **-Sorcier:** 9
-    ligne de combat:
-    armure utiliser:
-    arme utiliser:
-    type d'attaque utiliser:
+    Style de combat: Distance
+    armure utiliser: équipement en tissue
+    arme utiliser: Bâton/ sceptre
+    type d'attaque utiliser: Invocation/ maléfice/ sortilège mistérieux 
 
     `)
     .setFooter("")
@@ -2507,9 +2507,8 @@ if(command === "class"){
                     .setAuthor("Barbare")
                     .setImage("https://i.imgur.com/tluyj40.png")
                     .setDescription(`
-                    
-tu ne pourras pas changer de class veux-tu vraiment être Barbare ? 
-                    `)
+                    Un combattant brutal qui provient des frontières de la civilisation
+                                        `)
                     .setFooter("✅accepter ❌refuser ")
             message.channel.send(barbare).then(async function (message ) {
                await message.react("✅")
@@ -2543,7 +2542,8 @@ tu ne pourras pas changer de class veux-tu vraiment être Barbare ?
                 var barde = new Discord.RichEmbed()
                 .setAuthor("Barde")
                 .setImage("https://i.imgur.com/kzV53Vy.png")
-                .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Barde ?
+                .setDescription(`qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés,
+                 troubler ses ennemis et accessoirement tiré des flèches.
                 `)
                 .setFooter("✅accepter ❌refuser ")
                 message.channel.send(barde).then(async function (message ) {
@@ -2578,7 +2578,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var clerc = new Discord.RichEmbed()
         .setAuthor("Clerc")
         .setImage("https://i.imgur.com/ik8cIbo.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Clerc ?
+        .setDescription(`Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie
+        et utiliser le pouvoir sacré pour occire ses ennemis.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(clerc).then(async function (message ) {
@@ -2614,7 +2615,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var druid = new Discord.RichEmbed()
         .setAuthor("Druide")
         .setImage("https://i.imgur.com/7gGcQB3.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Druide ?
+        .setDescription(`A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(druid).then(async function (message ) {
@@ -2649,7 +2650,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var guerrier = new Discord.RichEmbed()
         .setAuthor("Chevalier")
         .setImage("https://i.imgur.com/hKl4yeP.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Chevalier ?
+        .setDescription(`Un maître en matière d’armes et d'armures de toutes sortes à la fois courageux et vaillant.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(guerrier).then(async function (message ) {
@@ -2684,7 +2685,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var mage = new Discord.RichEmbed()
         .setAuthor("Mage")
         .setImage("https://i.imgur.com/I8y8Npk.jpg")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Mage ?
+        .setDescription(` Qui, à force d'étudier sans cesse, parvient à maîtriser la magie et acquiert d'incroyables pouvoirs.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(mage).then(async function (message ) {
@@ -2719,7 +2720,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var moine = new Discord.RichEmbed()
         .setAuthor("Moine")
         .setImage("https://i.imgur.com/FDslwrn.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Moine ?
+        .setDescription(`Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense
+        et accessoirement aime la bière.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(moine).then(async function (message ) {
@@ -2754,7 +2756,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var paladin = new Discord.RichEmbed()
         .setAuthor("Paladin")
         .setImage("https://i.imgur.com/BVmG9m1.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Paladin ?
+        .setDescription(`Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien 
+        et à un penchant un peut trop prononcé pour la lumière.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(paladin).then(async function (message ) {
@@ -2789,7 +2792,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var rodeur = new Discord.RichEmbed()
         .setAuthor("Rôdeur")
         .setImage("https://i.imgur.com/5ydscFv.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Rôdeur ?
+        .setDescription(`A la fois pisteur et chasseur, une créature des étendues sauvages
+        qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(rodeur).then(async function (message ) {
@@ -2824,7 +2828,9 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         var sorcier = new Discord.RichEmbed()
         .setAuthor("Sorcier")
         .setImage("https://i.imgur.com/vgMYf49.png")
-        .setDescription(`tu ne pourras pas changer de class veux-tu vraiment être Sorcier ?
+        .setDescription(`Qui rôde à la frontière des lieux civilisés.
+        Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges
+        pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
         `)
         .setFooter("✅accepter ❌refuser ")
         message.channel.send(sorcier).then(async function (message ) {

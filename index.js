@@ -1155,9 +1155,7 @@ if(!rolerain)
                                  if (persrep == goodrep) {
                                      message.reply ("Correct");
                                  }
-                                 if(persrep == false){
-                                    setTimeout("Fin du temps" , 5000 );
-                                 }
+
                                  else{
                                      message.reply("Faux");
                                  }

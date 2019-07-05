@@ -1139,7 +1139,7 @@ if(!rolerain)
                message.reply("le dé roule et c'est un: 6"); 
                }
             }}
-
+/*
             client.on ("ready", () => {
                 answered = true;
                 cAnswer = "";
@@ -1196,7 +1196,7 @@ if(!rolerain)
                           }); 
 
 
-
+*/
             {
                 function World_of_warcraft(){
                     message.reply("Et c'etai world of warcraft")

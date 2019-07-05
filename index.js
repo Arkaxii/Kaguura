@@ -1159,13 +1159,14 @@ if(message.content.startsWith(prefix + "test")){
             .setDescription(`metre la ref`)
             message.channel.send(te);
 
-        }
+        
         if(msg == "test 1"){
         message.channel.send(nice)}
 else{
     message.channel.send("nop")
 }
     }
+}
 
 
 

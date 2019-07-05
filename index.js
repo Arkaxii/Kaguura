@@ -1167,7 +1167,7 @@ if(!rolerain)
                                      message.reply ("Correct");
                                  }
                                  if(userAnswer == false){
-                                    setTimeout("Fin du temps" , 5000);break;
+                                    setTimeout("Fin du temps" , 5000 );
                                  }
                                  else{
                                      message.reply("Faux");

@@ -424,13 +424,12 @@ client.on("message", async message => {
      db.add(`globalMessages_${message.author.id}`, 1);
      db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
 
+     const config = require("./config.json");
 
     if (message.content.indexOf(config.prefix) !== 0) return;
 
 	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-
-     msg = message.content.toLocaleLowerCase();	
 	
 
   if (command === "dico"){
@@ -1155,7 +1154,7 @@ if(!rolerain)
                message.reply("le dé roule et c'est un: 6"); 
                }
             }}
-            
+
             client.on ("ready", () => {
                 answered = true;
                 cAnswer = "";

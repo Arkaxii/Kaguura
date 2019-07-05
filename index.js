@@ -386,8 +386,6 @@ client.on("message", async message => {
                }
                answered = true; cAnswer = ""; userAnswer = "";
            }
-
-
            if (msg.startsWith(prefix + "quiz" )){
                number = 18;
                var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
@@ -1157,6 +1155,59 @@ if(!rolerain)
                message.reply("le dé roule et c'est un: 6"); 
                }
             }}
+
+
+                client.on("message", async message => {
+
+                    msg = message.content.toLocaleLowerCase();
+                  
+                             if (answered == false && message.author == quizUser) {
+                                 userAnswer = msg;
+                                 if (userAnswer == cAnswer) {
+                                     message.reply ("Correct");
+                                 }
+                                 if(userAnswer == false){
+                                    setTimeout("Fin du temps" , 5000);break;
+                                 }
+                                 else{
+                                     message.reply("Faux");
+                                 }
+                                 answered = true; cAnswer = ""; userAnswer = "";
+                             }
+                             if (msg.startsWith(prefix + "test" )){
+                                 number = 18;
+                                 var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
+                                 switch(random){
+                                  case 1: message.channel.send ("Que ce qu'es le mot Tellurique: \n1 - Qualifie des planètes similaires a la Terre \n2 - Un minerai extrait de roche \n3 - Un mouvement spirituelle \n4 - Obi wan kenobi "); cAnswer = "1";  break; 
+                                     case 2: message.channel.send ("Quel est l'auteur de la citation « Je n’ai pas échoué. J’ai simplement trouvé 10 000 solutions qui ne fonctionnent pas. » ?  \n1 - Benjamin Franklin. \n2 - Albert Einstein. \n3 - Thomas Edison. \n4 - Emmanuel Macron.");cAnswer = "3"; break;
+                                     case 3: message.channel.send ("Parmis ces anime quelle l'anime avec le plus d'épisodes ? \n1 - Detective Conan \n2 - One Piece \n3 - Doraemon \n4 - C'est l'anime le plus long"); cAnswer = "3"; break;
+                                     case 4: message.channel.send ("D’où vient Vasco de Gama ? \n1 - Du Portugal \n2 - De Venise \n3 - De l'Espagne \n4 - Du Taboulistan " );cAnswer = "1"; break;
+                                     case 5: message.channel.send ("Quelle année a suivi l’an 1 avant J.C ? \n1 - L'an 0 \n2 - L'an 1 aprés J.C \n3 - L'an 0 avant J.C \n4 Le nouvelle an");cAnswer = "2"; break;
+                                     case 6: message.channel.send ("Combien de nouvelles chaînes sont apparus grâce à la TNT ? \n1 - 11 \n2 - 15 \n3 - 12 \n4 - 69");cAnswer = "3" ;break;
+                                     case 7: message.channel.send ("Quel l’équivalent du pape au Tibet ? \n1 - Le dalalama \n2 - L'Alpaga \n3 - L'Alpagïatelle \n4 - Le dallai lama");cAnswer = "4" ; break;
+                                     case 8: message.channel.send ("De combien de syllabes est composé un alexandrin ? \n1 - 4 \n2 - 8 \n3 - 6 \n4 - 12");cAnswer = "4" ;break;
+                                     case 9: message.channel.send ("Comment appelle-t-on la lumière qui se rapproche le plus de la lumière du soleil ?  \n1 - La lumière jaune \n2 - Les UV \n3 - La lumière blanche \n4 - La lumière ");cAnswer = "3" ; break ;
+                                     case 10: message.channel.send ("Quel était le nom du programme spatial qui visait à envoyer le premier homme sur la lune ? \n1 - Spoutnik  \n2 - Voyager 1 \n3 - Apollo 11 \n4 - L'Homme n'a jamais marché sur la lune, c'est un mensonge de la NASA !");cAnswer = "3" ;break;
+                                     case 11: message.channel.send ("Quel révolutionnaire et grand orateur a déclaré en 1792 : “De l’audace, encore de l’audace, toujours de l’audace.” \n1 - Saint-Juste \n2 - Danton \n3 - Robespierre \n4 - Marat");cAnswer = "2" ;break;
+                                     case 12: message.channel.send ("Selon la légende, comment le pape Adrien IV est mort en 1159 ?\n1 - En avalant une mouche \n2 - En se cognant contre une porte \n3 - En tombant d'un balcon \n4 - En chutant de chevale");cAnswer = "1" ;break;
+                                     case 13: message.channel.send ("Qui est le dieu du Soleil dans l'ancienne Egypte ? \n1 - Seth \n2 - Ramsès \n3 - Reshep  \n4 - Râ / Rê");cAnswer = "4" ;break;
+                                     case 14: message.channel.send ("Quel a été le premier nom du jeu de boules ? \n1 - Le por███ 👀 \n2 - La pétanque \n3 - Le Boulingrins \n4 - Bocce");cAnswer = "3" ;break;
+                                     case 15: message.channel.send ("Les champignons compte plus de 50 000 espèces. Combient sont comestible?\n1 - Quelque dizaine \n2 - Quelque centaine \n3 - Quelque miliers \n4 - La réponse 4");cAnswer = "2" ;break;
+                                     case 16: message.channel.send ("Sur quelle échelle est éxprimée l'intensité des tremblement de terre? \n1 - L'échelle de Trilling \n2 - L'échelle de Richter \n3 - L'échelle de Beaufort \n4 - L'échelle de Chuck norris");cAnswer = "2" ;break;
+                                     case 17: message.channel.send ("En Ecosse un lac porte le nom de:  \n1 - Lake \n2 - See \n3 - Loch \n4 - Water");cAnswer = "3" ;break;
+                                     case 18: message.channel.send ("Les habitant de la Nouvelle-Guinée s'appellent: \n1 - Les Massaïs \n2 - Les Maoris \n3 - Les Papous \n4 - Les Gilnéen");cAnswer = "3" ;break;
+                  
+                                 
+                             }
+                  
+                                  answered = false;
+                                 quizUser = message.author;
+                             }
+                  
+                          }); 
+
+
+
             {
                 function World_of_warcraft(){
                     message.reply("Et c'etai world of warcraft")
@@ -2348,7 +2399,7 @@ if(!rolerain)
 
 
 
-        if(message.content.startsWith(prefix + "test")){
+        if(message.content.startsWith(prefix + "rpg")){
  
             const p1 = new Discord.RichEmbed()
             .setAuthor("Niveaux 1")
@@ -2371,11 +2422,11 @@ if(!rolerain)
                            .setFooter("niveaux `[3]` ===>")
             
                            message.channel.send(p2).then(message => {
-                            message.react("🔪");
+                            message.react("⏩");
 
                             client.on('messageReactionAdd',async (reaction, user) =>{
 
-                            if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
+                            if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
                                 reaction.remove(user)
                                 message.channel.send("Vous attaquer les `3 slimes`")
                               await message.delete(p2)

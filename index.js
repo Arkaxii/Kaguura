@@ -8,23 +8,8 @@ const db = require('quick.db');
 const prefix = '?'
 const ms2 = require('ms');
 const func = require('./function.js'); 
-const Quick = require('quick.db-plus');
-let guildDb = new Quick.db('database');
 
-client . settings =  guildDb ;
-client.on('globalMessages_', () => { console.log('globalMessages_'); console.log(client.settings.all()) });
-client.on('guildMessages_', () => { console.log('guildMessages_'); console.log(client.settings.all()) });
-client.on('userBalance_', () => { console.log('userBalance_!'); console.log(client.settings.all()) });
-client.on('testBalance_', () => { console.log('testBalance_!'); console.log(client.settings.all()) });
-client.on('terreBalance_', () => { console.log('terreBalance_!'); console.log(client.settings.all()) });
-client.on('cartonBalance_', () => { console.log('cartonBalance_!'); console.log(client.settings.all()) });
-client.on('ferBalance_', () => { console.log('ferBalance_!'); console.log(client.settings.all()) });
-client.on('bronzeBalance_', () => { console.log('bronzeBalance_!'); console.log(client.settings.all()) });
-client.on('argentBalance_', () => { console.log('argentBalance_!'); console.log(client.settings.all()) });
-client.on('orBalance_', () => { console.log('orBalance_!'); console.log(client.settings.all()) });
-client.on('platineBalance_', () => { console.log('platineBalance_!'); console.log(client.settings.all()) });
-client.on('diamantBalance_', () => { console.log('diamantBalance_!'); console.log(client.settings.all()) });
-client.on('legendeBalance_', () => { console.log('legendeBalance_!'); console.log(client.settings.all()) });
+
 
 
 //information about the bot
@@ -350,29 +335,29 @@ client.on('ready', () => {
                           message.channel.send(respecta);
         }
      });
-  
-  client.on("ready", () => {
+ 
+client.on("ready", () => {
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+    client.user.setActivity(`Regarder ${client.guilds.size} servers`);
   });
   
   client.on("guildCreate", guild => {
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+    client.user.setActivity(`Regarder ${client.guilds.size} servers`);
   });
   
   client.on("guildDelete", guild => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+    client.user.setActivity(`Regarder ${client.guilds.size} servers`);
   });
-  
   client.on ("ready", () => {
   answered = true;
   cAnswer = "";
   userAnswer = "";
-});
-client.on("message", async message => {
-
+  });
+  
+  client.on("message", async message => {
+  
     msg = message.content.toLocaleLowerCase();
   
              if (answered == false && message.author == quizUser) {
@@ -417,7 +402,7 @@ client.on("message", async message => {
              }
   
           }); 
-
+  
 
 client.on("message", async message => {
 

@@ -1141,7 +1141,7 @@ if(!rolerain)
             }}
 
 
-            function test(){
+            function test1(){
                 message.reply("test 1")
             }
                  function random(min, max){
@@ -1160,11 +1160,11 @@ if(message.content.startsWith(prefix + "test")){
             message.channel.send(te);
 
         }
-        if(msg == "test 1")
-        message.channel.send(nice)
-else(
+        if(msg == "test 1"){
+        message.channel.send(nice)}
+else{
     message.channel.send("nop")
-)
+}
     }
 
 

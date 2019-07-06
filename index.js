@@ -555,8 +555,11 @@ message.channel.send(syntb)
 
 
 if(command ==="syntaxe-c"){
-message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\n```\n```fix\nUn message\n```\n```md\n# Un message\n```\n```py\n# Un message\n```\n```cs\n# Un message\n```\n```diff\n- Un message\n```\n```xl\n'Un message'\n```\n```tex\n$ Un message\n```\n```md\n[Un](message)\n``` ")
-/*
+
+    const syntc =  "Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\n```\n```fix\nUn message\n```\n```md\n# Un message\n```\n```py\n# Un message\n```\n```cs\n# Un message\n```\n```diff\n- Un message\n```\n```xl\n'Un message'\n```\n```tex\n$ Un message\n```\n```md\n[Un](message)\n``` "
+
+ message.channel.send(syntc)
+
 .then(async function (message ) {
 
      await message.react("0⃣")
@@ -575,12 +578,12 @@ message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\
        if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
            reaction.remove(user)
            reaction.remove()
-           await message.delete(syntb)
+           await message.delete(syntc)
            
-           var gr = new Discord.RichEmbed()
-           .setAuthor("Gras")
-           .setImage("https://i.imgur.com/bFbRwsL.png")
-           message.channel.send(gr);
+           var bg = new Discord.RichEmbed()
+           .setAuthor("Change la couleur suivant la version du discord")
+           .setImage("https://miro.medium.com/max/189/0*Ge9j3pIqe0yLp24w")
+           message.channel.send(bg);
 
         }
     })
@@ -589,12 +592,12 @@ message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\
         if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(syntb)
+            await message.delete(syntc)
             
-            var ita = new Discord.RichEmbed()
-            .setAuthor("Italique")
-            .setImage("https://i.imgur.com/Lt7TM69.png")
-            message.channel.send(ita);
+            var VB = new Discord.RichEmbed()
+            .setAuthor("Change la couleur suivant la version du discord")
+            .setImage("https://miro.medium.com/max/174/0*9aDweOZLf9UA6J4J")
+            message.channel.send(VB);
  
          }
      })
@@ -603,12 +606,12 @@ message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\
         if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(syntb)
+            await message.delete(syntc)
             
-            var souli = new Discord.RichEmbed()
-            .setAuthor("Souligné")
-            .setImage("https://i.imgur.com/WHB7BzJ.png")
-            message.channel.send(souli);
+            var J = new Discord.RichEmbed()
+            .setAuthor("Jaune")
+            .setImage("https://miro.medium.com/max/191/0*UUjVqgsQGDAsIK2c")
+            message.channel.send(J);
  
          }
      })
@@ -617,12 +620,12 @@ message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\
         if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(syntb)
+            await message.delete(syntc)
             
-            var barre = new Discord.RichEmbed()
-            .setAuthor("Barré")
-            .setImage("https://i.imgur.com/s1YxfdD.png")
-            message.channel.send(barre);
+            var BC = new Discord.RichEmbed()
+            .setAuthor("Bleu clair")
+            .setImage("https://miro.medium.com/max/196/0*w1erI-mlSsLS-UAo")
+            message.channel.send(BC);
  
          }
      })
@@ -631,17 +634,90 @@ message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\
         if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
             reaction.remove(user)
             reaction.remove()
-            await message.delete(syntb)
+            await message.delete(syntc)
             
-            var bl = new Discord.RichEmbed()
-            .setAuthor("Blocs")
-            .setImage("https://i.imgur.com/P4aX63S.png")
-            message.channel.send(bl);
+            var G = new Discord.RichEmbed()
+            .setAuthor("Gris")
+            .setImage("https://miro.medium.com/max/209/0*ByksHgPVmf_R4WSt")
+            message.channel.send(G);
  
          }
      })
 
-})*/
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntc)
+            
+            var O = new Discord.RichEmbed()
+            .setAuthor("Orange")
+            .setImage("https://miro.medium.com/max/201/0*IePOTWeVqNh8Xi6v")
+            message.channel.send(O);
+ 
+         }
+     })
+
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntc)
+            
+            var r = new Discord.RichEmbed()
+            .setAuthor("Rouge")
+            .setImage("https://miro.medium.com/max/203/0*oyJvdUGzNoXIHNFf")
+            message.channel.send(r);
+ 
+         }
+     })
+
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntc)
+            
+            var bs = new Discord.RichEmbed()
+            .setAuthor("Bleu sarcelle")
+            .setImage("https://miro.medium.com/max/183/0*Wjl5GfS3bnfmduUd")
+            message.channel.send(bs);
+ 
+         }
+     })
+
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "8⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntc)
+            
+            var sur = new Discord.RichEmbed()
+            .setAuthor("Surligner")
+            .setImage("https://miro.medium.com/max/193/0*X_zV6R7wBAlLSs5u")
+            message.channel.send(sur);
+ 
+         }
+     })
+})
+
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "9⃣" && user.id !== client.user.id) {
+        reaction.remove(user)
+        reaction.remove()
+        await message.delete(syntc)
+        
+        var bi = new Discord.RichEmbed()
+        .setAuthor("bicolore")
+        .setImage("https://miro.medium.com/max/202/0*e77nVHYRVK8khWcv")
+        message.channel.send(bi);
+
+     }
+ })
+
+
+
+
 }
 	
 

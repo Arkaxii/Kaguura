@@ -456,18 +456,18 @@ if (command === "f-a"){
 
 Syntaxe Basique:
 
-0 **Salut, ce message est en gras!**
+0) **Salut, ce message est en gras!**
 
-1 *je me sens penché*
+1) *je me sens penché*
 
-2 __Je suis souligné... Meh__
+2) __Je suis souligné... Meh__
 
-3 ~~Nan mais ok je me barre~~
+3) ~~Nan mais ok je me barre~~
 
 `)
     .setFooter(`  `)
 message.channel.send(syntb)
-/*.then(async function (message ) {
+.then(async function (message ) {
 
    await message.react("0⃣")
    await message.react("1⃣")
@@ -532,7 +532,7 @@ message.channel.send(syntb)
      })
 
 
-})*/
+})
 }
 	
 	

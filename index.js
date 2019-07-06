@@ -555,29 +555,20 @@ message.channel.send(syntb)
 
 
 if(command ==="syntaxe-c"){
-    let syntb = new Discord.RichEmbed()
-    .setTitle(`Requested By | ${message.author.username}`)
-        .setDescription(`
-
-Syntaxe Basique:
-
-0) **Salut, ce message est en gras!**
-
-1) *je me sens penché*
-
-2) __Je suis souligné... Meh__
-
-3) ~~Nan mais ok je me barre~~
-
-`)
-    .setFooter(` on peut mixer plusieur syntaxe `)
-message.channel.send(syntb)
+message.channel.send("Syntaxe coloré\n```\nUn message\n```\n\n```css\nUn message\n```\n\n```fix\nUn message\n```\n\n```md\n# Un message\n```\n\n```py\n# Un message\n```cs\n# Un message\n```\n\n```diff\n- Un message\n```\n\n```xl\n'Un message'\n```\n\n```tex\n$ Un message\n```\n\n```md\n[Un](message)\n``` ")
+/*
 .then(async function (message ) {
 
-   await message.react("0⃣")
-   await message.react("1⃣")
-   await  message.react("2⃣")
-   await message.react("3⃣")
+     await message.react("0⃣")
+     await message.react("1⃣")
+     await message.react("2⃣")
+     await message.react("3⃣")
+     await message.react("4⃣")
+     await message.react("5⃣")
+     await message.react("6⃣")
+     await message.react("7⃣")
+     await message.react("8⃣")
+     await message.react("9⃣")
 
 
    client.on('messageReactionAdd',async (reaction, user) =>{
@@ -650,7 +641,7 @@ message.channel.send(syntb)
          }
      })
 
-})
+})*/
 }
 	
 

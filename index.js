@@ -543,7 +543,7 @@ message.channel.send(syntb)
             var bl = new Discord.RichEmbed()
             .setAuthor("Blocs")
             .setDescription(" ``C'est un blocs``  ")
-            .setImage("https://i.imgur.com/P4aX63S.png")
+            .setImage("https://i.imgur.com/0OlUjKp.png")
             message.channel.send(bl);
  
          }

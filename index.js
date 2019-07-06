@@ -552,7 +552,7 @@ Syntaxe Basique:
 
 3) ~~Nan mais ok je me barre~~
 
-4) ``Utile pour le code``
+4) ``Utile pour codé``
 
 `)
     .setFooter(` on peut mixer plusieur syntaxe `)

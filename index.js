@@ -467,7 +467,7 @@ Syntaxe Basique:
 `)
     .setFooter(`  `)
 message.channel.send(syntb)
-.then(async function (message ) {
+/*.then(async function (message ) {
 
    await message.react("0⃣")
    await message.react("1⃣")
@@ -532,7 +532,7 @@ message.channel.send(syntb)
      })
 
 
-})
+})*/
 }
 	
 	

@@ -699,7 +699,7 @@ if(command ==="syntaxe-c"){
  
          }
      })
-})
+
 
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "9⃣" && user.id !== client.user.id) {
@@ -714,7 +714,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
      }
  })
-
+})
 
 
 

@@ -449,7 +449,7 @@ if (command === "f-a"){
   
 
 
-   if(commande ==="synt basique"){
+   if(command ==="synt basique"){
     let syntb = new Discord.RichEmbed()
     .setTitle(`Requested By | ${message.author.username}`)
         .setDescription(`

@@ -464,6 +464,8 @@ Syntaxe Basique:
 
 3) ~~Nan mais ok je me barre~~
 
+4) Blocs ==> 4⃣  pour plus d'info
+
 `)
     .setFooter(` on peut mixer plusieur syntaxe `)
 message.channel.send(syntb)
@@ -473,7 +475,8 @@ message.channel.send(syntb)
    await message.react("1⃣")
    await  message.react("2⃣")
    await message.react("3⃣")
-   
+   await message.react("4⃣")
+
 
    client.on('messageReactionAdd',async (reaction, user) =>{
        if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
@@ -531,13 +534,27 @@ message.channel.send(syntb)
          }
      })
 
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntb)
+            
+            var bl = new Discord.RichEmbed()
+            .setAuthor("Blocs")
+            .setDescription(" ``C'est un blocs``  ")
+            .setImage("https://i.imgur.com/P4aX63S.png")
+            message.channel.send(bl);
+ 
+         }
+     })
 
 })
 }
     
 
 
-if(command ==="syntaxe-b"){
+if(command ==="syntaxe-c"){
     let syntb = new Discord.RichEmbed()
     .setTitle(`Requested By | ${message.author.username}`)
         .setDescription(`
@@ -619,6 +636,19 @@ message.channel.send(syntb)
          }
      })
 
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntb)
+            
+            var bl = new Discord.RichEmbed()
+            .setAuthor("Blocs")
+            .setImage("https://i.imgur.com/P4aX63S.png")
+            message.channel.send(bl);
+ 
+         }
+     })
 
 })
 }

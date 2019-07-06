@@ -449,8 +449,91 @@ if (command === "f-a"){
   
 
 
+   if(commande ==="synt basique"){
+    let syntb = new Discord.RichEmbed()
+    .setTitle(`Requested By | ${message.author.username}`)
+        .setDescription(`
+
+Syntaxe Basique:
+
+0 **Salut, ce message est en gras!**
+
+1 *je me sens penché*
+
+2 __Je suis souligné... Meh__
+
+3 ~~Nan mais ok je me barre~~
+
+`)
+    .setFooter(`  `)
+message.channel.send(syntb)
+.then(async function (message ) {
+
+   await message.react("0⃣")
+   await message.react("1⃣")
+   await  message.react("2⃣")
+   await message.react("3⃣")
    
-	
+
+   client.on('messageReactionAdd',async (reaction, user) =>{
+       if (reaction.emoji.name === "0⃣" && user.id !== client.user.id) {
+           reaction.remove(user)
+           reaction.remove()
+           await message.delete(syntb)
+           
+           var gr = new Discord.RichEmbed()
+           .setAuthor("Gras")
+           .setImage("https://i.imgur.com/bFbRwsL.png")
+           message.channel.send(gr);
+
+        }
+    })
+
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntb)
+            
+            var ita = new Discord.RichEmbed()
+            .setAuthor("Italique")
+            .setImage("https://i.imgur.com/Lt7TM69.png")
+            message.channel.send(ita);
+ 
+         }
+     })
+
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntb)
+            
+            var souli = new Discord.RichEmbed()
+            .setAuthor("Souligné")
+            .setImage("https://i.imgur.com/WHB7BzJ.png")
+            message.channel.send(souli);
+ 
+         }
+     })
+
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntb)
+            
+            var barre = new Discord.RichEmbed()
+            .setAuthor("Barré")
+            .setImage("https://i.imgur.com/s1YxfdD.png")
+            message.channel.send(barre);
+ 
+         }
+     })
+
+
+})
+}
 	
 	
 	if(command == "timer"){

@@ -555,7 +555,7 @@ message.channel.send(syntb)
 
 
 if(command ==="syntaxe-c"){
-message.channel.send("Syntaxe coloré\n```\nUn message\n```\n\n```css\nUn message\n```\n\n```fix\nUn message\n```\n\n```md\n# Un message\n```\n\n```py\n# Un message\n```cs\n# Un message\n```\n\n```diff\n- Un message\n```\n\n```xl\n'Un message'\n```\n\n```tex\n$ Un message\n```\n\n```md\n[Un](message)\n``` ")
+message.channel.send("Syntaxe coloré\n```\nUn message\n```\n```css\nUn message\n```\n```fix\nUn message\n```\n```md\n# Un message\n```\n```py\n# Un message\n```\n```cs\n# Un message\n```\n```diff\n- Un message\n```\n```xl\n'Un message'\n```\n```tex\n$ Un message\n```\n```md\n[Un](message)\n``` ")
 /*
 .then(async function (message ) {
 

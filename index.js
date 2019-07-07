@@ -356,6 +356,13 @@ client.on("ready", () => {
   userAnswer = "";
   });
   
+
+
+
+
+
+
+
   client.on("message", async message => {
   
     msg = message.content.toLocaleLowerCase();
@@ -403,6 +410,66 @@ client.on("ready", () => {
   
           }); 
   
+
+
+          client.on("message", async message => {
+            {
+                             function random(min, max){
+                                min = Math.ceil(1);
+                                max = Math.floor(2);
+                                randnum = Math.floor(Math.random() * (max - min +1) +min);
+                                }      
+            var prefix = '?'      
+            
+
+
+
+
+            msg = message.content.toLocaleLowerCase();
+            
+            if (answered == false && message.author == quizUser) {
+                userAnswer = msg;
+                if (userAnswer == cAnswer) {
+                    message.reply ("Correct! Tien un :cookie: ");
+                }
+                else{
+                    message.reply("Faux");
+                }
+                answered = true; cAnswer = ""; userAnswer = "";
+            }
+            
+            
+            
+            if(message.content.startsWith(prefix + "test")){
+                random();
+            
+            
+                
+                if (randnum == 1){
+                    let te = new Discord.RichEmbed()
+                        .setDescription(`metre la ref 1`)
+                        message.channel.send(te);
+            
+                        cAnswer = "ref 1"; break;
+            }
+            if (randnum == 2){
+                let te = new Discord.RichEmbed()
+                    .setDescription(`metre la ref 2`)
+                    message.channel.send(te);
+                    cAnswer = "ref 2"; break;
+            }
+            
+            
+            
+                }
+                answered = false;
+                quizUser = message.author;
+            }
+            
+            });
+
+
+
 
 client.on("message", async message => {
 
@@ -1410,32 +1477,6 @@ if(!rolerain)
             }}
 
 
-            function test1(){
-                message.reply("test 1")
-            }
-                 function random(min, max){
-                    min = Math.ceil(1);
-                    max = Math.floor(1);
-                    randnum = Math.floor(Math.random() * (max - min +1) +min);
-                    }      
-var prefix = '?'
-if(message.content.startsWith(prefix + "test")){
-    random();
-    msg = message.content.toLocaleLowerCase();
-
-    if (randnum == 1){
-        let te = new Discord.RichEmbed()
-            .setDescription(`metre la ref`)
-            message.channel.send(te);
-
-        
-        if(msg == "test 1"){
-        message.channel.send(nice)}
-else{
-    message.channel.send("nop")
-}
-    }
-}
 
 
 

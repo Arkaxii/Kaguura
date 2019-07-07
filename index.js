@@ -436,8 +436,8 @@ client.on("ready", () => {
                 var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                 switch(random){
                
-                    case 1: message.channel.send ("c'est la ref 1"); cAnswer = "ref 1 test";if(!userAnswer){ setTimeout(message.delet() , 5000)};break; 
-                    case 2: message.channel.send ("c'est la ref 2"); cAnswer = "ref 2 test";if(!userAnswer){ setTimeout(message.delet() , 5000)};break; 
+                    case 1: message.channel.send ("c'est la ref 1"); cAnswer = "ref 1 test";if(!userAnswer){message.delet(5000)};break; 
+                    case 2: message.channel.send ("c'est la ref 2"); cAnswer = "ref 2 test";if(!userAnswer){message.delet(5000)};break; 
             
             
                 }

@@ -412,18 +412,7 @@ client.on("ready", () => {
   
 
 
-          client.on("message", async message => {
-            {
-                             function random(min, max){
-                                min = Math.ceil(1);
-                                max = Math.floor(2);
-                                randnum = Math.floor(Math.random() * (max - min +1) +min);
-                                }      
-            var prefix = '?'      
-            
-
-
-
+          client.on("message", async message => {            
 
             msg = message.content.toLocaleLowerCase();
             
@@ -431,34 +420,26 @@ client.on("ready", () => {
                 userAnswer = msg;
                 if (userAnswer == cAnswer) {
                     message.reply ("Correct! Tien un :cookie: ");
+
                 }
-                else{
+                if(userAnswer !== cAnswer){
                     message.reply("Faux");
+                }
+                if(!userAnswer , 5000){
+                    message.delet()
                 }
                 answered = true; cAnswer = ""; userAnswer = "";
             }
             
             
             
-            if(message.content.startsWith(prefix + "test")){
-                random();
-            
-            
-                
-                if (randnum == 1){
-                    let te = new Discord.RichEmbed()
-                        .setDescription(`metre la ref 1`)
-                        message.channel.send(te);
-            
-                        cAnswer = "ref 1"; break;
-            }
-            if (randnum == 2){
-                let te = new Discord.RichEmbed()
-                    .setDescription(`metre la ref 2`)
-                    message.channel.send(te);
-                    cAnswer = "ref 2"; break;
-            }
-            
+            if(message.content.startsWith(prefix + "testq")){
+                number = 2;
+                var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
+                switch(random){
+               
+                    case 1: message.channel.send ("c'est la ref 1"); cAnswer = "ref 1 test";  break; 
+                    case 2: message.channel.send ("c'est la ref 2"); cAnswer = "ref 2 test";  break; 
             
             
                 }

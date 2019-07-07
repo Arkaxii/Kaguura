@@ -425,8 +425,8 @@ client.on("ready", () => {
                 if(userAnswer !== cAnswer){
                     message.reply("Faux");
                 }
-                if(!userAnswer , 5000){
-                    message.delet()
+                if(!userAnswer){
+                    setTimeout(message.delet() , 5000)
                 }
                 answered = true; cAnswer = ""; userAnswer = "";
             }

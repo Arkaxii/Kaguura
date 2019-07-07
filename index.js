@@ -504,7 +504,7 @@ if(command === "q-help"){
         -Mettre le nom COMPLET (FFXIV❌ /final fantasy XIV✅ )
         -Lettre minuscule uniquement sauf chiffres romains
         `)
-    message.send(aideq)
+    message.channel.send(aideq)
 }
 
    if(command ==="syntaxe-b"){

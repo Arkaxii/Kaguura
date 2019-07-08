@@ -84,6 +84,9 @@ client.on('ready', () => {
   **?info [pseudo]: ** Donne les info de la personne pinger
   **?mes messages:** Donne le nombre de message envoyer 
   **?message [pseudo]:** Donne le nombre de message du membre ping
+  **?syntaxe-b**
+  **?syntaxe-c**
+
   Argent:
   **?inventair: **Pour voir son inventair
   **?shop: **Pour fair des achat avec la THUN que tu as acqui
@@ -96,6 +99,7 @@ client.on('ready', () => {
   **?refjeux: **trouve à quelle jeux appartien la référence 
   **?refanime: **trouve à quelle anime appartien la référence 
   **?quiz: **Tester votre QI 
+  **?q-help**
   Random:
   **?pile: **1 chance sur 2
   **?face: **1 chance sur 2
@@ -156,6 +160,8 @@ client.on('ready', () => {
   **?info [pseudo]: ** Donne les info de la personne pinger
   **?mes messages:** Donne le nombre de message envoyer 
   **?message [pseudo]:** Donne le nombre de message du membre ping
+  **?syntaxe-b**
+  **?syntaxe-c**
     
   =====================🤖** utilitaire **🤖=====================
     `)
@@ -194,6 +200,7 @@ client.on('ready', () => {
   **?refjeux: **trouve à quelle jeux appartien la référence 
   **?refanime: **trouve à quelle anime appartien la référence 
   **?quiz: **Tester votre QI 
+  **?q-help**
   =====================🤖** Jeux **🤖=====================
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
@@ -432,14 +439,35 @@ client.on("ready", () => {
             
             
             
-            if(message.content.startsWith(prefix + "testq")){
-                number = 2;
+            if(message.content.startsWith(prefix + "refjeux")){
+                number = 23;
                 var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                 switch(random){
                
-                    case 1: message.channel.send ("c'est la ref 1"); cAnswer = "ref 1 test";break; 
-                    case 2: message.channel.send ("c'est la ref 2"); cAnswer = "ref 2 test";break; 
-            
+                    case 1: message.channel.send ("« c'est une vrai dent de requin faite en résine!»"); cAnswer = "world of warcraft";break; 
+                    case 2: message.channel.send ("« je ne voi que les ténèbre...»"); cAnswer = "world of warcraft";break; 
+                    case 3: message.channel.send ("« The cake is a lie»"); cAnswer = "portal";break; 
+                    case 4: message.channel.send ("« La folie c’est refaire sans arrêt exactement la même connerie qu’on répète sans arrêt, en espérant que ça change»"); cAnswer = "Far Cry 3";break; 
+                    case 5: message.channel.send ("« La guerre, la guerre ne meurt jamais »"); cAnswer = "fallout";break; 
+                    case 6: message.channel.send ("« Rien n’est vrai. Tout est permis »"); cAnswer = "Assassin's Creed";break; 
+                    case 7: message.channel.send ("« Avant j’étais un aventurier comme toi. Et puis je me suis pris une flèche dans le genou »"); cAnswer = "skyrim";break; 
+                    case 8: message.channel.send ("« Mes couilles sur ton nez, t’auras l’air d’un dindon »"); cAnswer = "duke nukem forever";break; 
+                    case 9: message.channel.send ("« It’s me, Mario ! »"); cAnswer = "super mario 64";break; 
+                    case 10: message.channel.send ("« L’Homme choisit. L’esclave obéit »"); cAnswer = "bioshock";break; 
+                    case 11: message.channel.send ("« Il y a des gens qui vous attaquent délibérément ??? »"); cAnswer = "dragon age";break; 
+                    case 12: message.channel.send ("« Travail terminé ! »"); cAnswer = "warcraft 3";break; 
+                    case 13: message.channel.send ("« Encore du travail ? »"); cAnswer = "warcraft 3";break; 
+                    case 14: message.channel.send ("« PAR LE FEU SOYEZ PURIFIES »"); cAnswer = "world of warcraft";break; 
+                    case 15: message.channel.send ("« Vous êtes rempli de détermination »"); cAnswer = "undertale";break; 
+                    case 16: message.channel.send ("« this cannot continue »"); cAnswer = "nier automata";break; 
+                    case 17: message.channel.send ("« Est-ce que tu pleures ? C'est seulement la pluie. Le Diable ne pleure jamais »"); cAnswer = "devil may cry 3";break; 
+                    case 18: message.channel.send ("« Tu veux qu'on se tire l'oreille ? »"); cAnswer = "metale gear solid V";break; 
+                    case 19: message.channel.send ("« OBJECTION ! »"); cAnswer = "phoenix wright";break; 
+                    case 20: message.channel.send ("« Je ne suis pas un héros, jamais je ne l'ai été, jamais je ne le serai. »"); cAnswer = "metal gear solid 4";break; 
+                    case 21: message.channel.send ("« J'mets les pieds où j'veux ! Et c'est souvent dans la gueule ! »"); cAnswer = "halo 2";break; 
+                    case 22: message.channel.send ("« Ceci n'est pas ton tombeau. Mais tu es le bienvenu »"); cAnswer = "halo 2";break; 
+                    case 23: message.channel.send ("« Tue un Déchu, j'en ferai un Infâme. Tue un Infâme, j'en dressera dix de plus »"); cAnswer = "destiny 2";break; 
+
             
                 }
                 answered = false;
@@ -448,7 +476,59 @@ client.on("ready", () => {
             
             });
 
+            client.on("message", async message => {            
 
+                msg = message.content.toLocaleLowerCase();
+                
+                if (answered == false && message.author == quizUser) {
+                    userAnswer = msg;
+                    if (userAnswer == cAnswer) {
+                        message.reply ("Correct! Tien un :cookie: ");
+                        db.add(`quizMcorrect_${message.author.id}`, 1);
+                    }
+                    if(userAnswer !== cAnswer){
+                        message.reply("Pas de chance");
+                        db.add(`quizMfaux_${message.author.id}`, 1);
+                    }
+                    
+                    answered = true; cAnswer = ""; userAnswer = "";
+                }
+
+            if(message.content.startsWith(prefix + "refanime")){
+                number = 23;
+                var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
+                switch(random){
+               
+                    case 1: message.channel.send ("«T'es con naturellement où t'as pris des cours?»"); cAnswer = "great teacher onizuka";break; 
+                    case 1: message.channel.send ("«Interdit de mourir sous mon commandement. T'es déjà pas un cadeau, pas besoin de paperasse»"); cAnswer = "fullmetal alchimiste";break; 
+                    case 1: message.channel.send ("«Les gens meurent si ils sont tués»"); cAnswer = "fate stay night";break; 
+                    case 1: message.channel.send ("«Tu ne le sais pas encore, mais tu es déjà mort»"); cAnswer = "ken le survivant";break; 
+                    case 1: message.channel.send ("«Ne crois pas en moi qui crois en toi, ne crois pas en toi qui crois en moi, crois en toi, c'est tout»"); cAnswer = "gurren lagann";break; 
+                    case 1: message.channel.send ("«la seule chose qui nous est permis de faire, c'est de ne pas regretter les choix que l'on a fait»"); cAnswer = "shingeki no kyojin";break; 
+                    case 1: message.channel.send ("«La vérité puni l'arrogance humaine par le desespoir»"); cAnswer = "fullmetal alchimiste brotherhood";break; 
+                    case 1: message.channel.send ("«Ce que je dis est bien trop subtil pour tes 2 neurones qui se battent en duel»"); cAnswer = "rosario vampire";break; 
+                    case 1: message.channel.send ("«Je ne suis pas stupide. Je suis juste trop paresseux pour vous montrer à quel point je suis intelligent»"); cAnswer = "hyouka";break; 
+                    case 1: message.channel.send ("«Si la vérité est une maîtresse cruelle, le mensonge doit être une gentille fille»"); cAnswer = "oregairu";break; 
+                    case 1: message.channel.send ("«lelolelolelolelo»"); cAnswer = "jojo's bizarre adventure";break; 
+                    case 1: message.channel.send ("«Ok»"); cAnswer = "one punch man";break; 
+                    case 1: message.channel.send ("«L'être humain est lâche par nature. Il jalouse celui qui n'a ne serait-ce qu'un peu plus que lui, et au contraire méprise celui qui possède moins. Pour une légère différence, il craint et il hait. Et c'est dur à admettre, mais spécialement lorsqu'il s'agit de parias comme nous»"); cAnswer = "berserk";break; 
+                    case 1: message.channel.send ("«tu pense qu'être faible est un problème ? Tu te trompe. Le problème c'est de le rester.»"); cAnswer = "black clover";break; 
+                    case 1: message.channel.send ("«Ciaossu !»"); cAnswer = "katekyoshi hitman reborn";break; 
+                    case 1: message.channel.send ("«Mon trésor ? Je vous le laisse, si vous voulez. Trouvez-le ! Je l'ai laissé quelque part dans ce monde»"); cAnswer = "one piece";break; 
+                    case 1: message.channel.send ("«Tous les hommes sans exception, même les plus corrompus, au fond de le cœur ne cherchent nul autre que la considération»"); cAnswer = "naruto shippuden";break; 
+                    case 1: message.channel.send ("«Le roi des Pirates, ce sera moi !»"); cAnswer = "one piece";break; 
+                    case 1: message.channel.send ("«Yes, my Lord»"); cAnswer = "black butler";break; 
+                    case 1: message.channel.send ("«Pour qui vous me prenez ?!»"); cAnswer = "gurren lagenn";break; 
+                    case 1: message.channel.send ("«Pousse de soja»"); cAnswer = "d.gray man";break; 
+ 
+
+            
+                }
+                answered = false;
+                quizUser = message.author;
+            }
+            
+            });
 
 
 client.on("message", async message => {
@@ -1493,328 +1573,6 @@ if(!rolerain)
                }
             }}
 
-
-
-
-
-
-            {
-                function World_of_warcraft(){
-                    message.reply("Et c'etai world of warcraft")
-                }
-                function Portal(){
-                    message.reply("Et c'etai Portal")
-                }
-                function Far_Cry_3(){
-                    message.reply("Et c'etai Far Cry 3")
-                }
-                function Fallout(){
-                    message.reply("Et c'etai Fallout")
-                }
-                function AC(){
-                    message.reply("Et c'etai Assassin's Creed")
-                }
-                function Skyrim(){
-                    message.reply("Et c'etai Skyrim")
-                }
-                function Duke_Nukem_Forever(){
-                    message.reply("Et c'etai Duke Nukem Forever")
-                }
-                function Bioshock(){
-                    message.reply("Et c'etai Bioshock")
-                }
-                function Dragon_Age(){
-                    message.reply("Et c'etai Dragon Age : Origins")
-                }
-                function Super_Mario_64(){
-                    message.reply("Et c'etai Super Mario 64")
-                }
-                function Warcraft3(){
-                    message.reply("Et c'etai Warcraft 3")
-                }
-                function Undertale(){
-                    message.reply("Et c'etai Undertale")
-                }
-                function Nier_automata(){
-                    message.reply("Et c'etai Nier Automata")
-                }
-                function Devil_may_cry_3(){
-                    message.reply("Et c'etai Devil may cry 3")
-                }
-                function metal_gear_solid(){
-                    message.reply("Et c'etai Metal gear solid")
-                }
-                function phoenix_wright(){
-                    message.reply("Et c'etai Phoenix wright")
-                }
-                function metal_gear_solid_4(){
-                    message.reply("Et c'etai Metal gear solid 4")
-                }
-                function Halo_2(){
-                    message.reply("Et c'etai Halo 2")
-                }
-                function Super_Mario_64(){
-                    message.reply("Super Mario 64")
-                }
-             function Destiny_2(){
-                    message.reply("Et c'etai Destiny 2")
-                }
-                     function random(min, max){
-                        min = Math.ceil(1);
-                        max = Math.floor(23);
-                        randnum = Math.floor(Math.random() * (max - min +1) +min);
-                        }      
-    var prefix = '?'
-    if(message.content.startsWith(prefix + "refjeux")){
-        random();
-        if (randnum == 1){
-            message.reply(" «c'est une vrai dent de requin faite en résine!»  (vous avez 30s)")
-            setTimeout( World_of_warcraft , 30000);
-        }
-        if (randnum == 2){
-            message.reply(" «je ne voi que les ténèbre...»  (vous avez 30s)")
-              setTimeout( World_of_warcraft , 30000);
-                }
-        if (randnum == 3){
-            message.reply(" «The cake is a lie»  (vous avez 30s)")
-            setTimeout( Portal , 30000);
-                }
-        if (randnum == 4){
-            message.reply(" «La folie c’est refaire sans arrêt exactement la même connerie qu’on répète sans arrêt, en espérant que ça change»   (vous avez 30s)")
-            setTimeout( Far_Cry_3 , 30000);
-                }
-        if (randnum == 5){
-            message.reply(" « La guerre, la guerre ne meurt jamais »  (vous avez 30s)")
-            setTimeout( Fallout , 30000);
-                }
-        if (randnum == 6){
-             message.reply(" « Rien n’est vrai. Tout est permis »  (vous avez 30s)")
-            setTimeout( AC , 30000);
-                        }
-        if (randnum == 7){
-             message.reply(" « Avant j’étais un aventurier comme toi. Et puis je me suis pris une flèche dans le genou »  (vous avez 30s)")
-            setTimeout( Skyrim , 30000);
-                        }
-        if (randnum == 8){
-            message.reply(" « Mes couilles sur ton nez, t’auras l’air d’un dindon »  (vous avez 30s)")
-            setTimeout( Duke_Nukem_Forever , 30000);
-                        }
-        if (randnum == 9){
-            message.reply(" « It’s me, Mario ! » (vous avez 30s)")
-            setTimeout( Super_Mario_64 , 30000);
-                        }
-                        if (randnum == 10){
-                            message.reply("  L’Homme choisit. L’esclave obéit » (vous avez 30s)")
-                            setTimeout( Bioshock , 30000);
-                                             }
-                            if (randnum == 11){
-                                message.reply(" « Il y a des gens qui vous attaquent délibérément ??? » (vous avez 30s)")
-                                setTimeout( Dragon_Age , 30000);
-                                              }
-                            if (randnum == 12){
-                                message.reply(" « Travail terminé ! » (vous avez 30s)")
-                                setTimeout( Warcraft3 , 30000);
-                                             }
-                             if (randnum == 13){
-                                message.reply(" « Encore du travail ? » (vous avez 30s)")
-                                setTimeout( Warcraft3 , 30000);
-                                             }
-                             if (randnum == 14){
-                                 message.reply(" « PAR LE FEU SOYEZ PURIFIES » (vous avez 30s)")
-                                setTimeout( World_of_warcraft , 30000);
-                                           }
-                            if (randnum == 15){
-                                 message.reply(" « Vous êtes rempli de détermination » (vous avez 30s)")
-                                setTimeout( Undertale , 30000);
-                                           }
-                            if (randnum == 16){
-                                 message.reply(" « this cannot continue » (vous avez 30s)")
-                                setTimeout( Nier_automata , 30000);
-                                            }
-                            if (randnum == 17){
-                                message.reply(" « Est-ce que tu pleures ? C'est seulement la pluie. Le Diable ne pleure jamais » (vous avez 30s)")
-                                setTimeout( Devil_may_cry_3 , 30000);
-                                            }
-                            if (randnum == 18){
-                               message.reply(" « Tu veux qu'on se tire l'oreille ? » (vous avez 30s)")
-                               setTimeout( metal_gear_solid , 30000);
-                                            }
-                            if (randnum == 19){
-                               message.reply(" « OBJECTION ! » (vous avez 30s)")
-                               setTimeout( phoenix_wright , 30000);
-                                           }
-                            if (randnum == 20){
-                               message.reply(" « Je ne suis pas un héros, jamais je ne l'ai été, jamais je ne le serai. » (vous avez 30s)")
-                               setTimeout( metal_gear_solid_4 , 30000);
-                                           }
-                            if (randnum == 21){
-                                message.reply(" « J'mets les pieds où j'veux ! Et c'est souvent dans la gueule ! » (vous avez 30s)")
-                                setTimeout( Halo_2 , 30000);
-                                           }
-                            if (randnum == 22){
-                                message.reply(" « Ceci n'est pas ton tombeau. Mais tu es le bienvenu » (vous avez 30s)")
-                                setTimeout( Halo_2 , 30000);
-                                           }
-                            if (randnum == 23){
-                                message.reply(" « Tue un Déchu, j'en ferai un Infâme. Tue un Infâme, j'en dressera dix de plus » (vous avez 30s)")
-                                setTimeout( Destiny_2 , 30000);
-                                           }
-    
-        };
-            }
-            {
-                function GTO (){
-                    message.reply(" Et c'est great teacher onizuka")
-                }
-                function FullmetalAlchimiste (){
-                    message.reply("Et c'est Fullmetal Alchimiste")
-                }
-                function FSN (){
-                    message.reply("Et c'est Fate Stay Night")
-                }
-                function Ken (){
-                    message.reply("Et c'est ken le survivant")
-                }
-                function Gurren_Lagann (){
-                    message.reply("Et c'est Gurren Lagann")
-                }
-                function SnK (){
-                    message.reply("Et c'est Shingeki no kyojin")
-                }
-                function FullmetalAlchimistebrotherhood (){
-                    message.reply("Et c'est Fullmetal Alchimiste Brotherhood")
-                }
-                function  rosario_vampire (){
-                    message.reply("Et c'est rosario vampire ")
-                }
-                function Hyouka (){
-                    message.reply("Et c'est Hyouka")
-                }
-                function Oregairu (){
-                    message.reply("Et c'est Oregairu")
-                }
-                function jojo (){
-                    message.reply("Et c'est Jojo's Bizarre Adventure: Stardust Crusaders")
-                }
-                function onepunch (){
-                    message.reply("Et c'est One Punch Man")
-                }
-                function Berserk  (){
-                    message.reply("Et c'est Berserk ")
-                }
-                function BlackClover (){
-                    message.reply("Et c'est Black Clover")
-                }
-                function KHR (){
-                    message.reply("Et c'est Katekyoshi Hitman Reborn!")
-                }
-                function Naruto_Shippuden (){
-                    message.reply("Et c'est Naruto Shippuden")
-                }
-                function Onepiece(){
-                    message.reply("Et c'est One Piece")
-                }
-                function Black_Butler (){
-                    message.reply("Et c'est Black Butler")
-                }
-                function  Dgray_Man (){
-                    message.reply("Et c'est D.gray Man")
-                }
-                     function random(min, max){
-                        min = Math.ceil(1);
-                        max = Math.floor(21);
-                        randnum = Math.floor(Math.random() * (max - min +1) +min);
-                        }      
-    var prefix = '?'
-    if(message.content.startsWith(prefix + "refanime")){
-        random();
-        if (randnum == 1){
-            message.reply(" «T'es con naturellement où t'as pris des cours?»  (vous avez 30s)")
-            setTimeout( GTO , 30000);
-        }
-        if (randnum == 2){
-            message.reply(" « Interdit de mourir sous mon commandement. T'es déjà pas un cadeau, pas besoin de paperasse »  (vous avez 30s)")
-              setTimeout( FullmetalAlchimiste , 30000);
-                }
-        if (randnum == 3){
-            message.reply(" « Les gens meurent si ils sont tués »  (vous avez 30s)")
-            setTimeout( FSN , 30000);
-                }
-        if (randnum == 4){
-            message.reply(" « Tu ne le sais pas encore, mais tu es déjà mort »   (vous avez 30s)")
-            setTimeout( Ken , 30000);
-                }
-        if (randnum == 5){
-            message.reply(" « Ne crois pas en moi qui crois en toi, ne crois pas en toi qui crois en moi, crois en toi, c'est tout »  (vous avez 30s)")
-            setTimeout( Gurren_Lagann , 30000);
-                }
-        if (randnum == 6){
-             message.reply(" « la seule chose qui nous est permis de faire, c'est de ne pas regretter les choix que l'on a fait »  (vous avez 30s)")
-            setTimeout( SnK , 30000);
-                        }
-        if (randnum == 7){
-             message.reply(" « La vérité puni l'arrogance humaine par le desespoir »  (vous avez 30s)")
-            setTimeout( FullmetalAlchimistebrotherhood , 30000);
-                        }
-        if (randnum == 8){
-            message.reply(" « Ce que je dis est bien trop subtil pour tes 2 neurones qui se battent en duel »  (vous avez 30s)")
-            setTimeout(  rosario_vampire , 30000);
-                        }
-        if (randnum == 9){
-            message.reply(" «  Je ne suis pas stupide. Je suis juste trop paresseux pour vous montrer à quel point je suis intelligent » (vous avez 30s)")
-            setTimeout( Hyouka , 30000);
-                        }
-                        if (randnum == 10){
-                            message.reply("« Si la vérité est une maîtresse cruelle, le mensonge doit être une gentille fille » (vous avez 30s)")
-                            setTimeout( Oregairu , 30000);
-                                             }
-                            if (randnum == 11){
-                                message.reply(" « lelolelolelolelo » (vous avez 30s)")
-                                setTimeout( jojo , 30000);
-                                              }
-                            if (randnum == 12){
-                                message.reply(" « Ok » (vous avez 30s)")
-                                setTimeout( onepunch , 30000);
-                                             }
-                             if (randnum == 13){
-                                message.reply(" « L'être humain est lâche par nature. Il jalouse celui qui n'a ne serait-ce qu'un peu plus que lui, et au contraire méprise celui qui possède moins. Pour une légère différence, il craint et il hait. Et c'est dur à admettre, mais spécialement lorsqu'il s'agit de parias comme nous » (vous avez 30s)")
-                                setTimeout( Berserk , 30000);
-                                             }
-                             if (randnum == 14){
-                                 message.reply(" « tu pense qu'être faible est un problème ? Tu te trompe. Le problème c'est de le rester. » (vous avez 30s)")
-                                setTimeout( BlackClover , 30000);
-                                           }
-                            if (randnum == 15){
-                                 message.reply(" « Ciaossu ! » (vous avez 30s)")
-                                setTimeout( KHR , 30000);
-                                           }
-                            if (randnum == 16){
-                                 message.reply(" « Tous les hommes sans exception, même les plus corrompus, au fond de le cœur ne cherchent nul autre que la considération » (vous avez 30s)")
-                                setTimeout( Naruto_Shippuden , 30000);
-                                            }
-                            if (randnum == 17){
-                                message.reply(" «Le roi des Pirates, ce sera moi !» (vous avez 30s)")
-                                setTimeout( Onepiece , 30000);
-                                            }
-                            if (randnum == 18){
-                               message.reply(" « Yes, my Lord » (vous avez 30s)")
-                               setTimeout( Black_Butler , 30000);
-                                            }
-                            if (randnum == 19){
-                               message.reply(" « Pour qui vous me prenez ?! » (vous avez 30s)")
-                               setTimeout( Gurren_Lagann , 30000);
-                                           }
-                            if (randnum == 20){
-                               message.reply(" « Pousse de soja » (vous avez 30s)")
-                               setTimeout(  Dgray_Man , 30000);
-                                           }
-                            if (randnum == 21){
-                                message.reply(" « Mon trésor ? Je vous le laisse, si vous voulez. Trouvez-le ! Je l'ai laissé quelque part dans ce monde » (vous avez 30s)")
-                                setTimeout(  Onepiece , 30000);
-                                           }               
-    
-                                        }
-                                    };
                                {
                                     function random(min, max){
                                         min = Math.ceil(1);

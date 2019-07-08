@@ -420,10 +420,11 @@ client.on("ready", () => {
                 userAnswer = msg;
                 if (userAnswer == cAnswer) {
                     message.reply ("Correct! Tien un :cookie: ");
-
+                    db.add(`quizJcorrect_${message.author.id}`, 1);
                 }
                 if(userAnswer !== cAnswer){
                     message.reply("Pas de chance");
+                    db.add(`quizJfaux_${message.author.id}`, 1);
                 }
                 
                 answered = true; cAnswer = ""; userAnswer = "";
@@ -491,12 +492,37 @@ if (command === "f-a"){
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
+if(command ==="q-stat"){
+    let jvr = await db.fetch(`quizJcorrect_${user.id}`);
+    let jfa = await db.fetch(`quizJfaux_${user.id}`);
+    let mvr = await db.fetch(`quizMcorrect_${user.id}`);
+    let mfa = await db.fetch(`quizMfaux_${user.id}`);
 
+
+    let st = new Discord.RichEmbed()
+    .setTitle()
+    .setDescription(`
+
+    **Quiz**
+    
+    
+    **Référence Jeux vidéo**
+      Bonne réponses : ${jvr}
+      Mauvaise réponses : ${jfa}
+
+    **Référence Anime/Manga**
+      Bonne réponses : ${mvr}
+      Mauvaise réponses : ${mfa}
+    
+    `)
+}
   
 if(command === "q-help"){
     let aideq = new Discord.RichEmbed()
-        .setTitle("**Quiz**")
+        .setTitle("**Jeu des références**")
         .setDescription(`
+        -**?q-stat** pour voir le nombre de faute et de bonne réponse
+
         -Une seule chance par référence
         -Pas de faute d'orthographe 
         -Mettre des espace si le nom comporte des espace 

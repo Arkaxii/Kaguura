@@ -402,8 +402,8 @@ client.on("ready", () => {
                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                     .setDescription(`
                     ✅:cookie::cookie::cookie::cookie:✅
-                    Bonne réponses! Tu as
-                    maintenant \`$qvr\` bonne réponses
+                    
+                    Bonne réponses!
                     
                     `)
                     message.channel.send(qbo);     

@@ -375,18 +375,17 @@ client.on("ready", () => {
 
     let user = message.author;
     msg = message.content.toLocaleLowerCase();
-    const qvr = await db.fetch(`quizQcorrect_${user.id}`);
-    const qfa = await db.fetch(`quizQfaux_${user.id}`);
 
-    if (qvr === null) qvr = 0;
-    if (qfa === null) qfa = 0;
+
 
              if (answered == false && message.author == quizUser) {
                  userAnswer = msg;
 
 
                  if (userAnswer == cAnswer) {
-                 
+                    const qvr = await db.fetch(`quizQcorrect_${user.id}`);
+                    if (qvr === null) qvr = 0;
+
                     db.add(`quizQcorrect_${message.author.id}`, 1)
 
                     let qbo = new Discord.RichEmbed()
@@ -402,8 +401,9 @@ client.on("ready", () => {
                             }
                    
                             if(userAnswerJ !== cAnswerJ){
+                                const qfa = await db.fetch(`quizQfaux_${user.id}`);
+                                if (qfa === null) qfa = 0;
 
-                   
                                 db.add(`quizQfaux_${message.author.id}`, 1)
 
                                 let qufa = new Discord.RichEmbed()
@@ -461,8 +461,6 @@ client.on("ready", () => {
 
           client.on("message", async message => {
             let user = message.author;
-            const jvr = await db.fetch(`quizJcorrect_${user.id}`)
-            const jfa = await db.fetch(`quizJfaux_${user.id}`)
             msg = message.content.toLocaleLowerCase();
             
 
@@ -470,12 +468,13 @@ client.on("ready", () => {
             if (answeredJ == false && message.author == quizUserJ) {
                 userAnswerJ = msg;
 
-                if (jvr === null) jvr = 0;
-                if (jfa === null) jfa = 0;
 
 
 
                 if (userAnswerJ == cAnswerJ) {
+
+                    const jvr = await db.fetch(`quizJcorrect_${user.id}`)
+                    if (jvr === null) jvr = 0;
 
                     db.add(`quizJcorrect_${message.author.id}`, 1)
 
@@ -495,6 +494,8 @@ client.on("ready", () => {
 
 
                 if(userAnswerJ !== cAnswerJ){
+                    const jfa = await db.fetch(`quizJfaux_${user.id}`)
+                    if (jfa === null) jfa = 0;
 
                     db.add(`quizJfaux_${message.author.id}`, 1)
 
@@ -567,7 +568,6 @@ client.on("ready", () => {
 
                 msg = message.content.toLocaleLowerCase();
                 let user = message.author;
-                const mvr = await db.fetch(`quizMcorrect_${user.id}`);
                 const mfa = await db.fetch(`quizMfaux_${user.id}`);
 
                 
@@ -576,9 +576,10 @@ client.on("ready", () => {
 
 
                     if (userAnswerA == cAnswerA) {
+                        const mvr = await db.fetch(`quizMcorrect_${user.id}`);
+                        if (mvr === null) mvr = 0;
 
                         db.add(`quizMcorrect_${message.author.id}`, 1)
-                        if (mvr === null) mvr = 0;
 
     
     
@@ -597,9 +598,10 @@ client.on("ready", () => {
 
 
                         if(userAnswerA !== cAnswerA){
+                            const mfa = await db.fetch(`quizMfaux_${user.id}`);
+                            if (mfa === null) mfa = 0;
 
                             db.add(`quizMfaux_${message.author.id}`, 1)
-                            if (mfa === null) mfa = 0;
 
         
                             let sam = new Discord.RichEmbed()

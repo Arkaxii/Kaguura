@@ -454,7 +454,7 @@ client.on("ready", () => {
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                   await message.channel.send(sjb);
+                    message.channel.send(sjb);
         
                 }
 
@@ -477,7 +477,7 @@ client.on("ready", () => {
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                  await  message.channel.send(sjc);
+                    message.channel.send(sjc);
         
                 }
                 
@@ -564,7 +564,7 @@ client.on("ready", () => {
                         Bonne réponses: \`${mvr}\`
                         Mauvaise réponse: \`${mfa}\`
                         `)
-                       await message.reply(sab);
+                        message.reply(sab);
             
                     }
 
@@ -587,7 +587,7 @@ client.on("ready", () => {
                             Bonne réponses: \`${mvr}\`
                             Mauvaise réponse: \`${mfa}\`
                             `)
-                           await message.reply(sam);
+                            message.reply(sam);
                     }
                     
 

@@ -427,11 +427,12 @@ client.on("ready", () => {
             let jvr = await db.fetch(`quizJcorrect_${user.id}`);
             let jfa = await db.fetch(`quizJfaux_${user.id}`);
 
+            const cAnswerJ = cAnswer
 
             if (answered == false && message.author == quizUser) {
                 userAnswer = msg;
 
-                if (userAnswer == cAnswer) {
+                if (userAnswer == cAnswerJ) {
                     db.add(`quizJcorrect_${message.author.id}`, 1)
 
 
@@ -448,7 +449,7 @@ client.on("ready", () => {
                     message.reply(sjb);
         
                 }
-                if(userAnswer !== cAnswer){
+                if(userAnswer !== cAnswerJ){
                     db.add(`quizJfaux_${message.author.id}`, 1);
 
                     let sjc = new Discord.RichEmbed()

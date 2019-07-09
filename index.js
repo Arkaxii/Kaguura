@@ -373,15 +373,67 @@ client.on("ready", () => {
   client.on("message", async message => {
   
     msg = message.content.toLocaleLowerCase();
+    let jvr = await db.fetch(`quizJcorrect_${user.id}`);
+    let jfa = await db.fetch(`quizJfaux_${user.id}`);
+    let mvr = await db.fetch(`quizMcorrect_${user.id}`);
+    let mfa = await db.fetch(`quizMfaux_${user.id}`);
+    let gvr = await db.fetch(`quizGcorrect_${user.id}`);
+    let gfa = await db.fetch(`quizGfaux_${user.id}`);
+
   
              if (answered == false && message.author == quizUser) {
                  userAnswer = msg;
                  if (userAnswer == cAnswer) {
-                     message.reply ("Correct! Tien un :cookie: ");
+                    db.add(`quizGcorrect_${user.id}`)
+                     let sjb = new Discord.RichEmbed()
+                     .setTitle(`stat de ${message.author.username}`)
+                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
+                     .setDescription(`
+                     ✅:cookie::cookie::cookie::cookie::cookie:✅
+
+                     **Stat Quiz Générale**
+
+                     Bonne réponses: \`${gvr} \`
+                     Mauvaise réponses: \`${gfa} \`
+                     
+                     **Stat Référence Anime**
+
+                     Bonne réponses: \`${mvr} \`
+                     Mauvaise réponses:\`${mfa} \`
+
+                     **Stat Référence Jeux**
+ 
+                     Bonne réponses: \`${jvr}\`
+                     Mauvaise réponse: \`${jfa}\`
+                     `)
+                     message.reply(sjb);
                  }
                  else{
-                     message.reply("Faux");
-                 }
+                    db.add(`quizGfaux_${user.id}`)
+                
+                    .setTitle(`stat de ${message.author.username}`)
+                    .setThumbnail("https://i.imgur.com/NXPa3av.png")
+                    .setDescription(`
+
+                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
+
+                    **Stat Quiz Générale**
+
+                    Bonne réponses: \`${gvr} \`
+                    Mauvaise réponses: \`${gfa} \`
+                    
+                    **Stat Référence Anime**
+
+                    Bonne réponses: \`${mvr} \`
+                    Mauvaise réponses:\`${mfa} \`
+
+                    **Stat Référence Jeux**
+
+                    Bonne réponses: \`${jvr}\`
+                    Mauvaise réponse: \`${jfa}\`
+                    `)
+                
+                }
                  answered = true; cAnswer = ""; userAnswer = "";
              }
           
@@ -427,43 +479,20 @@ client.on("ready", () => {
             let jvr = await db.fetch(`quizJcorrect_${user.id}`);
             let jfa = await db.fetch(`quizJfaux_${user.id}`);
 
-            const cAnswerJ = cAnswer
 
             if (answered == false && message.author == quizUser) {
                 userAnswer = msg;
 
+
                 if (userAnswer == cAnswerJ) {
                     db.add(`quizJcorrect_${message.author.id}`, 1)
 
-
-                    let sjb = new Discord.RichEmbed()
-                    .setTitle(`stat de ${message.author.username}`)
-                    .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
-                    .setDescription(`
-                    ✅:cookie::cookie::cookie::cookie::cookie:✅
-                    **Stat Référence Jeux**
-
-                    Bonne réponses: \`${jvr}\`
-                    Mauvaise réponse: \`${jfa}\`
-                    `)
-                    message.reply(sjb);
         
                 }
+
                 if(userAnswer !== cAnswerJ){
                     db.add(`quizJfaux_${message.author.id}`, 1);
 
-                    let sjc = new Discord.RichEmbed()
-                    .setTitle(`stat de ${message.author.username}`)
-                    .setThumbnail("https://i.imgur.com/NXPa3av.png")
-                    .setDescription(`
-                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
-                    **Stat Référence Jeux**
-
-                    Bonne réponses: \`${jvr}\`
-                    Mauvaise réponse: \`${jfa}\`
-                    `)
-                    message.reply(sjc);
-        
                 }
                 
                 answered = true; cAnswer = ""; userAnswer = "";

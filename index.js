@@ -425,10 +425,11 @@ client.on("ready", () => {
   });
 
           client.on("message", async message => {
+            let user = message.author;
             const jvr = await db.fetch(`quizJcorrect_${user.id}`)
             const jfa = await db.fetch(`quizJfaux_${user.id}`)
             msg = message.content.toLocaleLowerCase();
-            let user = message.author;
+            
 
 
             if (answeredJ == false && message.author == quizUserJ) {

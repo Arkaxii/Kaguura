@@ -422,7 +422,7 @@ client.on("ready", () => {
           client.on("message", async message => {
 
             msg = message.content.toLocaleLowerCase();
-            let user = message.mentions.users.first() || message.author;
+            let user = message.author;
 
             let jvr = await db.fetch(`quizJcorrect_${user.id}`);
             let jfa = await db.fetch(`quizJfaux_${user.id}`);
@@ -434,34 +434,34 @@ client.on("ready", () => {
                 if (userAnswer == cAnswer) {
                     db.add(`quizJcorrect_${message.author.id}`, 1)
 
-                    message.reply("Correct! Tien un :cookie: ")
 
                     let sjb = new Discord.RichEmbed()
                     .setTitle(`stat de ${message.author.username}`)
                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                     .setDescription(`
+                    ✅:cookie::cookie::cookie::cookie::cookie:✅
                     **Stat Référence Jeux**
 
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                    message.channel.send(sjb);
+                    message.reply(sjb);
         
                 }
                 if(userAnswer !== cAnswer){
-                    message.reply("Pas de chance");
                     db.add(`quizJfaux_${message.author.id}`, 1);
 
                     let sjc = new Discord.RichEmbed()
                     .setTitle(`stat de ${message.author.username}`)
                     .setThumbnail("https://i.imgur.com/NXPa3av.png")
                     .setDescription(`
+                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
                     **Stat Référence Jeux**
 
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                    message.channel.send(sjc);
+                    message.reply(sjc);
         
                 }
                 

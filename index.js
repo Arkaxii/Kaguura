@@ -357,6 +357,7 @@ client.on("ready", () => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setActivity(`Regarder ${client.guilds.size} servers`);
   });
+
   client.on ("ready", () => {
   answered = true;
   cAnswer = "";
@@ -373,68 +374,15 @@ client.on("ready", () => {
   client.on("message", async message => {
   
     msg = message.content.toLocaleLowerCase();
-    let user = message.author;
-    let jvr = await db.fetch(`quizJcorrect_${user.id}`);
-    let jfa = await db.fetch(`quizJfaux_${user.id}`);
-    let mvr = await db.fetch(`quizMcorrect_${user.id}`);
-    let mfa = await db.fetch(`quizMfaux_${user.id}`);
-    let gvr = await db.fetch(`quizGcorrect_${user.id}`);
-    let gfa = await db.fetch(`quizGfaux_${user.id}`);
-
   
              if (answered == false && message.author == quizUser) {
                  userAnswer = msg;
                  if (userAnswer == cAnswer) {
-                    db.add(`quizGcorrect_${user.id}`)
-                     let sjb = new Discord.RichEmbed()
-                     .setTitle(`stat de ${message.author.username}`)
-                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
-                     .setDescription(`
-                     ✅:cookie::cookie::cookie::cookie::cookie:✅
-
-                     **Stat Quiz Générale**
-
-                     Bonne réponses: \`${gvr} \`
-                     Mauvaise réponses: \`${gfa} \`
-                     
-                     **Stat Référence Anime**
-
-                     Bonne réponses: \`${mvr} \`
-                     Mauvaise réponses:\`${mfa} \`
-
-                     **Stat Référence Jeux**
- 
-                     Bonne réponses: \`${jvr}\`
-                     Mauvaise réponse: \`${jfa}\`
-                     `)
-                     message.reply(sjb);
+                     message.reply ("Correct! Tien un :cookie: ");
                  }
                  else{
-                    db.add(`quizGfaux_${user.id}`)
-                
-                    .setTitle(`stat de ${message.author.username}`)
-                    .setThumbnail("https://i.imgur.com/NXPa3av.png")
-                    .setDescription(`
-
-                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
-
-                    **Stat Quiz Générale**
-
-                    Bonne réponses: \`${gvr} \`
-                    Mauvaise réponses: \`${gfa} \`
-                    
-                    **Stat Référence Anime**
-
-                    Bonne réponses: \`${mvr} \`
-                    Mauvaise réponses:\`${mfa} \`
-
-                    **Stat Référence Jeux**
-
-                    Bonne réponses: \`${jvr}\`
-                    Mauvaise réponse: \`${jfa}\`
-                    `)
-                
-                }
+                     message.reply("Faux");
+                 }
                  answered = true; cAnswer = ""; userAnswer = "";
              }
           
@@ -470,33 +418,66 @@ client.on("ready", () => {
   
           }); 
   
-
+  client.on ("ready", () => {
+  answeredJ = true;
+  cAnswerJ = "";
+  userAnswerJ = "";
+  });
 
           client.on("message", async message => {
 
             msg = message.content.toLocaleLowerCase();
             let user = message.author;
 
-            let jvr = await db.fetch(`quizJcorrect_${user.id}`);
-            let jfa = await db.fetch(`quizJfaux_${user.id}`);
+            let jvr = await db.fetch(`quizJcorrect_${user.id}`)
+            let jfa = await db.fetch(`quizJfaux_${user.id}`)
 
 
-            if (answered == false && message.author == quizUser) {
-                userAnswer = msg;
+            if (answeredJ == false && message.author == quizUserJ) {
+                userAnswerJ = msg;
 
 
-                if (userAnswer == cAnswerJ) {
+
+                if (userAnswerJ == cAnswerJ) {
+
                     db.add(`quizJcorrect_${message.author.id}`, 1)
 
+
+                    let sjb = new Discord.RichEmbed()
+                    .setTitle(`stat de ${message.author.username}`)
+                    .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
+                    .setDescription(`
+                    ✅:cookie::cookie::cookie::cookie::cookie:✅
+                    **Stat Référence Jeux**
+
+                    Bonne réponses: \`${jvr}\`
+                    Mauvaise réponse: \`${jfa}\`
+                    `)
+                    message.reply(sjb);
         
                 }
 
-                if(userAnswer !== cAnswerJ){
+
+
+                if(userAnswerJ !== cAnswerJ){
+
                     db.add(`quizJfaux_${message.author.id}`, 1);
 
+                    let sjc = new Discord.RichEmbed()
+                    .setTitle(`stat de ${message.author.username}`)
+                    .setThumbnail("https://i.imgur.com/NXPa3av.png")
+                    .setDescription(`
+                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
+                    **Stat Référence Jeux**
+
+                    Bonne réponses: \`${jvr}\`
+                    Mauvaise réponse: \`${jfa}\`
+                    `)
+                    message.reply(sjc);
+        
                 }
                 
-                answered = true; cAnswer = ""; userAnswer = "";
+                answeredJ = true; cAnswerJ = ""; userAnswerJ = "";
             }
             
             
@@ -538,21 +519,73 @@ client.on("ready", () => {
             
             });
 
-            client.on("message", async message => {            
+
+
+
+            client.on ("ready", () => {
+                answeredA = true;
+                cAnswerA = "";
+                userAnswerA = "";
+                });
+
+
+
+            client.on("message", async message => {
 
                 msg = message.content.toLocaleLowerCase();
+                let mvr = await db.fetch(`quizMcorrect_${user.id}`);
+                let mfa = await db.fetch(`quizMfaux_${user.id}`);
                 
                 if (answered == false && message.author == quizUser) {
                     userAnswer = msg;
-                    if (userAnswer == cAnswer) {
-                        db.add(`quizMcorrect_${message.author.id}`, 1);
+
+
+                    if (userAnswerA == cAnswerA) {
+
+                        db.add(`quizMcorrect_${message.author.id}`, 1)
+    
+    
+                        let sab = new Discord.RichEmbed()
+                        .setTitle(`stat de ${message.author.username}`)
+                        .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
+                        .setDescription(`
+                        ✅:cookie::cookie::cookie::cookie::cookie:✅
+                        **Stat Référence Anime**
+    
+                        Bonne réponses: \`${mvr}\`
+                        Mauvaise réponse: \`${mfa}\`
+                        `)
+                        message.reply(sab);
+            
                     }
-                    if(userAnswer !== cAnswer){
-                        db.add(`quizMfaux_${message.author.id}`, 1);
+
+
+
+                        if(userAnswerA !== cAnswerA){
+
+                            db.add(`quizMfaux_${message.author.id}`, 1);
+        
+                            let sam = new Discord.RichEmbed()
+                            .setTitle(`stat de ${message.author.username}`)
+                            .setThumbnail("https://i.imgur.com/NXPa3av.png")
+                            .setDescription(`
+                            ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
+                            **Stat Référence Anime**
+        
+                            Bonne réponses: \`${mvr}\`
+                            Mauvaise réponse: \`${mfa}\`
+                            `)
+                            message.reply(sam);
                     }
                     
-                    answered = true; cAnswer = ""; userAnswer = "";
+
+
+
+                    answeredA = true; cAnswerA = ""; userAnswerA = "";
                 }
+
+
+
 
             if(message.content.startsWith(prefix + "refanime")){
                 number = 21;
@@ -584,11 +617,16 @@ client.on("ready", () => {
 
             
                 }
-                answered = false;
-                quizUser = message.author;
+                answeredA = false;
+                quizUserA = message.author;
             }
             
             });
+
+
+
+
+
 
 
 client.on("message", async message => {

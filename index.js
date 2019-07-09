@@ -464,7 +464,6 @@ client.on("ready", () => {
   
 
 
-            let user = message.author;
             msg = message.content.toLocaleLowerCase();
             
 
@@ -558,7 +557,6 @@ client.on("ready", () => {
 
 
                 msg = message.content.toLocaleLowerCase();
-                let user = message.author;
 
                 
                 if (answeredA == false && message.author == quizUserA) {

@@ -439,9 +439,9 @@ client.on("ready", () => {
 
                 if (userAnswerJ == cAnswerJ) {
 
-                    db.add(`quizJcorrect_${message.author.id}`, 1)
-                    if (jvr === null) balance = 0;
-                    if (jfa === null) balance = 0;
+                   await db.add(`quizJcorrect_${message.author.id}`, 1)
+                    if (jvr === null) jvr = 0;
+                    if (jfa === null) jfa = 0;
 
 
                     let sjb = new Discord.RichEmbed()
@@ -454,7 +454,7 @@ client.on("ready", () => {
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                    message.channel.send(sjb);
+                   await message.channel.send(sjb);
         
                 }
 
@@ -462,9 +462,9 @@ client.on("ready", () => {
 
                 if(userAnswerJ !== cAnswerJ){
 
-                    db.add(`quizJfaux_${message.author.id}`, 1);
-                    if (jvr === null) balance = 0;
-                    if (jfa === null) balance = 0;
+                   await db.add(`quizJfaux_${message.author.id}`, 1);
+                    if (jvr === null) jvr = 0;
+                    if (jfa === null) jfa = 0;
 
 
                     let sjc = new Discord.RichEmbed()
@@ -477,7 +477,7 @@ client.on("ready", () => {
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                    message.channel.send(sjc);
+                  await  message.channel.send(sjc);
         
                 }
                 
@@ -548,7 +548,7 @@ client.on("ready", () => {
 
                     if (userAnswerA == cAnswerA) {
 
-                        db.add(`quizMcorrect_${message.author.id}`, 1)
+                       await db.add(`quizMcorrect_${message.author.id}`, 1)
                         if (mvr === null) mvr = 0;
                         if (mfa === null) mfa = 0;
 
@@ -564,7 +564,7 @@ client.on("ready", () => {
                         Bonne réponses: \`${mvr}\`
                         Mauvaise réponse: \`${mfa}\`
                         `)
-                        message.reply(sab);
+                       await message.reply(sab);
             
                     }
 
@@ -572,7 +572,7 @@ client.on("ready", () => {
 
                         if(userAnswerA !== cAnswerA){
 
-                            db.add(`quizMfaux_${message.author.id}`, 1);
+                           await db.add(`quizMfaux_${message.author.id}`, 1);
                             if (mvr === null) mvr = 0;
                             if (mfa === null) mfa = 0;
 
@@ -587,7 +587,7 @@ client.on("ready", () => {
                             Bonne réponses: \`${mvr}\`
                             Mauvaise réponse: \`${mfa}\`
                             `)
-                            message.reply(sam);
+                           await message.reply(sam);
                     }
                     
 

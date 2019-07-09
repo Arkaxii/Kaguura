@@ -364,8 +364,17 @@ client.on("ready", () => {
   userAnswer = "";
   });
   
+  client.on ("ready", () => {
+    answeredJ = true;
+    cAnswerJ = "";
+    userAnswerJ = "";
+    });
 
-
+    client.on ("ready", () => {
+        answeredA = true;
+        cAnswerA = "";
+        userAnswerA = "";
+        });
 
 
 
@@ -451,15 +460,10 @@ client.on("ready", () => {
                  quizUser = message.author;
              }
   
-          }); 
+          
   
-  client.on ("ready", () => {
-  answeredJ = true;
-  cAnswerJ = "";
-  userAnswerJ = "";
-  });
 
-          client.on("message", async message => {
+
             let user = message.author;
             msg = message.content.toLocaleLowerCase();
             
@@ -551,20 +555,7 @@ client.on("ready", () => {
                 quizUserJ = message.author;
             }
             
-            });
 
-
-
-
-            client.on ("ready", () => {
-                answeredA = true;
-                cAnswerA = "";
-                userAnswerA = "";
-                });
-
-
-
-            client.on("message", async message => {
 
                 msg = message.content.toLocaleLowerCase();
                 let user = message.author;

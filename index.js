@@ -392,29 +392,30 @@ client.on("ready", () => {
 
 
                  if (userAnswer == cAnswer) {
-                    let qvr = await db.fetch(`quizQcorrect_${user.id}`);
+  /*                  let qvr = await db.fetch(`quizQcorrect_${user.id}`);
                     if (qvr === null) qvr = 0;
 
                     db.add(`quizQcorrect_${message.author.id}`, 1)
-
+*/
                     let qbo = new Discord.RichEmbed()
                     .setTitle(`Bonne réponse!`)
                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                     .setDescription(`
                     ✅:cookie::cookie::cookie::cookie:✅
                     Bonne réponses! Tu as
-                    maintenant \`${qvr}\` bonne réponses
+                    maintenant \`$qvr\` bonne réponses
                     
                     `)
                     message.channel.send(qbo);     
                             }
                    
-                            if(userAnswerJ !== cAnswerJ){
-                                let qfa = await db.fetch(`quizQfaux_${user.id}`);
+
+                            else{
+  /*                              let qfa = await db.fetch(`quizQfaux_${user.id}`);
                                 if (qfa === null) qfa = 0;
 
                                 db.add(`quizQfaux_${message.author.id}`, 1)
-
+*/
                                 let qufa = new Discord.RichEmbed()
                     
                                 .setTitle(`Mauvaise réponse`)
@@ -422,7 +423,7 @@ client.on("ready", () => {
                                 .setDescription(`
                                 ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
                                 Mauvaise réponse. Tu as
-                                maintenant \`${qfa}\` mauvaise réponse
+                                maintenant \`$qfa\` mauvaise réponse
                                 `)
                                 message.channel.send(qufa);
                 

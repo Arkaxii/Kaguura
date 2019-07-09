@@ -373,6 +373,7 @@ client.on("ready", () => {
   client.on("message", async message => {
   
     msg = message.content.toLocaleLowerCase();
+    let user = message.author;
     let jvr = await db.fetch(`quizJcorrect_${user.id}`);
     let jfa = await db.fetch(`quizJfaux_${user.id}`);
     let mvr = await db.fetch(`quizMcorrect_${user.id}`);
@@ -544,11 +545,9 @@ client.on("ready", () => {
                 if (answered == false && message.author == quizUser) {
                     userAnswer = msg;
                     if (userAnswer == cAnswer) {
-                        message.reply ("Correct! Tien un :cookie: ");
                         db.add(`quizMcorrect_${message.author.id}`, 1);
                     }
                     if(userAnswer !== cAnswer){
-                        message.reply("Pas de chance");
                         db.add(`quizMfaux_${message.author.id}`, 1);
                     }
                     

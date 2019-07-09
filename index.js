@@ -422,8 +422,11 @@ client.on("ready", () => {
           client.on("message", async message => {
 
             msg = message.content.toLocaleLowerCase();
+            let user = message.mentions.users.first() || message.author;
+
             let jvr = await db.fetch(`quizJcorrect_${user.id}`);
             let jfa = await db.fetch(`quizJfaux_${user.id}`);
+
 
             if (answered == false && message.author == quizUser) {
                 userAnswer = msg;

@@ -372,19 +372,54 @@ client.on("ready", () => {
 
 
   client.on("message", async message => {
-  
+
+    let user = message.author;
     msg = message.content.toLocaleLowerCase();
-  
+    const qvr = await db.fetch(`quizQcorrect_${user.id}`);
+    const qfa = await db.fetch(`quizQfaux_${user.id}`);
+
+    if (qvr === null) qvr = 0;
+    if (qfa === null) qfa = 0;
+
              if (answered == false && message.author == quizUser) {
                  userAnswer = msg;
+
+
                  if (userAnswer == cAnswer) {
-                     message.reply ("Correct! Tien un :cookie: ");
-                 }
-                 else{
-                     message.reply("Faux");
-                 }
-                 answered = true; cAnswer = ""; userAnswer = "";
-             }
+                 
+                    db.add(`quizQcorrect_${message.author.id}`, 1)
+
+                    let qbo = new Discord.RichEmbed()
+                    .setTitle(`Bonne réponse!`)
+                    .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
+                    .setDescription(`
+                    ✅:cookie::cookie::cookie::cookie:✅
+                    Bonne réponses! Tu as
+                    maintenant \`${qvr}\` bonne réponses
+                    
+                    `)
+                    message.channel.send(qbo);     
+                            }
+                   
+                            if(userAnswerJ !== cAnswerJ){
+
+                   
+                                db.add(`quizQfaux_${message.author.id}`, 1)
+
+                                let qufa = new Discord.RichEmbed()
+                    
+                                .setTitle(`Mauvaise réponse`)
+                                .setThumbnail("https://i.imgur.com/NXPa3av.png")
+                                .setDescription(`
+                                ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
+                                Mauvaise réponse. Tu as
+                                maintenant \`${qfa}\` mauvaise réponse
+                                `)
+                                message.channel.send(qufa);
+                
+                            }
+                            answered = true; cAnswer = ""; userAnswer = "";
+                        }
           
            
              if (msg.startsWith(prefix + "quiz" )){
@@ -435,28 +470,26 @@ client.on("ready", () => {
             if (answeredJ == false && message.author == quizUserJ) {
                 userAnswerJ = msg;
 
+                if (jvr === null) jvr = 0;
+                if (jfa === null) jfa = 0;
+
 
 
                 if (userAnswerJ == cAnswerJ) {
 
                     db.add(`quizJcorrect_${message.author.id}`, 1)
-                    .then(async function (message ) {
-                    if (jvr === null) jvr = 0;
-                    if (jfa === null) jfa = 0;
 
 
                     let sjb = new Discord.RichEmbed()
-                    .setTitle(`stat de ${message.author.username}`)
+                    .setTitle(`Bonne réponse!`)
                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                     .setDescription(`
-                    ✅:cookie::cookie::cookie::cookie::cookie:✅
-                    **Stat Référence Jeux**
-
-                    Bonne réponses: \`${jvr}\`
-                    Mauvaise réponse: \`${jfa}\`
+                    ✅:cookie::cookie::cookie::cookie:✅
+                    Bonne réponses! Tu as
+                    maintenant \`${jvr}\` bonne réponses
+                    
                     `)
-                    message.channel.send(sjb);
-                    })
+                    setTimeout(sjb, 500)
                 }
 
 
@@ -464,23 +497,17 @@ client.on("ready", () => {
                 if(userAnswerJ !== cAnswerJ){
 
                     db.add(`quizJfaux_${message.author.id}`, 1)
-                    .then(async function (message ) {
-                    if (jvr === null) jvr = 0;
-                    if (jfa === null) jfa = 0;
 
 
                     let sjc = new Discord.RichEmbed()
-                    .setTitle(`stat de ${message.author.username}`)
+                    .setTitle(`Mauvaise réponse`)
                     .setThumbnail("https://i.imgur.com/NXPa3av.png")
                     .setDescription(`
-                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
-                    **Stat Référence Jeux**
-
-                    Bonne réponses: \`${jvr}\`
-                    Mauvaise réponse: \`${jfa}\`
+                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
+                    Mauvaise réponse. Tu as
+                    maintenant \`${jfa}\` mauvaise réponse
                     `)
                     message.channel.send(sjc);
-                    })
                 }
                 
                 answeredJ = true; cAnswerJ = ""; userAnswerJ = "";
@@ -551,24 +578,20 @@ client.on("ready", () => {
                     if (userAnswerA == cAnswerA) {
 
                         db.add(`quizMcorrect_${message.author.id}`, 1)
-                        .then(async function (message ) {
                         if (mvr === null) mvr = 0;
-                        if (mfa === null) mfa = 0;
 
     
     
                         let sab = new Discord.RichEmbed()
-                        .setTitle(`stat de ${message.author.username}`)
+                        .setTitle(`Bonne réponse!`)
                         .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                         .setDescription(`
-                        ✅:cookie::cookie::cookie::cookie::cookie:✅
-                        **Stat Référence Anime**
-    
-                        Bonne réponses: \`${mvr}\`
-                        Mauvaise réponse: \`${mfa}\`
+                        ✅:cookie::cookie::cookie::cookie:✅
+                        Bonne réponses! Tu as
+                        maintenant \`${mvr}\` bonne réponses
                         `)
                         message.reply(sab);
-                        })
+                        
                     }
 
 
@@ -576,23 +599,18 @@ client.on("ready", () => {
                         if(userAnswerA !== cAnswerA){
 
                             db.add(`quizMfaux_${message.author.id}`, 1)
-                            .then(async function (message ) {
-                            if (mvr === null) mvr = 0;
                             if (mfa === null) mfa = 0;
 
         
                             let sam = new Discord.RichEmbed()
-                            .setTitle(`stat de ${message.author.username}`)
+                            .setTitle(`Mauvaise réponse`)
                             .setThumbnail("https://i.imgur.com/NXPa3av.png")
                             .setDescription(`
-                            ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌
-                            **Stat Référence Anime**
-        
-                            Bonne réponses: \`${mvr}\`
-                            Mauvaise réponse: \`${mfa}\`
+                            ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
+                            Mauvaise réponse. Tu as
+                            maintenant \`${mfa}\` mauvaise réponse
                             `)
                             message.reply(sam);
-                            })
                     }
                     
 
@@ -693,27 +711,32 @@ if(command ==="q-stat"){
     let jfa = await db.fetch(`quizJfaux_${user.id}`);
     let mvr = await db.fetch(`quizMcorrect_${user.id}`);
     let mfa = await db.fetch(`quizMfaux_${user.id}`);
+    let qvr = await db.fetch(`quizQcorrect_${user.id}`);
+    let qfa = await db.fetch(`quizQfaux_${user.id}`);
+
     if (mvr === null) mvr = 0;
     if (mfa === null) mfa = 0;
     if (jvr === null) jvr = 0;
     if (jfa === null) jfa = 0;
-
+    if (qvr === null) qvr = 0;
+    if (qfa === null) qfa = 0;
 
 
     let st = new Discord.RichEmbed()
-    .setTitle()
+    .setTitle(`**Stat ${message.author.username}**`)
     .setDescription(`
 
     **Quiz**
-    
+    Bonne réponses: \`${qvr}\`
+    Mauvaise réponses: \`${qfa}\`
     
     **Référence Jeux vidéo**
-      Bonne réponses : ${jvr}
-      Mauvaise réponses : ${jfa}
+      Bonne réponses : \`${jvr}\`
+      Mauvaise réponses : \`${jfa}\`
 
     **Référence Anime/Manga**
-      Bonne réponses : ${mvr}
-      Mauvaise réponses : ${mfa}
+      Bonne réponses : \`${mvr}\`
+      Mauvaise réponses : \`${mfa}\`
     
     `)
     message.channel.send(st)

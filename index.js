@@ -549,8 +549,8 @@ client.on("ready", () => {
                     if (userAnswerA == cAnswerA) {
 
                         db.add(`quizMcorrect_${message.author.id}`, 1)
-                        if (mvr === null) balance = 0;
-                        if (mfa === null) balance = 0;
+                        if (mvr === null) mvr = 0;
+                        if (mfa === null) mfa = 0;
 
     
     
@@ -573,8 +573,8 @@ client.on("ready", () => {
                         if(userAnswerA !== cAnswerA){
 
                             db.add(`quizMfaux_${message.author.id}`, 1);
-                            if (mvr === null) balance = 0;
-                            if (mfa === null) balance = 0;
+                            if (mvr === null) mvr = 0;
+                            if (mfa === null) mfa = 0;
 
         
                             let sam = new Discord.RichEmbed()
@@ -688,10 +688,10 @@ if(command ==="q-stat"){
     let jfa = await db.fetch(`quizJfaux_${user.id}`);
     let mvr = await db.fetch(`quizMcorrect_${user.id}`);
     let mfa = await db.fetch(`quizMfaux_${user.id}`);
-    if (mvr === null) balance = 0;
-    if (mfa === null) balance = 0;
-    if (jvr === null) balance = 0;
-    if (jfa === null) balance = 0;
+    if (mvr === null) mvr = 0;
+    if (mfa === null) mfa = 0;
+    if (jvr === null) jvr = 0;
+    if (jfa === null) jfa = 0;
 
 
 

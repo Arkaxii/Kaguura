@@ -683,6 +683,11 @@ if (command === "f-a"){
 }
 
 if(command ==="q-stat"){
+    let user = message.author;
+    if (mvr === null) balance = 0;
+    if (mfa === null) balance = 0;
+    if (jvr === null) balance = 0;
+    if (jfa === null) balance = 0;
     let jvr = await db.fetch(`quizJcorrect_${user.id}`);
     let jfa = await db.fetch(`quizJfaux_${user.id}`);
     let mvr = await db.fetch(`quizMcorrect_${user.id}`);

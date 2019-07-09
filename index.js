@@ -766,6 +766,8 @@ Syntaxe Basique:
 
 4) Blocs ==> 4⃣  pour plus d'info
 
+5) || Pourquoi as-tu cliquer ? ||
+
 `)
     .setFooter(` on peut mixer plusieur syntaxe `)
 message.channel.send(syntb)
@@ -773,9 +775,10 @@ message.channel.send(syntb)
 
    await message.react("0⃣")
    await message.react("1⃣")
-   await  message.react("2⃣")
+   await message.react("2⃣")
    await message.react("3⃣")
    await message.react("4⃣")
+   await message.react("5⃣")
 
 
    client.on('messageReactionAdd',async (reaction, user) =>{
@@ -845,6 +848,21 @@ message.channel.send(syntb)
             .setDescription(" ``C'est un blocs``  ")
             .setImage("https://i.imgur.com/0OlUjKp.png")
             message.channel.send(bl);
+ 
+         }
+     })
+
+     client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
+            reaction.remove(user)
+            reaction.remove()
+            await message.delete(syntb)
+            
+            var ats = new Discord.RichEmbed()
+            .setAuthor("anti-spoil")
+            .setDescription(" || tu aime te faire spoil ? ||  ")
+            .setImage("https://i.imgur.com/hI3nOOb.png")
+            message.channel.send(ats);
  
          }
      })

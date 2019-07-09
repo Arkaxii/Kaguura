@@ -439,7 +439,8 @@ client.on("ready", () => {
 
                 if (userAnswerJ == cAnswerJ) {
 
-                   await db.add(`quizJcorrect_${message.author.id}`, 1)
+                    db.add(`quizJcorrect_${message.author.id}`, 1)
+                    .then(async function (message ) {
                     if (jvr === null) jvr = 0;
                     if (jfa === null) jfa = 0;
 
@@ -455,14 +456,15 @@ client.on("ready", () => {
                     Mauvaise réponse: \`${jfa}\`
                     `)
                     message.channel.send(sjb);
-        
+                    })
                 }
 
 
 
                 if(userAnswerJ !== cAnswerJ){
 
-                   await db.add(`quizJfaux_${message.author.id}`, 1);
+                    db.add(`quizJfaux_${message.author.id}`, 1)
+                    .then(async function (message ) {
                     if (jvr === null) jvr = 0;
                     if (jfa === null) jfa = 0;
 
@@ -478,7 +480,7 @@ client.on("ready", () => {
                     Mauvaise réponse: \`${jfa}\`
                     `)
                     message.channel.send(sjc);
-        
+                    })
                 }
                 
                 answeredJ = true; cAnswerJ = ""; userAnswerJ = "";
@@ -548,7 +550,8 @@ client.on("ready", () => {
 
                     if (userAnswerA == cAnswerA) {
 
-                       await db.add(`quizMcorrect_${message.author.id}`, 1)
+                        db.add(`quizMcorrect_${message.author.id}`, 1)
+                        .then(async function (message ) {
                         if (mvr === null) mvr = 0;
                         if (mfa === null) mfa = 0;
 
@@ -565,14 +568,15 @@ client.on("ready", () => {
                         Mauvaise réponse: \`${mfa}\`
                         `)
                         message.reply(sab);
-            
+                        })
                     }
 
 
 
                         if(userAnswerA !== cAnswerA){
 
-                           await db.add(`quizMfaux_${message.author.id}`, 1);
+                            db.add(`quizMfaux_${message.author.id}`, 1)
+                            .then(async function (message ) {
                             if (mvr === null) mvr = 0;
                             if (mfa === null) mfa = 0;
 
@@ -588,6 +592,7 @@ client.on("ready", () => {
                             Mauvaise réponse: \`${mfa}\`
                             `)
                             message.reply(sam);
+                            })
                     }
                     
 

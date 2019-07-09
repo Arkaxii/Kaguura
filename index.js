@@ -425,12 +425,10 @@ client.on("ready", () => {
   });
 
           client.on("message", async message => {
-
+            const jvr = await db.fetch(`quizJcorrect_${user.id}`)
+            const jfa = await db.fetch(`quizJfaux_${user.id}`)
             msg = message.content.toLocaleLowerCase();
             let user = message.author;
-
-            let jvr = await db.fetch(`quizJcorrect_${user.id}`)
-            let jfa = await db.fetch(`quizJfaux_${user.id}`)
 
 
             if (answeredJ == false && message.author == quizUserJ) {
@@ -441,6 +439,8 @@ client.on("ready", () => {
                 if (userAnswerJ == cAnswerJ) {
 
                     db.add(`quizJcorrect_${message.author.id}`, 1)
+                    if (jvr === null) balance = 0;
+                    if (jfa === null) balance = 0;
 
 
                     let sjb = new Discord.RichEmbed()
@@ -462,6 +462,9 @@ client.on("ready", () => {
                 if(userAnswerJ !== cAnswerJ){
 
                     db.add(`quizJfaux_${message.author.id}`, 1);
+                    if (jvr === null) balance = 0;
+                    if (jfa === null) balance = 0;
+
 
                     let sjc = new Discord.RichEmbed()
                     .setTitle(`stat de ${message.author.username}`)
@@ -534,8 +537,8 @@ client.on("ready", () => {
 
                 msg = message.content.toLocaleLowerCase();
                 let user = message.author;
-                let mvr = await db.fetch(`quizMcorrect_${user.id}`);
-                let mfa = await db.fetch(`quizMfaux_${user.id}`);
+                const mvr = await db.fetch(`quizMcorrect_${user.id}`);
+                const mfa = await db.fetch(`quizMfaux_${user.id}`);
 
                 
                 if (answeredA == false && message.author == quizUserA) {
@@ -545,6 +548,9 @@ client.on("ready", () => {
                     if (userAnswerA == cAnswerA) {
 
                         db.add(`quizMcorrect_${message.author.id}`, 1)
+                        if (mvr === null) balance = 0;
+                        if (mfa === null) balance = 0;
+
     
     
                         let sab = new Discord.RichEmbed()
@@ -566,6 +572,9 @@ client.on("ready", () => {
                         if(userAnswerA !== cAnswerA){
 
                             db.add(`quizMfaux_${message.author.id}`, 1);
+                            if (mvr === null) balance = 0;
+                            if (mfa === null) balance = 0;
+
         
                             let sam = new Discord.RichEmbed()
                             .setTitle(`stat de ${message.author.username}`)

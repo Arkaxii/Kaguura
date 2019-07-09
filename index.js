@@ -489,7 +489,7 @@ client.on("ready", () => {
                     maintenant \`${jvr}\` bonne réponses
                     
                     `)
-                    setTimeout(sjb, 500)
+                    message.channel.send(sjb);
                 }
 
 

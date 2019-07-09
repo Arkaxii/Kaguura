@@ -432,8 +432,9 @@ client.on("ready", () => {
                 userAnswer = msg;
 
                 if (userAnswer == cAnswer) {
-                    message.reply ("Correct! Tien un :cookie: ");
-                    db.add(`quizJcorrect_${message.author.id}`, 1);
+                    db.add(`quizJcorrect_${message.author.id}`, 1)
+
+                    message.reply("Correct! Tien un :cookie: ")
 
                     let sjb = new Discord.RichEmbed()
                     .setTitle(`stat de ${message.author.username}`)
@@ -625,6 +626,7 @@ if(command ==="q-stat"){
       Mauvaise réponses : ${mfa}
     
     `)
+    message.channel.send(st)
 }
   
 if(command === "q-help"){

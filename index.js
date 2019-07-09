@@ -383,7 +383,7 @@ client.on("ready", () => {
 
 
                  if (userAnswer == cAnswer) {
-                    const qvr = await db.fetch(`quizQcorrect_${user.id}`);
+                    let qvr = await db.fetch(`quizQcorrect_${user.id}`);
                     if (qvr === null) qvr = 0;
 
                     db.add(`quizQcorrect_${message.author.id}`, 1)
@@ -401,7 +401,7 @@ client.on("ready", () => {
                             }
                    
                             if(userAnswerJ !== cAnswerJ){
-                                const qfa = await db.fetch(`quizQfaux_${user.id}`);
+                                let qfa = await db.fetch(`quizQfaux_${user.id}`);
                                 if (qfa === null) qfa = 0;
 
                                 db.add(`quizQfaux_${message.author.id}`, 1)
@@ -473,7 +473,7 @@ client.on("ready", () => {
 
                 if (userAnswerJ == cAnswerJ) {
 
-                    const jvr = await db.fetch(`quizJcorrect_${user.id}`)
+                    let jvr = await db.fetch(`quizJcorrect_${user.id}`)
                     if (jvr === null) jvr = 0;
 
                     db.add(`quizJcorrect_${message.author.id}`, 1)
@@ -494,7 +494,7 @@ client.on("ready", () => {
 
 
                 if(userAnswerJ !== cAnswerJ){
-                    const jfa = await db.fetch(`quizJfaux_${user.id}`)
+                    let jfa = await db.fetch(`quizJfaux_${user.id}`)
                     if (jfa === null) jfa = 0;
 
                     db.add(`quizJfaux_${message.author.id}`, 1)
@@ -568,7 +568,6 @@ client.on("ready", () => {
 
                 msg = message.content.toLocaleLowerCase();
                 let user = message.author;
-                const mfa = await db.fetch(`quizMfaux_${user.id}`);
 
                 
                 if (answeredA == false && message.author == quizUserA) {
@@ -576,7 +575,7 @@ client.on("ready", () => {
 
 
                     if (userAnswerA == cAnswerA) {
-                        const mvr = await db.fetch(`quizMcorrect_${user.id}`);
+                        let mvr = await db.fetch(`quizMcorrect_${user.id}`);
                         if (mvr === null) mvr = 0;
 
                         db.add(`quizMcorrect_${message.author.id}`, 1)
@@ -598,7 +597,7 @@ client.on("ready", () => {
 
 
                         if(userAnswerA !== cAnswerA){
-                            const mfa = await db.fetch(`quizMfaux_${user.id}`);
+                            let mfa = await db.fetch(`quizMfaux_${user.id}`);
                             if (mfa === null) mfa = 0;
 
                             db.add(`quizMfaux_${message.author.id}`, 1)

@@ -453,7 +453,7 @@ client.on("ready", () => {
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                    message.reply(sjb);
+                    message.channel.send(sjb);
         
                 }
 
@@ -473,7 +473,7 @@ client.on("ready", () => {
                     Bonne réponses: \`${jvr}\`
                     Mauvaise réponse: \`${jfa}\`
                     `)
-                    message.reply(sjc);
+                    message.channel.send(sjc);
         
                 }
                 
@@ -513,8 +513,8 @@ client.on("ready", () => {
 
             
                 }
-                answered = false;
-                quizUser = message.author;
+                answeredJ = false;
+                quizUserJ = message.author;
             }
             
             });
@@ -538,7 +538,7 @@ client.on("ready", () => {
                 let mfa = await db.fetch(`quizMfaux_${user.id}`);
 
                 
-                if (answered == false && message.author == quizUser) {
+                if (answeredA == false && message.author == quizUserA) {
                     userAnswer = msg;
 
 

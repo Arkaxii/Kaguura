@@ -487,29 +487,29 @@ client.on("ready", () => {
                 var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                 switch(random){
                
-                    case 1: message.channel.send ("« c'est une vrai dent de requin faite en résine!»"); cAnswer = "world of warcraft";break; 
-                    case 2: message.channel.send ("« je ne voi que les ténèbre...»"); cAnswer = "world of warcraft";break; 
-                    case 3: message.channel.send ("« The cake is a lie»"); cAnswer = "portal";break; 
-                    case 4: message.channel.send ("« La folie c’est refaire sans arrêt exactement la même connerie qu’on répète sans arrêt, en espérant que ça change»"); cAnswer = "Far Cry 3";break; 
-                    case 5: message.channel.send ("« La guerre, la guerre ne meurt jamais »"); cAnswer = "fallout";break; 
-                    case 6: message.channel.send ("« Rien n’est vrai. Tout est permis »"); cAnswer = "Assassin's Creed";break; 
-                    case 7: message.channel.send ("« Avant j’étais un aventurier comme toi. Et puis je me suis pris une flèche dans le genou »"); cAnswer = "skyrim";break; 
-                    case 8: message.channel.send ("« Mes couilles sur ton nez, t’auras l’air d’un dindon »"); cAnswer = "duke nukem forever";break; 
-                    case 9: message.channel.send ("« It’s me, Mario ! »"); cAnswer = "super mario 64";break; 
-                    case 10: message.channel.send ("« L’Homme choisit. L’esclave obéit »"); cAnswer = "bioshock";break; 
-                    case 11: message.channel.send ("« Il y a des gens qui vous attaquent délibérément ??? »"); cAnswer = "dragon age";break; 
-                    case 12: message.channel.send ("« Travail terminé ! »"); cAnswer = "warcraft 3";break; 
-                    case 13: message.channel.send ("« Encore du travail ? »"); cAnswer = "warcraft 3";break; 
-                    case 14: message.channel.send ("« PAR LE FEU SOYEZ PURIFIES »"); cAnswer = "world of warcraft";break; 
-                    case 15: message.channel.send ("« Vous êtes rempli de détermination »"); cAnswer = "undertale";break; 
-                    case 16: message.channel.send ("« this cannot continue »"); cAnswer = "nier automata";break; 
-                    case 17: message.channel.send ("« Est-ce que tu pleures ? C'est seulement la pluie. Le Diable ne pleure jamais »"); cAnswer = "devil may cry 3";break; 
-                    case 18: message.channel.send ("« Tu veux qu'on se tire l'oreille ? »"); cAnswer = "metale gear solid V";break; 
-                    case 19: message.channel.send ("« OBJECTION ! »"); cAnswer = "phoenix wright";break; 
-                    case 20: message.channel.send ("« Je ne suis pas un héros, jamais je ne l'ai été, jamais je ne le serai. »"); cAnswer = "metal gear solid 4";break; 
-                    case 21: message.channel.send ("« J'mets les pieds où j'veux ! Et c'est souvent dans la gueule ! »"); cAnswer = "halo 2";break; 
-                    case 22: message.channel.send ("« Ceci n'est pas ton tombeau. Mais tu es le bienvenu »"); cAnswer = "halo 2";break; 
-                    case 23: message.channel.send ("« Tue un Déchu, j'en ferai un Infâme. Tue un Infâme, j'en dressera dix de plus »"); cAnswer = "destiny 2";break; 
+                    case 1: message.channel.send ("« c'est une vrai dent de requin faite en résine!»"); cAnswerJ = "world of warcraft";break; 
+                    case 2: message.channel.send ("« je ne voi que les ténèbre...»"); cAnswerJ = "world of warcraft";break; 
+                    case 3: message.channel.send ("« The cake is a lie»"); cAnswerJ = "portal";break; 
+                    case 4: message.channel.send ("« La folie c’est refaire sans arrêt exactement la même connerie qu’on répète sans arrêt, en espérant que ça change»"); cAnswerJ = "Far Cry 3";break; 
+                    case 5: message.channel.send ("« La guerre, la guerre ne meurt jamais »"); cAnswerJ = "fallout";break; 
+                    case 6: message.channel.send ("« Rien n’est vrai. Tout est permis »"); cAnswerJ = "Assassin's Creed";break; 
+                    case 7: message.channel.send ("« Avant j’étais un aventurier comme toi. Et puis je me suis pris une flèche dans le genou »"); cAnswerJ = "skyrim";break; 
+                    case 8: message.channel.send ("« Mes couilles sur ton nez, t’auras l’air d’un dindon »"); cAnswerJ = "duke nukem forever";break; 
+                    case 9: message.channel.send ("« It’s me, Mario ! »"); cAnswerJ = "super mario 64";break; 
+                    case 10: message.channel.send ("« L’Homme choisit. L’esclave obéit »"); cAnswerJ = "bioshock";break; 
+                    case 11: message.channel.send ("« Il y a des gens qui vous attaquent délibérément ??? »"); cAnswerJ = "dragon age";break; 
+                    case 12: message.channel.send ("« Travail terminé ! »"); cAnswerJ = "warcraft 3";break; 
+                    case 13: message.channel.send ("« Encore du travail ? »"); cAnswerJ = "warcraft 3";break; 
+                    case 14: message.channel.send ("« PAR LE FEU SOYEZ PURIFIES »"); cAnswerJ = "world of warcraft";break; 
+                    case 15: message.channel.send ("« Vous êtes rempli de détermination »"); cAnswerJ = "undertale";break; 
+                    case 16: message.channel.send ("« this cannot continue »"); cAnswerJ = "nier automata";break; 
+                    case 17: message.channel.send ("« Est-ce que tu pleures ? C'est seulement la pluie. Le Diable ne pleure jamais »"); cAnswerJ = "devil may cry 3";break; 
+                    case 18: message.channel.send ("« Tu veux qu'on se tire l'oreille ? »"); cAnswerJ = "metale gear solid V";break; 
+                    case 19: message.channel.send ("« OBJECTION ! »"); cAnswerJ = "phoenix wright";break; 
+                    case 20: message.channel.send ("« Je ne suis pas un héros, jamais je ne l'ai été, jamais je ne le serai. »"); cAnswerJ = "metal gear solid 4";break; 
+                    case 21: message.channel.send ("« J'mets les pieds où j'veux ! Et c'est souvent dans la gueule ! »"); cAnswerJ = "halo 2";break; 
+                    case 22: message.channel.send ("« Ceci n'est pas ton tombeau. Mais tu es le bienvenu »"); cAnswerJ = "halo 2";break; 
+                    case 23: message.channel.send ("« Tue un Déchu, j'en ferai un Infâme. Tue un Infâme, j'en dressera dix de plus »"); cAnswerJ = "destiny 2";break; 
 
             
                 }
@@ -533,8 +533,10 @@ client.on("ready", () => {
             client.on("message", async message => {
 
                 msg = message.content.toLocaleLowerCase();
+                let user = message.author;
                 let mvr = await db.fetch(`quizMcorrect_${user.id}`);
                 let mfa = await db.fetch(`quizMfaux_${user.id}`);
+
                 
                 if (answered == false && message.author == quizUser) {
                     userAnswer = msg;
@@ -592,27 +594,27 @@ client.on("ready", () => {
                 var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                 switch(random){
                
-                    case 1: message.channel.send ("«T'es con naturellement où t'as pris des cours?»"); cAnswer = "great teacher onizuka";break; 
-                    case 2: message.channel.send ("«Interdit de mourir sous mon commandement. T'es déjà pas un cadeau, pas besoin de paperasse»"); cAnswer = "fullmetal alchimiste";break; 
-                    case 3: message.channel.send ("«Les gens meurent si ils sont tués»"); cAnswer = "fate stay night";break; 
-                    case 4: message.channel.send ("«Tu ne le sais pas encore, mais tu es déjà mort»"); cAnswer = "ken le survivant";break; 
-                    case 5: message.channel.send ("«Ne crois pas en moi qui crois en toi, ne crois pas en toi qui crois en moi, crois en toi, c'est tout»"); cAnswer = "gurren lagann";break; 
-                    case 6: message.channel.send ("«la seule chose qui nous est permis de faire, c'est de ne pas regretter les choix que l'on a fait»"); cAnswer = "shingeki no kyojin";break; 
-                    case 7: message.channel.send ("«La vérité puni l'arrogance humaine par le desespoir»"); cAnswer = "fullmetal alchimiste brotherhood";break; 
-                    case 8: message.channel.send ("«Ce que je dis est bien trop subtil pour tes 2 neurones qui se battent en duel»"); cAnswer = "rosario vampire";break; 
-                    case 9: message.channel.send ("«Je ne suis pas stupide. Je suis juste trop paresseux pour vous montrer à quel point je suis intelligent»"); cAnswer = "hyouka";break; 
-                    case 10: message.channel.send ("«Si la vérité est une maîtresse cruelle, le mensonge doit être une gentille fille»"); cAnswer = "oregairu";break; 
-                    case 11: message.channel.send ("«lelolelolelolelo»"); cAnswer = "jojo's bizarre adventure";break; 
-                    case 12: message.channel.send ("«Ok»"); cAnswer = "one punch man";break; 
-                    case 13: message.channel.send ("«L'être humain est lâche par nature. Il jalouse celui qui n'a ne serait-ce qu'un peu plus que lui, et au contraire méprise celui qui possède moins. Pour une légère différence, il craint et il hait. Et c'est dur à admettre, mais spécialement lorsqu'il s'agit de parias comme nous»"); cAnswer = "berserk";break; 
-                    case 14: message.channel.send ("«tu pense qu'être faible est un problème ? Tu te trompe. Le problème c'est de le rester.»"); cAnswer = "black clover";break; 
-                    case 15: message.channel.send ("«Ciaossu !»"); cAnswer = "katekyoshi hitman reborn";break; 
-                    case 16: message.channel.send ("«Mon trésor ? Je vous le laisse, si vous voulez. Trouvez-le ! Je l'ai laissé quelque part dans ce monde»"); cAnswer = "one piece";break; 
-                    case 17: message.channel.send ("«Tous les hommes sans exception, même les plus corrompus, au fond de le cœur ne cherchent nul autre que la considération»"); cAnswer = "naruto shippuden";break; 
-                    case 18: message.channel.send ("«Le roi des Pirates, ce sera moi !»"); cAnswer = "one piece";break; 
-                    case 19: message.channel.send ("«Yes, my Lord»"); cAnswer = "black butler";break; 
-                    case 20: message.channel.send ("«Pour qui vous me prenez ?!»"); cAnswer = "gurren lagenn";break; 
-                    case 21: message.channel.send ("«Pousse de soja»"); cAnswer = "d.gray man";break; 
+                    case 1: message.channel.send ("«T'es con naturellement où t'as pris des cours?»"); cAnswerA = "great teacher onizuka";break; 
+                    case 2: message.channel.send ("«Interdit de mourir sous mon commandement. T'es déjà pas un cadeau, pas besoin de paperasse»"); cAnswerA = "fullmetal alchimiste";break; 
+                    case 3: message.channel.send ("«Les gens meurent si ils sont tués»"); cAnswerA = "fate stay night";break; 
+                    case 4: message.channel.send ("«Tu ne le sais pas encore, mais tu es déjà mort»"); cAnswerA = "ken le survivant";break; 
+                    case 5: message.channel.send ("«Ne crois pas en moi qui crois en toi, ne crois pas en toi qui crois en moi, crois en toi, c'est tout»"); cAnswerA = "gurren lagann";break; 
+                    case 6: message.channel.send ("«la seule chose qui nous est permis de faire, c'est de ne pas regretter les choix que l'on a fait»"); cAnswerA = "shingeki no kyojin";break; 
+                    case 7: message.channel.send ("«La vérité puni l'arrogance humaine par le desespoir»"); cAnswerA = "fullmetal alchimiste brotherhood";break; 
+                    case 8: message.channel.send ("«Ce que je dis est bien trop subtil pour tes 2 neurones qui se battent en duel»"); cAnswerA = "rosario vampire";break; 
+                    case 9: message.channel.send ("«Je ne suis pas stupide. Je suis juste trop paresseux pour vous montrer à quel point je suis intelligent»"); cAnswerA = "hyouka";break; 
+                    case 10: message.channel.send ("«Si la vérité est une maîtresse cruelle, le mensonge doit être une gentille fille»"); cAnswerA = "oregairu";break; 
+                    case 11: message.channel.send ("«lelolelolelolelo»"); cAnswerA = "jojo's bizarre adventure";break; 
+                    case 12: message.channel.send ("«Ok»"); cAnswerA = "one punch man";break; 
+                    case 13: message.channel.send ("«L'être humain est lâche par nature. Il jalouse celui qui n'a ne serait-ce qu'un peu plus que lui, et au contraire méprise celui qui possède moins. Pour une légère différence, il craint et il hait. Et c'est dur à admettre, mais spécialement lorsqu'il s'agit de parias comme nous»"); cAnswerA = "berserk";break; 
+                    case 14: message.channel.send ("«tu pense qu'être faible est un problème ? Tu te trompe. Le problème c'est de le rester.»"); cAnswerA = "black clover";break; 
+                    case 15: message.channel.send ("«Ciaossu !»"); cAnswerA = "katekyoshi hitman reborn";break; 
+                    case 16: message.channel.send ("«Mon trésor ? Je vous le laisse, si vous voulez. Trouvez-le ! Je l'ai laissé quelque part dans ce monde»"); cAnswerA = "one piece";break; 
+                    case 17: message.channel.send ("«Tous les hommes sans exception, même les plus corrompus, au fond de le cœur ne cherchent nul autre que la considération»"); cAnswerA = "naruto shippuden";break; 
+                    case 18: message.channel.send ("«Le roi des Pirates, ce sera moi !»"); cAnswerA = "one piece";break; 
+                    case 19: message.channel.send ("«Yes, my Lord»"); cAnswerA = "black butler";break; 
+                    case 20: message.channel.send ("«Pour qui vous me prenez ?!»"); cAnswerA = "gurren lagenn";break; 
+                    case 21: message.channel.send ("«Pousse de soja»"); cAnswerA = "d.gray man";break; 
  
 
             

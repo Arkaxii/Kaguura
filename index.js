@@ -403,7 +403,6 @@ client.on("ready", () => {
                     ✅:cookie::cookie::cookie::cookie:✅
                     
                     Bonne réponses!
-                    
                     `)
                     message.channel.send(qbo);     
                             }
@@ -420,7 +419,9 @@ client.on("ready", () => {
                                 ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌   
 
                                 Mauvaise réponse.
-                                
+
+                                Regarde si tu as oublier le numéro après le nom ou
+                                bien orthographier le nom !
                                 `)
                                 message.channel.send(qufa);
                 
@@ -482,9 +483,7 @@ client.on("ready", () => {
                     .setDescription(`
                     ✅:cookie::cookie::cookie::cookie:✅
 
-                    Bonne réponses! 
-
-                    
+                    Bonne réponses!
                     `)
                     message.channel.send(sjb);
                 }
@@ -503,6 +502,8 @@ client.on("ready", () => {
 
                     Mauvaise réponse. 
 
+                    Regarde si tu as oublier le numéro après le nom ou
+                    bien orthographier le nom !
                     `)
                     message.channel.send(sjc);
                 }
@@ -520,7 +521,7 @@ client.on("ready", () => {
                     case 1: message.channel.send ("« c'est une vrai dent de requin faite en résine!»"); cAnswerJ = "world of warcraft";break; 
                     case 2: message.channel.send ("« je ne voi que les ténèbre...»"); cAnswerJ = "world of warcraft";break; 
                     case 3: message.channel.send ("« The cake is a lie»"); cAnswerJ = "portal";break; 
-                    case 4: message.channel.send ("« La folie c’est refaire sans arrêt exactement la même connerie qu’on répète sans arrêt, en espérant que ça change»"); cAnswerJ = "Far Cry 3";break; 
+                    case 4: message.channel.send ("« La folie c’est refaire sans arrêt exactement la même connerie qu’on répète sans arrêt, en espérant que ça change»"); cAnswerJ = "far cry 3";break; 
                     case 5: message.channel.send ("« La guerre, la guerre ne meurt jamais »"); cAnswerJ = "fallout";break; 
                     case 6: message.channel.send ("« Rien n’est vrai. Tout est permis »"); cAnswerJ = "Assassin's Creed";break; 
                     case 7: message.channel.send ("« Avant j’étais un aventurier comme toi. Et puis je me suis pris une flèche dans le genou »"); cAnswerJ = "skyrim";break; 
@@ -568,7 +569,6 @@ client.on("ready", () => {
                         ✅:cookie::cookie::cookie::cookie:✅
 
                         Bonne réponses!
-
                         `)
                         message.reply(sab);
                         
@@ -588,6 +588,8 @@ client.on("ready", () => {
 
                             Mauvaise réponse. 
 
+                            Regarde si tu as oublier le numéro après le nom ou
+                            bien orthographier le nom !
                             `)
                             message.reply(sam);
                     }

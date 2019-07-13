@@ -764,7 +764,7 @@ Syntaxe Basique:
 
 3) ~~Nan mais ok je me barre~~
 
-4) Blocs ==> 4⃣  pour plus d'info
+4) Bloc ==> 4⃣  pour plus d'info
 
 5) || Pourquoi as-tu cliquer ? ||
 
@@ -844,8 +844,8 @@ message.channel.send(syntb)
             await message.delete(syntb)
             
             var bl = new Discord.RichEmbed()
-            .setAuthor("Blocs")
-            .setDescription(" ``C'est un blocs``  ")
+            .setAuthor("Bloc")
+            .setDescription(" ``C'est un bloc``  ")
             .setImage("https://i.imgur.com/0OlUjKp.png")
             message.channel.send(bl);
  

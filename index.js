@@ -384,6 +384,8 @@ client.on("ready", () => {
 
     let user = message.author;
     msg = message.content.toLocaleLowerCase();
+    let goodrep = await db.fetch(`quizgood_${user.id}`);
+    let falsrep = await db.fetch(`quizfalse_${user.id}`);
 
 
 
@@ -392,11 +394,8 @@ client.on("ready", () => {
 
 
                  if (userAnswer == cAnswer) {
-  /*                  let qvr = await db.fetch(`quizQcorrect_${user.id}`);
-                    if (qvr === null) qvr = 0;
+                    db.add(`quizgood_${message.author.id}`, 1)
 
-                    db.add(`quizQcorrect_${message.author.id}`, 1)
-*/
                     let qbo = new Discord.RichEmbed()
                     .setTitle(`Bonne réponse!`)
                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
@@ -411,19 +410,17 @@ client.on("ready", () => {
                    
 
                             else{
-  /*                              let qfa = await db.fetch(`quizQfaux_${user.id}`);
-                                if (qfa === null) qfa = 0;
+                                db.add(`quizfalse_${message.author.id}`, 1)
 
-                                db.add(`quizQfaux_${message.author.id}`, 1)
-*/
                                 let qufa = new Discord.RichEmbed()
                     
                                 .setTitle(`Mauvaise réponse`)
                                 .setThumbnail("https://i.imgur.com/NXPa3av.png")
                                 .setDescription(`
-                                ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
-                                Mauvaise réponse. Tu as
-                                maintenant \`$qfa\` mauvaise réponse
+                                ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌   
+
+                                Mauvaise réponse.
+                                
                                 `)
                                 message.channel.send(qufa);
                 
@@ -476,11 +473,7 @@ client.on("ready", () => {
 
 
                 if (userAnswerJ == cAnswerJ) {
-
-                    let jvr = await db.fetch(`quizJcorrect_${user.id}`)
-                    if (jvr === null) jvr = 0;
-
-                    db.add(`quizJcorrect_${message.author.id}`, 1)
+                    db.add(`quizgood_${message.author.id}`, 1)
 
 
                     let sjb = new Discord.RichEmbed()
@@ -488,8 +481,9 @@ client.on("ready", () => {
                     .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                     .setDescription(`
                     ✅:cookie::cookie::cookie::cookie:✅
-                    Bonne réponses! Tu as
-                    maintenant \`${jvr}\` bonne réponses
+
+                    Bonne réponses! 
+
                     
                     `)
                     message.channel.send(sjb);
@@ -498,19 +492,17 @@ client.on("ready", () => {
 
 
                 if(userAnswerJ !== cAnswerJ){
-                    let jfa = await db.fetch(`quizJfaux_${user.id}`)
-                    if (jfa === null) jfa = 0;
-
-                    db.add(`quizJfaux_${message.author.id}`, 1)
+                    db.add(`quizfalse_${message.author.id}`, 1)
 
 
                     let sjc = new Discord.RichEmbed()
                     .setTitle(`Mauvaise réponse`)
                     .setThumbnail("https://i.imgur.com/NXPa3av.png")
                     .setDescription(`
-                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
-                    Mauvaise réponse. Tu as
-                    maintenant \`${jfa}\` mauvaise réponse
+                    ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌    
+
+                    Mauvaise réponse. 
+
                     `)
                     message.channel.send(sjc);
                 }
@@ -565,10 +557,7 @@ client.on("ready", () => {
 
 
                     if (userAnswerA == cAnswerA) {
-                        let mvr = await db.fetch(`quizMcorrect_${user.id}`);
-                        if (mvr === null) mvr = 0;
-
-                        db.add(`quizMcorrect_${message.author.id}`, 1)
+                        db.add(`quizgood_${message.author.id}`, 1)
 
     
     
@@ -577,8 +566,9 @@ client.on("ready", () => {
                         .setThumbnail("https://i.imgur.com/TgVQZ7C.jpg")
                         .setDescription(`
                         ✅:cookie::cookie::cookie::cookie:✅
-                        Bonne réponses! Tu as
-                        maintenant \`${mvr}\` bonne réponses
+
+                        Bonne réponses!
+
                         `)
                         message.reply(sab);
                         
@@ -587,19 +577,17 @@ client.on("ready", () => {
 
 
                         if(userAnswerA !== cAnswerA){
-                            let mfa = await db.fetch(`quizMfaux_${user.id}`);
-                            if (mfa === null) mfa = 0;
-
-                            db.add(`quizMfaux_${message.author.id}`, 1)
+                            db.add(`quizfalse_${message.author.id}`, 1)
 
         
                             let sam = new Discord.RichEmbed()
                             .setTitle(`Mauvaise réponse`)
                             .setThumbnail("https://i.imgur.com/NXPa3av.png")
                             .setDescription(`
-                            ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌        
-                            Mauvaise réponse. Tu as
-                            maintenant \`${mfa}\` mauvaise réponse
+                            ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌    
+
+                            Mauvaise réponse. 
+
                             `)
                             message.reply(sam);
                     }
@@ -698,36 +686,23 @@ if (command === "f-a"){
 
 if(command ==="q-stat"){
     let user = message.author;
-    let jvr = await db.fetch(`quizJcorrect_${user.id}`);
-    let jfa = await db.fetch(`quizJfaux_${user.id}`);
-    let mvr = await db.fetch(`quizMcorrect_${user.id}`);
-    let mfa = await db.fetch(`quizMfaux_${user.id}`);
-    let qvr = await db.fetch(`quizQcorrect_${user.id}`);
-    let qfa = await db.fetch(`quizQfaux_${user.id}`);
+    let falsrep = await db.fetch(`quizfalse_${user.id}`);
+    let goodrep = await db.fetch(`quizgood_${user.id}`);
 
-    if (mvr === null) mvr = 0;
-    if (mfa === null) mfa = 0;
-    if (jvr === null) jvr = 0;
-    if (jfa === null) jfa = 0;
-    if (qvr === null) qvr = 0;
-    if (qfa === null) qfa = 0;
+
+    if (falsrep === null) falsrep = 0;
+    if (goodrep === null) goodrep = 0;
+
 
 
     let st = new Discord.RichEmbed()
-    .setTitle(`**Stat ${message.author.username}**`)
+    .setTitle(`**Stat**`)
     .setDescription(`
 
-    **Quiz**
-    Bonne réponses: \`${qvr}\`
-    Mauvaise réponses: \`${qfa}\`
-    
-    **Référence Jeux vidéo**
-      Bonne réponses : \`${jvr}\`
-      Mauvaise réponses : \`${jfa}\`
+    **Stat de ${message.author.username} **
 
-    **Référence Anime/Manga**
-      Bonne réponses : \`${mvr}\`
-      Mauvaise réponses : \`${mfa}\`
+    Bonne réponses: \`${goodrep}\`✅
+    Mauvaise réponses: \`${falsrep}\`❌
     
     `)
     message.channel.send(st)

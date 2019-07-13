@@ -419,9 +419,6 @@ client.on("ready", () => {
                                 ❌¯\\_(ツ)_/¯¯\\_(ツ)_/¯¯\\_(ツ)_/¯❌   
 
                                 Mauvaise réponse.
-
-                                Regarde si tu as oublier le numéro après le nom ou
-                                bien orthographier le nom !
                                 `)
                                 message.channel.send(qufa);
                 
@@ -554,7 +551,7 @@ client.on("ready", () => {
 
                 
                 if (answeredA == false && message.author == quizUserA) {
-                    userAnswer = msg;
+                    userAnswerA = msg;
 
 
                     if (userAnswerA == cAnswerA) {
@@ -719,9 +716,8 @@ if(command === "q-help"){
         -Une seule chance par référence
         -Pas de faute d'orthographe 
         -Mettre des espace si le nom comporte des espace 
-        -Mettre un numéro si le nom comporte un numéro (warcraft 3)
-        -Mettre le nom COMPLET (FFXIV❌ /final fantasy XIV✅ )
-        -Lettre minuscule uniquement sauf chiffres romains
+        -Mettre un numéro si le nom comporte un numéro (Warcraft 3)
+        -Mettre le nom COMPLET (FFXIV❌ /Final Fantasy XIV✅ )
         `)
     message.channel.send(aideq)
 }

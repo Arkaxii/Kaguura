@@ -624,7 +624,7 @@ client.on("ready", () => {
                     case 17: message.channel.send ("«Tous les hommes sans exception, même les plus corrompus, au fond de le cœur ne cherchent nul autre que la considération»"); cAnswerA = "naruto shippuden";break; 
                     case 18: message.channel.send ("«Le roi des Pirates, ce sera moi !»"); cAnswerA = "one piece";break; 
                     case 19: message.channel.send ("«Yes, my Lord»"); cAnswerA = "black butler";break; 
-                    case 20: message.channel.send ("«Pour qui vous me prenez ?!»"); cAnswerA = "gurren lagenn";break; 
+                    case 20: message.channel.send ("«Pour qui vous me prenez ?!»"); cAnswerA = "gurren lagann";break; 
                     case 21: message.channel.send ("«Pousse de soja»"); cAnswerA = "d.gray man";break; 
  
 
@@ -707,20 +707,6 @@ if(command ==="q-stat"){
     message.channel.send(st)
 }
   
-if(command === "q-help"){
-    let aideq = new Discord.RichEmbed()
-        .setTitle("**Jeu des références**")
-        .setDescription(`
-        -**?q-stat** pour voir le nombre de faute et de bonne réponse
-
-        -Une seule chance par référence
-        -Pas de faute d'orthographe 
-        -Mettre des espace si le nom comporte des espace 
-        -Mettre un numéro si le nom comporte un numéro (Warcraft 3)
-        -Mettre le nom COMPLET (FFXIV❌ /Final Fantasy XIV✅ )
-        `)
-    message.channel.send(aideq)
-}
 
    if(command ==="syntaxe-b"){
     let syntb = new Discord.RichEmbed()

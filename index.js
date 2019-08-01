@@ -305,20 +305,20 @@ client.on('ready', () => {
   }
 
 let event = ['kagura'];
-let fondintext = false;
+let fondintextr = false;
 for (var i in event){
     if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
-    fondintext = true;
-    if(fondintext){
+    fondintextr = true;
+    if(fondintextr){
         message.react(`👀`);
     }
 }
 let eventr = ['respect ?','respect?'];
-let fondintext = false;
+let fondintextr = false;
 for (var i in eventr){
     if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
-    fondintext = true;
-    if(fondintext){
+    fondintextr = true;
+    if(fondintextr){
         let respect = new Discord.RichEmbed()
         .setTitle(`Il est bon`)
         .setImage("https://i.imgur.com/J2qrXHK.gif")

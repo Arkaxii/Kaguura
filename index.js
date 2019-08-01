@@ -305,11 +305,11 @@ client.on('ready', () => {
   }
 
 let event = ['kagura'];
-let fondintextr = false;
+let fondintext = false;
 for (var i in event){
     if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
-    fondintextr = true;
-    if(fondintextr){
+    fondintext = true;
+    if(fondintext){
         message.react(`👀`);
     }
 }

@@ -313,10 +313,10 @@ for (var i in event){
         message.react(`👀`);
     }
 }
-let event = ['respect ?','respect?'];
+let eventr = ['respect ?','respect?'];
 let fondintext = false;
-for (var i in event){
-    if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
+for (var i in eventr){
+    if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
     fondintext = true;
     if(fondintext){
         let respect = new Discord.RichEmbed()

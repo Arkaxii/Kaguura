@@ -303,28 +303,16 @@ client.on('ready', () => {
       .setColor("RANDOM")
       message.ownerID.send({embed})
   }
-              if(message.content.startsWith("n'est ce pas Kagura ?")){
-          if(message.author.id !== config.ownerID);
-       let args = message.content.split(" ").slice(1);
-  
-  var reponse = [
-  "Entièrement d'accord",
-  "Ah ba sa oui",
-  "Tu pens comme moi x)",
-  "Sa c'est sûr :p",
-  "Je peut pas le nier",
-  "Ce n'etai pas déja une évidence ?"
-  
-  
-  ]
-  
-          var result = Math.floor((Math.random() * reponse.length) + 0);
-  
-          message.channel.send(reponse[result]);
-  
-  
-         }
 
+let event = ['kagura'];
+let fondintext = false;
+for (var i in event){
+    if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
+    fondintext = true;
+    if(fondintext){
+        message.react(`👀`);
+    }
+}
 
          if(message.content.startsWith("mais ou est le respect ?")){
             let respect = new Discord.RichEmbed()

@@ -313,7 +313,7 @@ for (var i in event){
         message.react(`👀`);
     }
 }
-let eventr = ['respect ?','respect?'];
+let eventr = ['respect ?'||'respect?'];
 let fondintextr = false;
 for (var i in eventr){
     if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))

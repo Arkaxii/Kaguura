@@ -592,21 +592,21 @@ client.on("ready", () => {
                 var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                 switch(random){
                
-                    case 1: message.channel.send ("«T'es con naturellement où t'as pris des cours?»"); cAnswerA = "great teacher onizuka"||"gto"||"GTO";break; 
-                    case 2: message.channel.send ("«Interdit de mourir sous mon commandement. T'es déjà pas un cadeau, pas besoin de paperasse»"); cAnswerA = "fullmetal alchimiste"||"FMA";break; 
+                    case 1: message.channel.send ("«T'es con naturellement où t'as pris des cours?»"); cAnswerA = "great teacher onizuka","gto","GTO";break; 
+                    case 2: message.channel.send ("«Interdit de mourir sous mon commandement. T'es déjà pas un cadeau, pas besoin de paperasse»"); cAnswerA = "fullmetal alchimiste","FMA";break; 
                     case 3: message.channel.send ("«Les gens meurent si ils sont tués»"); cAnswerA = "fate stay night";break; 
                     case 4: message.channel.send ("«Tu ne le sais pas encore, mais tu es déjà mort»"); cAnswerA = "ken le survivant";break; 
                     case 5: message.channel.send ("«Ne crois pas en moi qui crois en toi, ne crois pas en toi qui crois en moi, crois en toi, c'est tout»"); cAnswerA = "gurren lagann";break; 
-                    case 6: message.channel.send ("«la seule chose qui nous est permis de faire, c'est de ne pas regretter les choix que l'on a fait»"); cAnswerA = "shingeki no kyojin"||"snk";break; 
-                    case 7: message.channel.send ("«La vérité puni l'arrogance humaine par le desespoir»"); cAnswerA = "fullmetal alchimiste brotherhood"||"fma";break; 
+                    case 6: message.channel.send ("«la seule chose qui nous est permis de faire, c'est de ne pas regretter les choix que l'on a fait»"); cAnswerA = "shingeki no kyojin","snk";break; 
+                    case 7: message.channel.send ("«La vérité puni l'arrogance humaine par le desespoir»"); cAnswerA = "fullmetal alchimiste brotherhood","fma";break; 
                     case 8: message.channel.send ("«Ce que je dis est bien trop subtil pour tes 2 neurones qui se battent en duel»"); cAnswerA = "rosario vampire";break; 
                     case 9: message.channel.send ("«Je ne suis pas stupide. Je suis juste trop paresseux pour vous montrer à quel point je suis intelligent»"); cAnswerA = "hyouka";break; 
                     case 10: message.channel.send ("«Si la vérité est une maîtresse cruelle, le mensonge doit être une gentille fille»"); cAnswerA = "oregairu";break; 
-                    case 11: message.channel.send ("«lelolelolelolelo»"); cAnswerA = "jojo's bizarre adventure"||"jojo"||"jojo's";break; 
+                    case 11: message.channel.send ("«lelolelolelolelo»"); cAnswerA = "jojo's bizarre adventure","jojo","jojo's";break; 
                     case 12: message.channel.send ("«Ok»"); cAnswerA = "one punch man";break; 
                     case 13: message.channel.send ("«L'être humain est lâche par nature. Il jalouse celui qui n'a ne serait-ce qu'un peu plus que lui, et au contraire méprise celui qui possède moins. Pour une légère différence, il craint et il hait. Et c'est dur à admettre, mais spécialement lorsqu'il s'agit de parias comme nous»"); cAnswerA = "berserk";break; 
                     case 14: message.channel.send ("«tu pense qu'être faible est un problème ? Tu te trompe. Le problème c'est de le rester.»"); cAnswerA = "black clover";break; 
-                    case 15: message.channel.send ("«Ciaossu !»"); cAnswerA = "katekyoshi hitman reborn"||"khr";break; 
+                    case 15: message.channel.send ("«Ciaossu !»"); cAnswerA = "katekyoshi hitman reborn","khr";break; 
                     case 16: message.channel.send ("«Mon trésor ? Je vous le laisse, si vous voulez. Trouvez-le ! Je l'ai laissé quelque part dans ce monde»"); cAnswerA = "one piece";break; 
                     case 17: message.channel.send ("«Tous les hommes sans exception, même les plus corrompus, au fond de le cœur ne cherchent nul autre que la considération»"); cAnswerA = "naruto shippuden";break; 
                     case 18: message.channel.send ("«Le roi des Pirates, ce sera moi !»"); cAnswerA = "one piece";break; 

@@ -313,22 +313,21 @@ for (var i in event){
         message.react(`👀`);
     }
 }
+let event = ['respect ?','respect?'];
+let fondintext = false;
+for (var i in event){
+    if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
+    fondintext = true;
+    if(fondintext){
+        let respect = new Discord.RichEmbed()
+        .setTitle(`Il est bon`)
+        .setImage("https://i.imgur.com/J2qrXHK.gif")
 
-         if(message.content.startsWith("mais ou est le respect ?")){
-            let respect = new Discord.RichEmbed()
-            .setTitle(`Il est bon`)
-            .setImage("https://i.imgur.com/J2qrXHK.gif")
+                      message.channel.send(respect);
+    }
+    }
 
-                          message.channel.send(respect);
-        }
 
-        if(message.content.startsWith("Mais ou est le respect ?")){
-            let respecta = new Discord.RichEmbed()
-            .setTitle(`Il est bon`)
-            .setImage("https://i.imgur.com/J2qrXHK.gif")
-
-                          message.channel.send(respecta);
-        }
      });
  
 client.on("ready", () => {

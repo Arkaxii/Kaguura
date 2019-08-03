@@ -3497,48 +3497,32 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-        
-       db.add(`globalMessages_${message.author.id}`, 1);
-       db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
-
-
     
        if(command === "play"){
 
-        const streamOptions = {cherche: 0, volume: 1};
-        const broadcast = client.createVoiceBroadcast();
-
-        if(!message.member.voiceChannel)
-        return message.channel.send("Va dans un vocal avant");
- 
-        if(!args[0])
-        return message.channel.send("C'est mieux avec l'url :p");
-
-        let validate = await ytdl.validateURL(args[0]);
-        if (!validate) 
-        return message.channel.send("Un url valid serai mieux :p");
-
-        let info = await ytdl.getInfo(args[0]);
-            let connection = message.member.voiceChannel.join();
-            let dispatcher = await connection.play(ytdl(args[0], { filter : 'audioonly' }));
-
-        message.channel.send(`en cour: ${info.title}`);
-    
+      const voiceChannel = msg.member.voiceChannel;
+      if(!voiceChannel)
+      return msg.cannel.send("tu dois te connecter a un salon!");
+      const permissions = voiceChannel.permissionsFor(msg.client.user);
+      if(!permissions.has('CONNECT')){
+          return msg.channel.send("je ne suis pas autoriser à me connecter a ce salon!");
+      }
+    if(!permissions.has('SPEAK')){
+        return msg.channel.send("je ne suis pas autoriser à parler dans ce salon!");
+    }
+    try {
+        var connection = await voiceChannel.join();
+    }catch (error){
+        return msg.channel.send(`${error}`);
+    }
+    const dispatcher = connection.playStream(ytdl(args[1]))
+    .on('error', error => {
+        console.error(error);
+    });
+    dispatcher.setVolumeLogarithmic(5 / 5);
         }
 
 
-
-
-           if(command === "leave"){
-            if(!message.member.voiceChannel)
-            return message.channel.send("Tu dois te connecter au vocale pour me déconnecter!");
-            if(!message.guild.me.voiceChannel)
-            return message.channel.send("je ne suis pas connecter");
-            if(message.guild.me.voiceChannelID !== message.member.voiceChannelID)
-            return message.channel.send("tu n'est pas dans le meme salon!");
-            message.guild.me.voiceChannel.leave();
-            message.channel.send("ok");
-        }
             });
 
             client.on("message", async message => {

@@ -8,7 +8,8 @@ const db = require('quick.db');
 const prefix = '?'
 const ms2 = require('ms');
 const func = require('./function.js'); 
-
+const ytdl = require('ytdl-core');
+var queue = new Map();
 
 
 
@@ -3491,8 +3492,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     client.on("message", async message => {
 
         
-        const ytdl = require('ytdl-core');
-        var queue = new Map();
 
     if (message.content.indexOf(config.prefix) !== 0) return;
     

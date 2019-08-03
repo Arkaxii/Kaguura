@@ -3499,6 +3499,76 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     const command = args.shift().toLowerCase();
     const serverQueue = queue.get(message.guild.id);
 
+
+
+
+    async function play(message, serverQueue) {
+        const args = message.content.split(" ");
+     
+        const voiceChannel = message.member.voiceChannel;
+        if(!voiceChannel) return message.reply("tu doit etre connecté!");
+        const permission = voiceChannel.permissionsFor(message.client.user);
+        if(!permission.has('CONNECT') || !permission.has("SPEAK")) {
+            return message.channel.send("JE PEUT PAS PARLER/ ME CONNECTER !")
+        }
+     
+        const songInfo = await ytdl.getInfo(args[1]);
+        const song = {
+            title: songInfo.title,
+            url: songInfo.video_url,
+        };
+     
+        if(!serverQueue) {
+            const queueConstruct = {
+                textChannel: message.channel,
+                voiceChannel: voiceChannel,
+                connection: null,
+                songs: [],
+                volume: 5,
+                playing: true,
+            };
+            queue.set(message.guild.id, queueConstruct);
+     
+            queueConstruct.songs.push(song);
+     
+            try{
+                var connection = await voiceChannel.join();
+                queueConstruct.connection = connection;
+                playSong(message.guild, queueConstruct.songs[0]);
+            } catch (err) {
+                console.log(err);
+                queue.delete(message.guild.id)
+                return message.channel.send("erreur: " + err);
+            }
+        } else {
+            serverQueue.songs.push(song);
+            return message.channel.send(`${song.title} à été ajouter!`);
+        }
+    }
+     
+
+
+    
+    function playSong(guild, song) {
+        const serverQueue = queue.get(guild.id);
+     
+        if(!song) {
+            serverQueue.voiceChannel.leave();
+            queue.delete(guild.id);
+            return;
+        }
+     
+        const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
+            .on('end', () => {
+                serverQueue.songs.shift();
+                playSong(guild, serverQueue.songs[0]);
+            })
+            .on('error', error => {
+                console.log(error);
+            })
+        dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+    }
+
        if(command === "play"){
         play(message, serverQueue);
 
@@ -3507,74 +3577,6 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
 
             });
-
-
-            async function play(message, serverQueue) {
-                const args = message.content.split(" ");
-             
-                const voiceChannel = message.member.voiceChannel;
-                if(!voiceChannel) return message.reply("tu doit etre connecté!");
-                const permission = voiceChannel.permissionsFor(message.client.user);
-                if(!permission.has('CONNECT') || !permission.has("SPEAK")) {
-                    return message.channel.send("JE PEUT PAS PARLER/ ME CONNECTER !")
-                }
-             
-                const songInfo = await ytdl.getInfo(args[1]);
-                const song = {
-                    title: songInfo.title,
-                    url: songInfo.video_url,
-                };
-             
-                if(!serverQueue) {
-                    const queueConstruct = {
-                        textChannel: message.channel,
-                        voiceChannel: voiceChannel,
-                        connection: null,
-                        songs: [],
-                        volume: 5,
-                        playing: true,
-                    };
-                    queue.set(message.guild.id, queueConstruct);
-             
-                    queueConstruct.songs.push(song);
-             
-                    try{
-                        var connection = await voiceChannel.join();
-                        queueConstruct.connection = connection;
-                        playSong(message.guild, queueConstruct.songs[0]);
-                    } catch (err) {
-                        console.log(err);
-                        queue.delete(message.guild.id)
-                        return message.channel.send("erreur: " + err);
-                    }
-                } else {
-                    serverQueue.songs.push(song);
-                    return message.channel.send(`${song.title} à été ajouter!`);
-                }
-            }
-             
-            function playSong(guild, song) {
-                const serverQueue = queue.get(guild.id);
-             
-                if(!song) {
-                    serverQueue.voiceChannel.leave();
-                    queue.delete(guild.id);
-                    return;
-                }
-             
-                const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
-                    .on('end', () => {
-                        serverQueue.songs.shift();
-                        playSong(guild, serverQueue.songs[0]);
-                    })
-                    .on('error', error => {
-                        console.log(error);
-                    })
-                dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-            }
-
-
-
 
 
             client.on("message", async message => {

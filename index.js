@@ -3519,16 +3519,9 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         return message.channel.send("Un url valid serai mieux :p");
 
         let info = await ytdl.getInfo(args[0]);
-            let voiceConnection = message.member.voiceChannel.join()
+            let connection = message.member.voiceChannel.join();
+            let dispatcher = await connection.play(ytdl(args[0], { filter : 'audioonly' }));
 
-            .then(voiceConnection => {
-
-            const stream = ytdl(args[0], { filter : 'audioonly' });
-            broadcast.playStream(stream);
-            const Dispatcher = Connection.playBroadcast(broadcast);
-
-            })
-            .catch(console.error);
         message.channel.send(`en cour: ${info.title}`);
     
         }
@@ -3541,6 +3534,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
             return message.channel.send("Tu dois te connecter au vocale pour me déconnecter!");
             if(!message.guild.me.voiceChannel)
             return message.channel.send("je ne suis pas connecter");
+            if(message.guild.me.voiceChannelID !== message.member.voiceChannelID)
+            return message.channel.send("tu n'est pas dans le meme salon!");
             message.guild.me.voiceChannel.leave();
             message.channel.send("ok");
         }

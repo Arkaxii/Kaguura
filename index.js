@@ -3511,10 +3511,10 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         if(!message.member.voiceChannel)
         return message.channel.send("Va dans un vocal avant");
  
-        if(!args[0])
+        if(!args[2])
         return message.channel.send("C'est mieux avec l'url :p");
 
-        let validate = await ytdl.validateURL(args[0]);
+        let validate = await ytdl.validateURL(args[2]);
         if (!validate) 
         return message.channel.send("Un url valid serai mieux :p");
 

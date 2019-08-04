@@ -56,7 +56,7 @@ client.on('ready', () => {
           let helpem = new Discord.RichEmbed()
       .setTitle(`Requested By | ${message.author.username}`)
           .setDescription(`
-  =====================🤖 KaguraHelp+ 🤖=====================
+  ==========🤖KaguraHelp+🤖==========
   Rolplay:
   **
   ?wink
@@ -108,7 +108,7 @@ client.on('ready', () => {
   **?lancer20:** imite un lancer de dé à 20 face
   Admin:
   ?help admin
-  =====================🤖 KaguraHelp+ 🤖=====================
+  ==========🤖KaguraHelp+🤖==========
   `)
       .setFooter(`created by  ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
   message.channel.send(helpem);
@@ -119,7 +119,7 @@ client.on('ready', () => {
             let helprp = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`**
-  =====================🤖** Rolplay **🤖=====================
+  ==========🤖**Rolplay**🤖==========
     
   **Pas besoin d'expliquer les commandes...fin je suis pose...j'éspère...Vraiment...bon ok j'arrète**
   ?wink
@@ -133,7 +133,7 @@ client.on('ready', () => {
   ?kiss
   ?kill
   ?hug
-  =====================🤖** Rolplay **🤖=====================
+  ==========🤖**Rolplay**🤖==========
     **`)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(helprp);
@@ -145,7 +145,7 @@ client.on('ready', () => {
             let helputi = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`
-  =====================🤖** utilitaire **🤖=====================
+  ==========🤖**utilitaire**🤖==========
     
   **?sondage: **Fait un sondage pour avoir l'avie d'autre personne
   **?info kagura: **Toute les infos a propo de Kagura
@@ -163,7 +163,7 @@ client.on('ready', () => {
   **?syntaxe-b**
   **?syntaxe-c**
     
-  =====================🤖** utilitaire **🤖=====================
+  ==========🤖**utilitaire**🤖==========
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(helputi);
@@ -174,14 +174,14 @@ client.on('ready', () => {
             let help$ = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`
-  =====================🤖** [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] **🤖=====================
+  ==========🤖**[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]**🤖==========
   **?inventair: **Pour voir son inventair
   **?shop: **Pour fair des achat avec la THUN que tu as acquis
   **?compt: **pour voir à combien s'élève ton compt
   **?daily: **pour recevoir 250$ par jour
   **?pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 25$
   **?roulette[montant de $]:**Parie pour essayer de gagnier des $
-  =====================🤖**[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]**🤖=====================
+  ==========🤖**[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]**🤖==========
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(help$);
@@ -194,14 +194,15 @@ client.on('ready', () => {
             let helpje = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`
-  =====================🤖** Jeux **🤖=====================
+  ==========🤖**Jeux**🤖==========
     
   **?8ball: **Pose n'importe quelle question
   **?refjeux: **trouve à quelle jeux appartien la référence 
   **?refanime: **trouve à quelle anime appartien la référence 
   **?quiz: **Tester votre QI 
   **?q-help**
-  =====================🤖** Jeux **🤖=====================
+  
+  ==========🤖**Jeux**🤖==========
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(helpje);
@@ -213,13 +214,15 @@ client.on('ready', () => {
             let helprd = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`
-  =====================🤖** Random **🤖=====================
+  ==========🤖** Random **🤖==========
+
   **?pile: **1 chance sur 2
   **?face: **1 chance sur 2
   **?lancer6: **imite un lancer de dé à **6 face ** 
   **?lancer12: **imite un lancer de dé à **12 face ** 
   **?lancer20:** imite un lancer de dé à **20 face **
-  =====================🤖** Random **🤖=====================
+
+  ==========🤖** Random **🤖==========
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(helprd);
@@ -235,7 +238,7 @@ client.on('ready', () => {
             let helpad = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`
-  =====================🤖 **Admin** 🤖=====================
+  ==========🤖**Admin**🤖==========
     
   **?rainbow: **Change la couleur d'un role en random
   **?purge: **Peut suprimer de 2 a 100 message 
@@ -244,7 +247,8 @@ client.on('ready', () => {
   SI LE RAINBOW NE FONCTIONNE PAS:
   Assurez-vous que le role rainbow soit le plus haut possible
   il change de couleur toute les minutes
-  =====================🤖 **Admin** 🤖=====================
+
+  ==========🤖**Admin**🤖==========
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(helpad);
@@ -256,7 +260,7 @@ client.on('ready', () => {
             let helpa = new Discord.RichEmbed()
         .setTitle(`Requested By | ${message.author.username}`)
             .setDescription(`
-  =====================🤖** Help **🤖=====================
+  ==========🤖**Help**🤖==========
    
   **?help+:** Montre toute les commandes disponible
   **?help rp:** Montre uniquement les commandes RP (punch/kiss/hug/...)
@@ -265,7 +269,8 @@ client.on('ready', () => {
   **?help jeux:** Montre uniquement les commande de jeux (8ball/refanime/quizz/...)
   **?help rand:** Montre uniquement les commande random (pile/face/lancer6/...)
   **?help admin:** Que pour les admines
-  =====================🤖** Help **🤖=====================
+
+  ==========🤖**Help**🤖==========
     `)
         .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
     message.channel.send(helpa);
@@ -3579,6 +3584,8 @@ client.on('messageReactionAdd',async (reaction, user) =>{
                     })
                     
                  }
+
+
 
 
                 });

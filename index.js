@@ -3518,12 +3518,12 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         if (!validate) 
         return message.channel.send("Un url valid serai mieux :p");
 
-        let info = await ytdl.getInfo(args[0]);
+        let info = await ytdl.getInfo(args[2]);
             let voiceConnection = message.member.voiceChannel.join()
 
             .then(voiceConnection => {
 
-            const stream = ytdl(args[0], { filter : 'audioonly' });
+            const stream = ytdl(args[2], { filter : 'audioonly' });
             broadcast.playStream(stream);
             const Dispatcher = Connection.playBroadcast(broadcast);
 

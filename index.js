@@ -3511,19 +3511,19 @@ client.on('messageReactionAdd',async (reaction, user) =>{
         if(!message.member.voiceChannel)
         return message.channel.send("Va dans un vocal avant");
  
-        if(!args[2])
+        if(!args[1])
         return message.channel.send("C'est mieux avec l'url :p");
 
-        let validate = await ytdl.validateURL(args[2]);
+        let validate = await ytdl.validateURL(args[1]);
         if (!validate) 
         return message.channel.send("Un url valid serai mieux :p");
 
-        let info = await ytdl.getInfo(args[2]);
+        let info = await ytdl.getInfo(args[1]);
             let voiceConnection = message.member.voiceChannel.join()
 
             .then(voiceConnection => {
 
-            const stream = ytdl(args[2], { filter : 'audioonly' });
+            const stream = ytdl(args[1], { filter : 'audioonly' });
             broadcast.playStream(stream);
             const Dispatcher = Connection.playBroadcast(broadcast);
 

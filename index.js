@@ -11,7 +11,6 @@ const func = require('./function.js');
 
 
 
-
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log('')

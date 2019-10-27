@@ -1172,7 +1172,7 @@ if(!rolerain)
             if(message.author.id !== config.ownerID)     
             
             
-            var monst = [
+            var monstu = [
                 "https://i.imgur.com/pXfJGC9.png",
                 "https://i.imgur.com/vgoPbC9.jpg",
                 "https://i.imgur.com/CvsIaOX.jpg",
@@ -1185,7 +1185,7 @@ if(!rolerain)
 
             ];
 
-            var mt = monst[Math.floor(Math.random() * monst.length)] ;
+            var mt = monstu[Math.floor(Math.random() * monstu.length)] ;
             var monst_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Le monstre en toi est:')
@@ -1239,7 +1239,7 @@ if(!rolerain)
             var del = dellet[Math.floor(Math.random() * dellet.length)] ;
             var delt_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .setTitle('Le monstre en toi est:')
+            .setTitle('DELET SAAAA')
             .setImage(del)
             .setFooter("")
             message.channel.send(delt_embed);

@@ -1254,7 +1254,17 @@ if(!rolerain)
 
         };
 
+        if(command === "waifu") {            
+            
+            var wa_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Ta nouvelle waifu')
+            .setImage("https://i.imgur.com/6uWVkVn.jpg")
+            .setFooter("je te laisse fair connaissance")
+            message.channel.send(wa_embed);
 
+
+        };
 
 
 

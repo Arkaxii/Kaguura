@@ -1256,7 +1256,6 @@ if(!rolerain)
 
 
 
-
                if(command === "wink") {
    
                    let member = message.mentions.members.first();

@@ -1182,6 +1182,7 @@ if(!rolerain)
 
 
 
+            if(message.author.id !== config.ownerID)     
 
             var monstu = [
                 "https://i.imgur.com/pXfJGC9.png",

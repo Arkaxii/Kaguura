@@ -1175,6 +1175,96 @@ if(!rolerain)
            }
         }}
    
+
+        if(command === "monstre") {
+            if(message.author.id !== config.ownerID)     
+            
+            
+            var monst = [
+                "https://i.imgur.com/pXfJGC9.png",
+                "https://i.imgur.com/vgoPbC9.jpg",
+                "https://i.imgur.com/CvsIaOX.jpg",
+                "https://i.imgur.com/86ovEZu.jpg",
+                "https://i.imgur.com/IzJTScd.png",
+                "https://i.imgur.com/LAZgBCw.jpg",
+                "https://i.imgur.com/ydZbrqF.jpg",
+                "https://i.imgur.com/tymTI95.jpg",
+                "https://i.imgur.com/nCoZH8x.jpg"
+
+            ];
+
+            var mt = monst[Math.floor(Math.random() * monst.length)] ;
+            var monst_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Le monstre en toi est:')
+            .setImage(mt)
+            .setFooter("")
+            message.channel.send(monst_embed);
+
+
+
+            var monstO_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Le monstre en toi est:')
+            .setImage("https://i.imgur.com/vwRsUBW.jpg")
+            .setFooter("")
+            message.channel.send(monstO_embed);
+
+        };
+
+        if(command === "del") {            
+            
+            var dellet = [
+"https://i.imgur.com/vSO0Pha.jpg",
+"https://i.imgur.com/GfH98IF.jpg",
+"https://i.imgur.com/qwDCQYZ.jpg",
+"https://i.imgur.com/uEDzLaJ.jpg",
+"https://i.imgur.com/72SU3St.jpg",
+"https://i.imgur.com/ZkjzyM4.jpg",
+"https://i.imgur.com/T5t9ktB.jpg",
+"https://i.imgur.com/87lQKGz.png",
+"https://i.imgur.com/jLsfggt.png",
+"https://i.imgur.com/AAJ27hj.png",
+"https://i.imgur.com/BwJNUHX.jpg",
+"https://i.imgur.com/XJlzkbw.jpg",
+"https://i.imgur.com/XvWi3YG.png",
+"https://i.imgur.com/x92xI1U.png",
+"https://i.imgur.com/9peb6vE.png",
+"https://i.imgur.com/xIE4Dlw.png",
+"https://i.imgur.com/YumxR4S.png",
+"https://i.imgur.com/sNiUYEQ.png",
+"https://i.imgur.com/o2MFwv1.png",
+"https://i.imgur.com/adXzvr2.gif",
+"https://i.imgur.com/QUMShn2.png",
+"https://i.imgur.com/WLu4MBw.png",
+"https://i.imgur.com/2C1DGMQ.png",
+"https://i.imgur.com/PgpRywN.jpg",
+"https://i.imgur.com/e2II9gv.jpg",
+"https://i.imgur.com/uwC9F4h.png",
+"https://i.imgur.com/h8MmOgR.jpg"
+];
+
+            var del = dellet[Math.floor(Math.random() * dellet.length)] ;
+            var delt_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Le monstre en toi est:')
+            .setImage(del)
+            .setFooter("")
+            message.channel.send(delt_embed);
+
+
+        };
+
+
+
+
+
+
+
+
+
+
+
                if(command === "wink") {
    
                    let member = message.mentions.members.first();

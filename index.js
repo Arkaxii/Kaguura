@@ -646,6 +646,12 @@ client.on("message", async message => {
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais/${chepasécriree}`);
 }
 
+if (command === "chercher"){
+    const search = args.join(" ");
+    if(!search)  
+    return message.reply("Je ne peut pas t'aider si tu ne met rien");
+    message.channel.send(`http://www.google.fr/#q=${search}`);
+}
 
 if (command === "a-f"){
     const chepasdir = args.join(" ");
@@ -1286,18 +1292,37 @@ if(!rolerain)
         }
 
 
-        if (command === "chercher"){
-            const search = args.join(" ");
-            if(!search)  
-            return message.reply("Je ne peut pas t'aider si tu ne met rien");
-            message.channel.send(`http://www.google.fr/#q=${search}`);
-        }
+if (command === "hack"){
+    let victime = message.mentions.members.first();
+
+if(!victime)
+message.reply("Tu as oublier de metre le nom de la victime");
+
+var ha = [
+
+"👀 Tous les fichiers compromettant! ah... oups c'est les tiens" + `${message.author.username}`  ,
+"Mais dit moi c'est quoi tous ces fichiers ? 🤔",
+"FBI OPEN UP!",
+"POURQUOI TU AS DU BOCU NO PICO !😱 ",
+`${memberInfo.displayName}`+"il essaie de te hacké ! Wouaa ça m'aurais pas plu",
+"aaah, c'est sa ton mot de passe ?",
+"bip boup bip bip hack interompu pour cause de flemme ",
+"Tien du café. Oups trompé de fonctionnalité ",
+"Hack fini."+`${memberInfo.displayName}`+" utilise bien un compte Discord!"
+]
+    const m = await message.channel.send("Récupération des données");
+    m.edit(`Récupération des données ● `);
+    m.edit(`Récupération des données ● ● `);
+    m.edit(`Récupération des données ● ● ● `);
+    m.edit(`Tape au pif sur le clavier   `);
+    m.edit(`Tape au pif sur le clavier ● `);
+    m.edit(`Tape au pif sur le clavier ● ●`);
+    m.edit(`Tape au pif sur le clavier ● ● ●`);
+
+    m.edit(ha);
 
 
-
-
-
-
+}
 
 
 

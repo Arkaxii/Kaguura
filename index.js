@@ -3737,10 +3737,10 @@ client.on('messageReactionAdd',async (reaction, user) =>{
                
                    if (message.content.indexOf(config.prefix) !== 0) return;
                
-                     const args = message.content.slice(config.prefix.length).trim().split(/+/%20);
+                     const args = message.content.slice(config.prefix.length).trim().split();
                  const command = args.shift().toLowerCase();
 
-
+ 
                 if (command === "yt"){
                     const chepasdire = args.join(" ");
                     if(!chepasdire)  

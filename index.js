@@ -1304,11 +1304,11 @@ var ha = [
 "Mais dit moi c'est quoi tous ces fichiers ? 🤔",
 "FBI OPEN UP!",
 "POURQUOI TU AS DU BOCU NO PICO !😱 ",
-`${memberInfo.displayName}`+"il essaie de te hacké ! Wouaa ça m'aurais pas plu",
+`${victime.displayName}`+"il essaie de te hacké ! Wouaa ça m'aurais pas plu",
 "aaah, c'est sa ton mot de passe ?",
 "bip boup bip bip hack interompu pour cause de flemme ",
 "Tien du café. Oups trompé de fonctionnalité ",
-"Hack fini."+`${memberInfo.displayName}`+" utilise bien un compte Discord!"
+"Hack fini."+`${victime.displayName}`+" utilise bien un compte Discord!"
 ]
     const m = await message.channel.send("Récupération des données");
     m.edit(`Récupération des données ● `);

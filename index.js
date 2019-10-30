@@ -1168,6 +1168,21 @@ if(!rolerain)
         }}
    
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         if(command === "monstre") {
             if(message.author.id == config.ownerID)     
 
@@ -1254,6 +1269,8 @@ if(!rolerain)
 
         };
 
+
+
         if(command === "waifu") {            
             
             var wa_embed = new Discord.RichEmbed()
@@ -1265,6 +1282,32 @@ if(!rolerain)
 
 
         };
+
+
+        if (command === "yt"){
+            const chepasdire = args.join(" ");
+            if(!chepasdire)  
+            return message.reply("met ce que tu veux rechercher");
+            message.channel.send(`https://www.youtube.com/results?search_query=${chepasdire}`);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

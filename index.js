@@ -646,12 +646,6 @@ client.on("message", async message => {
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais/${chepasécriree}`);
 }
 
-if (command === "chercher"){
-    const search = args.join(" ");
-    if(!search)  
-    return message.reply("Je ne peut pas t'aider si tu ne met rien");
-    message.channel.send(`http://www.google.fr/#q=${search}`);
-}
 
 if (command === "a-f"){
     const chepasdir = args.join(" ");
@@ -1292,7 +1286,12 @@ if(!rolerain)
         }
 
 
-
+        if (command === "chercher"){
+            const search = args.join(" ");
+            if(!search)  
+            return message.reply("Je ne peut pas t'aider si tu ne met rien");
+            message.channel.send(`http://www.google.fr/#q=${search}`);
+        }
 
 
 
@@ -3730,6 +3729,37 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
 
                 });
+
+
+                client.on("message", async message => {
+
+                    const config = require("./config.json");
+               
+                   if (message.content.indexOf(config.prefix) !== 0) return;
+               
+                     const args = message.content.slice(config.prefix.length).trim().split(/%20+/g);
+                 const command = args.shift().toLowerCase();
+
+
+                if (command === "yt"){
+                    const chepasdire = args.join(" ");
+                    if(!chepasdire)  
+                    return message.reply("met ce que tu veux rechercher");
+                    message.channel.send(`https://www.youtube.com/results?search_query=${chepasdire}`);
+                }
+        
+        
+                if (command === "chercher"){
+                    const search = args.join(" ");
+                    if(!search)  
+                    return message.reply("Je ne peut pas t'aider si tu ne met rien");
+                    message.channel.send(`http://www.google.fr/#q=${search}`);
+                }
+
+
+
+            });
+
 
 
 client.login(token); 

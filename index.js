@@ -1304,12 +1304,14 @@ var ha = [
 "Mais dit moi c'est quoi tous ces fichiers ? 🤔",
 "FBI OPEN UP!",
 "POURQUOI TU AS DU BOCU NO PICO !😱 ",
-`${victime.displayName}`+"il essaie de te hacké ! Wouaa ça m'aurais pas plu",
+`${victime.displayName} il essaie de te hacké ! Wouaa ça m'aurais pas plu`,
 "aaah, c'est sa ton mot de passe ?",
 "bip boup bip bip hack interompu pour cause de flemme ",
 "Tien du café. Oups trompé de fonctionnalité ",
-"Hack fini."+`${victime.displayName}`+" utilise bien un compte Discord!"
+`Hack fini. ${victime.displayName} utilise bien un compte Discord!`
 ]
+var hac = ha[Math.floor(Math.random() * ha.length)] ;
+
     const m = await message.channel.send("Récupération des données");
     m.edit(`Récupération des données ● `);
     m.edit(`Récupération des données ● ● `);
@@ -1319,7 +1321,7 @@ var ha = [
     m.edit(`Tape au pif sur le clavier ● ●`);
     m.edit(`Tape au pif sur le clavier ● ● ●`);
 
-    m.edit(ha);
+    m.edit(hac);
 
 
 }

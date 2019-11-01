@@ -1303,7 +1303,7 @@ var ha = [
 "👀 Tous les fichiers compromettant! ah... oups c'est les tiens" + ` ${message.author.username}`  ,
 "Mais dit moi c'est quoi tous ces fichiers ? 🤔",
 "FBI OPEN UP!",
-"POURQUOI TU AS DU BOCU NO PICO !? 😱 ",
+"POURQUOI TU AS DES IMAGES DE BOCU NO PICO !? 😱 ",
 `${victime.displayName} il essaie de te hacké ! Wouaa ça m'aurais pas plu`,
 "aaah, c'est sa ton mot de passe ?",
 "bip boup bip bip hack interompu pour cause de flemme ",

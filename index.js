@@ -1317,7 +1317,6 @@ var hac = ha[Math.floor(Math.random() * ha.length)] ;
     m.edit(`Récupération des données ● ● ● `);
     m.edit(`Tape au pif sur le clavier ● `);
     m.edit(`Tape au pif sur le clavier ● ●`);
-    m.edit(`Tape au pif sur le clavier ● ● ●`);
 
     m.edit(hac);
 

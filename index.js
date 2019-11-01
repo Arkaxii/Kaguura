@@ -1300,7 +1300,7 @@ message.reply("Tu as oublier de metre le nom de la victime");
 
 var ha = [
 
-"👀 Tous les fichiers compromettant! ah... oups c'est les tiens" + `${message.author.username}`  ,
+"👀 Tous les fichiers compromettant! ah... oups c'est les tiens" + ` ${message.author.username}`  ,
 "Mais dit moi c'est quoi tous ces fichiers ? 🤔",
 "FBI OPEN UP!",
 "POURQUOI TU AS DU BOCU NO PICO !😱 ",
@@ -1312,11 +1312,9 @@ var ha = [
 ]
 var hac = ha[Math.floor(Math.random() * ha.length)] ;
 
-    const m = await message.channel.send("Récupération des données");
-    m.edit(`Récupération des données ● `);
+    const m = await message.channel.send("Récupération des données ● ");
     m.edit(`Récupération des données ● ● `);
     m.edit(`Récupération des données ● ● ● `);
-    m.edit(`Tape au pif sur le clavier   `);
     m.edit(`Tape au pif sur le clavier ● `);
     m.edit(`Tape au pif sur le clavier ● ●`);
     m.edit(`Tape au pif sur le clavier ● ● ●`);

@@ -300,9 +300,9 @@ client.on('ready', () => {
       .setDescription(sayMessage)
       .setFooter(`Requested By | ${message.author.username}`)
       .setColor("RANDOM")
-      message.to(ownerID).createDM().then(channel =>{
-          channel.send(embed)
-      });
+      client.fetchUser("246395977450258432",false).then(user => {
+        user.send(embed) 
+});
   }
 
 let event = ['kagura'];

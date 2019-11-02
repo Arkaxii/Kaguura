@@ -291,14 +291,18 @@ client.on('ready', () => {
           var ownerID = "246395977450258432";
      let sayMessage = args.join(" ");
       if(!message.channel.guild) return;
+    
       message.react('🤖')
+
       var embed = new Discord.RichEmbed()
       .setAuthor(message.author.username , message.author.avatarURL )
       .setTitle("Suggestion")
       .setDescription(sayMessage)
       .setFooter(`Requested By | ${message.author.username}`)
       .setColor("RANDOM")
-      message.ownerID.send({embed})
+      message.ownerID.createDM().then(channel =>{
+          channel.send(embed)
+      });
   }
 
 let event = ['kagura'];
@@ -1178,18 +1182,6 @@ if(!rolerain)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         if(command === "monstre") {
             if(message.author.id == config.ownerID)     
 
@@ -1654,10 +1646,36 @@ var hac = ha[Math.floor(Math.random() * ha.length)] ;
        message.channel.send(cat_embed);
    };
    
-   var prefix = '?'
    if(message.content.startsWith(prefix + "secret")){
-       message.channel.send("Ajout prochain: Commande de base / jeux de cart et collection / peut etre une commande permettant de sauvgarder un serv (pour avoir un rollback du serv) en cas de raid ")
-   }
+    let secret = new Discord.RichEmbed()
+    .setTitle(`Requested By | ${message.author.username}`)
+    .setDescription(`
+===================**Ajout prochain**===================
+    
+__**V1**__
+    
+**-commandes en pagaille**
+    
+    
+__**V2**__
+    
+**-Commande vocale**
+    
+**-Changement d'hébergeur**
+Base de donnée 
+sauvegarde de donnée comme l'argent / carte / ...
+    
+    
+__**V3**__
+   
+**-RollBack de serveur à triple sécuritée** 
+(requieres 2 modo et le propriétaire du serveur )
+             
+===================**Ajout prochain**===================
+`)
+    .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
+    message.channel.send(secret);
+    }
    {
    function random(min, max){
        min = Math.ceil(1);

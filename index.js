@@ -300,7 +300,7 @@ client.on('ready', () => {
       .setDescription(sayMessage)
       .setFooter(`Requested By | ${message.author.username}`)
       .setColor("RANDOM")
-      message.ownerID.createDM().then(channel =>{
+      message.author.createDM().then(channel =>{
           channel.send(embed)
       });
   }

@@ -2107,7 +2107,7 @@ if (command == "choix" ){
 var sond2 = new Discord.RichEmbed()
 .setDescription("Sondage")
 .setAuthor(message.author.username)
-;setDescription("🅰"+tTE+ "\n🅱"+Tte)
+.setDescription("🅰"+tTE+ "\n🅱"+Tte)
 .setColor(0x00FF00)
 .setTimestamp()
 message.channel.send(sond2)

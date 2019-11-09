@@ -2105,11 +2105,10 @@ if (command == "choix" ){
     let tTE = args[0]
     let Tte = args[1]
 var sond2 = new Discord.RichEmbed()
-.setDescription("aide Sondage")
+.setDescription("Sondage")
 .setAuthor(message.author.username)
 ;setDescription("🅰"+tTE+ "\n🅱"+Tte)
 .setColor(0x00FF00)
-.setFooter("Répondre avec :white_check_mark: ou :x:")
 .setTimestamp()
 message.channel.send(sond2)
 .then(function(message){

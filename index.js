@@ -2065,7 +2065,7 @@ __**V3**__
                 };
     
     if(message.content.startsWith(prefix + "sondage")){
-                var sond = new Discord.RichEmbed()
+                var sond0 = new Discord.RichEmbed()
                 .setTitle("aide Sondage")
                 .setAuthor(message.author.username)
                 .setDescription(` 
@@ -2076,21 +2076,21 @@ __**V3**__
                 `)
                 .setColor(0x00FF00)
                 .setTimestamp()
-                message.channel.send(sond)
+                message.channel.send(sond0)
     
                 }
 
 if (command == "sondage-1" ){
 
     let tTE = args.join(" ")
-var sond = new Discord.RichEmbed()
+var sond1 = new Discord.RichEmbed()
 .setDescription("Sondage")
 .setAuthor(message.author.username)
 .setDescription(tTE)
 .setColor(0x00FF00)
 .setFooter("✅ pour oui || ❌ pour non ")
 .setTimestamp()
-message.channel.send(sond)
+message.channel.send(sond1)
 .then(function(message){
     message.react("✅")
     message.react("❌")
@@ -2104,7 +2104,7 @@ if (command == "sondage-2" ){
 
     let tTE = args[1].join(" ")
     let Tte = args[2].join(" ")
-var sond = new Discord.RichEmbed()
+var sond2 = new Discord.RichEmbed()
 .setDescription("aide Sondage")
 .setAuthor(message.author.username)
 .addField("🅰",tTE)
@@ -2112,7 +2112,7 @@ var sond = new Discord.RichEmbed()
 .setColor(0x00FF00)
 .setFooter("Répondre avec :white_check_mark: ou :x:")
 .setTimestamp()
-message.channel.send(sond)
+message.channel.send(sond2)
 .then(function(message){
     message.react("🅰")
     message.react("🅱")

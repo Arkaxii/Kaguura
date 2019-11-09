@@ -1357,8 +1357,9 @@ if(command === "useless") {
     var sit = situ[Math.floor(Math.random() * situ.length)] ;
     var sit_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle('>> _Inutile mais indispensable!_ <<')
+    .setTitle('>> _Inutile donc indispensable!_ <<')
     .setURL(sit)
+    .setDescription("Ce qui est inutile est utile car ils sont inutile! N'oublie jamais sa!")
     message.channel.send(sit_embed);
 };
 

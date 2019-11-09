@@ -1359,7 +1359,7 @@ if(command === "useless") {
     .setColor('RANDOM')
     .setTitle('>> _Inutile donc indispensable!_ <<')
     .setURL(sit)
-    .setDescription("Ce qui est inutile est utile car ils sont inutile! N'oublie jamais sa!")
+    .setDescription("Ce qui est inutile est utile car c'est inutile! N'oublie jamais sa!")
     message.channel.send(sit_embed);
 };
 

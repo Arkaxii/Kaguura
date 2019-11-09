@@ -1327,7 +1327,40 @@ var hac = ha[Math.floor(Math.random() * ha.length)] ;
 
 
 
+if(command === "useless") {
+   
+    var situ = [
+        "http://www.leduchamp.com/",
+        "http://r33b.net/",
+        "http://adultcatfinder.com/",
+        "http://catcordion.sergethew.com/",
+        "http://www.papertoilet.com/",
+        "http://www.ouaismaisbon.ch/",
+        "http://eelslap.com/",
+        "http://www.koalastothemax.com/",
+        "https://www.pointerpointer.com/",
+        "http://seoi.net/penint/",
+        "http://www.patience-is-a-virtue.org/",
+        "https://cant-not-tweet-this.com/",
+        "https://trypap.com/",
+        "http://www.trashloop.com/",
+        "http://dogs.are.the.most.moe/",
+        "http://endless.horse/",
+        "http://make-everything-ok.com/",
+        "https://findtheinvisiblecow.com/",
+        "http://hackertyper.com/",
+        "https://thisissand.com/",
 
+
+    ];
+
+    var sit = situ[Math.floor(Math.random() * situ.length)] ;
+    var sit_embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle('>> _Inutile mais indispensable!_ <<')
+    .setURL(situ)
+    message.channel.send(sit_embed);
+};
 
 
 

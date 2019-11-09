@@ -2107,15 +2107,14 @@ if (command == "choix" ){
 var sond2 = new Discord.RichEmbed()
 .setDescription("aide Sondage")
 .setAuthor(message.author.username)
-.addField("🅰",tTE)
-.addField("🅱",Tte)
+;setDescription("🅰"+tTE+ "\n🅱"+Tte)
 .setColor(0x00FF00)
 .setFooter("Répondre avec :white_check_mark: ou :x:")
 .setTimestamp()
 message.channel.send(sond2)
 .then(function(message){
-    message.react("🅰")
-    message.react("🅱")
+   await message.react("🅰")
+   await message.react("🅱")
 }).catch(function(){    
 });
 message.delete()

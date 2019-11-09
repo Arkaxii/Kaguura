@@ -2112,8 +2112,8 @@ var sond2 = new Discord.RichEmbed()
 .setTimestamp()
 message.channel.send(sond2)
 .then(function(message){
-   await message.react("🅰")
-   await message.react("🅱")
+    message.react("🅰")
+    message.react("🅱")
 }).catch(function(){    
 });
 message.delete()

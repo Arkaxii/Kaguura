@@ -2069,9 +2069,9 @@ __**V3**__
                 .setTitle("aide Sondage")
                 .setAuthor(message.author.username)
                 .setDescription(` 
-                **?sondage1**
+                **ouinon**
 -Sondage pouvant être répondu par oui ou non 
-                **?sondage2**
+                **?sond**
 -Sondage avec avec 2 choix 
                 `)
                 .setColor(0x00FF00)
@@ -2080,7 +2080,7 @@ __**V3**__
     
                 }
 
-if (command == "sondage1" ){
+if (command == "ouinon" ){
 
     let tTE = args.join(" ")
 var sond1 = new Discord.RichEmbed()
@@ -2100,7 +2100,7 @@ message.delete()
 
 }
 
-if (command == "sondage2" ){
+if (command == "sond" ){
 
     let tTE = args[1].join(" ")
     let Tte = args[2].join(" ")

@@ -2082,7 +2082,7 @@ __**V3**__
 
 if (command == "ouinon" ){
 
-    let tTE = args.join(" ")
+    let tTE = args
 var sond1 = new Discord.RichEmbed()
 .setDescription("Sondage")
 .setAuthor(message.author.username)
@@ -2102,8 +2102,8 @@ message.delete()
 
 if (command == "sond" ){
 
-    let tTE = args[1].join(" ")
-    let Tte = args[2].join(" ")
+    let tTE = args[0]
+    let Tte = args[1]
 var sond2 = new Discord.RichEmbed()
 .setDescription("aide Sondage")
 .setAuthor(message.author.username)

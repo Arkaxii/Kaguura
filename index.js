@@ -2071,7 +2071,7 @@ __**V3**__
                 .setDescription(` 
                 **ouinon**
 -Sondage pouvant être répondu par oui ou non 
-                **?sond**
+                **?choix**
 -Sondage avec avec 2 choix 
                 `)
                 .setColor(0x00FF00)
@@ -2100,7 +2100,7 @@ message.delete()
 
 }
 
-if (command == "sond" ){
+if (command == "choix" ){
 
     let tTE = args[0]
     let Tte = args[1]

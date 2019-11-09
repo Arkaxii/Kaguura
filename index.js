@@ -1358,7 +1358,7 @@ if(command === "useless") {
     var sit_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle('>> _Inutile mais indispensable!_ <<')
-    .setURL(situ)
+    .setURL(sit)
     message.channel.send(sit_embed);
 };
 

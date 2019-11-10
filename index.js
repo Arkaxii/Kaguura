@@ -670,13 +670,6 @@ if (command === "f-a"){
     message.channel.send(`https://www.larousse.fr/dictionnaires/francais-anglais/${chepasdire}`);
 }
 
-if (command === "yt"){
-    const chepasdire = args.join(" ");
-    if(!chepasdire)  
-    return message.reply("met ce que tu veux rechercher");
-    message.channel.send(`https://www.youtube.com/results?search_query=${chepasdire}`);
-}
-
 if(command ==="q-stat"){
     let user = message.author;
     let falsrep = await db.fetch(`quizfalse_${user.id}`);
@@ -2064,6 +2057,19 @@ __**V3**__
                 message.channel.send(infobot);
                 };
     
+
+
+
+
+
+
+
+
+
+
+
+
+
     if(message.content.startsWith(prefix + "sondage")){
                 var sond0 = new Discord.RichEmbed()
                 .setTitle("aide Sondage")
@@ -2120,6 +2126,50 @@ message.delete()
 
 }
 
+
+if(command == "either" ){
+
+var RA = [
+"Etre intélligent mais pué en permanance (meme avec parfum) ",
+"Etre miliardaire mais solitaire",
+"Etre invisible mais le rester pour toujours",
+"Sauver le monde de la famine mais tu mourras de faim",
+"Participer aux Hunger Games",
+"Un corps de rêve mais un visage affreux",
+"Voir tout nu toutes les personnes que tu regardes",
+"Savoir comment tu **VAS** mourir",
+"Embrasser Marin Le Pen"
+
+]
+ 
+var RB = [
+"Etre jeté dans \"Le Labyrinthe\" ",
+"Avoir un visage sublime et un corps difforme",
+"Lire dans les pensées de tous ceux qui te regardent",
+"Etre pauvre en argent mais jamais solitaire",
+"Chaque personne que tu regarde meurt instantanément",
+"Savoir quand tu vas mourir",
+"Roter *burp* entre *burp* chaque *burp* mot",
+"Sniffer du tabasco tout les jours",
+"Te fair caresser la cuisse (*touss* voir plus *touss*) par Hitler"
+
+]
+
+var eith = new Discord.RichEmbed()
+.setDescription("Either")
+.setAuthor(message.author.username)
+.setDescription("Tu préfères \n🅰"+RA+"\nou\n🅱"+RB)
+.setColor(0x00FF00)
+.setTimestamp()
+message.channel.send(eith)
+.then(function(message){
+    message.react("🅰")
+    message.react("🅱")
+})
+
+
+
+}
 
 
 

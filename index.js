@@ -2154,11 +2154,13 @@ var RB = [
 "Te fair caresser la cuisse (*touss* voir plus *touss*) par Hitler"
 
 ]
+var RAR = RA[Math.floor(Math.random() * RA.length)] ;
+var RBR = RB[Math.floor(Math.random() * RB.length)] ;
 
 var eith = new Discord.RichEmbed()
 .setDescription("Either")
 .setAuthor(message.author.username)
-.setDescription("Tu préfères \n🅰"+RA+"\nou\n🅱"+RB)
+.setDescription("Tu préfères \n🅰"+RAR+"\nou\n🅱"+RBR)
 .setColor(0x00FF00)
 .setTimestamp()
 message.channel.send(eith)

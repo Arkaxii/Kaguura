@@ -363,9 +363,13 @@ client.on("ready", () => {
         userAnswerA = "";
         });
 
+        client.on("message", guild , message => {
 
 
-
+        if(command === "test"){
+            message.channel.send(`Test = ${guild.members.random()} `);
+        };
+    });
 
   client.on("message", async message => {
 
@@ -2059,10 +2063,6 @@ __**V3**__
     
 
 
-
-                if(command === "test"){
-                    message.channel.send(`Test = ${guild.members.random()} `);
-                };
 
 
 

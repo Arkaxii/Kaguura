@@ -268,7 +268,7 @@ client.on('ready', () => {
     message.channel.send(helpa);
         }
   
-  
+
       })
   
   client.on("message", async message => {
@@ -1174,6 +1174,42 @@ if(!rolerain)
 
 
 
+
+
+
+
+
+
+
+        let eventr = ['👆'];
+
+        if(!message.author.id == "635547572983037970")return;
+var kanna = [
+"https://discordemoji.com/assets/emoji/KannaFreeze.png",
+"https://discordemoji.com/assets/emoji/KannaSpook.png",
+"https://discordemoji.com/assets/emoji/Kannasuicide.png"
+]
+var kana = kanna[Math.floor(Math.random() * kanna.length)] ;
+
+let fondintextr = false;
+for (var i in eventr){
+    if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
+    fondintextr = true;
+    if(fondintextr){
+        let respect = new Discord.RichEmbed()
+        .setTitle(`Il est bon`)
+        .setImage(kana)
+            
+            message.channel.send(respect);
+    }
+    }
+
+
+
+
+    
+
+
         if(command === "monstre") {
             if(message.author.id == config.ownerID)     
 
@@ -2057,6 +2093,17 @@ __**V3**__
                 message.channel.send(infobot);
                 };
     
+
+
+
+
+
+
+
+
+
+
+
 
 
 

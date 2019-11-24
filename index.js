@@ -1196,11 +1196,10 @@ for (var i in eventr){
     if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
     fondintextr = true;
     if(fondintextr){
-        let respect = new Discord.RichEmbed()
-        .setTitle(`Il est bon`)
+        let kan = new Discord.RichEmbed()
         .setImage(kana)
             
-            message.channel.send(respect);
+            message.channel.send(kan);
     }
     }
 

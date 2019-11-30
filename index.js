@@ -326,7 +326,15 @@ for (var i in eventr){
                       message.channel.send(respect);
     }
     }
-
+    let evente = [`👌`];
+    let fondintextt = false;
+    for (var i in evente){
+    if (message.content.toLocaleLowerCase().includes(evente[i].toLocaleLowerCase()))
+    fondintextt = true;
+    if(fondintextt){
+    message.react('👆');
+    }
+}
 
      });
  
@@ -1176,14 +1184,7 @@ if(!rolerain)
 
 
 
-        let evente = ['👌'];
-        let fondintextt = false;
-        for (var i in evente){
-        if (message.content.toLocaleLowerCase().includes(evente[i].toLocaleLowerCase()))
-        fondintextt = true;
-        if(fondintextt){
-        message.channel.send('👆');
-        }}
+   
 
 
 

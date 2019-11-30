@@ -1176,15 +1176,6 @@ if(!rolerain)
 
 
 
-        if(command === "t-inv"){
-            var invite_embed = new Discord.RichEmbed()
-                .setTitle("Ne cliquez pas ici pour m'ajouter à votre serveur !...")
-                .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2146958847")
-                .addField(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
-                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
-                .setTimestamp()
-            message.channel.send(invite_embed);
-         };
 
 
 

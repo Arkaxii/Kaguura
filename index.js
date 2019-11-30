@@ -344,7 +344,7 @@ fondintextt = true;
 if(fondintextt){
     await message.channel.send({files: [
         {
-          attachment: kanna
+          attachment: kana
         }
       ]});
 }

@@ -2158,7 +2158,7 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
                     var lo = new Discord.RichEmbed()
                     .setDescription(` 
                     test
-                    ${message.guild.members.random()}
+                    ${message.members.username.random()}
                     test
                     `)
                     message.channel.send(lo)

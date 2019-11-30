@@ -326,15 +326,6 @@ for (var i in eventr){
                       message.channel.send(respect);
     }
     }
-    let evente = [`👌`];
-    let fondintextt = false;
-    for (var i in evente){
-    if (message.content.toLowerCase().includes(evente[i].toLowerCase()))
-    fondintextt = true;
-    if(fondintextt){
-        message.channel.send(`👆`);
-    }
-}
 
      });
  

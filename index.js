@@ -1176,13 +1176,13 @@ if(!rolerain)
 
 
 
-        let evente = [':ok_hand:'];
+        let evente = ['👌'];
         let fondintextt = false;
         for (var i in evente){
         if (message.content.toLocaleLowerCase().includes(evente[i].toLocaleLowerCase()))
         fondintextt = true;
         if(fondintextt){
-        message.channel.send(':point_up_2: ');
+        message.channel.send('👆');
         }}
 
 

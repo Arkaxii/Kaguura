@@ -327,13 +327,12 @@ for (var i in eventr){
     }
     }
     let evente = [`👌`];
-    let emot = `👆`
     let fondintextt = false;
     for (var i in evente){
-    if (message.content.toLocaleLowerCase().includes(evente[i].toLocaleLowerCase()))
+    if (message.content.toLowerCase().includes(evente[i].toLowerCase()))
     fondintextt = true;
     if(fondintextt){
-        message.channel.send(emot);
+        message.channel.send(`👆`);
     }
 }
 

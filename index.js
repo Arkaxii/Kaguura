@@ -327,6 +327,34 @@ for (var i in eventr){
     }
     }
 
+    let eventr = ['👆'];
+
+    if(!message.author.id == "635547572983037970")return;
+var kanna = [
+"https://discordemoji.com/assets/emoji/KannaFreeze.png",
+"https://discordemoji.com/assets/emoji/KannaSpook.png",
+"https://discordemoji.com/assets/emoji/Kannasuicide.png"
+]
+var kana = kanna[Math.floor(Math.random() * kanna.length)] ;
+
+let fondintextr = false;
+for (var i in eventr){
+if (message.content.toLowerCase().includes(eventr[i].toLowerCase()))
+fondintextr = true;
+if(fondintextr){
+    let kan = new Discord.RichEmbed()
+    .setImage(kana)
+        
+        message.channel.send(kan);
+}
+}
+
+
+
+
+
+
+
      });
  
 client.on("ready", () => {
@@ -641,6 +669,29 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   if (command === "dico"){
     const chepasécriree = args.join(" ");
     if(!chepasécriree)  
@@ -1183,27 +1234,7 @@ if(!rolerain)
 
 
 
-        let eventr = ['👆'];
 
-        if(!message.author.id == "635547572983037970")return;
-var kanna = [
-"https://discordemoji.com/assets/emoji/KannaFreeze.png",
-"https://discordemoji.com/assets/emoji/KannaSpook.png",
-"https://discordemoji.com/assets/emoji/Kannasuicide.png"
-]
-var kana = kanna[Math.floor(Math.random() * kanna.length)] ;
-
-let fondintextr = false;
-for (var i in eventr){
-    if (message.content.toLowerCase().includes(eventr[i].toLowerCase()))
-    fondintextr = true;
-    if(fondintextr){
-        let kan = new Discord.RichEmbed()
-        .setImage(kana)
-            
-            message.channel.send(kan);
-    }
-    }
 
 
 

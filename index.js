@@ -2136,7 +2136,20 @@ __**V3**__
 
 
 
+if(command ==="test2"){
+var ka = [
+"https://i.imgur.com/btYFdDL.png",
+"https://i.imgur.com/2hr6Bt7.png",
+"https://i.imgur.com/8BcgdaJ.png"
+]
+var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
+    await message.channel.send({files: [
+        {
+          attachment: kanaa
+        }
+      ]});
+}
 
 
                 if(command === "test"){

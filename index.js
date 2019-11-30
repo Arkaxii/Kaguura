@@ -2157,7 +2157,7 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
                     var lo = new Discord.RichEmbed()
                     .setTitle("aide Sondage")
                     .setDescription(` 
-                     ${guild.members.random()}
+                     ${message.guild.members.random()}
                     `)
                     .setColor(0x00FF00)
                     message.channel.send(lo)

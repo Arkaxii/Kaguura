@@ -1204,7 +1204,7 @@ var kana = kanna[Math.floor(Math.random() * kanna.length)] ;
 
 let fondintextr = false;
 for (var i in eventr){
-    if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
+    if (message.content.toLowerCase().includes(eventr[i].toLowerCase()))
     fondintextr = true;
     if(fondintextr){
         let kan = new Discord.RichEmbed()

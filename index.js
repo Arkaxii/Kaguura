@@ -2154,8 +2154,16 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
 
                 if(command === "test"){
-                    message.channel.send(`Test = ${guild.members.displayName.random()} `);
-                };
+                    var lo = new Discord.RichEmbed()
+                    .setTitle("aide Sondage")
+                    .setDescription(` 
+                     ${guild.members.random()}
+                    `)
+                    .setColor(0x00FF00)
+                    message.channel.send(lo)
+        
+                    }
+
 
 
 

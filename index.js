@@ -2154,7 +2154,7 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
 
                 if(command === "test"){
-                    message.channel.send(`Test = ${members.displayName.random()} `);
+                    message.channel.send(`Test = ${guild.members.displayName.random()} `);
                 };
 
 

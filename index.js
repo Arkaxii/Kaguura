@@ -2185,7 +2185,7 @@ if(command === "t2"){
                 mom = message.guild.members.random().displayName
                 dad = message.guild.members.random().displayName;
                             
-                baby = dad.substring(1, 4);
+                baby = dad.substring(0, 4);
                 newBaby = baby + (mom.substring(4, 10))
                 message.channel.send(newBaby)
 

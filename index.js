@@ -2169,7 +2169,7 @@ if(command === "love"){
     l.edit(message.author.username+" 25% "+message.guild.members.random().displayName)
     l.edit(message.author.username+" 50% "+message.guild.members.random().displayName)
     l.edit(message.author.username+" 75% "+message.guild.members.random().displayName)
-    l.edit(message.author.username+" 100% ton âme soeur est "+message.guild.members.random().displayName+" Oula j'aimerai pas étre toi...")
+    l.edit(message.author.username+" 100% ton âme soeur est "+message.guild.members.random().displayName+". Oula j'aimerai pas étre toi...")
 
 }
 
@@ -2183,7 +2183,7 @@ if(command === "love"){
 if(command === "t2"){
 
                 mom = message.guild.members.random().displayName
-                dad = message.member.displayName;
+                dad = message.guild.members.random().displayName;
                             
                 baby = dad.substring(1, 4);
                 newBaby = baby + (mom.substring(4, 10))

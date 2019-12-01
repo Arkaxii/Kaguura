@@ -2155,12 +2155,13 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
                 if(command === "test"){
 
+
+
+                message.channel.send(`${message.guild.members.random().displayName}`)
+
                     
 
-                message.guild.members.fetch(message.author)
-                .then(member => {
-                    message.channel.send(`${member}`)
-                });
+
 
 
 

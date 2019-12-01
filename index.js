@@ -2169,7 +2169,7 @@ if(command === "t2"){
                             
                 baby = dad.substring(1, 4);
                 newBaby = baby + (mom.substring(4, 10))
-                message.channel.send(newbaby)
+                message.channel.send(newBaby)
 
                 };
 

@@ -2157,7 +2157,7 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
 
 
-                message.channel.send(`${message.guild.user.tag}`)
+                message.channel.send(`${message.guild.user.random()}`)
 
                     
 

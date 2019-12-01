@@ -2157,7 +2157,7 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
 
 
-                message.channel.send(`${message.guild.user.random()}`)
+                message.channel.send(`${message.guild.members.random()}`)
 
                     
 
@@ -2169,7 +2169,22 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
                 };
 
+                if(command === "ha1"){
+                    let memberInfo2 = message.mentions.members.first();
 
+
+
+                    message.channel.send(`test ${memberInfo2.email} `)
+    
+                        
+    
+    
+    
+    
+    
+    
+    
+                    };
 
 
 

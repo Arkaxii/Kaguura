@@ -326,7 +326,7 @@ for (var i in eventr){
                       message.channel.send(respect);
     }
     }
-
+/*
     let eventt = ['👆'];
 
     if(message.author.id !== "635547572983037970")return;
@@ -349,7 +349,7 @@ if(fondintextt){
       ]});
 }
 }
-
+*/
 
 
 

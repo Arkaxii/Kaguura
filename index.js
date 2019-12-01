@@ -2161,11 +2161,15 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
                     
 
+                };
+if(command === "t2"){
 
-
-
-
-
+                mom = message.guild.members.random().displayName
+                dad = message.member.displayName;
+                            
+                baby = dad.substring(1, 4);
+                newBaby = baby + (mom.substring(4, 10))
+                message.channel.send(newbaby)
 
                 };
 

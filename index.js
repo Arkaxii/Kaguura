@@ -2155,19 +2155,19 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
 
                 if(command === "test"){
 
-                    let foo = new String();
-                    message.guild.presences.forEach(presence => {
-                        try {
-                            foo += `${presence.member.displayName}\n`;
-                        } catch(e) {
-                            foo += `${e.message}\n`;
-                        }
-                    });
-                    message.channel.send(foo, {split:true})
 
-                }
+
+                message.channel.send(`${message.guild.user.tag.random()}`)
+
                     
-                
+
+
+
+
+
+
+
+                };
 
 
 

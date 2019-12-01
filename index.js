@@ -2162,6 +2162,24 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
                     
 
                 };
+
+
+if(command === "love"){
+    var l = message.channel.send(message.author.username)
+    l.edit(message.author.username+"==25%=<3==>"+message.guild.members.random().displayName)
+    l.edit(message.author.username+"==50%=<3==>"+message.guild.members.random().displayName)
+    l.edit(message.author.username+"==75%=<3==>"+message.guild.members.random().displayName)
+    l.edit(message.author.username+"==100%=<3==>"+message.guild.members.random().displayName+"Oula bonne chance")
+
+}
+
+
+
+
+
+
+
+
 if(command === "t2"){
 
                 mom = message.guild.members.random().displayName

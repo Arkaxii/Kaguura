@@ -2163,6 +2163,8 @@ var kanaa = ka[Math.floor(Math.random() * ka.length)] ;
                             foo += `${e.message}\n`;
                         }
                     });
+                    message.channel.send(foo, {split:true})
+
                 }
                     
                 

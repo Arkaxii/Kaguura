@@ -1665,6 +1665,8 @@ if(command === "useless") {
                };  
    
                if(command === "kill") {
+                if(message.author.id == config.ownerID)     
+                return message.reply("🖕");
    
                    let member = message.mentions.members.first();
                if(!member)

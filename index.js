@@ -1223,26 +1223,6 @@ if(!rolerain)
    
 
 
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
         if(command === "monstre") {
             if(message.author.id == config.ownerID)     
 
@@ -1559,6 +1539,7 @@ if(command === "useless") {
                     .setTitle('Roleplay')
                    .setImage(gif)
                    .setDescription(`_**${message.author.username}** écrase les moustiques qui sont sur **${member.displayName}**._`)
+                   .setFooter("Slapping the 🅱ass")
                    message.channel.send(slap_embed);
                };
    

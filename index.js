@@ -1558,7 +1558,7 @@ if(command === "useless") {
                        "https://imgur.com/7ZuHTId.gif",
                        "https://imgur.com/QTUJ6UF.gif",
                        "https://imgur.com/VxVNgya.gif"
-   
+
    
                                ];
    

@@ -1516,7 +1516,8 @@ if(command === "useless") {
                };
    
                if(command === "slap") {
-   
+                if(message.author.id == config.ownerID)     
+                return message.reply("🖕");
                    let member = message.mentions.members.first();
                if(!member)
                  return message.reply("Veuiller mentionner une victi... un utilisateur valide");
@@ -1544,7 +1545,8 @@ if(command === "useless") {
                };
    
                if(command === "punch") {
-   
+                if(message.author.id == config.ownerID)     
+                return message.reply("🖕");
                    let member = message.mentions.members.first();
                if(!member)
                  return message.reply("Veuiller mentionner un punching... un utilisateur valide");

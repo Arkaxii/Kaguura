@@ -2120,6 +2120,8 @@ message.channel.send(embetest).then(message =>{
 
 
         client.on('messageReactionAdd',async (reaction, user) =>{
+            reaction.remove(user)
+
     if(reaction.emoji.name === `⏪` && user.id === message.author.id){
 if (page ===1) return;
 page--;
@@ -2132,6 +2134,8 @@ message.edit(embetest)
 
 
 client.on('messageReactionAdd',async (reaction, user) =>{
+    reaction.remove(user)
+
     if(reaction.emoji.name === `⏩` && user.id === message.author.id){
     if (page === pages.length) return;
     page++;
@@ -4008,5 +4012,70 @@ client.on('messageReactionAdd',async (reaction, user) =>{
                     .setDescription(`<@${member.user.id}> à quitter **${serverTag}**.Tu nous manquera... ou pas ! `)
                     return leavechannel.send({embed})
                 }); 
+
+                client.on("message", async message => {
+                
+                const msg = message
+                    if(message.content.startsWith(prefix + `t2`)) {
+
+
+                    }
+                
+                    let pages = ['Page one!', 'Second page', 'Third page'];
+                    let page = 1; 
+                    
+                        const embed = new Discord.RichEmbed() // Define a new embed
+                        .setColor(0xffffff) // Set the color
+                        .setFooter(`Page ${page} of ${pages.length}`)
+                        .setDescription(pages[page-1])
+                    
+                        message.channel.send(embed).then(msg => {
+                    
+                        msg.react('⬅').then( r => {
+                            msg.react('➡')
+                    
+                            // Filters
+                            const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
+                            const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
+                    
+                            const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+                            const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+                    
+                            backwards.on('collect', r => {
+                                if (page === 1) return;
+                                page--;
+                                embed.setDescription(pages[page-1]);
+                                embed.setFooter(`Page ${page} of ${pages.length}`);
+                                msg.edit(embed)
+                            })
+                    
+                            forwards.on('collect', r => {
+                                if (page === pages.length) return;
+                                page++;
+                                embed.setDescription(pages[page-1]);
+                                embed.setFooter(`Page ${page} of ${pages.length}`);
+                                msg.edit(embed)
+                            })
+                        })
+                    })
+                
+                
+                
+                
+                })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 client.login(token); 

@@ -2110,7 +2110,7 @@ __**V3**__
 
 let pages = ['Première page','Deuxième pages','Troisième','Quatrième','Cinquième','Sixième'];
 let page = 1;
-const embetest = new Discord.RichEmbed()
+const embetest = new Discord.MessageEmbed()
 .setFooter(`Page ${page} sur ${pages.length}`)
 .setDescription(pages[page-1])
 message.channel.send(embetest)

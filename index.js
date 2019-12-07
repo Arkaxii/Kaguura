@@ -2126,15 +2126,15 @@ const forwa = message.createReactionCollector(forfiltre, {time: 60000});
 backwa.on('collect', r =>{
 if (page ===1) return;
 page--;
-embed.setDescription(pages[page-1]);
-embed.setFooter(`Page ${page} sur ${pages.length}`);
+embetest.setDescription(pages[page-1]);
+embetest.setFooter(`Page ${page} sur ${pages.length}`);
 message.edit(embetest)
 })
 forwa.on('collect', r =>{
     if (page === pages.length) return;
     page++;
-    embed.setDescription(pages[page-1]);
-    embed.setFooter(`Page ${page} sur ${pages.length}`);
+    embetest.setDescription(pages[page-1]);
+    embetest.setFooter(`Page ${page} sur ${pages.length}`);
     message.edit(embetest)
   
 })

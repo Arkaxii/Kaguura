@@ -2110,33 +2110,35 @@ __**V3**__
 
 let pages = ['Première page','Deuxième pages','Troisième','Quatrième','Cinquième','Sixième'];
 let page = 1;
-const embetest = new Discord.MessageEmbed()
+const embetest = new Discord.RichEmbed()
 .setFooter(`Page ${page} sur ${pages.length}`)
 .setDescription(pages[page-1])
-message.channel.send(embetest)
-.then(message =>{
+message.channel.send(embetest).then(message =>{
     message.react("⏪").then( r =>{
         message.react("⏩")
 
-        const backfiltre = (reaction, user) => reaction.emoji.name === `⏪` && user.id === message.author.id;
-        const forfiltre = (reaction, user) => reaction.emoji.name === `⏩` && user.id === message.author.id;
-const backwa = message.createReactionCollector(backfiltre, {time: 60000});
-const forwa = message.createReactionCollector(forfiltre, {time: 60000});
 
-backwa.on('collect', r =>{
+
+        client.on('messageReactionAdd',async (reaction, user) =>{
+    if(reaction.emoji.name === `⏪` && user.id === message.author.id){
 if (page ===1) return;
 page--;
 embetest.setDescription(pages[page-1]);
 embetest.setFooter(`Page ${page} sur ${pages.length}`);
 message.edit(embetest)
+    }
 })
-forwa.on('collect', r =>{
+
+
+
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if(reaction.emoji.name === `⏩` && user.id === message.author.id){
     if (page === pages.length) return;
     page++;
     embetest.setDescription(pages[page-1]);
     embetest.setFooter(`Page ${page} sur ${pages.length}`);
     message.edit(embetest)
-  
+    }
 })
 })
 })               

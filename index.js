@@ -42,8 +42,215 @@ client.on('ready', () => {
   });
   
   
-    client.on("message", message => {
-    if (message.content === "?help+") {
+    client.on("message", async message => {
+
+        if (message.content === "?helpt") {
+
+            let helpet = new Discord.RichEmbed()
+            .setTitle(`Choisi une parti`)
+            .setDescription(`
+            
+            ─▻__**Séléction de la partie**__
+
+            1 Rolplay 
+
+            2 Utilitaire
+            
+            3 Argent
+            
+            4 Jeux
+            
+            5 Random
+            
+            6 Autre
+            
+            7 Admin
+            `)
+            message.channel.send(helpet)
+            .then(async function(message){
+
+                message.react("1⃣")
+                 message.react("2⃣")
+                message.react("3⃣")
+                message.react("4⃣")
+                 message.react("5⃣")
+                 message.react("6⃣")
+                 message.react("7⃣")
+
+
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var hrp = new Discord.RichEmbed()
+                        .setAuthor("Rolplay")
+                        .setDescription(`
+                        ─▻__**Rolpay**__
+
+                        <<wink
+                        <<wave  
+                        <<sleep
+                        <<wake-up 
+                        <<slap 
+                        <<punch
+                        <<poke
+                        <<pat
+                        <<kiss
+                        <<kill
+                        <<hug
+                        `)
+
+                        message.channel.send(hrp)
+
+
+                    }
+                 })
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var hut = new Discord.RichEmbed()
+                        .setAuthor("Utile")
+                        .setDescription(`
+                        ─▻__**Utilitaire**__
+
+                        **<<sondage: **Fait un sondage pour avoir l'avie d'autre personne
+                        **<<timer: **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
+                        **<<info kagura: **Toute les infos a propo de Kagura
+                        **<<info discord: **Les info du serveur
+                        **<<infos: **Donne les infos d'un utilisateur ou de toi meme
+                        **<<secret: **Les prochain ajout sur le bot
+                        **<<avatar: **Recupere l'avatar pour l'afficher plus grand 
+                        **<<ping: **Pour connaitre son ping
+                        **<<say: **Fait dir ce que tu veut au bot 
+                        **<<invite: **Envoie un mp pour inviter le bot dans d'autre serveur
+                        **<<message:** Donne le nombre de message envoyer 
+                        **<<a-f:**traduit d'Anglais à Français
+                        **<<f-a:**Traduit du Français à l'Anglais
+                        **<<dico:** Cherche le mot dans le dictionnaire 
+                        **<<syntaxe-b:** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
+                        **<<syntaxe-c:** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**
+                        `)
+                        message.channel.send(hut)
+                    }
+                 })
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var har = new Discord.RichEmbed()
+                        .setAuthor("[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]")
+                        .setDescription(`
+                        ─▻__**Argent**__
+
+                        **<<inventaire: **Pour voir son inventaire
+                        **<<shop: **Pour fair des achat avec la THUNE que tu as acquis
+                        **<<pay: **pour donner de l'argent à d'autre utilisateur
+                        **<<compt: **pour voir à combien s'élève ton compt
+                        **<<daily: **pour recevoir 250$ par jour
+                        **<<pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 25$
+                        **<<roulette[montant de $]:**Test ta chance pour gagnier des $!
+                        `)
+                        message.channel.send(har)
+                    }
+                 })
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var hje = new Discord.RichEmbed()
+                        .setAuthor("Jeux")
+                        .setDescription(`
+                        ─▻__**Jeux**__
+
+                        **<<8ball: **Pose n'importe quelle question
+                        **<<refjeux: **trouve à quelle jeux appartien la référence 
+                        **<<refanime: **trouve à quelle anime appartien la référence 
+                        **<<quiz: **Test ton intelligence
+
+                        `)
+                        message.channel.send(hje)
+                    }
+                 })
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var hran = new Discord.RichEmbed()
+                        .setAuthor("Random")
+                        .setDescription(`
+                        ─▻__**Random**__
+
+                        **<<pile: **1 chance sur 2
+                        **<<face: **1 chance sur 2
+                        **<<lancer6: **imite un lancer de dé à 6 face 
+                        **<<lancer12: **imite un lancer de dé à 12 face 
+                        **<<lancer20:** imite un lancer de dé à 20 face
+                        
+                        `)
+                        message.channel.send(hran)
+                    }
+                 })
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var hau = new Discord.RichEmbed()
+                        .setAuthor("Autre")
+                        .setDescription(`
+                        ─▻__**Autre**__
+
+                        **<<waifu: **Montre ta nouvelle waifu
+                        **<<monstre: **Dévoile le monstre en toi
+                        **<<del: **Delet this (meme)
+                        **<<hack **Pour hacké une personne choisit
+                        **<<love **Pour connaitre ton "âme soeur"
+                        **<<fusion **FUUUUUUUUSION !!(fusionne des pseudos)
+                        
+                        `)
+                        message.channel.send(hau)
+                    }
+                 })
+                 client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
+                        reaction.remove(user)
+                        reaction.remove()
+                        await message.delete(helpet)
+                        var hau = new Discord.RichEmbed()
+                        .setAuthor("Admin")
+                        .setDescription(`
+                        ─▻__**Admin**__
+
+                        **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
+                        
+                        `)
+                        message.channel.send(hau)
+                    }
+                 })
+
+
+            })
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* if (message.content === "?help+") {
         message.react('🤖')
           let helpem = new Discord.RichEmbed()
       .setTitle(`Requested By | ${message.author.username}`)
@@ -220,7 +427,7 @@ client.on('ready', () => {
     message.channel.send(helprd);
         }
   
-  
+  */
   
   
         if (message.content === "?help admin") {
@@ -247,26 +454,7 @@ client.on('ready', () => {
         }
   
   
-        if (message.content === "?help") {
-          message.react('🤖')
-            let helpa = new Discord.RichEmbed()
-        .setTitle(`Requested By | ${message.author.username}`)
-            .setDescription(`
-  ==========🤖**Help**🤖==========
-   
-  **?help+:** Montre toute les commandes disponible
-  **?help rp:** Montre uniquement les commandes RP (punch/kiss/hug/...)
-  **?help utile:** Montre uniquement les commande utilitaire (timer/say/avatar/...)
-  **?help $:** Montre uniquement les commandes lié a la THUNE [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] (daily/shop/roulette/...)
-  **?help jeux:** Montre uniquement les commande de jeux (8ball/refanime/quizz/...)
-  **?help rand:** Montre uniquement les commande random (pile/face/lancer6/...)
-  **?help admin:** Que pour les admines
 
-  ==========🤖**Help**🤖==========
-    `)
-        .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
-    message.channel.send(helpa);
-        }
   
 
       })
@@ -336,6 +524,10 @@ var kanna = [
     "https://i.imgur.com/8BcgdaJ.png"
     ]
 var kana = kanna[Math.floor(Math.random() * kanna.length)] ;
+
+
+
+
 
 let fondintextt = false;
 for (var i in eventt){
@@ -1055,6 +1247,9 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
      }, ms2(Timer));
    }
+
+
+
 
 
  if(command === "rainbow") {

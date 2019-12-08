@@ -2160,6 +2160,7 @@ message.channel.send(embetest).then(message =>{
         const forwards = message.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
+            r.remove(r.users.filter(u => !u.client).first());
 
             if (page ===1) return;
             page--;
@@ -2170,6 +2171,7 @@ message.channel.send(embetest).then(message =>{
 })
 
 forwards.on('collect', r => {
+    r.remove(r.users.filter(u => !u.client).first());
 
     if (page === pages.length) return;
     page++;

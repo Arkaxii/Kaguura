@@ -2112,7 +2112,6 @@ __**V3**__
                         errors: ['time'],
                       })
                       .then((collected) => {
-                          message.delete(nembed)
                           const nembedd = new Discord.RichEmbed()
                         .setFooter('page 2 sur 7 -next pour continuer')
                         .setDescription('ceci est une autre déscription')
@@ -2125,7 +2124,6 @@ __**V3**__
                               errors: ['time'],
                             })
                             .then((collected) => {
-                                message.delete(nembedd)
 
                                 const nembeddd = new Discord.RichEmbed()
                                 .setFooter('page 3 sur 7 -pas next pour pas continuer')

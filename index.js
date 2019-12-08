@@ -2124,7 +2124,7 @@ message.channel.send(embetest).then(message =>{
         const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
-            r.remove(r.users.filter(u => !u.bot).first());
+            r.remove(r.users.filter(u => u === message.author).first());
 
             if (page ===1) return;
             page--;
@@ -2135,7 +2135,7 @@ message.channel.send(embetest).then(message =>{
 })
 
 forwards.on('collect', r => {
-    r.remove(r.users.filter(u => !u.bot).first());
+    r.remove(r.users.filter(u => u === message.author).first());
 
     if (page === pages.length) return;
     page++;

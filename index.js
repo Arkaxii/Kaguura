@@ -2100,7 +2100,19 @@ __**V3**__
 
 
 
-
+                if (command === "t2") {
+                    message.channel.send('1 next')
+                    .then(() => {
+                      message.channel.awaitMessages(response => response.content === 'next', {
+                        max: 1,
+                        time: 30000,
+                        errors: ['time'],
+                      })
+                      .then((collected) => {
+                          message.channel.send('2');
+                        })
+                    });
+                }
 
 
 
@@ -2124,7 +2136,6 @@ message.channel.send(embetest).then(message =>{
         const forwards = message.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
-            r.remove(r.users.filter(u => !u.bot).first());
 
             if (page ===1) return;
             page--;
@@ -2135,7 +2146,6 @@ message.channel.send(embetest).then(message =>{
 })
 
 forwards.on('collect', r => {
-    r.remove(r.users.filter(u => !u.bot).first());
 
     if (page === pages.length) return;
     page++;

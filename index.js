@@ -2166,6 +2166,12 @@ reaction.remove(user)
             if (page ===1) return;
             page--;
 
+            if(page ===1){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 1 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+            };
             if(page ===2){ 
                 embetest.setTitle(pages[page-1])
                 embetest.setDescription("Ceci est la 2 pages")  
@@ -2218,26 +2224,32 @@ reaction.remove(user)
     if (page === pages.length) return;
     page++;
 
+    if(page ===1){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription("Ceci est la 1 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+    };
     if(page ===2){ 
-        embetest.setTitle("")
+        embetest.setTitle(pages[page-1])
         embetest.setDescription("Ceci est la 2 pages")  
         embetest.setFooter(`Page ${page} sur ${pages.length}`)  
         message.edit(embetest) 
      };
      if(page ===3){ 
-        embetest.setTitle("")
+        embetest.setTitle(pages[page-1])
         embetest.setDescription("Ceci est la 3 pages")  
         embetest.setFooter(`Page ${page} sur ${pages.length}`)  
         message.edit(embetest) 
      };
      if(page ===4){ 
-        embetest.setTitle("")
+        embetest.setTitle(pages[page-1])
         embetest.setDescription("Ceci est la 4 pages")  
         embetest.setFooter(`Page ${page} sur ${pages.length}`)  
         message.edit(embetest) 
      };
      if(page ===5){ 
-        embetest.setTitle("")
+        embetest.setTitle(pages[page-1])
         embetest.setDescription("Ceci est la 5 pages")  
         embetest.setFooter(`Page ${page} sur ${pages.length}`)  
         message.edit(embetest) 

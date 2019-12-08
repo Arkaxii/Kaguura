@@ -2139,12 +2139,23 @@ __**V3**__
             }
 
 
-
+function HRP() {
+embetest.setDescription(" test de la page 1")
+message.edit(embetest)   
+}
+function Uti() {
+    embetest.setDescription("Test de la page 2")
+    message.edit(embetest)   
+}
 
 
                 if(command === "test"){
 
-let pages = ['Première page','Deuxième pages','Troisième','Quatrième','Cinquième','Sixième'];
+
+
+
+
+let pages = ['Première page','Deuxième pages'];
 let page = 1;
 const embetest = new Discord.RichEmbed()
 .setFooter(`Page ${page} sur ${pages.length}`)
@@ -2161,9 +2172,9 @@ if(reaction.emoji.name === '⏪' && user.id !== client.user.id){
 reaction.remove(user)
             if (page ===1) return;
             page--;
-            embetest.setDescription(pages[page-1]);
-            embetest.setFooter(`Page ${page} sur ${pages.length}`);
-            message.edit(embetest)
+
+            if(page ===1){HRP}
+            if(page ===2){Uti}
 }
 
  
@@ -2173,9 +2184,8 @@ if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
 reaction.remove(user)
     if (page === pages.length) return;
     page++;
-    embetest.setDescription(pages[page-1]);
-    embetest.setFooter(`Page ${page} sur ${pages.length}`);
-    message.edit(embetest)
+    if(page ===1){HRP}
+    if(page ===2){Uti}
 }
         })
 })

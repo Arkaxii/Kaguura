@@ -2154,9 +2154,9 @@ message.channel.send(embetest).then(message =>{
         message.react("⏩")
 
 
+        client.on('messageReactionAdd',async (reaction, user) =>{
 
 if(reaction.emoji.name === '⏪' && user.id === message.author.id){
-            client.on('messageReactionAdd',async (reaction, user) =>{
 
 reaction.remove(user)
             if (page ===1) return;
@@ -2164,12 +2164,12 @@ reaction.remove(user)
             embetest.setDescription(pages[page-1]);
             embetest.setFooter(`Page ${page} sur ${pages.length}`);
             message.edit(embetest)
-    
+}
 })
-        }
+ 
+client.on('messageReactionAdd',async (reaction, user) =>{
 
 if(reaction.emoji.name === '⏩' && user.id === message.author.id){
-    client.on('messageReactionAdd',async (reaction, user) =>{
 
 reaction.remove(user)
     if (page === pages.length) return;
@@ -2177,9 +2177,8 @@ reaction.remove(user)
     embetest.setDescription(pages[page-1]);
     embetest.setFooter(`Page ${page} sur ${pages.length}`);
     message.edit(embetest)
-    
-})
 }
+})
 })
                     })
                 };

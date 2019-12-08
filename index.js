@@ -2120,8 +2120,8 @@ message.channel.send(embetest).then(message =>{
         const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
         const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id;
 
-        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+        const backwards = message.createReactionCollector(backwardsFilter, {timer: 6000});
+        const forwards = message.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
             r.remove(r.users.filter(u => u === message.author).first());

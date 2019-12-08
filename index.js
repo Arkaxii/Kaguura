@@ -2147,11 +2147,12 @@ __**V3**__
 
 
 
-let pages = ['Première page','Deuxième pages'];
+let pages = ['Menu','Rolplay','Utilitaire','Argent','Jeux','Random','Autre','Admin'];
 let page = 1;
 const embetest = new Discord.RichEmbed()
+.setTitle(pages[page-1])
 .setFooter(`Page ${page} sur ${pages.length}`)
-.setDescription(pages[page-1])
+.setDescription(`ceci est la 1 page`)
 message.channel.send(embetest).then(message =>{
     message.react("⏪").then( r =>{
         message.react("⏩")
@@ -2165,12 +2166,46 @@ reaction.remove(user)
             if (page ===1) return;
             page--;
 
-            if(page ===1){
-                embetest.setDescription("Test de la page 1")
-                message.edit(embetest)   
-            };
             if(page ===2){ 
-                embetest.setDescription("Test de la page 2")    
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 2 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===3){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 3 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===4){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 4 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===5){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 5 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===6){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 6 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===7){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 7 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===8){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription("Ceci est la 8 pages")  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
                 message.edit(embetest) 
              };
 }
@@ -2182,12 +2217,47 @@ if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
 reaction.remove(user)
     if (page === pages.length) return;
     page++;
-    if(page ===1){
-        embetest.setDescription(" test de la page 1")
-        message.edit(embetest)   
-    };
+
     if(page ===2){ 
-        embetest.setDescription("Test de la page 2")    
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 2 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===3){ 
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 3 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===4){ 
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 4 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===5){ 
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 5 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===6){ 
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 6 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===7){ 
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 7 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===8){ 
+        embetest.setTitle("")
+        embetest.setDescription("Ceci est la 8 pages")  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
         message.edit(embetest) 
      };
 }

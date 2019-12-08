@@ -2139,14 +2139,6 @@ __**V3**__
             }
 
 
-function HRP() {
-embetest.setDescription(" test de la page 1")
-message.edit(embetest)   
-}
-function Uti() {
-    embetest.setDescription("Test de la page 2")
-    message.edit(embetest)   
-}
 
 
                 if(command === "test"){
@@ -2173,8 +2165,14 @@ reaction.remove(user)
             if (page ===1) return;
             page--;
 
-            if(page ===1){HRP}
-            if(page ===2){Uti}
+            if(page ===1){
+                embetest.setDescription("Test de la page 1")
+                message.edit(embetest)   
+            };
+            if(page ===2){ 
+                embetest.setDescription("Test de la page 2")    
+                message.edit(embetest) 
+             };
 }
 
  
@@ -2184,8 +2182,14 @@ if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
 reaction.remove(user)
     if (page === pages.length) return;
     page++;
-    if(page ===1){HRP}
-    if(page ===2){Uti}
+    if(page ===1){
+        embetest.setDescription(" test de la page 1")
+        message.edit(embetest)   
+    };
+    if(page ===2){ 
+        embetest.setDescription("Test de la page 2")    
+        message.edit(embetest) 
+     };
 }
         })
 })

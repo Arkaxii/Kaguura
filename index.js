@@ -2101,18 +2101,39 @@ __**V3**__
 
 
                 if (command === "t2") {
-                    message.channel.send('1 next')
+                    const nembed = new Discord.RichEmbed()
+                    .setFooter('page 1 sur 7 -next pour continuer')
+                    .setDescription('ceci est une déscription')
+                    message.channel.send(nembed)
                     .then(() => {
                       message.channel.awaitMessages(response => response.content === 'next', {
                         max: 1,
-                        time: 30000,
+                        time: 60000,
                         errors: ['time'],
                       })
                       .then((collected) => {
-                          message.channel.send('2');
-                        })
+                        nembed.setFooter('page 2 sur 7 -next pour continuer')
+                        nembed.setDescription('ceci est une autre déscription')
+                        message.edit(nembed)
+
+                    }).then(() => {
+                            message.channel.awaitMessages(response => response.content === 'next', {
+                              max: 1,
+                              time: 60000,
+                              errors: ['time'],
+                            })
+                            .then((collected) => {
+                                nembed.setFooter('page 3 sur 7 -pas next pour pas continuer')
+                                nembed.setDescription('ceci est la troisième déscription')
+                                message.edit(nembed)
+                            })
+
+
+
+
                     });
-                }
+                })
+            }
 
 
 

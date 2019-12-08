@@ -2112,9 +2112,11 @@ __**V3**__
                         errors: ['time'],
                       })
                       .then((collected) => {
-                        nembed.setFooter('page 2 sur 7 -next pour continuer')
-                        nembed.setDescription('ceci est une autre déscription')
-                        message.edit(nembed)
+                          message.delete(nembed)
+                          const nembedd = new Discord.RichEmbed()
+                        .setFooter('page 2 sur 7 -next pour continuer')
+                        .setDescription('ceci est une autre déscription')
+                        message.channel.send(nembedd)
 
                     }).then(() => {
                             message.channel.awaitMessages(response => response.content === 'next', {
@@ -2123,9 +2125,12 @@ __**V3**__
                               errors: ['time'],
                             })
                             .then((collected) => {
-                                nembed.setFooter('page 3 sur 7 -pas next pour pas continuer')
-                                nembed.setDescription('ceci est la troisième déscription')
-                                message.edit(nembed)
+                                message.delete(nembedd)
+
+                                const nembeddd = new Discord.RichEmbed()
+                                .setFooter('page 3 sur 7 -pas next pour pas continuer')
+                                .setDescription("ceci est la troisième et dernière déscription et oui j'ai eu la flemme d'en mettre 7")
+                                message.channel.send(nembeddd)
                             })
 
 

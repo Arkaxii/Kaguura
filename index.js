@@ -2156,7 +2156,7 @@ message.channel.send(embetest).then(message =>{
 
         client.on('messageReactionAdd',async (reaction, user) =>{
 
-if(reaction.emoji.name === '⏪' && user.id === message.author.id){
+if(reaction.emoji.name === '⏪' && user.id !== client.user.id){
 
 reaction.remove(user)
             if (page ===1) return;
@@ -2167,9 +2167,8 @@ reaction.remove(user)
 }
 })
  
-client.on('messageReactionAdd',async (reaction, user) =>{
 
-if(reaction.emoji.name === '⏩' && user.id === message.author.id){
+if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
 
 reaction.remove(user)
     if (page === pages.length) return;
@@ -2178,7 +2177,7 @@ reaction.remove(user)
     embetest.setFooter(`Page ${page} sur ${pages.length}`);
     message.edit(embetest)
 }
-})
+
 })
                     })
                 };

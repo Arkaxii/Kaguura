@@ -2165,7 +2165,7 @@ reaction.remove(user)
             embetest.setFooter(`Page ${page} sur ${pages.length}`);
             message.edit(embetest)
 }
-})
+
  
 
 if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
@@ -2177,7 +2177,7 @@ reaction.remove(user)
     embetest.setFooter(`Page ${page} sur ${pages.length}`);
     message.edit(embetest)
 }
-
+        })
 })
                     })
                 };

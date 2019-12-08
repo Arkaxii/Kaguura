@@ -2143,6 +2143,7 @@ __**V3**__
 
 
                 if(command === "test"){
+                    client.on('messageReactionAdd',async (reaction, user) =>{
 
 let pages = ['Première page','Deuxième pages','Troisième','Quatrième','Cinquième','Sixième'];
 let page = 1;
@@ -2180,6 +2181,7 @@ reaction.remove(user)
 })
 })
 })               
+                    })
                 };
 
 

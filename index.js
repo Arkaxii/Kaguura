@@ -2153,11 +2153,9 @@ message.channel.send(embetest).then(message =>{
     message.react("⏪").then( r =>{
         message.react("⏩")
 
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id;
 
 
-        backwardsFilter.on('collect', r => {
+if(reaction.emoji.name === '⏪' && user.id === message.author.id){
             client.on('messageReactionAdd',async (reaction, user) =>{
 
 reaction.remove(user)
@@ -2168,9 +2166,9 @@ reaction.remove(user)
             message.edit(embetest)
     
 })
-        })
+        }
 
-        forwardsFilter.on('collect', r => {
+if(reaction.emoji.name === '⏩' && user.id === message.author.id){
     client.on('messageReactionAdd',async (reaction, user) =>{
 
 reaction.remove(user)
@@ -2181,8 +2179,8 @@ reaction.remove(user)
     message.edit(embetest)
     
 })
+}
 })
-})               
                     })
                 };
 

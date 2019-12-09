@@ -326,7 +326,7 @@ client.on('ready', () => {
 
 
     
-      if (message.content === "<<help admin") {
+      if (message.content === "?help admin") {
         if(!message.member.permissions.has('ADMINISTRATOR') )
         return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!" );
         message.react('🤖')

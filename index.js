@@ -43,70 +43,84 @@ client.on('ready', () => {
   
 
   client.on("message", async message => {
-    if (message.content === "<<help") {
+    if (message.content === "?help") {
 
-        let helpet = new Discord.RichEmbed()
-        .setTitle(`Choisi une parti`)
-        .setDescription(`
+
+            let pages = ['Menu','─▻Rolplay','─▻Utilitaire','─▻Argent','─▻Jeux','─▻Random','─▻Autre','─▻Admin'];
+            let page = 1;
+            const embetest = new Discord.RichEmbed()
+            .setTitle(pages[page-1])
+            .setFooter(`Page ${page} sur ${pages.length}`)
+            .setDescription(`
         
-        ─▻__**Séléction de la partie**__
-        1 Rolplay 
-        2 Utilitaire
+        ─▻__**Catégorie**__
+        2 Rolplay 
+
+        3 Utilitaire
         
-        3 Argent
+        4 Argent
         
-        4 Jeux
+        5 Jeux
         
-        5 Random
+        6 Random
         
-        6 Autre
+        7 Autre
         
-        7 Admin
-        `)
-        message.channel.send(helpet)
-        .then(async function(message){
-
-          await  message.react("1⃣")
-          await   message.react("2⃣")
-          await  message.react("3⃣")
-          await  message.react("4⃣")
-          await   message.react("5⃣")
-          await   message.react("6⃣")
-          await   message.react("7⃣")
-
-
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "1⃣" && user.id !== client.user.id) {
-
-                    await message.delete(helpet)
-                    var hrp = new Discord.RichEmbed()
-                    .setAuthor("─▻ 1 Rolpay")
-                    .setDescription(`
-                    <<wink
-                    <<wave  
-                    <<sleep
-                    <<wake-up 
-                    <<slap 
-                    <<punch
-                    <<poke
-                    <<pat
-                    <<kiss
-                    <<kill
-                    <<hug
-                    `)
-
-                    message.channel.send(hrp)
-
-
-                }
-             })
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "2⃣" && user.id !== client.user.id) {
- 
-                    await message.delete(helpet)
-                    var hut = new Discord.RichEmbed()
-                    .setAuthor("─▻ 2 Utilitaire")
-                    .setDescription(`
+        8 Admin
+        `)  
+            message.channel.send(embetest).then(message =>{
+                message.react("⏪").then( r =>{
+                    message.react("⏩")
+            
+            
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            
+            if(reaction.emoji.name === '⏪' && user.id !== client.user.id){
+            
+            reaction.remove(user)
+                        if (page ===1) return;
+                        page--;
+            
+                        if(page ===1){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            ─▻__**Séléction de la partie**__
+                            1 Rolplay 
+                         
+                            2 Utilitaire
+                            
+                            3 Argent
+                            
+                            4 Jeux
+                            
+                            5 Random
+                            
+                            6 Autre
+                            
+                            7 Admin`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                        };
+                        if(page ===2){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            <<wink
+                            <<wave  
+                            <<sleep
+                            <<wake-up 
+                            <<slap 
+                            <<punch
+                            <<poke
+                            <<pat
+                            <<kiss
+                            <<kill
+                            <<hug`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+                         if(page ===3){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
                     **<<sondage : **Fait un sondage pour avoir l'avie d'autre personne
                     **<<timer : **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
                     **<<info kagura : **Toute les infos a propo de Kagura
@@ -122,96 +136,192 @@ client.on('ready', () => {
                     **<<f-a :**Traduit du Français à l'Anglais
                     **<<dico :** Cherche le mot dans le dictionnaire 
                     **<<syntaxe-b :** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
-                    **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**
-                    `)
-                    message.channel.send(hut)
-                }
-             })
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "3⃣" && user.id !== client.user.id) {
-
-                    await message.delete(helpet)
-                    var har = new Discord.RichEmbed()
-                    .setAuthor("─▻ 3 Argent [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]")
-                    .setDescription(`
+                    **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+                         if(page ===4){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            **<<inventaire : **Pour voir son inventaire
+                            **<<shop : **Pour fair des achat avec la THUNE que tu as acquis
+                            **<<pay : **pour donner de l'argent à d'autre utilisateur
+                            **<<compt : **pour voir à combien s'élève ton compt
+                            **<<daily : **pour recevoir 250$ par jour
+                            **<<pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 25$
+                            **<<roulette[montant de $] :**Test ta chance pour gagnier des $!`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+                         if(page ===5){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            **<<8ball : **Pose n'importe quelle question
+                            **<<refjeux : **trouve à quelle jeux appartien la référence 
+                            **<<refanime : **trouve à quelle anime appartien la référence 
+                            **<<quiz : **Test ton intelligence`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+                         if(page ===6){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            **<<pile : **1 chance sur 2
+                            **<<face : **1 chance sur 2
+                            **<<lancer6 : **imite un lancer de dé à 6 face 
+                            **<<lancer12 : **imite un lancer de dé à 12 face 
+                            **<<lancer20 :** imite un lancer de dé à 20 face`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+                         if(page ===7){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            **<<waifu : **Montre ta nouvelle waifu
+                            **<<monstre : **Dévoile le monstre en toi
+                            **<<del : **Delet this (meme)
+                            **<<hack : **Pour hacké une personne choisit
+                            **<<love : **Pour connaitre ton "âme soeur"
+                            **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)`)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+                         if(page ===8){ 
+                            embetest.setTitle(pages[page-1])
+                            embetest.setDescription(`
+                            **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
+                            `)  
+                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                            message.edit(embetest) 
+                         };
+            }
+            
+             
+            
+            if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
+            
+            reaction.remove(user)
+                if (page === pages.length) return;
+                page++;
+            
+                if(page ===1){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`     
+                   ─▻__**Séléction de la partie**__
+                    1 Rolplay 
+                
+                    2 Utilitaire
+                    
+                    3 Argent
+                    
+                    4 Jeux
+                    
+                    5 Random
+                    
+                    6 Autre
+                    
+                    7 Admin`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                };
+                if(page ===2){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    <<wink
+                    <<wave  
+                    <<sleep
+                    <<wake-up 
+                    <<slap 
+                    <<punch
+                    <<poke
+                    <<pat
+                    <<kiss
+                    <<kill
+                    <<hug`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+                 if(page ===3){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    **<<sondage : **Fait un sondage pour avoir l'avie d'autre personne
+                    **<<timer : **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
+                    **<<info kagura : **Toute les infos a propo de Kagura
+                    **<<info discord : **Les info du serveur
+                    **<<infos : **Donne les infos d'un utilisateur ou de toi meme
+                    **<<secret : **Les prochain ajout sur le bot
+                    **<<avatar : **Recupere l'avatar pour l'afficher plus grand 
+                    **<<ping : **Pour connaitre son ping
+                    **<<say : **Fait dir ce que tu veut au bot 
+                    **<<invite : **Envoie un mp pour inviter le bot dans d'autre serveur
+                    **<<message :** Donne le nombre de message envoyer 
+                    **<<a-f :**traduit d'Anglais à Français
+                    **<<f-a :**Traduit du Français à l'Anglais
+                    **<<dico :** Cherche le mot dans le dictionnaire 
+                    **<<syntaxe-b :** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
+                    **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+                 if(page ===4){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
                     **<<inventaire : **Pour voir son inventaire
                     **<<shop : **Pour fair des achat avec la THUNE que tu as acquis
                     **<<pay : **pour donner de l'argent à d'autre utilisateur
                     **<<compt : **pour voir à combien s'élève ton compt
                     **<<daily : **pour recevoir 250$ par jour
                     **<<pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 25$
-                    **<<roulette[montant de $] :**Test ta chance pour gagnier des $!
-                    `)
-                    message.channel.send(har)
-                }
-             })
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "4⃣" && user.id !== client.user.id) {
-
-                    await message.delete(helpet)
-                    var hje = new Discord.RichEmbed()
-                    .setAuthor("─▻ 4 Jeux")
-                    .setDescription(`
+                    **<<roulette[montant de $] :**Test ta chance pour gagnier des $!`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+                 if(page ===5){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
                     **<<8ball : **Pose n'importe quelle question
                     **<<refjeux : **trouve à quelle jeux appartien la référence 
                     **<<refanime : **trouve à quelle anime appartien la référence 
-                    **<<quiz : **Test ton intelligence
-                    `)
-                    message.channel.send(hje)
-                }
-             })
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "5⃣" && user.id !== client.user.id) {
-
-                    await message.delete(helpet)
-                    var hran = new Discord.RichEmbed()
-                    .setAuthor(" ─▻ 5 Random")
-                    .setDescription(`
+                    **<<quiz : **Test ton intelligence`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+                 if(page ===6){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
                     **<<pile : **1 chance sur 2
                     **<<face : **1 chance sur 2
                     **<<lancer6 : **imite un lancer de dé à 6 face 
                     **<<lancer12 : **imite un lancer de dé à 12 face 
-                    **<<lancer20 :** imite un lancer de dé à 20 face
-                    
-                    `)
-                    message.channel.send(hran)
-                }
-             })
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "6⃣" && user.id !== client.user.id) {
-  
-                    await message.delete(helpet)
-                    var hau = new Discord.RichEmbed()
-                    .setAuthor("─▻ 6 Autre")
-                    .setDescription(`
+                    **<<lancer20 :** imite un lancer de dé à 20 face`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+                 if(page ===7){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
                     **<<waifu : **Montre ta nouvelle waifu
                     **<<monstre : **Dévoile le monstre en toi
                     **<<del : **Delet this (meme)
                     **<<hack : **Pour hacké une personne choisit
                     **<<love : **Pour connaitre ton "âme soeur"
-                    **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)
-                    
-                    `)
-                    message.channel.send(hau)
-                }
-             })
-             client.on('messageReactionAdd',async (reaction, user) =>{
-                if (reaction.emoji.name === "7⃣" && user.id !== client.user.id) {
-
-                    await message.delete(helpet)
-                    var hadm = new Discord.RichEmbed()
-                    .setAuthor("─▻ 7 Admin")
-                    .setDescription(`
+                    **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)`)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+                 if(page ===8){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
                     **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
-                    
-                    `)
-                    message.channel.send(hadm)
-                }
-             })
-
-
-        })
-    }
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                 };
+            }
+                    })
+            })
+                                })
+                            };
 
 
 
@@ -2141,142 +2251,7 @@ __**V3**__
 
 
 
-                if(command === "test"){
-
-
-
-
-
-let pages = ['Menu','Rolplay','Utilitaire','Argent','Jeux','Random','Autre','Admin'];
-let page = 1;
-const embetest = new Discord.RichEmbed()
-.setTitle(pages[page-1])
-.setFooter(`Page ${page} sur ${pages.length}`)
-.setDescription(`ceci est la 1 page`)
-message.channel.send(embetest).then(message =>{
-    message.react("⏪").then( r =>{
-        message.react("⏩")
-
-
-        client.on('messageReactionAdd',async (reaction, user) =>{
-
-if(reaction.emoji.name === '⏪' && user.id !== client.user.id){
-
-reaction.remove(user)
-            if (page ===1) return;
-            page--;
-
-            if(page ===1){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 1 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-            };
-            if(page ===2){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 2 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-             if(page ===3){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 3 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-             if(page ===4){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 4 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-             if(page ===5){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 5 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-             if(page ===6){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 6 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-             if(page ===7){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 7 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-             if(page ===8){ 
-                embetest.setTitle(pages[page-1])
-                embetest.setDescription("Ceci est la 8 pages")  
-                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                message.edit(embetest) 
-             };
-}
-
  
-
-if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
-
-reaction.remove(user)
-    if (page === pages.length) return;
-    page++;
-
-    if(page ===1){ 
-        embetest.setTitle(pages[page-1])
-        embetest.setDescription("Ceci est la 1 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-    };
-    if(page ===2){ 
-        embetest.setTitle(pages[page-1])
-        embetest.setDescription("Ceci est la 2 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-     if(page ===3){ 
-        embetest.setTitle(pages[page-1])
-        embetest.setDescription("Ceci est la 3 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-     if(page ===4){ 
-        embetest.setTitle(pages[page-1])
-        embetest.setDescription("Ceci est la 4 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-     if(page ===5){ 
-        embetest.setTitle(pages[page-1])
-        embetest.setDescription("Ceci est la 5 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-     if(page ===6){ 
-        embetest.setTitle("")
-        embetest.setDescription("Ceci est la 6 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-     if(page ===7){ 
-        embetest.setTitle("")
-        embetest.setDescription("Ceci est la 7 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-     if(page ===8){ 
-        embetest.setTitle("")
-        embetest.setDescription("Ceci est la 8 pages")  
-        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-        message.edit(embetest) 
-     };
-}
-        })
-})
-                    })
-                };
 
 
 if(command === "love"){

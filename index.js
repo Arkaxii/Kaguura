@@ -1334,12 +1334,11 @@ if(!rolerain)
 
                random()
                if (randnum == 1){
-                const loose = await message.reply("Charge le pistolet et");
+                const loose = await message.channel.send("Charge le pistolet et");
                 loose.edit("Charge le pistolet et.");
                 loose.edit("Charge le pistolet et..");
                 loose.edit("Charge le pistolet et...");
-                loose.edit("Charge le pistolet et...PAN! ");
-                message.channel.send("Ah désolé "+ message.author.username +" mais tu est kick du serveur! ");
+                loose.edit("Charge le pistolet et...PAN! Désolé mais j'ai pas visée le genou ");
                 if(member){
                 await member.kick(reson)
                 .catch(error => message.reply(`Désoler ${message.author} le jeux est cassé à cause de l'erreur suivant: ${error}`));
@@ -1347,25 +1346,25 @@ if(!rolerain)
                }
 
                if (randnum == 2){
-                  const win = await message.reply("Charge le pistolet et");
+                  const win = await message.channel.send("Charge le pistolet et");
                   win.edit("Charge le pistolet et.");
                   win.edit("Charge le pistolet et..");
                   win.edit("Charge le pistolet et...");
-                  win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
+                  win.edit("Charge le pistolet et...Clik! GG Tu gagne le droit de refaire une roulette jusqua que tu perde!  ");
                }
                if (randnum == 3){
-                const win = await message.reply("Charge le pistolet et");
+                const win = await message.channel.send("Charge le pistolet et");
                 win.edit("Charge le pistolet et.");
                 win.edit("Charge le pistolet et..");
                 win.edit("Charge le pistolet et...");
-                win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
+                win.edit("Charge le pistolet et...Clik! GG Tu gagne le droit de refaire une roulette jusqua que tu perde!  ");
              }
              if (randnum == 4){
-                const win = await message.reply("Charge le pistolet et");
+                const win = await message.channel.send("Charge le pistolet et");
                 win.edit("Charge le pistolet et.");
                 win.edit("Charge le pistolet et..");
                 win.edit("Charge le pistolet et...");
-                win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
+                win.edit("Charge le pistolet et...Clik! GG Tu gagne le droit de refaire une roulette jusqua que tu perde!  ");
              }
 
 

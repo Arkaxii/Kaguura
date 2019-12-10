@@ -1324,7 +1324,7 @@ if(!rolerain)
         {
             function random(min, max){
                min = Math.ceil(1);
-               max = Math.floor(2);
+               max = Math.floor(4);
                randnum = Math.floor(Math.random() * (max - min +1) +min);
            }
             if(command ==="kick_roulette"){
@@ -1353,7 +1353,20 @@ if(!rolerain)
                   win.edit("Charge le pistolet et...");
                   win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
                }
-
+               if (randnum == 3){
+                const win = await message.reply("Charge le pistolet et");
+                win.edit("Charge le pistolet et.");
+                win.edit("Charge le pistolet et..");
+                win.edit("Charge le pistolet et...");
+                win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
+             }
+             if (randnum == 4){
+                const win = await message.reply("Charge le pistolet et");
+                win.edit("Charge le pistolet et.");
+                win.edit("Charge le pistolet et..");
+                win.edit("Charge le pistolet et...");
+                win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
+             }
 
 
 

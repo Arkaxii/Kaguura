@@ -1329,7 +1329,6 @@ if(!rolerain)
            }
             if(command ==="kick_roulette"){
                 const looseur = message.author
-                const reson = "A perdu à la roulette"
                random()
                if (randnum == 1){
                 const loose = await message.reply("Charge le pistolet et");

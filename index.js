@@ -1330,49 +1330,49 @@ if(!rolerain)
             if(command ==="kick_roulette"){
                random()
                if (randnum == 1){
-                const loose =  message.reply("Charge le pistolet et")
-                loose.edit("Charge le pistolet et.")
-                loose.edit("Charge le pistolet et..")
-                loose.edit("Charge le pistolet et...")
-                loose.edit("Charge le pistolet et...PAN! ")
-                message.channel.send("Ah désolé "+ author.username +" mais tu est kick du serveur! ")
-                await author.kick("A perdu à la roulette du kick ")
+                const loose = await message.reply("Charge le pistolet et");
+                loose.edit("Charge le pistolet et.");
+                loose.edit("Charge le pistolet et..");
+                loose.edit("Charge le pistolet et...");
+                loose.edit("Charge le pistolet et...PAN! ");
+                message.channel.send("Ah désolé "+ author.username +" mais tu est kick du serveur! ");
+                await author.kick("A perdu à la roulette du kick ");
                }
 
                if (randnum == 2){
-                  const win = message.reply("Charge le pistolet et")
-                  win.edit("Charge le pistolet et.")
-                  win.edit("Charge le pistolet et..")
-                  win.edit("Charge le pistolet et...")
-                  win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ")
+                  const win = await message.reply("Charge le pistolet et");
+                  win.edit("Charge le pistolet et.");
+                  win.edit("Charge le pistolet et..");
+                  win.edit("Charge le pistolet et...");
+                  win.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
                }
                if (randnum == 3){
-                const win1 = message.reply("Charge le pistolet et")
-                win1.edit("Charge le pistolet et.")
-                win1.edit("Charge le pistolet et..")
-                win1.edit("Charge le pistolet et...")
-                win1.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ")
+                const win1 = await message.reply("Charge le pistolet et");
+                win1.edit("Charge le pistolet et.");
+                win1.edit("Charge le pistolet et..");
+                win1.edit("Charge le pistolet et...");
+                win1.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
              }
              if (randnum == 4){
-                const win2 = message.reply("Charge le pistolet et")
-                win2.edit("Charge le pistolet et.")
-                win2.edit("Charge le pistolet et..")
-                win2.edit("Charge le pistolet et...")
-                win2.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ")
+                const win2 = await message.reply("Charge le pistolet et");
+                win2.edit("Charge le pistolet et.");
+                win2.edit("Charge le pistolet et..");
+                win2.edit("Charge le pistolet et...");
+                win2.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
              }
              if (randnum == 5){
-                const win3 = message.reply("Charge le pistolet et")
-                win3.edit("Charge le pistolet et.")
-                win3.edit("Charge le pistolet et..")
-                win3.edit("Charge le pistolet et...")
-                win3.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ")
+                const win3 = await message.reply("Charge le pistolet et");
+                win3.edit("Charge le pistolet et.");
+                win3.edit("Charge le pistolet et..");
+                win3.edit("Charge le pistolet et...");
+                win3.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
              }
              if (randnum == 6){
-                const win4 = message.reply("Charge le pistolet et")
-                win4.edit("Charge le pistolet et.")
-                win4.edit("Charge le pistolet et..")
-                win4.edit("Charge le pistolet et...")
-                win4.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ")
+                const win4 = await message.reply("Charge le pistolet et");
+                win4.edit("Charge le pistolet et.");
+                win4.edit("Charge le pistolet et..");
+                win4.edit("Charge le pistolet et...");
+                win4.edit("Charge le pistolet et...Clik! GG Tu gagne le pouvoir de refaire une roulette jusqua que tu perde!  ");
              }
 
 

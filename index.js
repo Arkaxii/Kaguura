@@ -1329,6 +1329,7 @@ if(!rolerain)
            }
             if(command ==="kick_roulette"){
                 const looseur = message.author
+                const reson = "A perdu à la roulette"
                random()
                if (randnum == 1){
                 const loose = await message.reply("Charge le pistolet et");
@@ -1337,7 +1338,8 @@ if(!rolerain)
                 loose.edit("Charge le pistolet et...");
                 loose.edit("Charge le pistolet et...PAN! ");
                 message.channel.send("Ah désolé "+ message.author.username +" mais tu est kick du serveur! ");
-                await looseur.kick("A perdu à la roulette du kick ");
+                await looseur.kick(reson)
+                .catch(error => message.reply(`Désoler ${message.author} le jeux est cassé à cause de l'erreur suivant: ${error}`));
                }
 
                if (randnum == 2){

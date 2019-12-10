@@ -1335,8 +1335,8 @@ if(!rolerain)
                 loose.edit("Charge le pistolet et..");
                 loose.edit("Charge le pistolet et...");
                 loose.edit("Charge le pistolet et...PAN! ");
-                message.channel.send("Ah désolé "+ author.username +" mais tu est kick du serveur! ");
-                await author.kick("A perdu à la roulette du kick ");
+                message.channel.send("Ah désolé "+ message.author.username +" mais tu est kick du serveur! ");
+                await message.author.kick("A perdu à la roulette du kick ");
                }
 
                if (randnum == 2){

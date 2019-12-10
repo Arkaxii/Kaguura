@@ -1338,8 +1338,7 @@ if(!rolerain)
                 loose.edit("Charge le pistolet et...");
                 loose.edit("Charge le pistolet et...PAN! ");
                 message.channel.send("Ah désolé "+ message.author.username +" mais tu est kick du serveur! ");
-                await looseur.kick(reson)
-                .catch(error => message.reply(`Désoler ${message.author} le jeux est cassé à cause de l'erreur suivant: ${error}`));
+                await looseur.kick
                }
 
                if (randnum == 2){

@@ -8,6 +8,8 @@ const db = require('quick.db');
 const prefix = '?'
 const ms2 = require('ms');
 const func = require('./function.js'); 
+const m3u8stream = require('m3u8stream');
+const parseTime   = require('m3u8stream/dist/parse-time');
 
 
 
@@ -4115,6 +4117,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
     client.on("message", async message => {
 
         
+
         const ytdl = require('ytdl-core');
         const serveurs = {};
 

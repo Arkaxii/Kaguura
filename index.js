@@ -1321,6 +1321,26 @@ if(!rolerain)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
         {
             function random(min, max){
                min = Math.ceil(1);

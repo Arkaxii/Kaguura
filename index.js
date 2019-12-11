@@ -4116,7 +4116,9 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
         
         const ytdl = require('ytdl-core');
-    
+        const serveurs = {};
+
+
     if (message.content.indexOf(config.prefix) !== 0) return;
     
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
@@ -4128,33 +4130,45 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
     
        if(command === "play"){
+        function play(connection, message){
+            var server = serveurs[message.guild.id];
 
-        const streamOptions = {cherche: 0, volume: 1};
-        const broadcast = client.createVoiceBroadcast();
+            serveurs.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+            server.queue.shift();
+            server.dispatcher.on("end", function(){
+                if(server.queue[0]){
+                    play(connection, message);
 
-        if(!message.member.voiceChannel)
-        return message.channel.send("Va dans un vocal avant");
- 
-        if(!args[0])
-        return message.channel.send("C'est mieux avec l'url :p");
+                }else {
+                    connection.disconnect();
+                }
+            });
+        }
 
-        let validate = await ytdl.validateURL(args[0]);
-        if (!validate) 
-        return message.channel.send("Un url valid serai mieux :p");
 
-        let info = await ytdl.getInfo(args[0]);
-            let voiceConnection = message.member.voiceChannel.join()
+        if(!args[1]){
+            message.channel.send("Manque une URL!!");
+            return;
+        }
 
-            .then(voiceConnection => {
+        if(!message.member.voiceChannel){
+            message.channel.send("Tu doit etre co sur un vocal");
+            return;
+        }
 
-            const stream = ytdl(args[0], { filter : 'audioonly' });
-            broadcast.playStream(stream);
-            const Dispatcher = Connection.playBroadcast(broadcast);
+        if(!serveurs[message.guild.id]) serveurs[message.guild.id]={
+            queue: []
+        }
 
-            })
-            .catch(console.error);
-        message.channel.send(`en cour: ${info.title}`);
-    
+        var server = serveurs[message.guild.id];
+        server.queue.push(args[1]);
+
+        if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+
+            play(connection, message);
+
+        })
+        
         }
 
 

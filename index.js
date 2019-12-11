@@ -4114,110 +4114,107 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 
 
     
-    client.on("message", async message => {
 
-        
+const ytdl = require('ytdl-core');
+const queue = new Map();
 
-        const ytdl = require('ytdl-core');
-        const serveurs = {};
+client.on('message', async message => {
+	if (message.author.bot) return;
+	if (!message.content.startsWith(prefix)) return;
 
+	const serverQueue = queue.get(message.guild.id);
 
-    if (message.content.indexOf(config.prefix) !== 0) return;
-    
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-        
-       db.add(`globalMessages_${message.author.id}`, 1);
-       db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
+	if (message.content.startsWith(`${prefix}play`)) {
+		execute(message, serverQueue);
+		return;
+	} else if (message.content.startsWith(`${prefix}skip`)) {
+		skip(message, serverQueue);
+		return;
+	} else if (message.content.startsWith(`${prefix}stop`)) {
+		stop(message, serverQueue);
+		return;
+	} 
+});
 
+async function execute(message, serverQueue) {
+	const args = message.content.split(' ');
 
-    
-       if(command === "play"){
-        function play(connection, message){
-            var server = serveurs[message.guild.id];
+	const voiceChannel = message.member.voiceChannel;
+	if (!voiceChannel) return message.channel.send('You need to be in a voice channel to play music!');
+	const permissions = voiceChannel.permissionsFor(message.client.user);
+	if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) {
+		return message.channel.send('I need the permissions to join and speak in your voice channel!');
+	}
 
-            serveurs.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
-            server.queue.shift();
-            server.dispatcher.on("end", function(){
-                if(server.queue[0]){
-                    play(connection, message);
+	const songInfo = await ytdl.getInfo(args[1]);
+	const song = {
+		title: songInfo.title,
+		url: songInfo.video_url,
+	};
 
-                }else {
-                    connection.disconnect();
-                }
-            });
-        }
+	if (!serverQueue) {
+		const queueContruct = {
+			textChannel: message.channel,
+			voiceChannel: voiceChannel,
+			connection: null,
+			songs: [],
+			volume: 5,
+			playing: true,
+		};
 
+		queue.set(message.guild.id, queueContruct);
 
-        if(!args[1]){
-            message.channel.send("Manque une URL!!");
-            return;
-        }
+		queueContruct.songs.push(song);
 
-        if(!message.member.voiceChannel){
-            message.channel.send("Tu doit etre co sur un vocal");
-            return;
-        }
+		try {
+			var connection = await voiceChannel.join();
+			queueContruct.connection = connection;
+			play(message.guild, queueContruct.songs[0]);
+		} catch (err) {
+			console.log(err);
+			queue.delete(message.guild.id);
+			return message.channel.send(err);
+		}
+	} else {
+		serverQueue.songs.push(song);
+		console.log(serverQueue.songs);
+		return message.channel.send(`${song.title} has been added to the queue!`);
+	}
 
-        if(!serveurs[message.guild.id]) serveurs[message.guild.id]={
-            queue: []
-        }
+}
 
-        var server = serveurs[message.guild.id];
-        server.queue.push(args[1]);
+function skip(message, serverQueue) {
+	if (!message.member.voiceChannel) return message.channel.send('You have to be in a voice channel to stop the music!');
+	if (!serverQueue) return message.channel.send('There is no song that I could skip!');
+	serverQueue.connection.dispatcher.end();
+}
 
-        if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+function stop(message, serverQueue) {
+	if (!message.member.voiceChannel) return message.channel.send('You have to be in a voice channel to stop the music!');
+	serverQueue.songs = [];
+	serverQueue.connection.dispatcher.end();
+}
 
-            play(connection, message);
+function play(guild, song) {
+	const serverQueue = queue.get(guild.id);
 
-        })
-        
-        }
+	if (!song) {
+		serverQueue.voiceChannel.leave();
+		queue.delete(guild.id);
+		return;
+	}
 
-
-
-
-           if(command === "leave"){
-            if(!message.member.voiceChannel)
-            return message.channel.send("Tu dois te connecter au vocale pour me déconnecter!");
-            if(!message.guild.me.voiceChannel)
-            return message.channel.send("je ne suis pas connecter");
-            message.guild.me.voiceChannel.leave();
-            message.channel.send("ok");
-        }
-
-            if(message.content.startsWith(prefix + "addrole")){
- 
-                if(!message.member.permissions.has('ADMINISTRATOR') )
-                return message.reply("Cette commande est réserver aux Admin");
-                let rolegive = message.mentions.roles.first();
-            if(!rolegive)
-              return message.reply("Veuiller mentionner un role valide");
-
-
-                const p1 = new Discord.RichEmbed()
-                .setAuthor("Donner vous vos roles")
-                .setDescription(`✅ pour avoir ${rolegive}`)
-                .setFooter("Role")
-                    message.channel.send(p1)
-                    .then(message => {
-                        message.react("✅")
-                    
-                        client.on('messageReactionAdd',  (reaction, user) =>{
-                        
-                            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                                
-                                reaction.message.guild.member(user).addRole(rolegive)                              
-
-                                reaction.remove(user);
-                                
-                            }
-                        })
-                    })
-                    
-                 }
-
-                });
+	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
+		.on('end', () => {
+			console.log('Music ended!');
+			serverQueue.songs.shift();
+			play(guild, serverQueue.songs[0]);
+		})
+		.on('error', error => {
+			console.error(error);
+		});
+	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+}
 
                 client.on('guildMemberAdd', member => {
 

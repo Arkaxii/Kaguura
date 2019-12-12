@@ -3711,8 +3711,8 @@ if (message.content === "?class1") {
     **-Sorcier:**
 
     💊
-    **-Clerc:** 2
-    **-Druide:** 3
+    **-Clerc:** 
+    **-Druide:** 
     `)  
     message.channel.send(embetest).then(message =>{
         message.react("⏪").then( r =>{
@@ -3745,8 +3745,8 @@ if (message.content === "?class1") {
                     **-Sorcier:**
                 
                     💊
-                    **-Clerc:** 2
-                    **-Druide:** 3
+                    **-Clerc:** 
+                    **-Druide:** 
                     `)  
                     embetest.setFooter(`Page ${page} sur ${pages.length}`)  
                     message.edit(embetest) 
@@ -4092,8 +4092,8 @@ if (message.content === "?class1") {
             **-Sorcier:**
         
             💊
-            **-Clerc:** 2
-            **-Druide:** 3
+            **-Clerc:** 
+            **-Druide:** 
             `)  
             embetest.setFooter(`Page ${page} sur ${pages.length}`)  
             message.edit(embetest) 

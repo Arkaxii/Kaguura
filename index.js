@@ -3687,7 +3687,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 }
 
 
-if (message.content === "?class1") {
+if (message.content === "?class") {
 
 
     let pages = [' Menu des classes','Paladin','Chevalier','Barbare','Moine','Rôdeur','Barde','Mage','Sorcier','Clerc','Druide'];

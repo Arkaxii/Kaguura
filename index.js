@@ -3272,64 +3272,34 @@ if(command === "class"){
     .setDescription(`
     
     **-Barbare:** 0 
-    Style de combat: Corp à corp
-    armure: Armure de plate légère
-    arme: Hache à 2 mains, épée à 2 mains  
-    type d'attaque utiliser: Bourinage, bourinage et euu... BOURINAGE!
+
 
     **-Barde:** 1
-    Style de combat: Distance
-    armure: équipement en cuire/ maille
-    arme: Arc, instrument de musique spécialement ceux avec corde
-    type d'attaque utiliser: tire à l'arc/ musique 
+
 
     **-Clerc:** 2
-    Style de combat: Support distance
-    armure: équipement en tissue
-    arme: Armes sacré (livres sacré/ bâton sacré)
-    type d'attaque utiliser: Sacré/ bénédiction majeur
+
 
     **-Druide:** 3
-    Style de combat: Distance/ Support 
-    armure: équipement en cuire
-    arme: Bâton
-    type d'attaque utiliser: Faune et flore/ métamorphe
+
 
     **-Chevalier:** 4
-    Style de combat: Corp à corp/ tank
-    armure: Armure de plate complet
-    arme: Hache à 2 main/ épée à 1(2) main(s)/ Bouclier
-    type d'attaque utiliser: Coup d'estoc/ taunt/ attaque basique
+
 
     **-Mage:** 5
-    Style de combat: Distance
-    armure: équipement en tissue
-    arme: Bâton/ sceptre 
-    type d'attaque utiliser: Givre/ feux/ éclair
+
     
     **-Moine:** 6
-    Style de combat: Corp à corp
-    armure: équipement en maille/ cuire
-    arme: Pugilat 
-    type d'attaque utiliser: Art martiaux/ Qi 
+
 
     **-Paladin:** 7
-    Style de combat: Corp à corp/ tank/ support
-    armure: Armure de plate lourde
-    arme: Marteaux/ épée 1(2) main(s)/ livre/ Bouclier
-    type d'attaque utiliser: Lumière/ sacrée/ bénédiction mineur
+
 
     **-Rôdeur:** 8
-    Style de combat: Corp à corp
-    armure: équipement en cuire
-    arme: Dague/ courte épée
-    type d'attaque utiliser: furtivité/ poisons  
+
 
     **-Sorcier:** 9
-    Style de combat: Distance
-    armure: équipement en tissue
-    arme: Bâton/ sceptre
-    type d'attaque utiliser: Invocation/ maléfice/ sortilège mistérieux 
+
 
     `)
     .setFooter("")
@@ -3716,67 +3686,814 @@ client.on('messageReactionAdd',async (reaction, user) =>{
 })
 }
 
+
+if (message.content === "?class1") {
+
+
+    let pages = [' Menu des classes','Paladin','Chevalier','Barbare','Moine','Rôdeur','Barde','Mage','Sorcier','Clerc','Druide'];
+    let page = 1;
+    const embetest = new Discord.RichEmbed()
+    .setTitle(pages[page-1])
+    .setFooter(`Page ${page} sur ${pages.length}`)
+    .setDescription(`
+    🛡
+    **-Paladin:**
+    **-Chevalier:**
+
+    ⚔
+    **-Barbare:** 
+    **-Moine:**
+    **-Rôdeur:**
+
+    🏹
+    **-Barde:** 
+    **-Mage:**
+    **-Sorcier:**
+
+    💊
+    **-Clerc:** 2
+    **-Druide:** 3
+    `)  
+    message.channel.send(embetest).then(message =>{
+        message.react("⏪").then( r =>{
+            message.react("⏩")
+    
+    
+            client.on('messageReactionAdd',async (reaction, user) =>{
+    
+    if(reaction.emoji.name === '⏪' && user.id !== client.user.id){
+    
+    reaction.remove(user)
+                if (page ===1) return;
+                page--;
+    
+                if(page ===1){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    🛡
+                    **-Paladin:**
+                    **-Chevalier:**
+                
+                    ⚔
+                    **-Barbare:** 
+                    **-Moine:**
+                    **-Rôdeur:**
+                
+                    🏹
+                    **-Barde:** 
+                    **-Mage:**
+                    **-Sorcier:**
+                
+                    💊
+                    **-Clerc:** 2
+                    **-Druide:** 3
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                };
+                if(page ===2){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien  et à un penchant un peut trop prononcé pour la lumière.
+
+                    Style de combat: Corp à corp/ tank/ support
+                    armure: Armure de plate lourde
+                    arme: Marteaux/ épée 1(2) main(s)/ livre/ Bouclier
+                    type d'attaque utiliser: Lumière/ sacrée/ bénédiction mineur
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+
+
+
+                 if(page ===3){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Un maître en matière d’armes et d'armures de toutes sortes à la fois courageux et vaillant.
+
+                    Style de combat: Corp à corp/ tank
+                    armure: Armure de plate complet
+                    arme: Hache à 2 main/ épée à 1(2) main(s)/ Bouclier
+                    type d'attaque utiliser: Coup d'estoc/ taunt/ attaque basique
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===4){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Un combattant brutal qui provient des frontières de la civilisation
+
+                    Style de combat: Corp à corp
+                    armure: Armure de plate légère
+                    arme: Hache à 2 mains, épée à 2 mains  
+                    type d'attaque utiliser: Bourinage, bourinage et euu... BOURINAGE!
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===5){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense et accessoirement aime la bière.
+
+                    Style de combat: Corp à corp
+                    armure: équipement en maille/ cuire
+                    arme: Pugilat 
+                    type d'attaque utiliser: Art martiaux/ Qi 
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===6){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    A la fois pisteur et chasseur, une créature des étendues sauvages qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
+
+                    Style de combat: Corp à corp
+                    armure: équipement en cuire
+                    arme: Dague/ courte épée
+                    type d'attaque utiliser: furtivité/ poisons  
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===7){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés, troubler ses ennemis et accessoirement tiré des flèches.
+
+                    Style de combat: Distance
+                    armure: équipement en cuire/ maille
+                    arme: Arc, instrument de musique spécialement ceux avec corde
+                    type d'attaque utiliser: tire à l'arc/ musique 
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===8){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Qui, à force d'étudier sans cesse, parvient à maîtriser la magie et acquiert d'incroyables pouvoirs.
+
+                    Style de combat: Distance
+                    armure: équipement en tissue
+                    arme: Bâton/ sceptre 
+                    type d'attaque utiliser: Givre/ feux/ éclair
+                     `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===9){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
+
+                    Style de combat: Distance
+                    armure: équipement en tissue
+                    arme: Bâton/ sceptre
+                    type d'attaque utiliser: Invocation/ maléfice/ sortilège mistérieux 
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===10){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie et utiliser le pouvoir sacré pour occire ses ennemis.
+
+                    Style de combat: Support distance
+                    armure: équipement en tissue
+                    arme: Armes sacré (livres sacré/ bâton sacré)
+                    type d'attaque utiliser: Sacré/ bénédiction majeur
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+                 if(page ===11){ 
+                    embetest.setTitle(pages[page-1])
+                    embetest.setDescription(`
+                    A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué
+
+                    Style de combat: Distance/ Support 
+                    armure: équipement en cuire
+                    arme: Bâton
+                    type d'attaque utiliser: Faune et flore/ métamorphe
+                    `)  
+                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                    message.edit(embetest) 
+                    .then(async function (message ) {
+                        await message.react("✅")
+                        await message.react("❌")
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                        await message.delete(embetest)
+                
+                    message.channel.send("et ba nop pas encore terminer")
+                }
+            })  
+            client.on('messageReactionAdd',async (reaction, user) =>{
+                if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+                    await message.delete(embetest)
+                    message.channel.send("❌A été Annuler")
+            
+                }
+            })
+            })
+                 };
+    }
+    
+     
+    
+    if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
+    
+    reaction.remove(user)
+        if (page === pages.length) return;
+        page++;
+    
+        if(page ===1){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            🛡
+            **-Paladin:**
+            **-Chevalier:**
+        
+            ⚔
+            **-Barbare:** 
+            **-Moine:**
+            **-Rôdeur:**
+        
+            🏹
+            **-Barde:** 
+            **-Mage:**
+            **-Sorcier:**
+        
+            💊
+            **-Clerc:** 2
+            **-Druide:** 3
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+        };
+        if(page ===2){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien  et à un penchant un peut trop prononcé pour la lumière.
+
+            Style de combat: Corp à corp/ tank/ support
+            armure: Armure de plate lourde
+            arme: Marteaux/ épée 1(2) main(s)/ livre/ Bouclier
+            type d'attaque utiliser: Lumière/ sacrée/ bénédiction mineur
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+
+
+
+         if(page ===3){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Un maître en matière d’armes et d'armures de toutes sortes à la fois courageux et vaillant.
+
+            Style de combat: Corp à corp/ tank
+            armure: Armure de plate complet
+            arme: Hache à 2 main/ épée à 1(2) main(s)/ Bouclier
+            type d'attaque utiliser: Coup d'estoc/ taunt/ attaque basique
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===4){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Un combattant brutal qui provient des frontières de la civilisation
+
+            Style de combat: Corp à corp
+            armure: Armure de plate légère
+            arme: Hache à 2 mains, épée à 2 mains  
+            type d'attaque utiliser: Bourinage, bourinage et euu... BOURINAGE!
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===5){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense et accessoirement aime la bière.
+
+            Style de combat: Corp à corp
+            armure: équipement en maille/ cuire
+            arme: Pugilat 
+            type d'attaque utiliser: Art martiaux/ Qi 
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===6){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            A la fois pisteur et chasseur, une créature des étendues sauvages qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
+
+            Style de combat: Corp à corp
+            armure: équipement en cuire
+            arme: Dague/ courte épée
+            type d'attaque utiliser: furtivité/ poisons  
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===7){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés, troubler ses ennemis et accessoirement tiré des flèches.
+
+            Style de combat: Distance
+            armure: équipement en cuire/ maille
+            arme: Arc, instrument de musique spécialement ceux avec corde
+            type d'attaque utiliser: tire à l'arc/ musique 
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===8){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Qui, à force d'étudier sans cesse, parvient à maîtriser la magie et acquiert d'incroyables pouvoirs.
+
+            Style de combat: Distance
+            armure: équipement en tissue
+            arme: Bâton/ sceptre 
+            type d'attaque utiliser: Givre/ feux/ éclair
+             `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===9){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
+
+            Style de combat: Distance
+            armure: équipement en tissue
+            arme: Bâton/ sceptre
+            type d'attaque utiliser: Invocation/ maléfice/ sortilège mistérieux 
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===10){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie et utiliser le pouvoir sacré pour occire ses ennemis.
+
+            Style de combat: Support distance
+            armure: équipement en tissue
+            arme: Armes sacré (livres sacré/ bâton sacré)
+            type d'attaque utiliser: Sacré/ bénédiction majeur
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+    
+        }
+    })
+    })
+         };
+         if(page ===11){ 
+            embetest.setTitle(pages[page-1])
+            embetest.setDescription(`
+            A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué
+
+            Style de combat: Distance/ Support 
+            armure: équipement en cuire
+            arme: Bâton
+            type d'attaque utiliser: Faune et flore/ métamorphe
+            `)  
+            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+            message.edit(embetest) 
+            .then(async function (message ) {
+                await message.react("✅")
+                await message.react("❌")
+                    client.on('messageReactionAdd',async (reaction, user) =>{
+            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                await message.delete(embetest)
+        
+            message.channel.send("et ba nop pas encore terminer")
+        }
+    })  
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+            await message.delete(embetest)
+            message.channel.send("❌A été Annuler")
+        }
+    })
+})
+};
+}
+})
+})
+})
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if(command === "cl"){
 
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")
     .setDescription(`
     
-    **-Barbare:** 0 
+    **-Barbare:** 0 https://i.imgur.com/tluyj40.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Barde:** 1
+    **-Barde:** 1 https://i.imgur.com/kzV53Vy.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Clerc:** 2
+    **-Clerc:** 2 https://i.imgur.com/ik8cIbo.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Druide:** 3
+    **-Druide:** 3 https://i.imgur.com/7gGcQB3.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Chevalier:** 4
+    **-Chevalier:** 4 https://i.imgur.com/hKl4yeP.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Mage:** 5
+    **-Mage:** 5 https://i.imgur.com/I8y8Npk.jpg
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
     
-    **-Moine:** 6
+    **-Moine:** 6 https://i.imgur.com/FDslwrn.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Paladin:** 7
+    **-Paladin:** 7 https://i.imgur.com/BVmG9m1.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Rôdeur:** 8
+    **-Rôdeur:** 8 https://i.imgur.com/5ydscFv.png
     ligne de combat:
     armure utiliser:
     arme utiliser:
     type d'attaque utiliser:
 
-    **-Sorcier:** 9
+    **-Sorcier:** 9 https://i.imgur.com/vgMYf49.png
     ligne de combat:
     armure utiliser:
     arme utiliser:

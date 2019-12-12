@@ -3266,7 +3266,7 @@ message.channel.send(eith)
 }
 
 
-if(command === "class"){
+if(command === "class23"){
     const clas = new Discord.RichEmbed()
     .setAuthor("Class")
     .setDescription(`

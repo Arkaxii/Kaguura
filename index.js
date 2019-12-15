@@ -10,7 +10,7 @@ const ms2 = require('ms');
 const func = require('./function.js'); 
 const m3u8stream = require('m3u8stream');
 const parseTime   = require('m3u8stream/dist/parse-time');
-
+const ownerID =  "246395977450258432"
 
 
 client.on('ready', () => {
@@ -1397,6 +1397,10 @@ if(!rolerain)
             
                 message.member.setNickname(pse);
             } 
+
+
+
+
 
 if(command ==="set-psd"){
 

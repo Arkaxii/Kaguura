@@ -1380,7 +1380,6 @@ if(!rolerain)
             };
 
             if(command ==="idk"){
-                let member = message.author
                 un = message.guild.members.random().displayName
                 deux = message.guild.members.random().displayName;
                             
@@ -1388,16 +1387,15 @@ if(!rolerain)
                 ueux = trois + (deux.substring(4, 10))            
                 const pse = args.slice(1).join(' ');
             
-                member.setNickname(pse);
+                message.member.setNickname(pse);
             } 
 
             if(command ==="psd"){
-                let member = message.author
 
             
                 const pse = args.slice(1).join(' ');
             
-                member.setNickname(pse);
+                message.member.setNickname(pse);
             } 
 
 if(command ==="set-psd"){

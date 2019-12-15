@@ -1384,9 +1384,7 @@ if(!rolerain)
                 deux = message.guild.members.random().displayName;
                             
                 trois = un.substring(0, 4);
-                ueux = trois + (deux.substring(4, 10))
-                message.channel.send(ueux)
-            
+                ueux = trois + (deux.substring(4, 10))            
                 const pse = args.slice(1).join(' ');
             
                 author.setNickname(pse);

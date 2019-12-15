@@ -1393,19 +1393,12 @@ if(!rolerain)
 
 
 
-if(command === "heur"){
-    message.channel.send(setTimestamp);
-}
 
 
+if(command ==="psd"){
+    const pse = args.join(" ");
 
-if(command ==="pseudo"){
-    premier = message.guild.members.random().displayName
-    deuxieme = message.guild.members.random().displayName;
-                
-    pre = premier.substring(0, 4);
-    preieme = pre + (deuxieme.substring(4, 10))
-    message.member.setNickname(preieme)
+    message.member.setNickname(pse);
 }
 
 

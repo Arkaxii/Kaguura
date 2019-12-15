@@ -1389,7 +1389,7 @@ if(!rolerain)
             
                 const pse = args.slice(1).join(' ');
             
-                message.author.setNickname(pse);
+                author.setNickname(pse);
             } 
 
             if(command ==="psd"){

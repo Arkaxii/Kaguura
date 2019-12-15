@@ -1396,9 +1396,11 @@ if(!rolerain)
 
 
 if(command ==="psd"){
-    const pse = args.join(" ");
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 
-    message.member.setNickname(pse);
+    const pse = args[1].join(" ");
+
+    member.setNickname(pse);
 }
 
 

@@ -1375,20 +1375,11 @@ if(!rolerain)
             if(command === "set"){
                 const acti = args.join(" ");
                 if(message.author.id !== ownerID) return;
-                if(!acti) return message.reply("la phrase est maintenant: ``"+acti+"``");
+                 message.channel.send("la phrase est maintenant: ``"+acti+"``");
                 client.user.setActivity(acti);
             };
 
-            if(command ==="idk"){
-                un = message.guild.members.random().displayName
-                deux = message.guild.members.random().displayName;
-                            
-                trois = un.substring(0, 4);
-                ueux = trois + (deux.substring(4, 10))            
-                const pse = args.slice(1).join(' ');
-            
-                message.member.setNickname(pse);
-            } 
+
 
             if(command ==="psd"){
 

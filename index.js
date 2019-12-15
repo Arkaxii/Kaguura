@@ -1384,18 +1384,34 @@ if(!rolerain)
                 win.edit("Charge le pistolet et...Clik! GG Tu gagne le droit de refaire une roulette jusqua que tu perde!  ");
              }
 
-
-
-
-
             }}
        
 
 
 
+            if(command ==="idk"){
+                un = message.guild.members.random().displayName
+                deux = message.guild.members.random().displayName;
+                            
+                trois = un.substring(0, 4);
+                ueux = trois + (deux.substring(4, 10))
+                message.channel.send(ueux)
+            
+                const pse = args.slice(1).join(' ');
+            
+                message.author.setNickname(pse);
+            } 
 
+            if(command ==="psd"){
 
-if(command ==="psd"){
+            
+                const pse = args.slice(1).join(' ');
+            
+                message.author.setNickname(pse);
+            } 
+
+if(command ==="set-psd"){
+    if(!message.member.permissions.has('ADMINISTRATOR') )
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 
     const pse = args.slice(1).join(' ');

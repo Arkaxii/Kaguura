@@ -769,13 +769,6 @@ client.on("message", async message => {
 
 
 
-if(command === "set")
-const acti = args.join(" ");
-if(!acti)  
-return message.reply("Tu as pas mis d'activiter!");
-client.user.setActivity(acti);
-
-
 
 
 

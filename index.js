@@ -447,21 +447,6 @@ if(fondintextt){
 
      });
  
-client.on("ready", () => {
-    console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-    client.user.setActivity(`Regarder ${client.guilds.size} servers`);
-  });
-  
-  client.on("guildCreate", guild => {
-    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setActivity(`Regarder ${client.guilds.size} servers`);
-  });
-  
-  client.on("guildDelete", guild => {
-    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.user.setActivity(`Regarder ${client.guilds.size} servers`);
-  });
-
   client.on ("ready", () => {
   answered = true;
   cAnswer = "";
@@ -1387,7 +1372,12 @@ if(!rolerain)
             }}
        
 
-
+            if(command === "set"){
+                const acti = args.join(" ");
+                if(message.author.id !== ownerID && message.author.id !== contributorID_01) return;
+                if(!acti) return message.reply("la phrase est maintenant: ``"+acti+"``");
+                client.user.setActivity(acti);
+            };
 
             if(command ==="idk"){
                 un = message.guild.members.random().displayName
@@ -1411,8 +1401,10 @@ if(!rolerain)
             } 
 
 if(command ==="set-psd"){
-    if(!message.member.permissions.has('ADMINISTRATOR') )
+
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+
+    if(!message.member.permissions.has('ADMINISTRATOR') )
 
     const pse = args.slice(1).join(' ');
 

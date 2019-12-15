@@ -769,9 +769,11 @@ client.on("message", async message => {
 
 
 
-
-
-
+if(command === "set")
+const acti = args.join(" ");
+if(!acti)  
+return message.reply("Tu as pas mis d'activiter!");
+client.user.setActivity(acti);
 
 
 
@@ -1398,25 +1400,45 @@ if(!rolerain)
 
 
 
+if(command === "heur"){
+    message.channel.send(setTimestamp);
+}
+
+
+
+if(command ==="pseudo"){
+    premier = message.guild.members.random().displayName
+    deuxieme = message.guild.members.random().displayName;
+                
+    pre = premier.substring(0, 4);
+    preieme = pre + (deuxieme.substring(4, 10))
+    message.member.setNickname(preieme)
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if(command === "love"){
+                var l = await message.channel.send(message.author.username)
+                l.edit(message.author.username+" 25% "+message.guild.members.random().displayName)
+                l.edit(message.author.username+" 50% "+message.guild.members.random().displayName)
+                l.edit(message.author.username+" 75% "+message.guild.members.random().displayName)
+                l.edit(message.author.username+" 100% ton âme soeur est "+message.guild.members.random().displayName+". Oula j'aimerai pas étre toi...")
+            
+            }
+            
+            if(command === "fusion"){
+            
+                            mom = message.guild.members.random().displayName
+                            dad = message.guild.members.random().displayName;
+                                        
+                            baby = dad.substring(0, 4);
+                            newBaby = baby + (mom.substring(4, 10))
+                            message.channel.send(newBaby)
+            
+                            };
 
         if(command === "monstre") {
             if(message.author.id == config.ownerID)     
@@ -2354,43 +2376,6 @@ __**V3**__
                     });
                 })
             }
-
-
-
-
- 
-
-
-if(command === "love"){
-    var l = await message.channel.send(message.author.username)
-    l.edit(message.author.username+" 25% "+message.guild.members.random().displayName)
-    l.edit(message.author.username+" 50% "+message.guild.members.random().displayName)
-    l.edit(message.author.username+" 75% "+message.guild.members.random().displayName)
-    l.edit(message.author.username+" 100% ton âme soeur est "+message.guild.members.random().displayName+". Oula j'aimerai pas étre toi...")
-
-}
-
-
-
-
-
-
-
-
-if(command === "fusion"){
-
-                mom = message.guild.members.random().displayName
-                dad = message.guild.members.random().displayName;
-                            
-                baby = dad.substring(0, 4);
-                newBaby = baby + (mom.substring(4, 10))
-                message.channel.send(newBaby)
-
-                };
-
-
-
-
 
 
 

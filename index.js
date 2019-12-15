@@ -1374,7 +1374,7 @@ if(!rolerain)
 
             if(command === "set"){
                 const acti = args.join(" ");
-                if(message.author.id !== ownerID && message.author.id !== contributorID_01) return;
+                if(message.author.id !== ownerID) return;
                 if(!acti) return message.reply("la phrase est maintenant: ``"+acti+"``");
                 client.user.setActivity(acti);
             };
@@ -1403,11 +1403,9 @@ if(!rolerain)
 if(command ==="set-psd"){
 
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-
-    if(!message.member.permissions.has('ADMINISTRATOR') )
-
     const pse = args.slice(1).join(' ');
 
+    if(!message.member.permissions.has('ADMINISTRATOR') )return;
     member.setNickname(pse);
 }
 

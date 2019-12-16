@@ -3126,18 +3126,19 @@ message.channel.send(eith)
 }
 
 {
-function randomxp1(min, max){
-    min = Math.ceil(0);
-    max = Math.floor(5);
-   const randxp1 = Math.floor(Math.randomxp1() * (max - min +1) +min);
+    function random(min, max){
+        min = Math.ceil(1);
+        max = Math.floor(10);
+        randwin = Math.floor(Math.random() * (max - min +1) +min);
+        
+    }
+        function randomxp1(min, max){
+        min = Math.ceil(0);
+        max = Math.floor(5);
+        randxp1 = Math.floor(Math.randomxp1() * (max - min +1) +min);
     }
 
-{
-function random(min, max){
-    min = Math.ceil(1);
-    max = Math.floor(10);
-   const randwin = Math.floor(Math.random() * (max - min +1) +min);
-    }
+
 
 if(command === "tower"){
     let xp = await db.fetch(`xp${message.author.id}`);
@@ -3186,7 +3187,7 @@ message.channel.send(niv1);
 
 }
 }
-}
+
 
 if (command === "class") {
 

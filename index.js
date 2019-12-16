@@ -1372,26 +1372,29 @@ if(!rolerain)
             }}
        
 
-            if(command === "set"){
-                const acti = args.join(" ");
-                if(message.author.id !== ownerID) return;
-                 message.channel.send("la phrase est maintenant: ``"+acti+"``");
-                client.user.setActivity(acti);
-            };
+
 
 
 
             if(command ==="psd"){
 
             
-                const pse = args.slice(1).join(' ');
+                const pse = args.join(" ");
             
                 message.member.setNickname(pse);
             } 
 
 
 
+            
 
+
+            if(command === "set"){
+                const acti = args.join(" ");
+                if(message.author.id !== ownerID) return;
+                 message.channel.send("la phrase est maintenant: ``"+acti+"``");
+                client.user.setActivity(acti);
+            };
 
 if(command ==="set-psd"){
 
@@ -1992,7 +1995,6 @@ __**V3**__
         randnum = Math.floor(Math.random() * (max - min +1) +min);
     }
     
-    var prefix = '?'
     if(message.content.startsWith(prefix + "pile")){
         random();
     
@@ -2012,70 +2014,9 @@ __**V3**__
             randnum = Math.floor(Math.random() * (max - min +1) +min);
         }
     
-        var prefix = '?'
         if(message.content.startsWith(prefix + "lancer20")){
             random();
-            if (randnum == 1){
-                message.reply("le dé roule et c'est un: 1");
-            }
-            if (randnum == 2){
-                message.reply("le dé roule et c'est un: 2");
-            }
-            if (randnum == 3){
-                message.reply("le dé roule et c'est un: 3");
-            }
-            if (randnum == 4){
-                message.reply("le dé roule et c'est un: 4");
-            }
-            if (randnum == 5){
-                message.reply("le dé roule et c'est un: 5");
-            }
-            if (randnum == 6){
-                message.reply("le dé roule et c'est un: 6");
-            }
-            if (randnum == 7){
-                message.reply("le dé roule et c'est un: 7");
-            }
-            if (randnum == 8){
-                message.reply("le dé roule et c'est un: 8");
-            }
-            if (randnum == 9){
-                message.reply("le dé roule et c'est un: 9");
-            }
-            if (randnum == 10){
-                message.reply("le dé roule et c'est un: 10");
-            }
-            if (randnum == 11){
-                message.reply("le dé roule et c'est un: 11");
-            }
-            if (randnum == 12){
-                message.reply("le dé roule et c'est un: 12");
-            }
-            if (randnum == 13){
-                message.reply("le dé roule et c'est un: 13");
-            }
-            if (randnum == 14){
-                message.reply("le dé roule et c'est un: 14");
-            }
-            if (randnum == 15){
-                message.reply("le dé roule et c'est un: 15");
-            }
-            if (randnum == 16){
-                message.reply("le dé roule et c'est un: 16");
-            }
-            if (randnum == 17){
-                message.reply("le dé roule et c'est un: 17");
-            }
-            if (randnum == 18){
-                message.reply("le dé roule et c'est un: 18");
-            }
-            if (randnum == 19){
-                message.reply("le dé roule et c'est un: 19");
-            }
-            if (randnum == 20){
-                message.reply("le dé roule et c'est un: 20");
-            }
-    
+                message.channel.send("le dé roule et c'est un ``"+randnum+"``");
         }} 
     {
     function random(min, max){
@@ -2084,45 +2025,10 @@ __**V3**__
             randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
     
-            var prefix = '?'
             if(message.content.startsWith(prefix + "lancer12")){
                 random();
-            if (randnum == 1){
-             message.reply("le dé roule et c'est un: 1"); 
-            }   
-            if (randnum == 2){
-                message.reply("le dé roule et c'est un: 2"); 
-               } 
-               if (randnum == 3){
-                message.reply("le dé roule et c'est un: 3"); 
-               } 
-               if (randnum == 4){
-                message.reply("le dé roule et c'est un: 4"); 
-               } 
-               if (randnum == 5){
-                message.reply("le dé roule et c'est un: 5"); 
-               } 
-               if (randnum == 6){
-                message.reply("le dé roule et c'est un: 6"); 
-               } 
-               if (randnum == 7){
-                message.reply("le dé roule et c'est un: 7"); 
-               } 
-               if (randnum == 8){
-                message.reply("le dé roule et c'est un: 8"); 
-               } 
-               if (randnum == 9){
-                message.reply("le dé roule et c'est un: 9"); 
-               } 
-               if (randnum == 10){
-                message.reply("le dé roule et c'est un: 10"); 
-               } 
-               if (randnum == 11){
-                message.reply("le dé roule et c'est un: 11"); 
-               } 
-               if (randnum == 12){
-                message.reply("le dé roule et c'est un: 12"); 
-               } 
+                message.channel.send("le dé roule et c'est un ``"+randnum+"``");
+
             }}
     {
     function random(min, max){
@@ -2131,27 +2037,10 @@ __**V3**__
             randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
     
-     var prefix = '?'                   
             if(message.content.startsWith(prefix + "lancer6")){
                 random();
-               if (randnum == 1){
-               message.reply("le dé roule et c'est un: 1"); 
-               }   
-               if (randnum == 2){
-               message.reply("le dé roule et c'est un: 2"); 
-               } 
-               if (randnum == 3){
-               message.reply("le dé roule et c'est un: 3"); 
-               } 
-               if (randnum == 4){
-               message.reply("le dé roule et c'est un: 4"); 
-               } 
-               if (randnum == 5){
-               message.reply("le dé roule et c'est un: 5"); 
-               } 
-               if (randnum == 6){
-               message.reply("le dé roule et c'est un: 6"); 
-               }
+                message.channel.send("le dé roule et c'est un ``"+randnum+"``");
+
             }}
 
                                {
@@ -4388,7 +4277,49 @@ if (message.content === "?class") {
 })
 };
 });
+client.on("message", async message => {
+        
+    const ytdl = require('ytdl-core');
 
+if (message.content.indexOf(config.prefix) !== 0) return;
+
+const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+    
+   db.add(`globalMessages_${message.author.id}`, 1);
+   db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
+
+   if(command === "play"){
+    const streamOptions = {cherche: 0, volume: 1};
+    const broadcast = client.createVoiceBroadcast();
+    if(!message.member.voiceChannel)
+    return message.channel.send("Va dans un vocal avant");
+
+    if(!args[0])
+    return message.channel.send("C'est mieux avec l'url :p");
+    let validate = await ytdl.validateURL(args[0]);
+    if (!validate) 
+    return message.channel.send("Un url valid serai mieux :p");
+    let info = await ytdl.getInfo(args[0]);
+        let voiceConnection = message.member.voiceChannel.join()
+        .then(voiceConnection => {
+        const stream = ytdl(args[0], { filter : 'audioonly' });
+        broadcast.playStream(stream);
+        const Dispatcher = Connection.playBroadcast(broadcast);
+        })
+        .catch(console.error);
+    message.channel.send(`en cour: ${info.title}`);
+
+    }
+       if(command === "leave"){
+        if(!message.member.voiceChannel)
+        return message.channel.send("Tu dois te connecter au vocale pour me déconnecter!");
+        if(!message.guild.me.voiceChannel)
+        return message.channel.send("je ne suis pas connecter");
+        message.guild.me.voiceChannel.leave();
+        message.channel.send("ok");
+    }
+        });
 
                 client.on('guildMemberAdd', member => {
 

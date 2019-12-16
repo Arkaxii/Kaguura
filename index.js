@@ -3126,13 +3126,14 @@ message.channel.send(eith)
 }
 
 {
-    function random(min, max){
+    function randomw(min, max){
         min = Math.ceil(1);
         max = Math.floor(10);
         randwin = Math.floor(Math.random() * (max - min +1) +min);
         
     }
-    function random(min, max){
+    {
+    function randomxp(min, max){
         min = Math.ceil(0);
         max = Math.floor(5);
         randxp1 = Math.floor(Math.random() * (max - min +1) +min);
@@ -3143,8 +3144,6 @@ message.channel.send(eith)
 if(command === "tower"){
     let xp = await db.fetch(`xp${message.author.id}`);
 
-    randxp1()
-randwin()
 var mob = [
     "https://i.imgur.com/tyJ9t5g.gif",
     "https://i.imgur.com/Z101RC0.gif",
@@ -3165,9 +3164,11 @@ var mob = [
     "https://i.imgur.com/5X2T9jk.gif",
     "https://i.imgur.com/wkQPuwp.gif",
 ]
-
 var mobs = mob[Math.floor(Math.random() * mob.length)] ;
+
+randomw();
 if(randwin <9 )
+randomxp();
 db.add(`xp_${message.author.id}`,randxp1);
 var niv1 = new Discord.RichEmbed()
 .setTitle("Nettoyage de la tour")
@@ -3187,7 +3188,7 @@ message.channel.send(niv1);
 
 }
 }
-
+}
 
 if (command === "class") {
 

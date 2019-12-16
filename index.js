@@ -3132,10 +3132,10 @@ message.channel.send(eith)
         randwin = Math.floor(Math.random() * (max - min +1) +min);
         
     }
-        function randomxp1(min, max){
+    function random(min, max){
         min = Math.ceil(0);
         max = Math.floor(5);
-        randxp1 = Math.floor(Math.randomxp1() * (max - min +1) +min);
+        randxp1 = Math.floor(Math.random() * (max - min +1) +min);
     }
 
 

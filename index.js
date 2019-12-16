@@ -3172,7 +3172,7 @@ randomxp();
 db.add(`xp_${message.author.id}`,randxp1);
 var niv1 = new Discord.RichEmbed()
 .setTitle("Nettoyage de la tour")
-.setDescription(``)
+.setDescription(`Cette commande est vouer a changer `)
 .setImage(mobs)
 .setFooter("tu as gagné ``"+ randxp1 +"``! Tu possède ``"+xp+"``xp")
 message.channel.send(niv1);
@@ -3180,7 +3180,7 @@ message.channel.send(niv1);
 if(randwin === 10 )
 var niv1 = new Discord.RichEmbed()
 .setTitle("Nettoyage de la tour")
-.setDescription(``)
+.setDescription(`Cette commande est vouer a changer`)
 .setImage(mobs)
 .setFooter("Tu as perdu tout ton xp")
 db.subtract(`xp_${message.author.id}`,xp);

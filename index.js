@@ -3125,14 +3125,14 @@ message.channel.send(eith)
 })
 }
 
-
+{
 function randomxp1(min, max){
     min = Math.ceil(0);
     max = Math.floor(5);
    const randxp1 = Math.floor(Math.randomxp1() * (max - min +1) +min);
     }
 
-
+{
 function random(min, max){
     min = Math.ceil(1);
     max = Math.floor(10);
@@ -3183,8 +3183,10 @@ var niv1 = new Discord.RichEmbed()
 .setFooter("Tu as perdu tout ton xp")
 db.subtract(`xp_${message.author.id}`,xp);
 message.channel.send(niv1);
-}
 
+}
+}
+}
 
 if (command === "class") {
 

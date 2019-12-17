@@ -3133,16 +3133,16 @@ message.channel.send(eith)
         
     }
     {
-    function randomxp(min, max){
-        min = Math.ceil(0);
-        max = Math.floor(5);
-        randxp1 = Math.floor(Math.random() * (max - min +1) +min);
-    }
+        function randomxp(min, max){
+            min = Math.ceil(0);
+            max = Math.floor(5);
+            randxp1 = Math.floor(Math.random() * (max - min +1) +min);
+        }
 
 
 
 if(command === "tower"){
-    let xp = await db.fetch(`xp${message.author.id}`);
+    let xp = await db.fetch(`xp_${message.author.id}`);
 
 var mob = [
     "https://i.imgur.com/tyJ9t5g.gif",
@@ -3169,26 +3169,73 @@ var mobs = mob[Math.floor(Math.random() * mob.length)] ;
 randomw();
 if(randwin <9 )
 randomxp();
-db.add(`xp_${message.author.id}`,randxp1);
+await db.add(`xp_${message.author.id}`,randxp1);
 var niv1 = new Discord.RichEmbed()
-.setTitle("Nettoyage de la tour")
-.setDescription(`Cette commande est vouer a changer `)
+.setTitle("Nom du monstre")
+.setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
+.setFooter("")
+message.channel.send(niv1)
+.then(async function (message ) {
+    await message.react("✅")
+    await message.react("❌")
+        client.on('messageReactionAdd',async (reaction, user) =>{
+if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+    await message.delete(niv1)
+
+var winF = new Discord.RichEmbed()
+.setTitle(message.author.username+"a triomphé de {mettre le nom du mob}")
+.setDescription("mettre un journale de combat")
+.setThumbnail(mobs)
 .setFooter("tu as gagné ``"+ randxp1 +"``! Tu possède ``"+xp+"``xp")
-message.channel.send(niv1);
+
+}
+})  
+client.on('messageReactionAdd',async (reaction, user) =>{
+if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+await message.delete(niv1)
+
+message.channel.send("Tu t'est enfui avec succes")
+
+}
+})
+})
 
 if(randwin === 10 )
 var niv1 = new Discord.RichEmbed()
-.setTitle("Nettoyage de la tour")
-.setDescription(`Cette commande est vouer a changer`)
+.setTitle("Nom du monstre")
+.setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
-.setFooter("Tu as perdu tout ton xp")
+.setFooter("")
 db.subtract(`xp_${message.author.id}`,xp);
-message.channel.send(niv1);
+message.channel.send(niv1)
+.then(async function (message ) {
+    await message.react("✅")
+    await message.react("❌")
+
+    client.on('messageReactionAdd',async (reaction, user) =>{
+        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+            await message.delete(niv1)
+            var deafF = new Discord.RichEmbed()
+            .setTitle(message.author.username+"a perdu face à {mettre le nom du mob}")
+            .setDescription("mettre un journale de combat")
+            .setThumbnail(mobs)
+            .setFooter("Tu a perdu TOUT ton xp")
+        }
+    })
+client.on('messageReactionAdd',async (reaction, user) =>{
+    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+    await message.delete(niv1)
+    message.channel.send("Tu t'est enfui avec succes")
+}
+})
+})
 
 }
+    }
 }
-}
+
+
 
 if (command === "class") {
 

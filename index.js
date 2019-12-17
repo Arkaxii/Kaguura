@@ -3188,7 +3188,7 @@ var winF = new Discord.RichEmbed()
 .setDescription("mettre un journale de combat")
 .setThumbnail(mobs)
 .setFooter("tu as gagné ``"+ randxp1 +"``! Tu possède ``"+xp+"``xp")
-
+message.channel.send(winF);
 }
 })  
 client.on('messageReactionAdd',async (reaction, user) =>{
@@ -3221,6 +3221,7 @@ message.channel.send(niv1)
             .setDescription("mettre un journale de combat")
             .setThumbnail(mobs)
             .setFooter("Tu a perdu TOUT ton xp")
+            message.channel.send(deafF);
         }
     })
 client.on('messageReactionAdd',async (reaction, user) =>{

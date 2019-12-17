@@ -3174,21 +3174,19 @@ var niv1 = new Discord.RichEmbed()
 .setTitle("Nom du monstre")
 .setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
-.setFooter("")
+niv1.setFooter("Pour attaquer: ✅ \n Pour fuire: ❌")
 message.channel.send(niv1)
 .then(async function (message ) {
     await message.react("✅")
     await message.react("❌")
         client.on('messageReactionAdd',async (reaction, user) =>{
 if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-    await message.delete(niv1)
 
-var winF = new Discord.RichEmbed()
-.setTitle(message.author.username+"a triomphé de {mettre le nom du mob}")
-.setDescription("mettre un journale de combat")
-.setThumbnail(mobs)
-.setFooter("tu as gagné ``"+ randxp1 +"``! Tu possède ``"+xp+"``xp")
-message.channel.send(winF);
+niv1.setTitle(message.author.username+"a triomphé de {mettre le nom du mob}")
+niv1.setDescription("mettre un journale de combat")
+niv1.setThumbnail(mobs)
+niv1.setFooter("tu as gagné ``"+ randxp1 +"``xp")
+message.edit(niv1);
 }
 })  
 client.on('messageReactionAdd',async (reaction, user) =>{
@@ -3203,31 +3201,30 @@ message.channel.send("Tu t'est enfui avec succes")
 
 if(randwin === 10 )
 var niv1 = new Discord.RichEmbed()
-.setTitle("Nom du monstre")
-.setDescription(`Mettre Carac et présentation du mob`)
-.setImage(mobs)
-.setFooter("")
+niv1.setTitle("Nom du monstre")
+niv1.setDescription(`Mettre Carac et présentation du mob`)
+niv1.setImage(mobs)
+niv1.setFooter("Pour attaquer: ✅ \n Pour fuire: ❌")
 db.subtract(`xp_${message.author.id}`,xp);
-message.channel.send(niv1)
+message.edit(niv1)
 .then(async function (message ) {
     await message.react("✅")
     await message.react("❌")
 
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-            await message.delete(niv1)
-            var deafF = new Discord.RichEmbed()
-            .setTitle(message.author.username+"a perdu face à {mettre le nom du mob}")
-            .setDescription("mettre un journale de combat")
-            .setThumbnail(mobs)
-            .setFooter("Tu a perdu TOUT ton xp")
-            message.channel.send(deafF);
+                        
+            niv1.setTitle(message.author.username+"a perdu face à {mettre le nom du mob}")
+            niv1.setDescription("mettre un journale de combat")
+            niv1.setThumbnail(mobs)
+            niv1.setFooter("Tu a perdu TOUT ton xp")
+            message.edit(niv1);
         }
     })
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-    await message.delete(niv1)
-    message.channel.send("Tu t'est enfui avec succes")
+niv1.setDescription("Tu t'est enfui avec succes")
+message.edit(niv1);
 }
 })
 })

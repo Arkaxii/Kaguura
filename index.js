@@ -3167,7 +3167,7 @@ var niv1 = new Discord.RichEmbed()
 .setTitle("Nom du monstre")
 .setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
-niv1.setFooter("Pour attaquer: ✅ \n Pour fuire: ❌")
+.setFooter("Pour attaquer: ✅ \n Pour fuire: ❌")
 message.channel.send(niv1)
 .then(async function (message ) {
     await message.react("✅")

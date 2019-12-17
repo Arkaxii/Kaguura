@@ -3137,6 +3137,7 @@ message.channel.send(eith)
 
 if(command === "tower"){
     let xp = await db.fetch(`xp_${message.author.id}`);
+    if (xp === null) xp = 0;
 
 var mob = [
     "https://i.imgur.com/tyJ9t5g.gif",
@@ -3167,23 +3168,24 @@ var niv1 = new Discord.RichEmbed()
 .setTitle("Nom du monstre")
 .setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
-.setFooter("Pour attaquer: ✅ \n Pour fuire: ❌")
+.setFooter("Pour attaquer: ⚔ \n Pour fuire: ↩")
 message.channel.send(niv1)
 .then(async function (message ) {
-    await message.react("✅")
-    await message.react("❌")
+    await message.react("⚔")
+    await message.react("↩")
         client.on('messageReactionAdd',async (reaction, user) =>{
-if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
 
 niv1.setTitle("a triomphé de {mettre le nom du mob}")
 niv1.setDescription("mettre un journale de combat")
 niv1.setThumbnail(mobs)
-niv1.setFooter("tu as ``"+xp+"``xp")
+niv1.setImage()
+niv1.setFooter("tu as "+xp+"xp")
 message.edit(niv1);
 }
 })  
 client.on('messageReactionAdd',async (reaction, user) =>{
-if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
 await message.delete(niv1)
 
 message.channel.send("Tu t'est enfui avec succes")
@@ -3197,25 +3199,26 @@ var niv1 = new Discord.RichEmbed()
 .setTitle("Nom du monstre")
 .setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
-.setFooter("Pour attaquer: ✅ \n Pour fuire: ❌")
+.setFooter("Pour attaquer: ⚔ || Pour fuire: ↩")
 db.subtract(`xp_${message.author.id}`,xp);
 message.channel.send(niv1)
 .then(async function (message ) {
-    await message.react("✅")
-    await message.react("❌")
+    await message.react("⚔")
+    await message.react("↩")
 
     client.on('messageReactionAdd',async (reaction, user) =>{
-        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+        if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
                         
             niv1.setTitle("a perdu face à {mettre le nom du mob}")
             niv1.setDescription("mettre un journale de combat")
             niv1.setThumbnail(mobs)
+            niv1.setImage()
             niv1.setFooter("Tu a perdu TOUT ton xp")
             message.edit(niv1);
         }
     })
 client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
+    if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
 niv1.setDescription("Tu t'est enfui avec succes")
 message.edit(niv1);
 }

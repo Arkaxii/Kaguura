@@ -3175,8 +3175,6 @@ message.channel.send(niv1)
     await message.react("↩")
         client.on('messageReactionAdd',async (reaction, user) =>{
 if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
-await reaction.remove(user)
-await reaction.remove()
 await reaction.remove()
 niv1.setTitle("a triomphé de {mettre le nom du mob}")
 niv1.setDescription("mettre un journale de combat")
@@ -3188,8 +3186,6 @@ message.edit(niv1);
 })  
 client.on('messageReactionAdd',async (reaction, user) =>{
 if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
-await reaction.remove(user)
-await reaction.remove()
 await reaction.remove()
 await message.delete(niv1)
 
@@ -3213,8 +3209,7 @@ message.channel.send(niv1)
 
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
-            await reaction.remove(user)
-            await reaction.remove()
+
             await reaction.remove()
 
             niv1.setTitle("a perdu face à {mettre le nom du mob}")
@@ -3228,8 +3223,7 @@ message.channel.send(niv1)
 client.on('messageReactionAdd',async (reaction, user) =>{
     if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
 
-        await reaction.remove(user)
-        await reaction.remove()
+
         await reaction.remove()
         await message.delete(niv1)
 

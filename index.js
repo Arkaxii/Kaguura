@@ -1315,6 +1315,90 @@ if(!rolerain)
 
 
 
+        
+
+
+
+
+
+if(command === "paradoxe"){
+    const para1 = new Discord.RichEmbed() 
+    .setTitle('Paradoxe du frommage à trous || paradoxe du gruyère')
+    .setFooter("Paradoxe: Logique")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Plus il y a de fromage, plus il y a de trous; or plus il y a de trous, moins il y a de fromage; donc plus il y a de fromage, moins il y a de fromage`)
+    
+    const para2 = new Discord.RichEmbed() 
+    .setTitle('Paradoxe socratique')
+    .setFooter("Paradoxe: Auto référence")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`« je sais que je ne sais rien »`)
+    
+    const para3 = new Discord.RichEmbed() 
+    .setTitle('Paradoxe sorite || paradoxe du tas')
+    .setFooter("Paradoxe: Imprécision")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Si vous enlevez un seul grain de sable à un tas, vous avez toujours un tas. En continuant d'enlever des grains, le tas disparaît. Un seul grain fait-il disparaître un tas ?`)
+    
+    const para4 = new Discord.RichEmbed() 
+    .setTitle('Hôtel de Hilbert')
+    .setFooter("Paradoxe: Infini et infinitésimaux")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Un hôtel complet comportant une infinité de chambre peut encore accepter une infinité de nouveaux clients`)
+    
+    const para5 = new Discord.RichEmbed() 
+    .setTitle('Paradoxe de Banach-Tarski')
+    .setFooter("Paradoxe: Géométrie et topologie")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Il est possible de couper une boule en un nombre fini de morceaux et de réassembler ces morceaux pour former deux boules identiques à la première`)
+    
+    const para6 = new Discord.RichEmbed() 
+    .setTitle('Paradoxe de la tolérance')
+    .setFooter("Paradoxe: Théorie de la décision")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Nous devrions revendiquer, au nom de la tolérance, le droit de ne pas tolérer l'intolérant`)
+    
+    const para7 = new Discord.RichEmbed() 
+    .setTitle('Paradoxe des feuilles de thé')
+    .setFooter("Paradoxe: Mécanique classique")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`En remuant un thé, les feuilles au fond de la tasse se rassemblent au centre, alors que la force centrifuge les pousse au bord`)
+    
+    const para8 = new Discord.RichEmbed() 
+    .setTitle('Chat de Schrödinger ')
+    .setFooter("Paradoxe: Mécanique quantique")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Selon l'interprétation de Copenhague de la physique quantique, un chat pourrait être à la fois vivant et mort tant qu'il reste non observé`)
+    
+    const para9 = new Discord.RichEmbed() 
+    .setTitle('Effet Mpemba')
+    .setFooter("Paradoxe: Thermodynamique")
+    .setThumbnail('https://i.imgur.com/91NE3ht.jpg')
+    .setDescription(`Dans certaines conditions l’eau chaude gèle plus vite que de l’eau froide`)
+    
+    var randparad = [
+        para1,
+        para2,
+        para3,
+        para4,
+        para5,
+        para6,
+        para7,
+        para8,
+        para9
+    ]
+    var randpara = randparad[Math.floor(Math.random() * randparad.length)] 
+    message.channel.send(randpara)
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2208,52 +2292,6 @@ __**V3**__
     
 
 
-
-
-
-
-
-
-                if (command === "t2") {
-                    const nembed = new Discord.RichEmbed()
-                    .setFooter('page 1 sur 7 -next pour continuer')
-                    .setDescription('ceci est une déscription')
-                    message.channel.send(nembed)
-                    .then(() => {
-                      message.channel.awaitMessages(response => response.content === 'next', {
-                        max: 1,
-                        time: 60000,
-                        errors: ['time'],
-                      })
-                      .then((collected) => {
-                          const nembedd = new Discord.RichEmbed()
-                        .setFooter('page 2 sur 7 -next pour continuer')
-                        .setDescription('ceci est une autre déscription')
-                        message.channel.send(nembedd)
-
-                    }).then(() => {
-                            message.channel.awaitMessages(response => response.content === 'next', {
-                              max: 1,
-                              time: 60000,
-                              errors: ['time'],
-                            })
-                            .then((collected) => {
-
-                                const nembeddd = new Discord.RichEmbed()
-                                .setFooter('page 3 sur 7 -pas next pour pas continuer')
-                                .setDescription("ceci est la troisième et dernière déscription et oui j'ai eu la flemme d'en mettre 7")
-                                message.channel.send(nembeddd)
-                            })
-
-
-
-
-                    });
-                })
-            }
-
-
-
     if(message.content.startsWith(prefix + "sondage")){
                 var sond0 = new Discord.RichEmbed()
                 .setTitle("aide Sondage")
@@ -3124,6 +3162,30 @@ message.channel.send(eith)
     })
 })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {
     function randomw(min, max){

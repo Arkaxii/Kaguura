@@ -381,6 +381,7 @@ client.on('ready', () => {
       var embed = new Discord.RichEmbed()
       .setAuthor(message.author.username , message.author.avatarURL )
       .setTitle("Suggestion")
+      .addField("ID:" + message.author.id)
       .setDescription(sayMessage)
       .setFooter(`Requested By | ${message.author.username}`)
       .setColor("RANDOM")

@@ -377,9 +377,9 @@ client.on('ready', () => {
       if(!message.channel.guild) return;
     
       message.react('🤖')
-
+ 
       var embed = new Discord.RichEmbed()
-      .setAuthor(message.author.username , message.author.avatarURL )
+      .setAuthor(message.author.username , message.author.id , message.author.avatarURL )
       .setTitle("Suggestion")
       .setDescription(sayMessage)
       .setFooter(`Requested By | ${message.author.username}`)

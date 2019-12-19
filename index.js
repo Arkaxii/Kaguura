@@ -952,7 +952,7 @@ if(command ==="set-psd"){
         loose.edit("Charge le pistolet et...PAN! Désolé mais j'ai pas visée le genou ");
         if(member){
         await member.kick(reson)
-        .catch(error => message.reply(`Désoler ${message.author} le jeux est cassé à cause de l'erreur suivant: ${error}`));
+        .catch(error => message.reply(`Désoler le jeux est cassé à cause de l'erreur suivant: ${error}`));
         }
        }
 
@@ -1545,13 +1545,13 @@ if(!rolerain)
 if(command ==="test"){
          if (message.author.presence.clientStatus = 'desktop') {
     message.channel.send("Tu es sur PC")
-    }
+    };
          if (message.author.presence.clientStatus = 'mobile') {
         message.channel.send("Tu es sur mobile")
-    }
+    };
          if (message.author.presence.clientStatus = 'web') {
         message.channel.send("Tu es sur web")
-    }
+    };
 
 
 }

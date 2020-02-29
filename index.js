@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.env.token;
+//const token = process.env.token;
 const money = require('discord-money'); 
 const ms = require('parse-ms')
 const config = require("./config.json");
@@ -11,6 +11,9 @@ const func = require('./function.js');
 const m3u8stream = require('m3u8stream');
 const parseTime   = require('m3u8stream/dist/parse-time');
 const ownerID =  "246395977450258432"
+const flip = require('flip-text')
+const zalgo = require('to-zalgo')
+const banish = require('to-zalgo/banish')
 
 
 client.on('ready', () => {
@@ -48,7 +51,7 @@ client.on('ready', () => {
     if (message.content === "?help") {
 
 
-            let pages = ['Menu','─▻Rolplay','─▻Utilitaire','─▻Argent','─▻Jeux','─▻Random','─▻Autre','─▻Admin'];
+            let pages = ['Menu','─▻Rolplay','─▻Utilitaire','─▻Texte','─▻Audio','─▻Argent','─▻Jeux','─▻Random','─▻Autre','─▻Admin'];
             let page = 1;
             const embetest = new Discord.RichEmbed()
             .setTitle(pages[page-1])
@@ -56,19 +59,24 @@ client.on('ready', () => {
             .setDescription(`
         
         ─▻__**Catégorie**__
+
         2 Rolplay 
 
         3 Utilitaire
+
+        4 texte
+
+        5 Audio
         
-        4 Argent
+        6 Argent
         
-        5 Jeux
+        7 Jeux
         
-        6 Random
+        8 Random
         
-        7 Autre
+        9 Autre
         
-        8 Admin
+        10 Admin
         `)  
             message.channel.send(embetest).then(message =>{
                 message.react("⏪").then( r =>{
@@ -80,252 +88,329 @@ client.on('ready', () => {
             if(reaction.emoji.name === '⏪' && user.id !== client.user.id){
             
             reaction.remove(user)
-                        if (page ===1) return;
-                        page--;
-            
-                        if(page ===1){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            ─▻__**Catégorie**__
-  
-                            2 Rolplay 
-                        
-                            3 Utilitaire
-                            
-                            4 Argent
-                            
-                            5 Jeux
-                            
-                            6 Random
-                            
-                            7 Autre
-                            
-                            8 Admin`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                        };
-                        if(page ===2){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            <<wink
-                            <<wave  
-                            <<sleep
-                            <<wake-up 
-                            <<slap 
-                            <<punch
-                            <<poke
-                            <<pat
-                            <<kiss
-                            <<kill
-                            <<hug`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-                         if(page ===3){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                    **<<sondage : **Fait un sondage pour avoir l'avie d'autre personne
-                    **<<timer : **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
-                    **<<info kagura : **Toute les infos a propo de Kagura
-                    **<<info discord : **Les info du serveur
-                    **<<infos : **Donne les infos d'un utilisateur ou de toi meme
-                    **<<secret : **Les prochain ajout sur le bot
-                    **<<avatar : **Recupere l'avatar pour l'afficher plus grand 
-                    **<<ping : **Pour connaitre son ping
-                    **<<say : **Fait dir ce que tu veut au bot 
-                    **<<invite : **Envoie un mp pour inviter le bot dans d'autre serveur
-                    **<<message :** Donne le nombre de message envoyer 
-                    **<<a-f :**traduit d'Anglais à Français
-                    **<<f-a :**Traduit du Français à l'Anglais
-                    **<<dico :** Cherche le mot dans le dictionnaire 
-                    **<<syntaxe-b :** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
-                    **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-                         if(page ===4){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            **<<inventaire : **Pour voir son inventaire
-                            **<<shop : **Pour fair des achat avec la THUNE que tu as acquis
-                            **<<pay : **pour donner de l'argent à d'autre utilisateur
-                            **<<compt : **pour voir à combien s'élève ton compt
-                            **<<daily : **pour recevoir 250$ par jour
-                            **<<pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 25$
-                            **<<roulette[montant de $] :**Test ta chance pour gagnier des $!`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-                         if(page ===5){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            **<<8ball : **Pose n'importe quelle question
-                            **<<refjeux : **trouve à quelle jeux appartien la référence 
-                            **<<refanime : **trouve à quelle anime appartien la référence 
-                            **<<quiz : **Test ton intelligence`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-                         if(page ===6){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            **<<pile : **1 chance sur 2
-                            **<<face : **1 chance sur 2
-                            **<<lancer6 : **imite un lancer de dé à 6 face 
-                            **<<lancer12 : **imite un lancer de dé à 12 face 
-                            **<<lancer20 :** imite un lancer de dé à 20 face`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-                         if(page ===7){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            **<<waifu : **Montre ta nouvelle waifu
-                            **<<monstre : **Dévoile le monstre en toi
-                            **<<del : **Delet this (meme)
-                            **<<hack : **Pour hacké une personne choisit
-                            **<<love : **Pour connaitre ton "âme soeur"
-                            **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)`)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-                         if(page ===8){ 
-                            embetest.setTitle(pages[page-1])
-                            embetest.setDescription(`
-                            **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
-                            `)  
-                            embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                            message.edit(embetest) 
-                         };
-            }
-            
-             
-            
-            if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
-            
-            reaction.remove(user)
-                if (page === pages.length) return;
-                page++;
-            
-                if(page ===1){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`     
-                    ─▻__**Catégorie**__
-  
-                    2 Rolplay 
+            if (page ===1) return;
+            page--;
+
+            if(page ===1){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                ─▻__**Catégorie**__
+
+                2 Rolplay 
+
+                3 Utilitaire
+        
+                4 texte
+        
+                5 Audio
                 
-                    3 Utilitaire
-                    
-                    4 Argent
-                    
-                    5 Jeux
-                    
-                    6 Random
-                    
-                    7 Autre
-                    
-                    8 Admin`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                };
-                if(page ===2){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    <<wink
-                    <<wave  
-                    <<sleep
-                    <<wake-up 
-                    <<slap 
-                    <<punch
-                    <<poke
-                    <<pat
-                    <<kiss
-                    <<kill
-                    <<hug`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-                 if(page ===3){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    **<<sondage : **Fait un sondage pour avoir l'avie d'autre personne
-                    **<<timer : **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
-                    **<<info kagura : **Toute les infos a propo de Kagura
-                    **<<info discord : **Les info du serveur
-                    **<<infos : **Donne les infos d'un utilisateur ou de toi meme
-                    **<<secret : **Les prochain ajout sur le bot
-                    **<<avatar : **Recupere l'avatar pour l'afficher plus grand 
-                    **<<ping : **Pour connaitre son ping
-                    **<<say : **Fait dir ce que tu veut au bot 
-                    **<<invite : **Envoie un mp pour inviter le bot dans d'autre serveur
-                    **<<message :** Donne le nombre de message envoyer 
-                    **<<a-f :**traduit d'Anglais à Français
-                    **<<f-a :**Traduit du Français à l'Anglais
-                    **<<dico :** Cherche le mot dans le dictionnaire 
-                    **<<syntaxe-b :** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
-                    **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-                 if(page ===4){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    **<<inventaire : **Pour voir son inventaire
-                    **<<shop : **Pour fair des achat avec la THUNE que tu as acquis
-                    **<<pay : **pour donner de l'argent à d'autre utilisateur
-                    **<<compt : **pour voir à combien s'élève ton compt
-                    **<<daily : **pour recevoir 250$ par jour
-                    **<<pierre / ?papier / ?ciseaux : **pour gagnier 50 $ ou perdre 25$
-                    **<<roulette[montant de $] :**Test ta chance pour gagnier des $!`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-                 if(page ===5){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    **<<8ball : **Pose n'importe quelle question
-                    **<<refjeux : **trouve à quelle jeux appartien la référence 
-                    **<<refanime : **trouve à quelle anime appartien la référence 
-                    **<<quiz : **Test ton intelligence`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-                 if(page ===6){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    **<<pile : **1 chance sur 2
-                    **<<face : **1 chance sur 2
-                    **<<lancer6 : **imite un lancer de dé à 6 face 
-                    **<<lancer12 : **imite un lancer de dé à 12 face 
-                    **<<lancer20 :** imite un lancer de dé à 20 face`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-                 if(page ===7){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    **<<waifu : **Montre ta nouvelle waifu
-                    **<<monstre : **Dévoile le monstre en toi
-                    **<<del : **Delet this (meme)
-                    **<<hack : **Pour hacké une personne choisit
-                    **<<love : **Pour connaitre ton "âme soeur"
-                    **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)`)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-                 if(page ===8){ 
-                    embetest.setTitle(pages[page-1])
-                    embetest.setDescription(`
-                    **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
-                    `)  
-                    embetest.setFooter(`Page ${page} sur ${pages.length}`)  
-                    message.edit(embetest) 
-                 };
-            }
+                6 Argent
+                
+                7 Jeux
+                
+                8 Random
+                
+                9 Autre
+                
+                10 Admin`)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+            };
+            if(page ===2){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                <<wink
+                <<wave  
+                <<sleep
+                <<wake-up 
+                <<slap 
+                <<punch
+                <<poke
+                <<pat
+                <<kiss
+                <<kill
+                <<hug`)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===3){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<mp :** Pour fair une suggestion ou rapporté ce qui ne va pas directement au créateur
+                **<<psd :** Pour avoir un pseudo random (sa fusionne 2 pseudos random du serveur)
+                **<<sondage : **Pour faire apparaitre le menu sondage
+                **<<timer : **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
+                **<<info kagura : **Toute les infos a propo de Kagura
+                **<<info discord : **Les info du serveur
+                **<<secret : **Les prochain ajout sur le bot
+                **<<avatar : **Recupere l'avatar pour l'afficher plus grand 
+                **<<ping : **Pour connaitre son ping
+                **<<say : **Fait dir ce que tu veut au bot 
+                **<<invite : **Envoie un mp pour inviter le bot dans d'autre serveur
+                **<<message :** Donne le nombre de message envoyer 
+                **<<a-f :**traduit d'Anglais à Français
+                **<<f-a :**Traduit du Français à l'Anglais
+                **<<dico :** Cherche le mot dans le dictionnaire `)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===4){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<syntaxe-b :** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
+                **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**
+                **<<flip :** Pour inverser ɐs ǝɯɯoɔ (comme sa*) 
+                **<<zalgo :** Pour écrire cͩ͗ͩoͯͮ̈́m̍̆͗m̨̃͑e͊̓ͦ ͗͒͢s̊̉͑aͦ̌̈́
+
+                `)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===5){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<play [URL vidéo] : **Pour jouer ta musique dans un salon vocale
+                **<<chill : **Pour jouer da la musique tranquile reposant en gros chill :p
+                **<<s-r-e : **Pour jouer de la musique Synthwave retro electro / retrowave
+                **<<audio-sm : **Pour des musique de 10H qui te ferons perdre la raison
+                **<<stop : **Baaaa pour me déconnécter du salon
+                **<<skip : **Pour skip la chanson en cour
+                `)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===6){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<inventaire : **Pour voir son inventaire
+                **<<shop : **Pour fair des achat avec la THUNE que tu as acquis
+                **<<pay : **pour donner de l'argent à d'autre utilisateur
+                **<<compt : **pour voir à combien s'élève ton compt
+                **<<daily : **pour recevoir 250$ par jour
+                **<<pierre / <<papier / <<ciseaux : **pour gagnier 50 $ ou perdre 25$
+                **<<roulette[montant de $] :**Test ta chance pour gagnier des $!`)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===7){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<8ball : **Pose n'importe quelle question
+                **<<either : **Le jeu "tu préfère" 
+                **<<refjeux : **trouve à quelle jeux appartien la référence 
+                **<<refanime : **trouve à quelle anime appartien la référence 
+                **<<quiz : **Test ton intelligence
+                **<<kick_roulette:** Soit tu gagne et tu reste soit tu perds et tu vire du serveur
+                **<<mute_roulette:** Soit tu gagne et tu peut parler soit tu perds et tu te tais`)  
+                
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===8){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<pile : **1 chance sur 2
+                **<<face : **1 chance sur 2
+                **<<lancer6 : **imite un lancer de dé à 6 face 
+                **<<lancer12 : **imite un lancer de dé à 12 face 
+                **<<lancer20 :** imite un lancer de dé à 20 face`)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===9){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<paradoxe :** Pour voir divers paradoxe 
+                **<<café :** Pour avoir ou donné un café
+                **<<cookies :** Pour avoir ou donné des cookies
+                **<<estimation :** Pour fair une estimation de ton (ou de la personne tag) genre ,Age et si tu es humain ou non
+                **<<chargement :** Barre de chargement (inutile donc indispensable) 
+                **<<useless :**Montre un site totalement inutile
+                **<<waifu : **Montre ta nouvelle waifu
+                **<<monstre : **Dévoile le monstre en toi
+                **<<del : **Delet this (meme)
+                **<<hack : **Pour hacké une personne choisit
+                **<<love : **Pour connaitre ton "âme soeur"
+                **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)`)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+             if(page ===10){ 
+                embetest.setTitle(pages[page-1])
+                embetest.setDescription(`
+                **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
+                `)  
+                embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+                message.edit(embetest) 
+             };
+}
+
+ 
+
+if(reaction.emoji.name === '⏩' && user.id !== client.user.id){
+
+reaction.remove(user)
+    if (page === pages.length) return;
+    page++;
+
+    if(page ===1){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        ─▻__**Catégorie**__
+
+        2 Rolplay 
+
+        3 Utilitaire
+
+        4 texte
+
+        5 Audio
+        
+        6 Argent
+        
+        7 Jeux
+        
+        8 Random
+        
+        9 Autre
+        
+        10 Admin`)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+    };
+    if(page ===2){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        <<wink
+        <<wave  
+        <<sleep
+        <<wake-up 
+        <<slap 
+        <<punch
+        <<poke
+        <<pat
+        <<kiss
+        <<kill
+        <<hug`)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===3){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<mp :** Pour fair une suggestion ou rapporté ce qui ne va pas directement au créateur
+        **<<psd :** Pour avoir un pseudo random en fusionnant 2 pseudos random du serveur
+        **<<sondage : **Pour faire apparaitre le menu sondage
+        **<<timer : **Pour avoir un timer qui peut durer quelque seconde comme plusieur jour
+        **<<info kagura : **Toute les infos a propo de Kagura
+        **<<info discord : **Les info du serveur
+        **<<secret : **Les prochain ajout sur le bot
+        **<<avatar : **Recupere l'avatar pour l'afficher plus grand 
+        **<<ping : **Pour connaitre son ping
+        **<<say : **Fait dir ce que tu veut au bot 
+        **<<invite : **Envoie un mp pour inviter le bot dans d'autre serveur
+        **<<message :** Donne le nombre de message envoyer 
+        **<<a-f :**traduit d'Anglais à Français
+        **<<f-a :**Traduit du Français à l'Anglais
+        **<<dico :** Cherche le mot dans le dictionnaire `)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===4){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<syntaxe-b :** Pour savoir **comment** ~~ne pas~~ *fair* __ça__ ||et d'autre chose||
+        **<<syntaxe-c :** Pour savoir comment écrire en couleur **__NE FONCTIONNE PAS SUR PORTABLE__**
+        **<<flip :** Pour inverser ɐs ǝɯɯoɔ (comme sa*) 
+        **<<zalgo :** Pour écrire cͩ͗ͩoͯͮ̈́m̍̆͗m̨̃͑e͊̓ͦ ͗͒͢s̊̉͑aͦ̌̈́
+
+        `)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===5){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<play [URL vidéo] : **Pour jouer ta musique dans un salon vocale
+        **<<chill : **Pour jouer da la musique tranquile reposant en gros chill :p
+        **<<s-r-e : **Pour jouer de la musique Synthwave retro electro / retrowave
+        **<<audio-sm : **Pour des musique de 10H qui te ferons perdre la raison
+        **<<stop : **Baaaa pour me déconnécter du salon
+        **<<skip : **Pour skip la chanson en cour
+        `)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===6){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<inventaire : **Pour voir son inventaire
+        **<<shop : **Pour fair des achat avec la THUNE que tu as acquis
+        **<<pay : **pour donner de l'argent à d'autre utilisateur
+        **<<compt : **pour voir à combien s'élève ton compt
+        **<<daily : **pour recevoir 250$ par jour
+        **<<pierre / <<papier / <<ciseaux : **pour gagnier 50 $ ou perdre 25$
+        **<<roulette[montant de $] :**Test ta chance pour gagnier des $!`)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===7){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<8ball : **Pose n'importe quelle question
+        **<<either : **Le jeu "tu préfère" 
+        **<<refjeux : **trouve à quelle jeux appartien la référence 
+        **<<refanime : **trouve à quelle anime appartien la référence 
+        **<<quiz : **Test ton intelligence
+        **<<kick_roulette:** Soit tu gagne et tu reste soit tu perds et tu vire du serveur
+        **<<mute_roulette:** Soit tu gagne et tu peut parler soit tu perds et tu te tais`)  
+        
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===8){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<pile : **1 chance sur 2
+        **<<face : **1 chance sur 2
+        **<<lancer6 : **imite un lancer de dé à 6 face 
+        **<<lancer12 : **imite un lancer de dé à 12 face 
+        **<<lancer20 :** imite un lancer de dé à 20 face`)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===9){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<paradoxe :** Pour voir divers paradoxe 
+        **<<café :** Pour avoir ou donné un café
+        **<<cookies :** Pour avoir ou donné des cookies
+        **<<estimation :** Pour fair une estimation de ton (ou de la personne tag) genre ,Age et si tu es humain ou non
+        **<<chargement :** Barre de chargement (inutile donc indispensable) 
+        **<<useless :**Montre un site totalement inutile
+        **<<waifu : **Montre ta nouvelle waifu
+        **<<monstre : **Dévoile le monstre en toi
+        **<<del : **Delet this (meme)
+        **<<hack : **Pour hacké une personne choisit
+        **<<love : **Pour connaitre ton "âme soeur"
+        **<<fusion : **FUUUUUUUUSION !!(fusionne des pseudos)`)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+     if(page ===10){ 
+        embetest.setTitle(pages[page-1])
+        embetest.setDescription(`
+        **<<help admin** Si BIEN EVIDEMENT tu possèdes les droit Administrateur
+        `)  
+        embetest.setFooter(`Page ${page} sur ${pages.length}`)  
+        message.edit(embetest) 
+     };
+}
+        })
+})
                     })
-            })
-                                })
-                            };
+                };
+
 
 
 
@@ -344,7 +429,7 @@ client.on('ready', () => {
 **<<ban:** Peut etre accompagner d'une raison
 ==========🤖**Admin**🤖==========
 `)
-      .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
+      .setFooter(`created by Arkaxii#5194 `)
   message.channel.send(helpad);
       }
     
@@ -411,7 +496,73 @@ for (var i in eventr){
                       message.channel.send(respect);
     }
     }
-/*
+
+
+    let eventb = ['bizarre*'];
+
+    setTimeout(() => {
+        if(message.author.id === "635547572983037970"){
+            let fondintextb = false;
+            for (var i in eventb){
+                if (message.content.toLocaleLowerCase().includes(eventb[i].toLocaleLowerCase()))
+                fondintextb = true;
+                if(fondintextb){
+                                  message.channel.send("Ba mince, c'est BIZZARD ce que tu dit");
+                }
+            }
+           }
+      },1000); 
+      
+
+   let eventc = ['Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?'];
+   setTimeout(() => {
+   if(message.author.id === "635547572983037970"){
+   let fondintextc = false;
+   for (var i in eventc){
+       if (message.content.toLocaleLowerCase().includes(eventc[i].toLocaleLowerCase()))
+       fondintextc = true;
+       if(fondintextc){
+                         message.channel.send("Ceux qui font les grammair-nazi ont toujour quelque chose a compenser :3 ");
+       }
+
+}
+}
+
+},1000); 
+
+let eventd = [`Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as un peu l'air d'une autiste. =P`];
+    setTimeout(() => {
+   if(message.author.id === "635547572983037970"){
+   let fondintextd = false;
+   for (var i in eventd){
+       if (message.content.toLocaleLowerCase().includes(eventd[i].toLocaleLowerCase()))
+       fondintextd = true;
+       if(fondintextd){
+                         message.channel.send("On dirai que j'ai toucher un point sensible :)");
+       }
+
+}
+   }
+    
+},1000); 
+
+let eventf = [`Pourquoi tu esquives encore, tu es vexée ? =]`];
+setTimeout(() => {
+   if(message.author.id === "635547572983037970"){
+   let fondintextf = false;
+   for (var i in eventf){
+       if (message.content.toLocaleLowerCase().includes(eventf[i].toLocaleLowerCase()))
+       fondintextf = true;
+       if(fondintextf){
+                         message.channel.send("oh non non, j'ésquive pas en générale je rentre dedant mais c'est pas bien de défonser des petit bots qui débute :3 ");
+       }
+
+}
+}
+    
+},1000); 
+
+    /*
     let eventt = ['👆'];
 
     if(message.author.id !== "635547572983037970")return;
@@ -421,7 +572,7 @@ var kanna = [
     "https://i.imgur.com/8BcgdaJ.png"
     ]
 var kana = kanna[Math.floor(Math.random() * kanna.length)] ;
-
+ 
 
 
 
@@ -442,11 +593,64 @@ if(fondintextt){
 
 
 
+if(message.isMentioned(client.users.get('511235137791459332'))){
+await db.add(`ping_${message.author.id}`,1)
+setTimeout((db.subtract(`ping_${message.author.id}`,14)),60*60000)
+let pg = await db.fetch(`ping_${message.author.id}`);
+
+if(pg === 1){
+ message.channel.send("On ne me PING PAS !")
+};
+if(pg === 2 ){
+     message.channel.send("Tu perds ton temp")
+    };
+    if(pg === 3 ){
+         message.channel.send("Ah ok tu veut jouer à sa")
+        };
+        if(pg ===4 ){
+             message.channel.send("Nan mais j'ai tout mon temp")
+            };
+            if(pg === 5 ){
+                 message.channel.send("Fait gaff derrière toi")
+                };
+                if(pg === 6 ){
+                     message.channel.send("J'espère que tu ne t'es pas fait avoir :p")
+                    };
+                    if(pg === 7 ){
+                         message.channel.send("Ho wait je peut pas te répondre je ne suis q'un bot qui réagie à des commandes spécifique")
+                        };
+                        if(pg === 8 ){
+                             message.channel.send("Et oui pas de chance. Mais en te voyant me ping sans cesse je me dit que je suis mieux comme sa :p")
+                            };
+                            if(pg === 9 ){
+                                 message.channel.send("Apres je comprend tu n'as pas d'amis donc tu me fait ch*er à leurs place")
+                                };
+                                if(pg === 10 ){
+                                     message.channel.send("Enfaite tu veut voir toute mes phrase hein ?")
+                                    };
+                                    if(pg === 11 ){
+                                         message.channel.send("Comme toute bonne personne qui ce respecte dans tous les jeux on fait ch*er les pnj pour voire toutes leur phrase j'usqua que sa face une boucle")
+                                        };
+                                        if(pg === 12 ){
+                                             message.channel.send("Mais qui te dit que je suis comme eux ?")
+                                            };
+                                            if(pg === 13 ){
+                                                 message.channel.send("Et oui car je suis moi toi t'es chia...toi")
+                                                };
+                                                if(pg === 14 ){
+                                                     message.channel.send("La suite prochainement")
+                                                     db.subtract(`ping_${message.author.id}`,14)
+
+                                                    };
+     
+                                                
+                                                }
+
 
 
 
      });
- 
+
   client.on ("ready", () => {
   answered = true;
   cAnswer = "";
@@ -731,6 +935,10 @@ if(fondintextt){
 
 
 
+
+
+
+
 client.on("message", async message => {
 
      db.add(`globalMessages_${message.author.id}`, 1);
@@ -758,6 +966,108 @@ client.on("message", async message => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  if (command ==="mute") {
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande")
+    let member = message.mentions.members.first()
+    if (!member) return message.channel.send("Membre introuvable")
+    tempban = parseInt(args.join('').replace(member, ''));
+    if(isNaN(tempban))
+    return message.channel.send("N'oublie de metre le temps en minute du mute apres le tag");
+    if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("Vous ne pouvez pas mute ce membre")
+    if (!member.manageable) return message.channel.send("Je ne peux pas mute ce membre")
+    let muterole = message.guild.roles.find(role => role.name === 'Muted')
+    if (muterole) {
+        member.addRole(muterole)
+        message.channel.send(member+" Tu as été mute pour "+tempban+" min")
+    }
+    else {
+        message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
+            message.guild.channels.filter(channel => channel.type === 'text').forEach(function (channel) {
+                channel.overwritePermissions(role, {
+                    SEND_MESSAGES: false
+                })
+            })
+            member.addRole(role)
+            message.channel.send(member+" as été mute ")
+        })
+    }
+    setTimeout(() => {
+        member.removeRole(muterole, `${member} peut reparler`);
+      }, tempban * 60000); 
+}
+  {
+    function random(min, max){
+       min = Math.ceil(1);
+       max = Math.floor(3);
+       randnum = Math.floor(Math.random() * (max - min +1) +min);
+   }
+if(command ==="mute_roulette"){
+random();
+
+if (randnum == 1){
+const win = await message.channel.send("Charge le pistolet et");
+win.edit("Charge le pistolet et.");
+win.edit("Charge le pistolet et..");
+win.edit("Charge le pistolet et...");
+win.edit("Charge le pistolet et...Clik! GG Tu gagne le droit de refaire une roulette jusqu'a que tu perde!  ");
+}
+
+if (randnum == 2){
+const win = await message.channel.send("Charge le pistolet et");
+win.edit("Charge le pistolet et.");
+win.edit("Charge le pistolet et..");
+win.edit("Charge le pistolet et...");
+win.edit("Charge le pistolet et...Clik! GG Tu gagne le droit de refaire une roulette jusqu'a que tu perde!  ");
+}
+
+if (randnum == 3){
+const deaf = await message.channel.send("Charge le pistolet et");
+deaf.edit("Charge le pistolet et.");
+deaf.edit("Charge le pistolet et..");
+deaf.edit("Charge le pistolet et...");
+deaf.edit("Charge le pistolet et...PAN!  ");
+
+let mutrole = message.guild.roles.find( 'name' , 'Muted' )
+if(!mutrole)
+message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
+message.guild.channels.filter(channel => channel.type === 'text').forEach(function (channel) {
+channel.overwritePermissions(role, {
+    SEND_MESSAGES: false
+})
+})
+})
+
+let member = message.guild.member(message.author);
+
+member.addRole(mutrole, `A perdu a la roulette = 1h mute`)
+await message.channel.send("Ahahahah! Oups sa ma échaper... Bon baa à dans 1h 😛")
+
+setTimeout(() => {
+member.removeRole(mutrole);
+}, 60 * 60000); 
+}
+}
+}
 
   if(command === "paradoxe"){
     const para1 = new Discord.RichEmbed() 
@@ -981,25 +1291,6 @@ if(command ==="set-psd"){
     }}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   if (command === "dico"){
     const chepasécriree = args.join(" ");
     if(!chepasécriree)  
@@ -1352,7 +1643,7 @@ client.on('messageReactionAdd',async (reaction, user) =>{
      }
 
      if(args[0] <= 0){
-       return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h\"");
+       return message.channel.send(":x: " + "| Entré une valeur suivi de \"s ou m ou h ou d\"");
      }
 
      message.channel.send(":white_check_mark: " + "| Timer lancer pour: " + `${ms2(ms2(Timer), {long: true})}`)
@@ -1431,7 +1722,7 @@ if(!rolerain)
   }
 
   if(command === "purge") {
-    if(!message.member.permissions.has('ADMINISTRATOR') )
+    if(!message.member.permissions.has('MANAGE_MESSAGES') )
     return message.reply("Désoler, tu n'as pas la permission d'utiliser cette commande!");
     const deleteCount = parseInt(args[0], 10);
 
@@ -1530,102 +1821,242 @@ if(!rolerain)
            }
         }}
    
+if(command === "café"){
+    let member = message.mentions.members.first();
+    if(!member){
+    var café_embedOW = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle(`Et 1 café pour ${message.author.username} `)
+    .setThumbnail("https://i.imgur.com/FKc9QuV.png")
+    .setFooter("Sa sent bon le café numérique")
+message.channel.send(café_embedOW);
+    }else{
+var café_embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setTitle(`Et 1 café de la part de ${message.author.username} pour ${member.displayName} `)
+.setThumbnail("https://i.imgur.com/FKc9QuV.png")
+.setFooter("Sa sent bon le café numérique")
+message.channel.send(café_embed);
+    }
+}
 
-
-
-
-       
-        if (command ==="mute") {
-            if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande")
-            let member = message.mentions.members.first()
-            if (!member) return message.channel.send("Membre introuvable")
-            if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("Vous ne pouvez pas mute ce membre")
-            if (!member.manageable) return message.channel.send("Je ne peux pas mute ce membre")
-            let muterole = message.guild.roles.find(role => role.name === 'Muted')
-            if (muterole) {
-                member.addRole(muterole)
-                message.channel.send("Tu as été mute pour 1h")
+        if(command === "cookies"){
+            let member = message.mentions.members.first();
+            if(!member){
+            var cookies_embedOW = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle(`Et voila des cookies pour ${message.author.username} `)
+            .setThumbnail("https://i.imgur.com/aKrTN5q.jpg")
+            .setFooter("Sa sent bon les cookies numérique")
+        message.channel.send(cookies_embedOW);
+            }else{
+        var cookies_embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTitle(`Et voila des cookies de la part de ${message.author.username} pour ${member.displayName} `)
+        .setThumbnail("https://i.imgur.com/aKrTN5q.jpg")
+        .setFooter("Sa sent bon les cookies numérique")
+        message.channel.send(cookies_embed);
             }
-            else {
-                message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
-                    message.guild.channels.filter(channel => channel.type === 'text').forEach(function (channel) {
-                        channel.overwritePermissions(role, {
-                            SEND_MESSAGES: false
-                        })
-                    })
-                    member.addRole(role)
-                    message.channel.send(member + ' a été mute :white_check_mark:')
-                })
-            }
-            setTimout(() => {
-                member.removeRole(mutedRole, `tu peut reparler`);
-              }, minutes * 3600000); 
+        }
+if(command === "flip"){
+    var flipmessage = args.join(" ")
+if(!flipmessage){
+    message.channel.send("si tu ne met rien je ne peut rien fair");
+}
+if(flipmessage === "the table"){
+  return message.channel.send("(╯°□°）╯︵ ┻━┻")
+} else {
+        message.channel.send(flip(flipmessage))
+}
+}
+if(command === "zalgo"){ //penser a metre la const qui est en haut
+
+    var zal = args.join(" ")
+    if(!zal){
+        message.channel.send("si tu ne met rien je ne peut rien fair");
+    }
+            message.channel.send(zalgo(zal))
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+                    if(command ==="psd"){
+        
+                        m = message.guild.members.random().displayName
+                        d = message.guild.members.random().displayName;
+                                    
+                        b = d.substring(0, 4);
+                        nB = b + (m.substring(4, 10))
+                    
+                        message.member.setNickname(nB);
+                        message.channel.send("Ton nouveaux pseudo sera: "+nB)
+                    } 
+        
+                    
+if(command === "useless") {
+   
+    var situ = [
+        "http://www.leduchamp.com/",
+        "http://r33b.net/",
+        "http://adultcatfinder.com/",
+        "http://catcordion.sergethew.com/",
+        "http://www.papertoilet.com/",
+        "http://www.ouaismaisbon.ch/",
+        "http://eelslap.com/",
+        "http://www.koalastothemax.com/",
+        "https://www.pointerpointer.com/",
+        "http://seoi.net/penint/",
+        "http://www.patience-is-a-virtue.org/",
+        "https://cant-not-tweet-this.com/",
+        "https://trypap.com/",
+        "http://www.trashloop.com/",
+        "http://dogs.are.the.most.moe/",
+        "http://endless.horse/",
+        "http://make-everything-ok.com/",
+        "https://findtheinvisiblecow.com/",
+        "http://hackertyper.com/",
+        "https://thisissand.com/",
+        "http://www.clicktoremove.com/",
+        "http://fallingguy.com/",
+        "https://www.randomthingstodo.com/",
+        "http://www.whatsmystarbucksname.com/",
+        "http://www.fallingfalling.com/",
+        "http://pixelsfighting.com/",
+        "http://whereisthesloth.com/",
+        "http://hmpg.net/"
+
+
+    ];
+
+    var sit = situ[Math.floor(Math.random() * situ.length)] ;
+    var sit_embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle('>> _Inutile donc indispensable!_ <<')
+    .setURL(sit)
+    .setDescription("Ce qui est inutile est utile car c'est inutile! N'oublie jamais sa!")
+    message.channel.send(sit_embed);
+};
+
+
+
+        
+        if(command==="chargement"){
+let m = await message.channel.send("{}═══════════════════════")
+m.edit("{═}══════════════════════")
+m.edit("{══}═════════════════════")
+m.edit("{═══}════════════════════")
+m.edit("{════}═══════════════════")
+m.edit("{═════}══════════════════")
+m.edit("{══════}═════════════════")
+m.edit("{═══════}════════════════")
+m.edit("{════════}═══════════════")
+m.edit("{═════════}══════════════")
+m.edit("{══════════}═════════════")
+m.edit("{═══════════}════════════")
+m.edit("{════════════}═══════════")
+m.edit("{═════════════}══════════")
+m.edit("{══════════════}═════════")
+m.edit("{═══════════════}════════")
+m.edit("{════════════════}═══════")
+m.edit("{═════════════════}══════")
+m.edit("{══════════════════}═════")
+m.edit("{═══════════════════}════")
+m.edit("{════════════════════}═══")
+m.edit("{═════════════════════}══")
+m.edit("{══════════════════════}═")
+m.edit("{═══════════════════════}")
+m.edit("https://i.imgur.com/RKMuXbh.jpg")
         }
 
 
 
-if(command ==="t2"){
 
-let mutrole = message.guild.roles.find( 'name' , 'MUTE' )
-if(!mutrole)
-    guild.createRole({
-        name: 'MUTE',
-        color: 'RED',
-      })
-    
-    
-      let mutedRole = message.guild.find(role => role.name == "Mute");
-  // This is the member you want to mute
-  let member = message.mentions.members.first();
+                    {
 
-  // Mute the user
-  member.addRole(mutedRole, ` Mute pour ${minutes} minutes. Raisons : <<Les morts ne parle pas.>>`);
+                        function random0(min, max){
+                            min = Math.ceil(1);
+                            max = Math.floor(3);
+                            race = Math.floor(Math.random() * (max - min +1) +min);
+                        }
+                        function random1(min, max){
+                           min = Math.ceil(1);
+                           max = Math.floor(3);
+                           genr = Math.floor(Math.random() * (max - min +1) +min);
+                       }
+                       function random2(min, max){
+                        min = Math.ceil(2);
+                        max = Math.floor(100);
+                        agee = Math.floor(Math.random() * (max - min +1) +min);
+                    }
+                    function random3(min, max){
+                        min = Math.ceil(1);
+                        max = Math.floor(100);
+                        pourcent = Math.floor(Math.random() * (max - min +1) +min);
+                    }
+                    function random4(min, max){
+                        min = Math.ceil(1);
+                        max = Math.floor(100);
+                        complement = Math.floor(Math.random() * (max - min +1) +min);
+                    }
+                    function random5(min, max){
+                        min = Math.ceil(1);
+                        max = Math.floor(100);
+                        pourcent2 = Math.floor(Math.random() * (max - min +1) +min);
+                    }
+                    function random6(min, max){
+                        min = Math.ceil(1);
+                        max = Math.floor(100);
+                        complement2 = Math.floor(Math.random() * (max - min +1) +min);
+                    }
+if(command ==="estimation"){
 
-  // Unmute them after x minutes
-  setTimout(() => {
-    member.removeRole(mutedRole, `Temporary mute expired.`);
-  }, minutes * 3600000); 
+    let target = message.mentions.users.first() || message.author;
+    random0()
+    random1()
+    random2()
+    random3()
+    random4()
+    random5()
+    random6()
+
+if(genr === 1 ){genr = "Homme"}
+if(genr === 2 ){genr = "Femme"}
+if(genr === 3 ){genr = "????"}
+if(race === 1 ){race = "Humaine"}
+if(race === 2 ){race = "Robotique"}
+if(race === 3 ){race = "Réptilien"}
+
+
+    var estimation = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setThumbnail(target.displayAvatarURL)
+    .setTitle(`Scanne fini`)
+    .setDescription("**Genre:** "+genr+" à "+ pourcent+","+ complement +"% \n**Age: **"+agee+" ans à "+ pourcent2+","+ complement2+"% \n**Race: **"+race+" à 100% " )
+    message.channel.send(estimation);
+
+
 }
-
-
-
-
-
-
-
-if(command ==="test"){
-         if (message.author.presence.clientStatus = 'desktop') {
-    message.channel.send("Tu es sur PC")
-    };
-         if (message.author.presence.clientStatus = 'mobile') {
-        message.channel.send("Tu es sur mobile")
-    };
-         if (message.author.presence.clientStatus = 'web') {
-        message.channel.send("Tu es sur web")
-    };
-
-
 }
-
-
-            if(command ==="psd"){
-
-            
-                const pse = args.join(" ");
-            
-                message.member.setNickname(pse);
-            } 
-
-
-
-            
-
-            
-
-
-
-
-
 
             if(command === "love"){
                 var l = await message.channel.send(message.author.username)
@@ -1791,55 +2222,6 @@ var hac = ha[Math.floor(Math.random() * ha.length)] ;
 
 
 }
-
-
-
-
-
-
-
-if(command === "useless") {
-   
-    var situ = [
-        "http://www.leduchamp.com/",
-        "http://r33b.net/",
-        "http://adultcatfinder.com/",
-        "http://catcordion.sergethew.com/",
-        "http://www.papertoilet.com/",
-        "http://www.ouaismaisbon.ch/",
-        "http://eelslap.com/",
-        "http://www.koalastothemax.com/",
-        "https://www.pointerpointer.com/",
-        "http://seoi.net/penint/",
-        "http://www.patience-is-a-virtue.org/",
-        "https://cant-not-tweet-this.com/",
-        "https://trypap.com/",
-        "http://www.trashloop.com/",
-        "http://dogs.are.the.most.moe/",
-        "http://endless.horse/",
-        "http://make-everything-ok.com/",
-        "https://findtheinvisiblecow.com/",
-        "http://hackertyper.com/",
-        "https://thisissand.com/",
-
-
-    ];
-
-    var sit = situ[Math.floor(Math.random() * situ.length)] ;
-    var sit_embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setTitle('>> _Inutile donc indispensable!_ <<')
-    .setURL(sit)
-    .setDescription("Ce qui est inutile est utile car c'est inutile! N'oublie jamais sa!")
-    message.channel.send(sit_embed);
-};
-
-
-
-
-
-
-
 
 
                if(command === "wink") {
@@ -2162,7 +2544,7 @@ if(command === "useless") {
     let secret = new Discord.RichEmbed()
     .setTitle(`Requested By | ${message.author.username}`)
     .setDescription(`
-===================**Ajout prochain**===================
+======**Ajout prochain**======
     
 __**V1**__
     
@@ -2183,9 +2565,9 @@ __**V3**__
 **-RollBack de serveur à triple sécuritée** 
 (requieres 2 modo et le propriétaire du serveur )
              
-===================**Ajout prochain**===================
+======**Ajout prochain**======
 `)
-    .setFooter(`created by ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)
+    .setFooter(`created by Arkaxii#5194 `)
     message.channel.send(secret);
     }
    {
@@ -2424,7 +2806,7 @@ __**V3**__
                 .addField(`Prefix` , prefix)
                 .addField("Language  NodeJS ")
                 .addField(`Utilisation de la RAM en MB ` ,(process.memoryUsage().rss / 1048576).toFixed() )
-                .setFooter(`Crée par ๖̶̶̶ۣۣۜۜζ͜͡Arkaxii#5194 `)            
+                .setFooter(`Crée par Arkaxii#5194 `)            
     
                 message.channel.send(infobot);
                 };
@@ -2536,18 +2918,6 @@ message.channel.send(eith)
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-    
          if(message.content.startsWith(prefix + "8ball")){
                     let args = message.content.split(" ").slice(1);
                     let question = args.join(" ")
@@ -3402,7 +3772,7 @@ var niv1 = new Discord.RichEmbed()
 .setDescription(`Mettre Carac et présentation du mob`)
 .setImage(mobs)
 .setFooter("Pour attaquer: ⚔ || Pour fuire: ↩")
-db.subtract(`xp_${message.author.id}`,xp);
+
 message.channel.send(niv1)
 .then(async function (message ) {
     await message.react("⚔")
@@ -3410,7 +3780,7 @@ message.channel.send(niv1)
 
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
-
+db.subtract(`xp_${message.author.id}`,xp);
             await reaction.remove()
 
             niv1.setTitle("a perdu face à {mettre le nom du mob}")
@@ -4170,9 +4540,11 @@ if (command === "class") {
 })
 };
 });
-/*client.on("message", async message => {
-        
-    const ytdl = require('ytdl-core');
+
+const queue = new Map();
+const ytdl = require('ytdl-core');
+client.on("message", async message => {
+
 
 if (message.content.indexOf(config.prefix) !== 0) return;
 
@@ -4182,58 +4554,284 @@ const command = args.shift().toLowerCase();
    db.add(`globalMessages_${message.author.id}`, 1);
    db.add(`guildMessages_${message.guild.id}_${message.author.id}`, 1);
 
+   /*
    if(command === "play"){
-    const streamOptions = {cherche: 0, volume: 1};
-    const broadcast = client.createVoiceBroadcast();
     if(!message.member.voiceChannel)
     return message.channel.send("Va dans un vocal avant");
-
+if(message.guild.me.voiceChannel)
+return message.channel.send("Je suis déja occupé")
     if(!args[0])
     return message.channel.send("C'est mieux avec l'url :p");
-    let validate = await ytdl.validateURL(args[0]);
+    let validate = ytdl.validateURL(args[0]);
     if (!validate) 
     return message.channel.send("Un url valid serai mieux :p");
     let info = await ytdl.getInfo(args[0]);
-        let voiceConnection = message.member.voiceChannel.join()
-        .then(voiceConnection => {
-        const stream = ytdl(args[0], { filter : 'audioonly' });
-        broadcast.playStream(stream);
-        const Dispatcher = Connection.playBroadcast(broadcast);
-        })
-        .catch(console.error);
-    message.channel.send(`en cour: ${info.title}`);
+        let connection = await message.member.voiceChannel.join();
+        let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1}) 
+
+        message.channel.send(`en cour: ${info.title}`);
 
     }
-       if(command === "leave"){
+*/
+if(command ==="leave"){
+if(!message.member.voiceChannel)
+return message.channel.send("connecte toi au salon vocale");
+if(!message.guild.me.voiceChannel)
+return message.channel.send("Je ne suis pas connécté");
+if(message.guild.me.voiceChannel !== message.member.voiceChannel)
+return message.channel.send("tu doit te connecter au meme salon vocale");
+message.guild.me.voiceChannel.leave();
+message.channel.send("OK");
+
+}
+
+
+
+   if(command === "audio-sm"){
+
+    var pétage_de_cable_10H = [
+
+
+        "https://www.youtube.com/watch?v=-50NdPawLVY", //crab rave
+        "https://www.youtube.com/watch?v=BzV4BkxtyYs", //EEEAAAOOO
+        "https://www.youtube.com/watch?v=wZZ7oFKsKzY&list=PLSsXgW1_ej0nw9BX8w4RXKLGzmT-LWDTq", //Nyan cat
+        "https://www.youtube.com/watch?v=D0q0QeQbw9U&t=2s",// AYAYAA AYAYAYAA
+        "https://www.youtube.com/watch?v=kxopViU98Xo", //Epic sax guy
+        "https://www.youtube.com/watch?v=V4EnjvimJqc", //BIM BAM BOUM
+        "https://www.youtube.com/watch?v=qTksCYUgI7s&list=PLk4bJkiHwNpludCO2G9YT9nuL6uxCt3JJ&index=2",//fuking normies REEEEEEEEEEEEEE
+        "https://www.youtube.com/watch?v=C2n212OP1cQ", //levan poolka
+        "https://www.youtube.com/watch?v=JPTeEZiBxlc",//o-zone
+        "https://www.youtube.com/watch?v=j4fik2nl7UI",//bisounours
+        "https://www.youtube.com/watch?v=WX-vAs__3YA",//crazy frog
+        "https://www.youtube.com/watch?v=-LzVr-1OXqQ",//i'm blue
+        "https://www.youtube.com/watch?v=PUpP5EyCyZA",//The scatman
+        "https://www.youtube.com/watch?v=UQyl6TA1pWw",// The scatman version anime
+        "https://www.youtube.com/watch?v=bWr2rZtV0Kk",//shooting star
+        "https://www.youtube.com/watch?v=B20I-mORNPU",//poussin piou
+        "https://www.youtube.com/watch?v=PzrGGyPMfoo",//PADORU
+        "https://www.youtube.com/watch?v=MdCCD2VDDKs",//dame tu cosita
+        "https://www.youtube.com/watch?v=uG323T3F9Yg",//touch my tralala
+        "https://www.youtube.com/watch?v=oOlft8xFdlY", //this is my pipi
+        "https://www.youtube.com/watch?v=_-WWqF4ZusA",//meh meh MEEH
+        "https://www.youtube.com/watch?v=EKxio8HZiNA&t=" //nep nep nep nep nep nep nep nep
+    ]
+    var pdc10 = pétage_de_cable_10H[Math.floor(Math.random() * pétage_de_cable_10H.length)] ;
+
+    if(!message.member.voiceChannel)
+    return message.channel.send("Va dans un vocal avant");
+if(message.guild.me.voiceChannel)
+return message.channel.send("Je suis déja occupé")
+    
+    let validate = ytdl.validateURL(pdc10);
+    if (!validate) 
+    return message.channel.send("l'url de la vidéo n'est plus valide");
+    let info = await ytdl.getInfo(pdc10);
+        let connection = await message.member.voiceChannel.join();
+        let dispatcher = await connection.playStream(ytdl(pdc10, {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1}) 
+
+        const embedsm = new Discord.RichEmbed()
+        .setTitle("Et une chanson dans la tête, UNE !")
+        .setDescription(`En cours : ${info.title}`)
+        .setThumbnail("https://i.imgur.com/GfRQIKr.jpg")  
+        .setFooter("<<stop pour déconnécter")
+        message.channel.send(embedsm)
+    }
+
+    if(command === "chill"){
+
+        var chiil = [
+    "https://www.youtube.com/watch?v=-FlxM_0S2lA",
+    "https://www.youtube.com/watch?v=lTRiuFIWV54",
+    "https://www.youtube.com/watch?v=ThF_C4IcmsQ",
+    "https://www.youtube.com/watch?v=xLetZ-36TYs",
+    "https://www.youtube.com/watch?v=tKMmMHyLBCE",
+    "https://www.youtube.com/watch?v=oJnF5VxTO5g",
+    "https://www.youtube.com/watch?v=8t-BLm6pbr8",
+    "https://www.youtube.com/watch?v=odhh4sInQW0",
+    "https://www.youtube.com/watch?v=wOMwO5T3yT4"
+    
+
+        ]
+        var c_hill = chiil[Math.floor(Math.random() * chiil.length)] ;
+    
         if(!message.member.voiceChannel)
-        return message.channel.send("Tu dois te connecter au vocale pour me déconnecter!");
-        if(!message.guild.me.voiceChannel)
-        return message.channel.send("je ne suis pas connecter");
-        message.guild.me.voiceChannel.leave();
-        message.channel.send("ok");
-    }
-        });*/
+        return message.channel.send("Va dans un vocal avant");
+    if(message.guild.me.voiceChannel)
+    return message.channel.send("Je suis déja occupé")
+        
+        let validate = ytdl.validateURL(c_hill);
+        if (!validate) 
+        return message.channel.send("l'url de la vidéo n'est plus valide");
+        let info = await ytdl.getInfo(c_hill);
+            let connection = await message.member.voiceChannel.join();
+            let dispatcher = await connection.playStream(ytdl(c_hill, {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1}) 
+            const embedchill = new Discord.RichEmbed()
+            .setTitle("Chill audio")
+            .setDescription(`En cours : ${info.title}`)
+            .setThumbnail("https://i.imgur.com/7lvOQj4.jpg")  
+            .setFooter("<<stop pour déconnécter")
 
-                client.on('guildMemberAdd', member => {
+            message.channel.send(embedchill)
+    
+        }
 
-                    let serverTag = member.guild.name
-                    const welcomechannel = member.guild.channels.find("name", "bienvenue")
-                    var embed = new Discord.RichEmbed()
-                    .setColor('#76D880')
-                    .setDescription(`<@${member.user.id}> à rejoint **${serverTag}**! Bienvenue à toi !`)
-                    return welcomechannel.send({embed});
-                
-                });
-                
-                
-                client.on('guildMemberRemove', member => { 
-                    let serverTag = member.guild.name
-                    const leavechannel = member.guild.channels.find('name', 'bienvenue')
-                    var embed = new Discord.RichEmbed()
-                    .setColor('#76D880')
-                    .setDescription(`<@${member.user.id}> à quitter **${serverTag}**.Tu nous manquera... ou pas ! `)
-                    return leavechannel.send({embed})
-                }); 
+        if(command === "s-r-e"){
+
+            var syre = [
+                "https://www.youtube.com/watch?v=DzJasz19EnA",
+                "https://www.youtube.com/watch?v=KPa1_7AF1lM",
+                "https://www.youtube.com/watch?v=85bkCmaOh4o&t",
+                "https://www.youtube.com/watch?v=brimpTmJeWM",
+                "https://www.youtube.com/watch?v=LxQWv-p5BMQ",
+                "https://www.youtube.com/watch?v=qk1nnAHI1mI",
+                "https://www.youtube.com/watch?v=0QKQlf8r7ls",
+                "https://www.youtube.com/watch?v=ZfP42qir76I",
+                "https://www.youtube.com/watch?v=xdQBN3jhjb8",
+                "https://www.youtube.com/watch?v=OTCp-kK9xJ0",
+                "https://www.youtube.com/watch?v=e_5T0uF7Lho",
+                "https://www.youtube.com/watch?v=qWZL5RnfgtI",
+                "https://www.youtube.com/watch?v=IKgEMEUZzjY",
+                "https://www.youtube.com/watch?v=HAqlSJnVt8E"
+        
+    
+            ]
+            var synth = syre[Math.floor(Math.random() * syre.length)] ;
+        
+            if(!message.member.voiceChannel)
+            return message.channel.send("Va dans un vocal avant");
+        if(message.guild.me.voiceChannel)
+        return message.channel.send("Je suis déja occupé")
+            
+            let validate = ytdl.validateURL(synth);
+            if (!validate) 
+            return message.channel.send("l'url de la vidéo n'est plus valide");
+            let info = await ytdl.getInfo(synth);
+                let connection = await message.member.voiceChannel.join();
+                let dispatcher = await connection.playStream(ytdl(synth, {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1}) 
+                const embedsre = new Discord.RichEmbed()
+                .setTitle("Synthwave retro electro / retrowave ")
+                .setDescription(`En cours : ${info.title}`)
+                .setThumbnail("https://i.imgur.com/1cyMAUX.jpg")  
+                .setFooter("<<stop pour déconnécter")
+
+                message.channel.send(embedsre)
+        
+            }
 
 
-                client.login(token); 
+
+	const serverQueue = queue.get(message.guild.id);
+
+	if (message.content.startsWith(`${prefix}play`)) {
+        execute(message, serverQueue)
+        await message.delete().catch(O_o=>{}); 
+		return;
+	} else if (message.content.startsWith(`${prefix}skip`)) {
+		skip(message, serverQueue);
+		return;
+	} else if (message.content.startsWith(`${prefix}stop`)) {
+        if(!serverQueue){
+            if(!message.member.voiceChannel)
+            return message.channel.send("connecte toi au salon vocale");
+            if(!message.guild.me.voiceChannel)
+            return message.channel.send("Je ne suis pas connécté");
+            if(message.guild.me.voiceChannel !== message.member.voiceChannel)
+            return message.channel.send("tu doit te connecter au meme salon vocale");
+            message.guild.me.voiceChannel.leave();
+            message.channel.send("OK");
+            return;
+        } else {
+		stop(message, serverQueue);
+		return; }
+        }
+
+
+async function execute(message, serverQueue) {
+	const args = message.content.split(' ');
+
+	const voiceChannel = message.member.voiceChannel;
+	if (!voiceChannel) return message.channel.send('Tu dois etre dans un salon vocale');
+	const permissions = voiceChannel.permissionsFor(message.client.user);
+	if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) {
+		return message.channel.send("Je n'ai pas les perm pour me connecter/parler à ce salon");
+	}
+
+	const songInfo = await ytdl.getInfo(args[1]);
+	const song = {
+		title: songInfo.title,
+		url: songInfo.video_url,
+	};
+
+	if (!serverQueue) {
+		const queueContruct = {
+			textChannel: message.channel,
+			voiceChannel: voiceChannel,
+			connection: null,
+			songs: [],
+			volume: 5,
+			playing: true,
+		};
+
+		queue.set(message.guild.id, queueContruct);
+
+		queueContruct.songs.push(song);
+
+		try {
+			var connection = await voiceChannel.join();
+			queueContruct.connection = connection;
+            play(message.guild, queueContruct.songs[0]);
+            const playembed = new Discord.RichEmbed()
+            .setDescription(`En cours : ${song.title}`)
+            .setFooter("<<stop pour déconnécter")
+
+            message.channel.send(playembed)	
+        	} catch (err) {
+			console.log(err);
+			queue.delete(message.guild.id);
+			return message.channel.send(err);
+		}
+	} else {
+		serverQueue.songs.push(song);
+        const queueembed = new Discord.RichEmbed()
+        .setDescription(`${song.title} à été ajouté à la queue `)
+        .setFooter("<<stop pour déconnécter")
+
+        message.channel.send(queueembed)	
+    	}
+
+}
+
+function skip(message, serverQueue) {
+	if (!message.member.voiceChannel) return message.channel.send("Tu dois etre dans le salon vocale pour skip");
+	if (!serverQueue) return message.channel.send("Il n'y a pas de song à skip");
+	serverQueue.connection.dispatcher.end();
+}
+
+function stop(message, serverQueue) {
+	if (!message.member.voiceChannel) return message.channel.send("Tu dois etre dans le salon vocale");
+	serverQueue.songs = [];
+	serverQueue.connection.dispatcher.end();
+}
+
+function play(guild, song) {
+	const serverQueue = queue.get(guild.id);
+
+	if (!song) {
+		serverQueue.voiceChannel.leave();
+		queue.delete(guild.id);
+		return;
+	}
+	const dispatcher =  serverQueue.connection.playStream(ytdl(song.url, {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1})
+		.on('end', () => {
+            const finembed = new Discord.RichEmbed()
+            .setDescription(`Fin de : ${song.title}`)
+            message.channel.send(finembed)	
+            serverQueue.songs.shift();
+            play(guild, serverQueue.songs[0])
+		})
+		.on('error', error => {
+			console.error(error);
+		});
+}
+});
+                client.login(process.env.TOKEN); 

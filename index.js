@@ -14,6 +14,7 @@ const ownerID =  "246395977450258432"
 const flip = require('flip-text')
 const zalgo = require('to-zalgo')
 const banish = require('to-zalgo/banish')
+const token = process.env.token;
 
 
 client.on('ready', () => {
@@ -1880,12 +1881,63 @@ if(command === "zalgo"){ //penser a metre la const qui est en haut
 
 }
 
+<<<<<<< HEAD
+=======
+       
+        if (command ==="mute") {
+            if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande")
+            let member = message.mentions.members.first()
+            if (!member) return message.channel.send("Membre introuvable")
+            if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("Vous ne pouvez pas mute ce membre")
+            if (!member.manageable) return message.channel.send("Je ne peux pas mute ce membre")
+            let muterole = message.guild.roles.find(role => role.name === 'Muted')
+            if (muterole) {
+                member.addRole(muterole)
+                message.channel.send("Tu as été mute")
+            }
+            else {
+                message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
+                    message.guild.channels.filter(channel => channel.type === 'text').forEach(function (channel) {
+                        channel.overwritePermissions(role, {
+                            SEND_MESSAGES: false
+                        })
+                    })
+                    member.addRole(role)
+                    message.channel.send(member + 'Tu as été mute ')
+                })
+            }
+
+        }
+>>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
 
 
 
+<<<<<<< HEAD
 
 
+=======
+let mutrole = message.guild.roles.find( 'name' , 'Muted' )
+if(!mutrole)
+message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
+    message.guild.channels.filter(channel => channel.type === 'text').forEach(function (channel) {
+        channel.overwritePermissions(role, {
+            SEND_MESSAGES: false
+        })
+    })
+})
+    
+    
+      let mutedRole = message.guild.find(role => role.name == "Muted");
+  let member = message.mentions.members.first();
+
+  member.addRole(mutedRole, ` Mute pour 1h minutes. Raisons : <<Les morts ne parle pas.>>`);
+
+  setTimeout(() => {
+    member.removeRole(mutedRole, ``);
+  }, 60 * 60000); 
+}
+>>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
 
 
@@ -4540,9 +4592,14 @@ if (command === "class") {
 })
 };
 });
+<<<<<<< HEAD
 
 const queue = new Map();
 const ytdl = require('ytdl-core');
+=======
+const ytdl = require('ytdl-core');
+const active = new Map();
+>>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 client.on("message", async message => {
 
 
@@ -4567,12 +4624,20 @@ return message.channel.send("Je suis déja occupé")
     return message.channel.send("Un url valid serai mieux :p");
     let info = await ytdl.getInfo(args[0]);
         let connection = await message.member.voiceChannel.join();
+<<<<<<< HEAD
         let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1}) 
+=======
+        let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly'}));
+>>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
         message.channel.send(`en cour: ${info.title}`);
 
     }
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 if(command ==="leave"){
 if(!message.member.voiceChannel)
 return message.channel.send("connecte toi au salon vocale");
@@ -4586,6 +4651,7 @@ message.channel.send("OK");
 }
 
 
+<<<<<<< HEAD
 
    if(command === "audio-sm"){
 
@@ -4636,6 +4702,9 @@ return message.channel.send("Je suis déja occupé")
         .setFooter("<<stop pour déconnécter")
         message.channel.send(embedsm)
     }
+=======
+});
+>>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
     if(command === "chill"){
 
@@ -4834,4 +4903,4 @@ function play(guild, song) {
 		});
 }
 });
-                client.login(process.env.TOKEN); 
+client.login(token);

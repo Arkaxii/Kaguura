@@ -1881,8 +1881,6 @@ if(command === "zalgo"){ //penser a metre la const qui est en haut
 
 }
 
-<<<<<<< HEAD
-=======
        
         if (command ==="mute") {
             if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande")
@@ -1908,15 +1906,12 @@ if(command === "zalgo"){ //penser a metre la const qui est en haut
             }
 
         }
->>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
 
 
 
-<<<<<<< HEAD
 
 
-=======
 let mutrole = message.guild.roles.find( 'name' , 'Muted' )
 if(!mutrole)
 message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
@@ -1936,8 +1931,7 @@ message.guild.createRole({name: 'Muted', permissions: 0}).then(function (role) {
   setTimeout(() => {
     member.removeRole(mutedRole, ``);
   }, 60 * 60000); 
-}
->>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
+
 
 
 
@@ -4591,15 +4585,11 @@ if (command === "class") {
 })
 })
 };
-});
-<<<<<<< HEAD
 
 const queue = new Map();
 const ytdl = require('ytdl-core');
-=======
 const ytdl = require('ytdl-core');
 const active = new Map();
->>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 client.on("message", async message => {
 
 
@@ -4624,20 +4614,15 @@ return message.channel.send("Je suis déja occupé")
     return message.channel.send("Un url valid serai mieux :p");
     let info = await ytdl.getInfo(args[0]);
         let connection = await message.member.voiceChannel.join();
-<<<<<<< HEAD
         let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25 }), {highWaterMark: 1}) 
-=======
+
         let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly'}));
->>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
         message.channel.send(`en cour: ${info.title}`);
 
     }
-<<<<<<< HEAD
 */
-=======
 
->>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 if(command ==="leave"){
 if(!message.member.voiceChannel)
 return message.channel.send("connecte toi au salon vocale");
@@ -4651,7 +4636,6 @@ message.channel.send("OK");
 }
 
 
-<<<<<<< HEAD
 
    if(command === "audio-sm"){
 
@@ -4702,9 +4686,7 @@ return message.channel.send("Je suis déja occupé")
         .setFooter("<<stop pour déconnécter")
         message.channel.send(embedsm)
     }
-=======
 });
->>>>>>> 81a26ed6b236ae107a4d039d1e36fdfbc2877831
 
     if(command === "chill"){
 

@@ -14,8 +14,7 @@ const ownerID =  "246395977450258432"
 const flip = require('flip-text')
 const zalgo = require('to-zalgo')
 const banish = require('to-zalgo/banish')
-
-
+const { encode, decode } = require('morsee');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -497,7 +496,15 @@ for (var i in eventr){
                       message.channel.send(respect);
     }
     }
-
+    let eventau = ['utilité ?'];
+    let fondintextau = false;
+    for (var i in eventau){
+        if (message.content.toLocaleLowerCase().includes(eventau[i].toLocaleLowerCase()))
+        fondintextau = true;
+        if(fondintextau){
+            message.channel.send(`Aucune`);
+        }
+    }
 
     let eventb = ['bizarre*'];
 
@@ -592,60 +599,6 @@ if(fondintextt){
 }
 */
 
-
-
-if(message.isMentioned(client.users.get('511235137791459332'))){
-await db.add(`ping_${message.author.id}`,1)
-setTimeout((db.subtract(`ping_${message.author.id}`,14)),60*60000)
-let pg = await db.fetch(`ping_${message.author.id}`);
-
-if(pg === 1){
- message.channel.send("On ne me PING PAS !")
-};
-if(pg === 2 ){
-     message.channel.send("Tu perds ton temp")
-    };
-    if(pg === 3 ){
-         message.channel.send("Ah ok tu veut jouer à sa")
-        };
-        if(pg ===4 ){
-             message.channel.send("Nan mais j'ai tout mon temp")
-            };
-            if(pg === 5 ){
-                 message.channel.send("Fait gaff derrière toi")
-                };
-                if(pg === 6 ){
-                     message.channel.send("J'espère que tu ne t'es pas fait avoir :p")
-                    };
-                    if(pg === 7 ){
-                         message.channel.send("Ho wait je peut pas te répondre je ne suis q'un bot qui réagie à des commandes spécifique")
-                        };
-                        if(pg === 8 ){
-                             message.channel.send("Et oui pas de chance. Mais en te voyant me ping sans cesse je me dit que je suis mieux comme sa :p")
-                            };
-                            if(pg === 9 ){
-                                 message.channel.send("Apres je comprend tu n'as pas d'amis donc tu me fait ch*er à leurs place")
-                                };
-                                if(pg === 10 ){
-                                     message.channel.send("Enfaite tu veut voir toute mes phrase hein ?")
-                                    };
-                                    if(pg === 11 ){
-                                         message.channel.send("Comme toute bonne personne qui ce respecte dans tous les jeux on fait ch*er les pnj pour voire toutes leur phrase j'usqua que sa face une boucle")
-                                        };
-                                        if(pg === 12 ){
-                                             message.channel.send("Mais qui te dit que je suis comme eux ?")
-                                            };
-                                            if(pg === 13 ){
-                                                 message.channel.send("Et oui car je suis moi toi t'es chia...toi")
-                                                };
-                                                if(pg === 14 ){
-                                                     message.channel.send("La suite prochainement")
-                                                     db.subtract(`ping_${message.author.id}`,14)
-
-                                                    };
-     
-                                                
-                                                }
 
 
 
@@ -1870,7 +1823,7 @@ if(flipmessage === "the table"){
         message.channel.send(flip(flipmessage))
 }
 }
-if(command === "zalgo"){ //penser a metre la const qui est en haut
+if(command === "zalgo"){
 
     var zal = args.join(" ")
     if(!zal){
@@ -1899,8 +1852,59 @@ if(command === "zalgo"){ //penser a metre la const qui est en haut
 
 
 
-        
-        
+
+
+
+
+
+
+
+
+if(command ==="loli"){
+var loll = [
+"https://i.imgur.com/VNTKHyU.jpg",
+"https://i.imgur.com/xcOc9NQ.jpg",
+"https://i.imgur.com/fqVZR4v.jpg",
+"https://i.imgur.com/axJ8QKp.jpg",
+"https://i.imgur.com/TdPGoVA.jpg",
+]
+    var lolipopp = loll[Math.floor(Math.random() * loll.length)] ;
+    var lol = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle(`lollipop`)
+    .setImage(lolipopp)
+    .setFooter("Comme j'ai dit je juge pas hein. Vraiment 👀")
+message.channel.send(lol);
+}
+
+
+ if(command ==="morse_decode"){
+    let sayMessage = args.join(" ");
+if(!sayMessage)
+ message.channel.send("Je n'est rien à décoder!")
+    const decoded = decode(sayMessage);
+    var modec = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle(`Traduction morse => alphabet`)
+    .setThumbnail("https://i.imgur.com/HbjfvoB.jpg")
+    .setDescription(decoded)
+    .setFooter(" /!\\ ö, é, ü et ñ ==> g, l, w et y")
+message.channel.send(modec);
+}
+
+if(command ==="morse_encode"){
+    let sayMessage = args.join(" ");
+if(!sayMessage)
+ message.channel.send("Je n'est rien à encoder!")
+    const encoded = encode(sayMessage);
+
+    var moenc = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle(`Traduction alphabet => morse`)
+    .setThumbnail("https://i.imgur.com/HbjfvoB.jpg")
+    .setDescription(encoded)
+message.channel.send(moenc);
+}
                     if(command ==="psd"){
         
                         m = message.guild.members.random().displayName
@@ -3609,107 +3613,248 @@ message.channel.send(eith)
 
 
 
+if(command === "subxp"){
+    var userxp = message.author.id
+    let xpt =  db.fetch(`xplay${userxp}`);
+    db.subtract(`xplay${userxp}`, xpt );
+    message.channel.send("yup")
+}
 
-        if(message.content.startsWith(prefix + "rpg")){
- 
-            const p1 = new Discord.RichEmbed()
-            .setAuthor("Niveaux 1")
-            .setImage("https://i.imgur.com/2x8lTdK.jpg")
-            .setFooter("niveaux `[2]` ===>")
-                message.channel.send(p1)
-                .then(message => {
-                //    message.react("⏪")
-                    message.react("⏩");
-    
-                    client.on('messageReactionAdd',async (reaction, user) =>{
-    
-                        if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                            reaction.remove(user)
-                            await message.delete(p1)
-                           
-                           var p2 = new Discord.RichEmbed()
-                           .setAuthor("Niveaux 2")
-                           .setImage("https://i.imgur.com/Z0lJoXU.jpg")
-                           .setFooter("niveaux `[3]` ===>")
-            
-                           message.channel.send(p2).then(message => {
-                            message.react("⏩");
+if(command === "addxp"){
+    var userxp = message.author.id
+    db.add(`xplay${userxp}`, 101 );
+    message.channel.send("yup")
 
-                            client.on('messageReactionAdd',async (reaction, user) =>{
+}
+if(command === "xpt"){
+    var userxp = message.author.id
+  let xpt =  db.fetch(`xplay${userxp}`);
+    message.channel.send("yup "+xpt)
 
-                            if (reaction.emoji.name === "⏩" && user.id !== client.user.id) {
-                                reaction.remove(user)
-                                message.channel.send("Vous attaquer les `3 slimes`")
-                              await message.delete(p2)
-                            
-                                var c2 = new Discord.RichEmbed()
-                                .setImage("https://i.imgur.com/s1r84dF.jpg")    
-    
-                                message.channel.send(c2).then(message => {
-                                    message.react("🔪")
-
-                                    client.on('messageReactionAdd',async (reaction, user) =>{
-
-                                    if (reaction.emoji.name === "🔪" && user.id !== client.user.id) {
-                                        reaction.remove(user)
-        
-                                        var deflvl2 = new Discord.RichEmbed()
-                                            .setAuthor("Combat contre slime")
-                                            .setDescription(`
-                                            En tentant d'attaquer, vous glisser sur le slime
-                                            0 hp
-                                            Les slimes ont gagnier!`)
-                                            .setFooter("lvl 1")
-
-                                    message.channel.send(deflvl2)                               
-                                }
-                            })
-                        })
-                    }
-                })
-            })
-        }
-    })
-})
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {
-    function randomw(min, max){
+
+    function coinsB(min, max){
+        min = Math.ceil(1);
+        max = Math.floor(5);
+        randcoin = Math.floor(Math.random() * (max - min +1) +min);
+        
+    }
+    function randomB(min, max){
         min = Math.ceil(1);
         max = Math.floor(10);
-        randwin = Math.floor(Math.random() * (max - min +1) +min);
+        randwinB = Math.floor(Math.random() * (max - min +1) +min);
         
+    }
+    function randomw(min, max){
+           min = Math.ceil(1);
+           max = Math.floor(10);
+           randwin = Math.floor(Math.random() * (max - min +1) +min);
+           
+       }
+
+if (command === "tower") {
+    let xpc = await db.fetch(`xplay${message.author.id}`);
+    if (xpc === null) xpc = 0;
+
+var userxp = message.author.id
+
+
+const jcl = await db.fetch(`jdc${message.author.id}`);
+if(jcl === 0 ){
+    message.channel.send("Choisi d'abord une classe avec la commande \" <<class \". ")
+}else
+
+
+
+var boss = [
+
+"https://i.imgur.com/rUnmk5Q.gif",
+"https://i.imgur.com/5cmgxek.gif",
+"https://i.imgur.com/YmagN3N.gif",
+"https://i.imgur.com/Fik0acb.gif",
+"https://i.imgur.com/3wOiex0.gif",
+"https://i.imgur.com/CH0O2OE.gif"
+]
+var bosss = boss[Math.floor(Math.random() * boss.length)] ;
+if(bosss === "https://i.imgur.com/rUnmk5Q.gif"){
+    var namemob = "Lumière noir"
+    var carac = "Une lumière qui c'est arrêtée de briller mais continu d'éclairé."
+    var jcbv = "Monstre => -50pv \nVous => -7pv\nMonstre => -20\nVous => -5pv\n monstre vaincu "
+    var jcvf = "Vous => -5pv \nMonstre => -30pv\nVous => -7\nMonstre => -50pv\n vous êtes vaincu ";
+    }
+    if(bosss === "https://i.imgur.com/5cmgxek.gif"){
+        var namemob = "Kaloïdel"
+        var carac = "Une simple citouille qui c'est élever au rang de monarque démoniaque."
+        var jcbv = "Monstre => -50pv \nVous => -7pv\nMonstre => -20\nVous => -5pv\n monstre vaincu "
+        var jcvf = "Vous => -5pv \nMonstre => -30pv\nVous => -7\nMonstre => -50pv\n vous êtes vaincu ";
+        }
+        if(bosss === "https://i.imgur.com/YmagN3N.gif"){
+            var namemob = "66 69-6e-20-64-65-20-73-c3-a9-72-69-65"
+            var carac = "Initialement ce robot est fait pour annihiler tous les astéroïdes voulant s'écraser sur terre mais la radiation à eu raison de lui (heureusement que la gravité l'empèche de déployer toute sa force)   "
+            var jcbv = "Monstre => -50pv \nVous => -7pv\nMonstre => -20\nVous => -5pv\n monstre vaincu "
+            var jcvf = "Vous => -5pv \nMonstre => -30pv\nVous => -7\nMonstre => -50pv\n vous êtes vaincu ";
+            }
+            if(bosss === "https://i.imgur.com/Fik0acb.gif"){
+                var namemob = "Shadokuro"
+                var carac = "Un squelette de bas niveau qui grace à ses capacité hors norme a pu s'élever au rang de monarque démoniaque."
+                var jcbv = "Monstre => -50pv \nVous => -7pv\nMonstre => -20\nVous => -5pv\n monstre vaincu "
+                var jcvf = "Vous => -5pv \nMonstre => -30pv\nVous => -7\nMonstre => -50pv\n vous êtes vaincu ";
+                }
+                if(bosss === "https://i.imgur.com/3wOiex0.gif"){
+                    var namemob = "Alstéïade"
+                    var carac = "Devenu monarque démoniaque en invocant le droit de l'âme. Peut on réussi à invoquer ce droit et encore moins y ont survécu."
+                    var jcbv = "Monstre => -50pv \nVous => -7pv\nMonstre => -20\nVous => -5pv\n monstre vaincu "
+                    var jcvf = "Vous => -5pv \nMonstre => -30pv\nVous => -7\nMonstre => -50pv\n vous êtes vaincu ";
+                    }
+                    if(bosss === "https://i.imgur.com/CH0O2OE.gif"){
+                        var namemob = "G-Dino"
+                        var carac = "ERR_INTERNET_DISCONNECTED"
+                        var jcbv = "Monstre => -50pv \nVous => -7pv\nMonstre => -20\nVous => -5pv\n monstre vaincu "
+                        var jcvf = "Vous => -5pv \nMonstre => -30pv\nVous => -7\nMonstre => -50pv\n vous êtes vaincu ";
+                        }
+
+
+
+                        if( xpc > 100){
+
+                            randomB();
+                            if(randwinB === 10 ){
+                                var niv1b = new Discord.RichEmbed()
+                                .setTitle(namemob)
+                                .setDescription(carac)
+                                .setThumbnail(bosss)
+                                .setFooter("écrire: combattre \nou\nécrire: fuite ")
+                                message.channel.send(niv1b)
+    
+                                .then(() => {
+                                    message.channel.awaitMessages(response => response.content === 'combattre', {
+                                        max: 1,
+                                        time: 30000,
+                                        errors: ['time'],
+                                    })
+                                    .then((collected) => {
+             message.delete(niv1b)
+                 var Vtowerb = new Discord.RichEmbed()
+    
+                .setTitle("a triomphé de "+namemob)
+                .setDescription(jcbv)
+                .setThumbnail(bosss)
+                .setFooter("tu as eu 50 xp")
+                message.channel.send(Vtowerb)
+                .then(async function (message ) {
+                    db.add(`xplay${userxp}`, 50 );
+                })
+                coinsB();
+                if(randcoin === 1){
+                    var coin = new Discord.RichEmbed()
+    
+                .setTitle("Tu as obtenu un Coin! ")
+                .setThumbnail("https://i.imgur.com/x5TCy19.gif")
+                message.channel.send(coin)
+                }
+            })
+            .catch(() => {
+              // Do something with error 
+            });
+    
+    
+            message.channel.awaitMessages(response => response.content === 'fuite', {
+                max: 1,
+                time: 30000,
+                errors: ['time'],
+              })
+              .then((collected) => {
+                message.delete(niv1b)
+    
+                    
+                if(xp>2){                
+                    message.channel.send("Tu t'est enfui en y laissant 2 xp ")
+                    .then(async function (message ) {
+                        db.subtract(`xplay${userxp}`, 2 );            
+                    })
+                }else{
+                    message.channel.send("Tu t'es enfui avec succes")
+                }
+                    })
+    
+                .catch(() => {
+                  // Do something with error 
+                });
+        });
+    }
+    
+    
+    if(randwinB < 9 ){
+    
+        var niv1b = new Discord.RichEmbed()
+        .setTitle(namemob)
+        .setDescription(carac)
+        .setThumbnail(bosss)
+        .setFooter("écrire: combattre \nou\nécrire: fuite ")
+        message.channel.send(niv1b)
+    
+    
+        .then(() => {
+          message.channel.awaitMessages(response => response.content === 'combattre', {
+            max: 1,
+            time: 30000,
+            errors: ['time'],
+          })
+          .then((collected) => {
+            message.delete(niv1b)
+    
+            
+            var towerFb = new Discord.RichEmbed()
+    
+            
+                        .setTitle("a perdu face à "+namemob)
+                        .setDescription(jcvf)
+                        .setThumbnail(bosss)
+                        .setFooter("Tu a perdu TOUT ton xp")
+                        message.channel.send(towerFb)
+                        .then(async function (message ) {
+                             db.subtract(`xplay${userxp}`, xpc );
+    
+                        })
+    
+    })
+                
+            .catch(() => {
+              // Do something with error 
+            });
+            message.channel.awaitMessages(response => response.content === 'fuite', {
+                max: 1,
+                time: 30000,
+                errors: ['time'],
+              })
+              .then((collected) => {
+                message.delete(niv1b)
+    
+                if(xp>2){                
+                    message.channel.send("Tu t'est enfui en y laissant 2 xp ")
+                    .then(async function (message ) {
+                        db.subtract(`xplay${userxp}`, 2 );            
+                    })
+                }else{
+                    message.channel.send("Tu t'es enfui avec succes")
+                }
+                    })
+
+                .catch(() => {
+                  // Do something with error 
+                });
+        });
+    
+    
     }
 
 
+}else{
 
-if(command === "tower"){
-    let xp = await db.fetch(`xp_${message.author.id}`);
-    if (xp === null) xp = 0;
 
 var mob = [
     "https://i.imgur.com/tyJ9t5g.gif",
@@ -3733,92 +3878,330 @@ var mob = [
 ]
 var mobs = mob[Math.floor(Math.random() * mob.length)] ;
 
+if(mobs === "https://i.imgur.com/tyJ9t5g.gif"){
+var namemob = "Feu verdoyant"
+var carac = "Un feu naissant lors des nuit aux lunes verte. Avec un peut plus de chance ils auraient pû devenire des tréant."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+ if(mobs === "https://i.imgur.com/Z101RC0.gif"){
+var namemob = "Feu abyssale"
+var carac = "Née dans les profondeur abyssale de l'océan. Oui vous avez bien lu du FEU sous L'EAU."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+ }
+if(mobs === "https://i.imgur.com/aOJWY5y.gif"){
+var namemob = "Feu feu "
+var carac = "Un jour un savant a crée un briquet pouvant donnée vie aux flammes. Ba voila ce qui c'est passé. "
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/tmwmE94.gif"){//<============================
+var namemob = "éclaireur"
+var carac = "coming soon"
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/zrtdGaY.gif"){
+var namemob = "Ciiiitrouille"
+var carac = "Voila ce qu'il se passe quand on laisse les déco d'halloween trop longtemps!"
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/zIHanrx.gif"){
+var namemob = "Maitre épée citrouille"      //<=============================
+var carac = "coming soon"
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/JfC5Iyp.gif"){
+var namemob = "Porte-manteau-cafetière-grille-pain"
+var carac = "Plus communément appelé p-m-c-g-p2077 un robot crée pour servir mais il a \"légèrement\" dysfonctionner et jette du café sur toutes forme de vie qu'il croise. "
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/ql4orca.gif"){
+var namemob = "Golem 6d-65-63-68-61"
+var carac = "C'est l'avant dernière création d'une usine robotique nommé WW4 ayant fermé il y a bien longtemps. Quelle drole de nom 🤔"
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/dOrf6cb.gif"){
+var namemob = "62-6f-75-63-6c-69-65-72"
+var carac = "Un bouclier robotique développer par l'armé et abandonné  pour cause de \"grosse châtaigne\" a chaque activation provocant le dysfonctionnement électrique du pay en 2070."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/HYr8jk6.gif"){
+var namemob = "Liche"
+var carac = "On dit que dans leur ancienne vie les Liche était des occultiste très puissant ~~qui sont tombé sur un os~~. "
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/SWl7kvs.gif"){
+var namemob = "Béhémoth d'os"
+var carac = "De leur vivant les béhémoth d'os sont connu comme étant des guerrier occulte relevé par les Liche."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/HfSNpeZ.gif"){
+var namemob = "Sac d'os"
+var carac = "Littéralement un punching ball rempli d'os sont unique but est de se prendre tout les dégât et lancer des os sur ses adversaires "
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/fu64yop.gif"){
+var namemob = "Démon des abîmes"
+var carac = "On dit que ses yeux ressemble aux abîme d'ou il est originaire et si tu regarde dans ces yeux tu verras qu'il te \"regarde\" aussi. " 
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/eGHVaED.gif"){
+var namemob = "ésprit démoniaque"
+var carac = "A la mort d'un démon son ésprit est ramené à la capitale démoniaque via ce que l'on pourrais appeler une boite à meuh pour etre implanté dans un nouveau corp. Mais celui-ci c'est échappé."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/fyUH1qk.gif"){
+var namemob = "Démon"
+var carac = "Il s'agit de la première vie d'un démon il n'as rien de spéciale sauf qu'il brille dans le noire."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/79YNSbT.gif"){
+var namemob = "Qbert"
+var carac = "un mystérieu monstre orange."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/5X2T9jk.gif"){
+var namemob = "P-man"
+var carac = "Une mystérieuse boule jaune qui mange des boules."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+if(mobs === "https://i.imgur.com/wkQPuwp.gif"){
+var namemob = "Spaaaace"
+var carac = "Un mystérieux envahisseur venu de l'espaaaaace."
+var jcbv = "Monstre => -2pv \nVous => -3pv\nMonstre => -1\nVous => -3pv\n monstre vaincu "
+var jcvf = "Vous => -2pv \nMonstre => -3pv\nVous => -1\nMonstre => -3pv\n vous êtes vaincu ";
+}
+
+
+
+
 randomw();
-if(randwin <9 )
-await db.add(`xp_${message.author.id}`, 0,1,2,3,4,5 );
-var niv1 = new Discord.RichEmbed()
-.setTitle("Nom du monstre")
-.setDescription(`Mettre Carac et présentation du mob`)
-.setImage(mobs)
-.setFooter("Pour attaquer: ⚔ \n Pour fuire: ↩")
-message.channel.send(niv1)
-.then(async function (message ) {
-    await message.react("⚔")
-    await message.react("↩")
-        client.on('messageReactionAdd',async (reaction, user) =>{
-if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
-await reaction.remove()
-niv1.setTitle("a triomphé de {mettre le nom du mob}")
-niv1.setDescription("mettre un journale de combat")
-niv1.setThumbnail(mobs)
-niv1.setImage()
-niv1.setFooter("tu as "+xp+"xp")
-message.edit(niv1);
+if(randwin <9 ){
+    var niv1 = new Discord.RichEmbed()
+    .setTitle(namemob)
+    .setDescription(carac)
+    .setThumbnail(mobs)
+    .setFooter("écrire: combattre \nou\nécrire: fuite ")
+    message.channel.send(niv1)
+
+
+    .then(() => {
+      message.channel.awaitMessages(response => response.content === 'combattre', {
+        max: 1,
+        time: 30000,
+        errors: ['time'],
+      })
+      .then((collected) => {
+         message.delete(niv1)
+             var Vtower = new Discord.RichEmbed()
+
+            .setTitle("a triomphé de "+namemob)
+            .setDescription(jcbv)
+            .setThumbnail(mobs)
+            .setFooter("tu as eu 4 xp")
+            message.channel.send(Vtower)
+            .then(async function (message ) {
+                db.add(`xplay${userxp}`, 4 );
+            })
+        })
+        .catch(() => {
+          // Do something with error 
+        });
+
+
+        message.channel.awaitMessages(response => response.content === 'fuite', {
+            max: 1,
+            time: 30000,
+            errors: ['time'],
+          })
+          .then((collected) => {
+            message.delete(niv1)
+
+                
+            if(xp>2){                
+                message.channel.send("Tu t'est enfui en y laissant 2 xp ")
+                .then(async function (message ) {
+                    db.subtract(`xplay${userxp}`, 2 );            
+                })
+            }else{
+                message.channel.send("Tu t'es enfui avec succes")
+            }
+                })
+
+            .catch(() => {
+              // Do something with error 
+            });
+    });
 }
-})  
-client.on('messageReactionAdd',async (reaction, user) =>{
-if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
-await reaction.remove()
-await message.delete(niv1)
 
-message.channel.send("Tu t'est enfui avec succes")
+
+if(randwin === 10 ){
+
+    var niv1 = new Discord.RichEmbed()
+    .setTitle(namemob)
+    .setDescription(carac)
+    .setThumbnail(mobs)
+    .setFooter("écrire: combattre \nou\nécrire: fuite ")
+    message.channel.send(niv1)
+
+
+    .then(() => {
+      message.channel.awaitMessages(response => response.content === 'combattre', {
+        max: 1,
+        time: 30000,
+        errors: ['time'],
+      })
+      .then((collected) => {
+        message.delete(niv1)
+
+        
+        var towerF = new Discord.RichEmbed()
+
+        
+                    .setTitle("a perdu face à "+namemob)
+                    .setDescription(jcvf)
+                    .setThumbnail(mobs)
+                    .setFooter("Tu a perdu TOUT ton xp")
+                    message.channel.send(towerF)
+                    .then(async function (message ) {
+                        db.subtract(`xplay${userxp}`, xpc );
+
+                    })
+
+})
+            
+        .catch(() => {
+          // Do something with error 
+        });
+        message.channel.awaitMessages(response => response.content === 'fuite', {
+            max: 1,
+            time: 30000,
+            errors: ['time'],
+          })
+          .then((collected) => {
+            message.delete(niv1)
+
+                
+            if(xp>2){                
+                message.channel.send("Tu t'est enfui en y laissant 2 xp ")
+                .then(async function (message ) {
+                    db.subtract(`xplay${userxp}`, 2 );            
+                })
+            }else{
+                message.channel.send("Tu t'es enfui avec succes")
+            }
+                })
+            .catch(() => {
+              // Do something with error 
+            });
+    });
+
 
 }
-})
-})
-
-if(randwin === 10 )
-var niv1 = new Discord.RichEmbed()
-.setTitle("Nom du monstre")
-.setDescription(`Mettre Carac et présentation du mob`)
-.setImage(mobs)
-.setFooter("Pour attaquer: ⚔ || Pour fuire: ↩")
-
-message.channel.send(niv1)
-.then(async function (message ) {
-    await message.react("⚔")
-    await message.react("↩")
-
-    client.on('messageReactionAdd',async (reaction, user) =>{
-        if (reaction.emoji.name === "⚔" && user.id !== client.user.id) {
-db.subtract(`xp_${message.author.id}`,xp);
-            await reaction.remove()
-
-            niv1.setTitle("a perdu face à {mettre le nom du mob}")
-            niv1.setDescription("mettre un journale de combat")
-            niv1.setThumbnail(mobs)
-            niv1.setImage()
-            niv1.setFooter("Tu a perdu TOUT ton xp")
-            message.edit(niv1);
-        }
-    })
-client.on('messageReactionAdd',async (reaction, user) =>{
-    if (reaction.emoji.name === "↩" && user.id !== client.user.id) {
+}
+}
+}
 
 
-        await reaction.remove()
-        await message.delete(niv1)
 
 
-message.channel.send("Tu t'est enfui avec succes")
+if(command ==="cc"){
+    
+    let sjcl = await db.fetch(`jdc${message.author.id}`);
+    await db.subtract(`jdc${message.author.id}`, sjcl );
+  let scpal = await db.fetch(`cpal${message.author.id}`);
+    await db.subtract(`cpal${message.author.id}`, scpal );
+    let scche = await db.fetch(`cche${message.author.id}`);
+    await db.subtract(`cche${message.author.id}`, scche );
+    let scbarba = await db.fetch(`cbarb${message.author.id}`);
+    await db.subtract(`cbarb${message.author.id}`, scbarba );
+    let scmoin = await db.fetch(`cmoin${message.author.id}`);
+    await db.subtract(`cmoin${message.author.id}`, scmoin );
+    let scrod = await db.fetch(`crod${message.author.id}`);
+    await db.subtract(`crod${message.author.id}`, scrod );
+    let scbarde = await db.fetch(`cbard${message.author.id}`);
+    await db.subtract(`cbard${message.author.id}`, scbarde );
+    let scmage = await db.fetch(`cmage${message.author.id}`);
+    await db.subtract(`cmage${message.author.id}`, scmage );
+    let scsorc = await db.fetch(`csorc${message.author.id}`);
+   await db.subtract(`csorc${message.author.id}`, scsorc );
+    let scclerc = await db.fetch(`cclerc${message.author.id}`);
+    await db.subtract(`ccler${message.author.id}`, scclerc );
+    let scdruid = await db.fetch(`cdruid${message.author.id}`);
+    await db.subtract(`cdruid${message.author.id}`, scdruid );
+    message.channel.send("class reset")
+}
+
+if(command ==="etatc"){
+
+    let jcl = await db.fetch(`jdc${message.author.id}`);
+    if (jcl === null) jcl = 0;
+    let classid = await db.fetch(`cpal${message.author.id}`);
+    if(classid=== 0){message.channel.send("Tu n'as aucune classe *touss dans les 2 sens du terme touss*")}
+    if(classid=== 1 ){ message.channel.send("Tu est un Paladin.")};
+    if(classid=== 2 ){ message.channel.send("Tu est un Chevalier.")};
+    if(classid=== 3 ){ message.channel.send("Tu est un Barbare.")};
+    if(classid=== 4 ){ message.channel.send("Tu est un Moine.")};
+    if(classid=== 5 ){ message.channel.send("Tu est un Rôdeur.")};
+    if(classid=== 6 ){ message.channel.send("Tu est un Barde.")};
+    if(classid=== 7 ){ message.channel.send("Tu est un Mage.")};
+    if(classid=== 8 ){ message.channel.send("Tu est un Sorcier Harry. Je veu dir "+message.author.username )};
+    if(classid=== 9 ){ message.channel.send("Tu est un Clerc.")};
+    if(classid=== 10 ){ message.channel.send("Tu est un Druide.")};
+
+
 
 }
-})
-})
+
+
+
+if(command === "t"){
+    let classid = await db.fetch(`cpal${message.author.id}`);
+    message.channel.send(classid+" P")
 
 }
-    }
+
+
+
+
+
+
+
+
 
 
 
 
 if (command === "class") {
+    const userclasse = message.author.id
+
+
+
+    const jcl = await db.fetch(`jdc${message.author.id}`);
+    let cpal = await db.fetch(`cpal${message.author.id}`);
+
 
 
     let pages = [' Menu des classes','Paladin','Chevalier','Barbare','Moine','Rôdeur','Barde','Mage','Sorcier','Clerc','Druide'];
     let page = 1;
     const embetest = new Discord.RichEmbed()
     .setTitle(pages[page-1])
+    .setThumbnail("https://i.imgur.com/L220L1r.png")
     .setFooter(`Page ${page} sur ${pages.length}`)
     .setDescription(`
     🛡
@@ -3842,7 +4225,16 @@ if (command === "class") {
     message.channel.send(embetest).then(message =>{
         message.react("⏪").then( r =>{
             message.react("⏩")
-    
+
+
+            const filter = (reaction, user) => {
+                return ['⏪', '⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
+            };
+            
+            message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                .then(collected => {
+
+
     
             client.on('messageReactionAdd',async (reaction, user) =>{
     
@@ -3853,6 +4245,7 @@ if (command === "class") {
                 page--;
     
                 if(page ===1){ 
+                    embetest.setThumbnail("https://i.imgur.com/L220L1r.png")
                     embetest.setTitle(pages[page-1])
                     embetest.setDescription(`
                     🛡
@@ -3878,6 +4271,7 @@ if (command === "class") {
                 };
                 if(page ===2){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/T7yl3KM.gif")
                     embetest.setDescription(`
                     Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien  et à un penchant un peut trop prononcé pour la lumière.
 
@@ -3891,27 +4285,81 @@ if (command === "class") {
                     .then(async function (message ) {
                         await message.react("✅")
                         await message.react("❌")
+                        
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
+
+
+
+                                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        message.clearReactions();
+
+                            if(jcl === 1){
+
+                                embetest.setTitle("❌")
+                                embetest.setThumbnail()
+                                embetest.setDescription(`
+                                Tu as déja une classe !
+                                `)  
+                                embetest.setFooter(`❌`)  
+                                message.edit(embetest) 
+
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
                 
-                    message.channel.send("et ba nop pas encore terminer")
-                }
-            })  
+                            }else{
+
+                            
+                        
+                    
+
+                                embetest.setTitle("✅")
+                                embetest.setDescription(`
+                                T'as nouvelle classe t'as été atribué !
+                                `)  
+                                embetest.setFooter(`✅`)  
+                                message.edit(embetest)
+                                .then(async function (message ) {
+                        db.add(`cpal${userclasse}`, 1)
+                        db.add(`jdc${userclasse}`,1)    ;
+                                                
+                    })
+
+                    setTimeout(() => {
+
+                    message.delete(embetest)
+            },3000);
+
+            }
+        }
+            })
+
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
 
 
 
                  if(page ===3){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/nZ3JpTi.gif")
                     embetest.setDescription(`
                     Un maître en matière d’armes et d'armures de toutes sortes à la fois courageux et vaillant.
 
@@ -3926,23 +4374,63 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{
+                                    
+                                
+            
+                                embetest.setTitle("✅")
+                                embetest.setDescription(`
+                                T'as nouvelle classe t'as été atribué !
+                                `)  
+                                embetest.setFooter(`✅`)  
+                                message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                        }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
+            
             })
             })
-                 };
+                 }else
                  if(page ===4){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/m8liniX.gif")
                     embetest.setDescription(`
                     Un combattant brutal qui provient des frontières de la civilisation
 
@@ -3957,23 +4445,62 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{
+                                    
+                                
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)  
+                                    message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                        }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
                  if(page ===5){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/GcjbEJG.gif")
                     embetest.setDescription(`
                     Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense et accessoirement aime la bière.
 
@@ -3988,23 +4515,63 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+        
+                                        }else{    
+                                     
+                                
+            
+                                     embetest.setTitle("✅")
+                                     embetest.setDescription(`
+                                     T'as nouvelle classe t'as été atribué !
+                                     `)  
+                                     embetest.setFooter(`✅`)  
+                                     message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                            }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
                  if(page ===6){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/Y2VZKuG.gif")
                     embetest.setDescription(`
                     A la fois pisteur et chasseur, une créature des étendues sauvages qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
 
@@ -4019,23 +4586,62 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{                             
+                                    
+                            
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)  
+                                    message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                            }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);                
                 }
             })
             })
-                 };
+                 }else
                  if(page ===7){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/5m13KSi.gif")
                     embetest.setDescription(`
                     qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés, troubler ses ennemis et accessoirement tiré des flèches.
 
@@ -4050,23 +4656,62 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{                       
+                                    
+                                
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)  
+                                    message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                            }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
                  if(page ===8){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/EQQ3w03.gif")
                     embetest.setDescription(`
                     Qui, à force d'étudier sans cesse, parvient à maîtriser la magie et acquiert d'incroyables pouvoirs.
 
@@ -4081,23 +4726,63 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{
+                                    
+                                
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)  
+                                    message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                        }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
                  if(page ===9){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/mgvn26U.gif")
                     embetest.setDescription(`
                     Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
 
@@ -4112,23 +4797,63 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{
+                                    
+                                
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)  
+                                    message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                            }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
                  if(page ===10){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/g57g6yQ.gif")
                     embetest.setDescription(`
                     Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie et utiliser le pouvoir sacré pour occire ses ennemis.
 
@@ -4143,23 +4868,61 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{
+                                
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)    
+                                    message.edit(embetest)                              
+                                    .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                            }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
-                 };
+                 }else
                  if(page ===11){ 
                     embetest.setTitle(pages[page-1])
+                    embetest.setThumbnail("https://i.imgur.com/ioAWWiA.gif")
                     embetest.setDescription(`
                     A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué
 
@@ -4174,17 +4937,55 @@ if (command === "class") {
                         await message.react("✅")
                         await message.react("❌")
                             client.on('messageReactionAdd',async (reaction, user) =>{
-                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                        await message.delete(embetest)
-                
-                    message.channel.send("et ba nop pas encore terminer")
-                }
+                                if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                        if(jcl === 1){
+                                            embetest.setTitle("❌")
+                                            embetest.setThumbnail()
+                                            embetest.setDescription(`
+                                            Tu as déja une classe !
+                                            `)  
+                                            embetest.setFooter(`❌`)  
+                                            message.edit(embetest) 
+                                            setTimeout(() => {
+
+                                                message.delete(embetest)
+                                        },3000);
+        
+                                        }else{
+                                    
+                                
+            
+                                    embetest.setTitle("✅")
+                                    embetest.setDescription(`
+                                    T'as nouvelle classe t'as été atribué !
+                                    `)  
+                                    embetest.setFooter(`✅`)  
+                                    message.edit(embetest)
+                                .then(async function (message ) {
+                                    db.add(`cpal${userclasse}`, 1)
+                                    db.add(`jdc${userclasse}`,1)         
+                                })
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+                            }
+                            }
             })  
             client.on('messageReactionAdd',async (reaction, user) =>{
                 if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-                    await message.delete(embetest)
-                    message.channel.send("❌A été Annuler")
-            
+                    embetest.setTitle("❌")
+                    embetest.setThumbnail()
+                    embetest.setDescription(`
+                    La séléction de classe est annuler
+                    `)  
+                    embetest.setFooter(`❌`)  
+                    message.edit(embetest) 
+                    setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
                 }
             })
             })
@@ -4201,6 +5002,7 @@ if (command === "class") {
     
         if(page ===1){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/L220L1r.png")
             embetest.setDescription(`
             🛡
             **-Paladin:**
@@ -4225,6 +5027,7 @@ if (command === "class") {
         };
         if(page ===2){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/T7yl3KM.gif")
             embetest.setDescription(`
             Un chevalier à l’armure étincelante, un individu dévoué à la loi ainsi qu'au bien  et à un penchant un peut trop prononcé pour la lumière.
 
@@ -4238,27 +5041,78 @@ if (command === "class") {
             .then(async function (message ) {
                 await message.react("✅")
                 await message.react("❌")
-                    client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
-    })  
+
+                            client.on('messageReactionAdd',async (reaction, user) =>{
+
+                                    if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+                                        message.clearReactions();
+
+                            if(jcl === 1){
+                                embetest.setTitle("❌")
+                                embetest.setThumbnail()
+                                embetest.setDescription(`
+                                Tu as déja une classe !
+                                `)  
+                                embetest.setFooter(`❌`)  
+                                message.edit(embetest) 
+                                setTimeout(() => {
+
+                                    message.delete(embetest)
+                            },3000);
+
+
+                            }else{
+                        
+                    
+
+                        embetest.setTitle("✅")
+                        embetest.setDescription(`
+                        T'as nouvelle classe t'as été atribué !
+                        `)  
+                        embetest.setFooter(`✅`)  
+                        message.edit(embetest)
+                    .then(async function (message ) {
+                        db.add(`cpal${userclasse}`, 1)
+                        db.add(`jdc${userclasse}`,1)        ;
+                    })
+
+
+                    setTimeout(() => {
+
+                    message.delete(embetest)
+            },3000);
+
+    
+                }
+            }
+
+            })
+
+
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
+
         }
     })
     })
-         };
+         }else
 
 
 
          if(page ===3){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/nZ3JpTi.gif")
             embetest.setDescription(`
             Un maître en matière d’armes et d'armures de toutes sortes à la fois courageux et vaillant.
 
@@ -4273,23 +5127,59 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+                            
+                    
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
-         };
+         }else
          if(page ===4){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/m8liniX.gif")
             embetest.setDescription(`
             Un combattant brutal qui provient des frontières de la civilisation
 
@@ -4304,23 +5194,62 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)          
+                       })
+                       setTimeout(() => {
+
+                        message.delete(embetest)
+                },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===5){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/GcjbEJG.gif")
             embetest.setDescription(`
             Qui étudie les arts martiaux et s’entraîne à faire de son corps sa meilleure arme et sa meilleure défense et accessoirement aime la bière.
 
@@ -4335,23 +5264,65 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+
+                                
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===6){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/Y2VZKuG.gif")
             embetest.setDescription(`
             A la fois pisteur et chasseur, une créature des étendues sauvages qui excelle lorsqu'il s’agit de débusquer ses ennemis jurés.
 
@@ -4366,23 +5337,62 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===7){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/5m13KSi.gif")
             embetest.setDescription(`
             qui utilise ses capacités ainsi que ses sorts pour donner du courage à ses alliés, troubler ses ennemis et accessoirement tiré des flèches.
 
@@ -4397,23 +5407,63 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===8){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/EQQ3w03.gif")
             embetest.setDescription(`
             Qui, à force d'étudier sans cesse, parvient à maîtriser la magie et acquiert d'incroyables pouvoirs.
 
@@ -4428,23 +5478,63 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===9){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/mgvn26U.gif")
             embetest.setDescription(`
             Le puissant lien qu'ils possède avec sa divinité protectrice lui permet de bénéficier d'étranges pouvoirs mystiques par l'intermédiaire d’invocation bien spécial.
 
@@ -4459,23 +5549,63 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);            
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===10){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/g57g6yQ.gif")
             embetest.setDescription(`
             Fidèle et dévoué à son dieu, peut soigner les blessures, ramener les morts à la vie et utiliser le pouvoir sacré pour occire ses ennemis.
 
@@ -4490,25 +5620,65 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
-    
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
     })
          };
          if(page ===11){ 
             embetest.setTitle(pages[page-1])
+            embetest.setThumbnail("https://i.imgur.com/ioAWWiA.gif")
             embetest.setDescription(`
-            A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué
+            A la fois lanceur de sorts vénérant la nature, ami des animaux et métamorphe doué.
 
             Style de combat: Distance/ Support 
             armure: équipement en cuire
@@ -4521,16 +5691,56 @@ if (command === "class") {
                 await message.react("✅")
                 await message.react("❌")
                     client.on('messageReactionAdd',async (reaction, user) =>{
-            if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
-                await message.delete(embetest)
-        
-            message.channel.send("et ba nop pas encore terminer")
-        }
+                        if (reaction.emoji.name === "✅" && user.id !== client.user.id) {
+
+                                if(jcl === 1){
+                                    embetest.setTitle("❌")
+                                    embetest.setThumbnail()
+                                    embetest.setDescription(`
+                                    Tu as déja une classe !
+                                    `)  
+                                    embetest.setFooter(`❌`)  
+                                    message.edit(embetest) 
+                                    setTimeout(() => {
+
+                                        message.delete(embetest)
+                                },3000);
+
+
+                                }else{
+                            
+                        
+    
+                            embetest.setTitle("✅")
+                            embetest.setDescription(`
+                            T'as nouvelle classe t'as été atribué !
+                            `)  
+                            embetest.setFooter(`✅`)  
+                            message.edit(embetest)
+                        .then(async function (message ) {
+                            db.add(`cpal${userclasse}`, 1)
+                            db.add(`jdc${userclasse}`,1)         
+                        })
+                        setTimeout(() => {
+
+                            message.delete(embetest)
+                    },3000);
+                    }
+                    }
     })  
     client.on('messageReactionAdd',async (reaction, user) =>{
         if (reaction.emoji.name === "❌" && user.id !== client.user.id) {
-            await message.delete(embetest)
-            message.channel.send("❌A été Annuler")
+            embetest.setTitle("❌")
+            embetest.setThumbnail()
+            embetest.setDescription(`
+            La séléction de classe est annuler
+            `)  
+            embetest.setFooter(`❌`)  
+            message.edit(embetest) 
+            setTimeout(() => {
+
+                message.delete(embetest)
+        },3000);
         }
     })
 })
@@ -4539,8 +5749,30 @@ if (command === "class") {
 })
 })
 })
+    })
 };
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const queue = new Map();
 const ytdl = require('ytdl-core');
